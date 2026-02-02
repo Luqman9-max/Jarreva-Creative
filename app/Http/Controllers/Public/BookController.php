@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\PublicArea;
+namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
 
