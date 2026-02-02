@@ -4,13 +4,12 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Admin Routes
 |--------------------------------------------------------------------------
 |
-| Routes untuk halaman publik (landing page, detail buku).
+| Routes khusus untuk admin panel.
+| Semua route di sini akan memiliki prefix /admin
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Admin routes will be defined here
