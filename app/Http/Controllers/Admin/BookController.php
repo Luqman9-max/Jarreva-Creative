@@ -9,17 +9,22 @@ class BookController extends Controller
     public function index(\Illuminate\Http\Request $request)
     {
         $query = \App\Models\Book::query();
+        $query->with('admin'); // Eager load admin
 
         // Search
         if ($request->filled('search')) {
             $search = $request->search;
             $query->where(function($q) use ($search) {
                 $q->where('title', 'like', "%{$search}%")
-                  ->orWhere('author', 'like', "%{$search}%");
+                  ->orWhere('author', 'like', "%{$search}%")
+                  ->orWhereHas('admin', function($q) use ($search) {
+                      $q->where('name', 'like', "%{$search}%");
+                  });
             });
         }
 
         // Filters
+        // 1. Status Filter
         if ($request->filled('filter')) {
             switch ($request->filter) {
                 case 'published':
@@ -31,13 +36,36 @@ class BookController extends Controller
                 case 'featured':
                     $query->where('is_featured', true);
                     break;
-                // 'all' is default
             }
         }
 
-        $books = $query->latest()->paginate(10)->withQueryString();
+        // 2. Advanced Filters (Year & Category)
+        if ($request->filled('year')) {
+            $query->where('year', $request->year);
+        }
+        if ($request->filled('category')) {
+            $query->where('category', 'like', "%{$request->category}%");
+        }
 
-        return view('admin.books.index', compact('books'));
+        // Sorting
+        $sort_by = $request->get('sort_by', 'created_at'); // Default: date
+        $sort_dir = $request->get('sort_dir', 'desc'); // Default: desc
+        
+        // Whitelist sort columns
+        $allowedImports = ['created_at', 'title', 'year'];
+        if (in_array($sort_by, $allowedImports)) {
+            $query->orderBy($sort_by, $sort_dir);
+        } else {
+            $query->latest();
+        }
+
+        $books = $query->paginate(10)->withQueryString();
+        
+        // Get unique years and categories for filter dropdowns
+        $filter_years = \App\Models\Book::select('year')->distinct()->orderBy('year', 'desc')->pluck('year');
+        $filter_categories = \App\Models\Book::select('category')->distinct()->orderBy('category')->pluck('category');
+
+        return view('admin.books.index', compact('books', 'filter_years', 'filter_categories'));
     }
 
     public function create()
@@ -48,13 +76,16 @@ class BookController extends Controller
     public function store(\App\Http\Requests\Admin\BookRequest $request)
     {
         $data = $request->validated();
+        $data['admin_id'] = \Illuminate\Support\Facades\Auth::guard('admin')->id();
         
         if ($request->hasFile('cover_image')) {
             $path = $request->file('cover_image')->store('books', 'public');
             $data['cover_image'] = $path;
         }
 
-        \App\Models\Book::create($data);
+        $book = \App\Models\Book::create($data);
+
+        \App\Helpers\ActivityLogger::log('created', "Added new book: {$book->title}", $book);
 
         return redirect()->route('admin.books.index')->with('success', 'Book created successfully.');
     }
@@ -79,17 +110,23 @@ class BookController extends Controller
 
         $book->update($data);
 
+        \App\Helpers\ActivityLogger::log('updated', "Updated details for book: {$book->title}", $book);
+
         return redirect()->route('admin.books.index')->with('success', 'Book updated successfully.');
     }
 
     public function destroy(\App\Models\Book $book)
     {
+        $title = $book->title; // Capture title before deleting
+
         if ($book->cover_image && \Illuminate\Support\Facades\Storage::disk('public')->exists($book->cover_image)) {
             \Illuminate\Support\Facades\Storage::disk('public')->delete($book->cover_image);
         }
         
         $book->delete();
 
-        return redirect()->route('admin.books.index')->with('success', 'Book deleted successfully.');
+        \App\Helpers\ActivityLogger::log('deleted', "Deleted book: {$title}", null); // Subject null since it's gone
+
+        return redirect()->route('admin.books.index')->with('delete', 'Book deleted successfully.');
     }
 }

@@ -52,28 +52,91 @@
 </div>
 
 {{-- Toolbar --}}
-<div class="bg-white dark:bg-[#1e293b] p-2 rounded-xl border border-slate-200 dark:border-slate-700 mb-6 flex flex-col md:flex-row gap-3">
-    <form action="{{ route('admin.books.index') }}" method="GET" class="flex-grow">
-        @if(request('filter'))
-            <input type="hidden" name="filter" value="{{ request('filter') }}">
-        @endif
-        <div class="relative group w-full">
-            <div class="absolute left-3 top-1/2 -translate-y-1/2 flex items-center text-slate-400">
-                <span class="material-symbols-outlined text-[20px]">search</span>
+<div x-data="{ showFilters: {{ request('category') || request('year') ? 'true' : 'false' }}, sortOpen: false }" class="mb-6">
+    <div class="bg-white dark:bg-[#1e293b] p-2 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col md:flex-row gap-3">
+        <form action="{{ route('admin.books.index') }}" method="GET" class="flex-grow">
+            {{-- Persist other filters --}}
+            @if(request('filter')) <input type="hidden" name="filter" value="{{ request('filter') }}"> @endif
+            @if(request('sort_by')) <input type="hidden" name="sort_by" value="{{ request('sort_by') }}"> @endif
+            @if(request('sort_dir')) <input type="hidden" name="sort_dir" value="{{ request('sort_dir') }}"> @endif
+            @if(request('year')) <input type="hidden" name="year" value="{{ request('year') }}"> @endif
+            @if(request('category')) <input type="hidden" name="category" value="{{ request('category') }}"> @endif
+
+            <div class="relative group w-full">
+                <div class="absolute left-3 top-1/2 -translate-y-1/2 flex items-center text-slate-400">
+                    <span class="material-symbols-outlined text-[20px]">search</span>
+                </div>
+                <input name="search" value="{{ request('search') }}" class="w-full h-11 pl-10 pr-4 rounded-lg bg-slate-50 dark:bg-[#0f172a] border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 text-sm transition-all outline-none" placeholder="Search by title, author, or ISBN..." type="text"/>
             </div>
-            <input name="search" value="{{ request('search') }}" class="w-full h-11 pl-10 pr-4 rounded-lg bg-slate-50 dark:bg-[#0f172a] border-transparent focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 text-sm transition-all outline-none" placeholder="Search by title, author, or ISBN..." type="text"/>
+        </form>
+        
+        <div class="relative">
+            <button @click="sortOpen = !sortOpen" @click.away="sortOpen = false" class="px-4 py-2.5 bg-white border border-slate-200 dark:bg-slate-800 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-bold hover:bg-slate-50 transition-colors flex items-center gap-2 h-full">
+                <span class="material-symbols-outlined text-[18px]">sort</span>
+                Sort
+                <span class="material-symbols-outlined text-[16px] text-slate-400">expand_more</span>
+            </button>
+            
+            {{-- Sort Dropdown --}}
+            <div x-show="sortOpen" class="absolute z-10 right-0 mt-2 w-48 bg-white dark:bg-[#1e293b] rounded-lg shadow-xl border border-slate-100 dark:border-slate-700 py-1" style="display: none;">
+                @php 
+                    $sorts = [
+                        ['label' => 'Newest First', 'by' => 'created_at', 'dir' => 'desc'],
+                        ['label' => 'Oldest First', 'by' => 'created_at', 'dir' => 'asc'],
+                        ['label' => 'Title A-Z', 'by' => 'title', 'dir' => 'asc'],
+                        ['label' => 'Year (Newest)', 'by' => 'year', 'dir' => 'desc'],
+                    ];
+                @endphp
+                @foreach($sorts as $sort)
+                <a href="{{ request()->fullUrlWithQuery(['sort_by' => $sort['by'], 'sort_dir' => $sort['dir']]) }}" 
+                   class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 {{ request('sort_by', 'created_at') == $sort['by'] && request('sort_dir', 'desc') == $sort['dir'] ? 'font-bold text-primary bg-orange-50' : '' }}">
+                    {{ $sort['label'] }}
+                </a>
+                @endforeach
+            </div>
         </div>
-    </form>
-    
-    <button class="px-4 py-2.5 bg-white border border-slate-200 dark:bg-slate-800 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-bold hover:bg-slate-50 transition-colors flex items-center gap-2">
-        <span class="material-symbols-outlined text-[18px]">sort</span>
-        Sort
-    </button>
-    
-    <button class="px-4 py-2.5 bg-white border border-slate-200 dark:bg-slate-800 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-bold hover:bg-slate-50 transition-colors flex items-center gap-2">
-        <span class="material-symbols-outlined text-[18px]">filter_list</span>
-        More Filters
-    </button>
+        
+        <button @click="showFilters = !showFilters" :class="showFilters ? 'bg-slate-100 dark:bg-slate-700 border-slate-300' : 'bg-white border-slate-200'" class="px-4 py-2.5 border dark:bg-slate-800 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg text-sm font-bold hover:bg-slate-50 transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">filter_list</span>
+            More Filters
+        </button>
+    </div>
+
+    {{-- Extended Filters Panel --}}
+    <div x-show="showFilters" x-transition class="bg-white dark:bg-[#1e293b] p-4 rounded-xl border border-slate-200 dark:border-slate-700 mt-2 shadow-sm" style="display: none;">
+        <form action="{{ route('admin.books.index') }}" method="GET" class="flex flex-wrap items-end gap-4">
+             {{-- Persist other filters --}}
+            @if(request('search')) <input type="hidden" name="search" value="{{ request('search') }}"> @endif
+            @if(request('filter')) <input type="hidden" name="filter" value="{{ request('filter') }}"> @endif
+            @if(request('sort_by')) <input type="hidden" name="sort_by" value="{{ request('sort_by') }}"> @endif
+            @if(request('sort_dir')) <input type="hidden" name="sort_dir" value="{{ request('sort_dir') }}"> @endif
+
+            <div class="flex flex-col gap-1 w-full md:w-auto min-w-[150px]">
+                <label class="text-xs font-bold text-slate-500 uppercase">Year</label>
+                <select name="year" class="w-full h-9 px-3 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+                    <option value="">All Years</option>
+                    @foreach($filter_years ?? [] as $y)
+                        <option value="{{ $y }}" {{ request('year') == $y ? 'selected' : '' }}>{{ $y }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="flex flex-col gap-1 w-full md:w-auto min-w-[200px]">
+                <label class="text-xs font-bold text-slate-500 uppercase">Category</label>
+                <select name="category" class="w-full h-9 px-3 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+                    <option value="">All Categories</option>
+                    @foreach($filter_categories ?? [] as $c)
+                        <option value="{{ $c }}" {{ request('category') == $c ? 'selected' : '' }}>{{ $c }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="flex items-center gap-2 pb-0.5">
+                <button type="submit" class="px-4 py-2 bg-primary hover:bg-orange-600 text-white rounded-lg text-sm font-bold shadow-md shadow-orange-500/20">Apply</button>
+                <a href="{{ route('admin.books.index') }}" class="px-4 py-2 text-slate-500 hover:text-slate-700 text-sm font-bold">Reset</a>
+            </div>
+        </form>
+    </div>
 </div>
 
 {{-- Data Table --}}
@@ -83,7 +146,7 @@
             <thead class="bg-slate-50/50 dark:bg-[#0f172a]/50 border-b border-slate-100 dark:border-slate-800">
                 <tr>
                     <th class="px-6 py-4 text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider w-1/3">Book Details</th>
-                    <th class="px-6 py-4 text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider">Author</th>
+                    <th class="px-6 py-4 text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider">Added By</th>
                     <th class="px-6 py-4 text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider">Details</th>
                     <th class="px-6 py-4 text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider">Status</th>
                     <th class="px-6 py-4 text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-wider text-right">Actions</th>
@@ -110,7 +173,16 @@
                         </div>
                     </td>
                     <td class="px-6 py-4">
-                        <span class="text-slate-600 dark:text-slate-300 text-sm font-medium">{{ $book->author ?? '-' }}</span>
+                        <div class="flex items-center gap-2">
+                             @if($book->admin && $book->admin->profile_photo_path)
+                                <div class="h-6 w-6 rounded-full bg-cover bg-center border border-slate-200" style="background-image: url('{{ asset('storage/' . $book->admin->profile_photo_path) }}');"></div>
+                            @else
+                                <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-[10px] font-bold">
+                                    {{ substr($book->admin->name ?? 'S', 0, 1) }}
+                                </div>
+                            @endif
+                            <span class="text-slate-600 dark:text-slate-300 text-sm font-medium">{{ $book->admin->name ?? 'System' }}</span>
+                        </div>
                     </td>
                     <td class="px-6 py-4">
                         <div class="flex flex-col gap-1">

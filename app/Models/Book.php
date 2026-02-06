@@ -17,10 +17,16 @@ class Book extends Model
         'category',
         'is_featured',
         'is_published',
+        'admin_id',
     ];
 
     protected $casts = [
         'is_featured' => 'boolean',
         'is_published' => 'boolean',
     ];
+
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class);
+    }
 }

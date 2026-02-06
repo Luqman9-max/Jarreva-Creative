@@ -19,16 +19,21 @@ class AdminController extends Controller
         return view('admin.admins.create');
     }
 
-    public function store(\App\Http\Requests\Admin\AdminRequest $request)
+    public function store(\Illuminate\Http\Request $request)
     {
-        $data = $request->validated();
-        $data['password'] = \Illuminate\Support\Facades\Hash::make($data['password']);
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:admins',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
 
-        if ($request->hasFile('profile_photo')) {
-            $data['profile_photo_path'] = $request->file('profile_photo')->store('admin-photos', 'public');
-        }
+        $admin = \App\Models\Admin::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => \Illuminate\Support\Facades\Hash::make($validated['password']),
+        ]);
 
-        Admin::create($data);
+        \App\Helpers\ActivityLogger::log('created', "Created new admin: {$admin->name}", $admin);
 
         return redirect()->route('admin.admins.index')->with('success', 'Admin created successfully!');
     }
@@ -38,32 +43,33 @@ class AdminController extends Controller
         return view('admin.admins.edit', compact('admin'));
     }
 
-    public function update(\App\Http\Requests\Admin\AdminRequest $request, Admin $admin)
+    public function update(\Illuminate\Http\Request $request, \App\Models\Admin $admin)
     {
-        $data = $request->validated();
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255|unique:admins,email,' . $admin->id,
+            'password' => 'nullable|string|min:8|confirmed',
+        ]);
 
-        if ($request->filled('password')) {
-            $data['password'] = \Illuminate\Support\Facades\Hash::make($data['password']);
-        } else {
-            unset($data['password']); // Keep existing password
-        }
+        $data = [
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+        ];
 
-        if ($request->hasFile('profile_photo')) {
-            // Delete old photo if exists
-            if ($admin->profile_photo_path) {
-                \Illuminate\Support\Facades\Storage::disk('public')->delete($admin->profile_photo_path);
-            }
-            $data['profile_photo_path'] = $request->file('profile_photo')->store('admin-photos', 'public');
+        if (!empty($validated['password'])) {
+            $data['password'] = \Illuminate\Support\Facades\Hash::make($validated['password']);
         }
 
         $admin->update($data);
 
+        \App\Helpers\ActivityLogger::log('updated', "Updated profile for admin: {$admin->name}", $admin);
+
         return redirect()->route('admin.admins.index')->with('success', 'Admin updated successfully!');
     }
 
-    public function destroy(Admin $admin)
+    public function destroy(\App\Models\Admin $admin)
     {
-        if ($admin->id === auth()->guard('admin')->id()) {
+        if ($admin->id === \Illuminate\Support\Facades\Auth::guard('admin')->id()) {
             return back()->with('error', 'You cannot delete yourself!');
         }
 
@@ -71,8 +77,11 @@ class AdminController extends Controller
             \Illuminate\Support\Facades\Storage::disk('public')->delete($admin->profile_photo_path);
         }
 
+        $name = $admin->name;
         $admin->delete();
 
-        return redirect()->route('admin.admins.index')->with('success', 'Admin deleted successfully!');
+        \App\Helpers\ActivityLogger::log('deleted', "Deleted admin: {$name}", null);
+
+        return redirect()->route('admin.admins.index')->with('delete', 'Admin deleted successfully!');
     }
 }

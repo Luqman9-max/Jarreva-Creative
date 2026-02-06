@@ -177,6 +177,64 @@
         });
     </script>
     @endif
+
+    {{-- Notification System --}}
+    @if (session('success') || session('delete'))
+    <div id="notification-overlay" class="fixed top-6 right-6 z-50 transition-all duration-500 transform translate-x-0 opacity-100">
+        @if (session('success'))
+        {{-- Success Notification (Orange) --}}
+        <div class="flex items-start gap-4 p-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border-l-4 border-orange-500 rounded-r-lg shadow-xl ring-1 ring-black/5 min-w-[320px] max-w-sm">
+            <div class="flex-shrink-0">
+                <span class="material-symbols-outlined text-orange-500 text-xl font-bold mt-0.5">check_circle</span>
+            </div>
+            <div class="flex-1">
+                <h3 class="font-bold text-sm text-slate-900 dark:text-white leading-tight mb-1 font-sans">Success</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium leading-relaxed font-sans">{{ session('success') }}</p>
+            </div>
+            <button onclick="closeNotification()" class="flex-shrink-0 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors ml-2 p-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full cursor-pointer">
+                <span class="material-symbols-outlined text-lg block">close</span>
+            </button>
+        </div>
+        @elseif (session('delete'))
+        {{-- Delete Notification (Red) --}}
+        <div class="flex items-start gap-4 p-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border-l-4 border-red-500 rounded-r-lg shadow-xl ring-1 ring-black/5 min-w-[320px] max-w-sm">
+            <div class="flex-shrink-0">
+                <span class="material-symbols-outlined text-red-500 text-xl font-bold mt-0.5">delete</span>
+            </div>
+            <div class="flex-1">
+                <h3 class="font-bold text-sm text-slate-900 dark:text-white leading-tight mb-1 font-sans">Deleted</h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium leading-relaxed font-sans">{{ session('delete') }}</p>
+            </div>
+            <button onclick="closeNotification()" class="flex-shrink-0 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors ml-2 p-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-full cursor-pointer">
+                <span class="material-symbols-outlined text-lg block">close</span>
+            </button>
+        </div>
+        @endif
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const notification = document.getElementById('notification-overlay');
+            if (notification) {
+                // Auto dismiss after 4 seconds
+                setTimeout(() => {
+                    closeNotification();
+                }, 4000);
+            }
+        });
+
+        function closeNotification() {
+            const notification = document.getElementById('notification-overlay');
+            if (notification) {
+                notification.classList.remove('translate-x-0', 'opacity-100');
+                notification.classList.add('translate-x-full', 'opacity-0');
+                setTimeout(() => {
+                    notification.remove();
+                }, 500);
+            }
+        }
+    </script>
+    @endif
     @yield('scripts')
 </body>
 </html>
