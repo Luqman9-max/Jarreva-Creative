@@ -15,7 +15,14 @@ class BookRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // TODO: Define validation rules
+            'title' => 'required|string|max:255',
+            'slug' => 'required|string|max:255|unique:books,slug,' . $this->route('book')?->id,
+            'description' => 'required|string',
+            'cover_image' => 'nullable|image|max:2048', // 2MB Max
+            'year' => 'nullable|integer|min:1900|max:' . (date('Y') + 1),
+            'category' => 'nullable|string|max:255',
+            'is_featured' => 'boolean',
+            'is_published' => 'boolean',
         ];
     }
 }
