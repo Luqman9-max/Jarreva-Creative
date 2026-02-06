@@ -10,7 +10,10 @@ class AdminAuth
     // Proteksi route admin
     public function handle(Request $request, Closure $next)
     {
-        // TODO: Implement admin authentication check
+        if (! \Illuminate\Support\Facades\Auth::guard('admin')->check()) {
+            return redirect()->route('admin.login');
+        }
+
         return $next($request);
     }
 }
