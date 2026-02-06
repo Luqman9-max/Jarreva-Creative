@@ -139,7 +139,7 @@
 </div>
 @endsection
 
-@push('scripts')
+@section('scripts')
 <script>
     // Rich Text Editor Logic
     document.querySelectorAll('.rich-editor').forEach(editor => {
@@ -184,4 +184,4 @@
         });
     });
 </script>
-@endpush
+@endsection
