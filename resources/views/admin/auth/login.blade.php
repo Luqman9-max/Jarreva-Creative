@@ -15,6 +15,28 @@
 </head>
 <body class="bg-slate-50 min-h-screen w-full flex items-center justify-center p-4 md:p-6 lg:p-8 font-sans text-slate-800 relative overflow-hidden group/page">
     
+    {{-- Floating Error Toast --}}
+    @if ($errors->any())
+    <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)" 
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0 -translate-y-full"
+         x-transition:enter-end="opacity-100 translate-y-0"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100 translate-y-0"
+         x-transition:leave-end="opacity-0 -translate-y-full"
+         class="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-red-500 text-white px-6 py-3 rounded-full shadow-xl flex items-center gap-3 min-w-[300px] justify-center">
+        <span class="material-symbols-outlined text-[24px]">error</span>
+        <div class="text-sm font-bold">
+            @foreach ($errors->all() as $error)
+                <span>{{ $error }}</span>
+            @endforeach
+        </div>
+        <button @click="show = false" class="ml-2 hover:bg-white/20 rounded-full p-1 transition-colors">
+            <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+    </div>
+    @endif
+    
     {{-- Background Animated Elements --}}
     <div class="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
         <div class="absolute top-[10%] left-[10%] w-6 h-6 bg-blue-400/30 rounded-full blur-[4px] animate-float-p1 transition-transform duration-700 ease-out group-hover/page:translate-x-4 group-hover/page:translate-y-4"></div>
@@ -138,15 +160,7 @@
                     @csrf
                     
                     {{-- Error Message --}}
-                    @if ($errors->any())
-                        <div class="bg-red-50 text-red-600 p-3 rounded-lg text-sm mb-4">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                    {{-- Error Message removed (moved to toast) --}}
 
                     <div class="space-y-1">
                         <label class="block text-sm font-semibold text-slate-700 ml-1 font-sans" for="email">Email Address</label>
