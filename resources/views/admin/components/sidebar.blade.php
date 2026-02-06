@@ -25,29 +25,33 @@
         <span class="text-sm font-medium">Books</span>
     </a>
     
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-blue-900 hover:bg-orange-50 hover:text-orange-800 hover:shadow-sm transition-all group" href="#">
-        <span class="material-symbols-outlined text-[20px] text-blue-800 group-hover:text-orange-600">group</span>
-        <span class="text-sm font-medium">Authors</span>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg {{ request()->routeIs('admin.admins.*') ? 'bg-orange-50 text-orange-900 border-l-4 border-primary shadow-sm' : 'text-blue-900 hover:bg-orange-50 hover:text-orange-800 hover:shadow-sm' }} transition-all group" href="{{ route('admin.admins.index') }}">
+        <span class="material-symbols-outlined text-[20px] {{ request()->routeIs('admin.admins.*') ? 'text-primary' : 'text-blue-800 group-hover:text-orange-600' }}">shield_person</span>
+        <span class="text-sm font-medium">Admins</span>
     </a>
     
     <p class="px-3 text-xs font-bold text-blue-900/50 uppercase tracking-wider mb-2 mt-6">System</p>
     
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-blue-900 hover:bg-orange-50 hover:text-orange-800 hover:shadow-sm transition-all group" href="#">
-        <span class="material-symbols-outlined text-[20px] text-blue-800 group-hover:text-orange-600">settings</span>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg {{ request()->routeIs('admin.settings.*') ? 'bg-orange-50 text-orange-900 border-l-4 border-primary shadow-sm' : 'text-blue-900 hover:bg-orange-50 hover:text-orange-800 hover:shadow-sm' }} transition-all group" href="{{ route('admin.settings.index') }}">
+        <span class="material-symbols-outlined text-[20px] {{ request()->routeIs('admin.settings.*') ? 'text-primary' : 'text-blue-800 group-hover:text-orange-600' }}">settings</span>
         <span class="text-sm font-medium">Settings</span>
     </a>
     
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-blue-900 hover:bg-orange-50 hover:text-orange-800 hover:shadow-sm transition-all group" href="#">
-        <span class="material-symbols-outlined text-[20px] text-blue-800 group-hover:text-orange-600">help</span>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg {{ request()->routeIs('admin.support.*') ? 'bg-orange-50 text-orange-900 border-l-4 border-primary shadow-sm' : 'text-blue-900 hover:bg-orange-50 hover:text-orange-800 hover:shadow-sm' }} transition-all group" href="{{ route('admin.support.index') }}">
+        <span class="material-symbols-outlined text-[20px] {{ request()->routeIs('admin.support.*') ? 'text-primary' : 'text-blue-800 group-hover:text-orange-600' }}">help</span>
         <span class="text-sm font-medium">Support</span>
     </a>
 </nav>
 <div class="p-4 border-t border-blue-100 bg-sidebar-bg">
     <div class="flex flex-col gap-3 p-3 bg-white/60 rounded-xl border border-blue-100">
         <div class="flex items-center gap-3 w-full">
-            <div class="size-10 rounded-full bg-blue-100 flex items-center justify-center text-xs font-bold text-blue-800 ring-2 ring-white shadow-sm">
-                {{ substr(Auth::guard('admin')->user()->name ?? 'AD', 0, 2) }}
-            </div>
+            @if(Auth::guard('admin')->user()->profile_photo_path)
+                <div class="size-10 rounded-full bg-cover bg-center ring-2 ring-white shadow-sm" style="background-image: url('{{ asset('storage/' . Auth::guard('admin')->user()->profile_photo_path) }}');"></div>
+            @else
+                <div class="size-10 rounded-full bg-blue-100 flex items-center justify-center text-xs font-bold text-blue-800 ring-2 ring-white shadow-sm">
+                    {{ substr(Auth::guard('admin')->user()->name ?? 'AD', 0, 2) }}
+                </div>
+            @endif
             <div class="flex flex-col">
                 <span class="text-sm font-bold text-blue-900 leading-tight">{{ Auth::guard('admin')->user()->name ?? 'Admin' }}</span>
                 <span class="text-[10px] text-slate-500 font-medium">Administrator</span>
