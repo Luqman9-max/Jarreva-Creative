@@ -19,6 +19,12 @@ use App\Http\Controllers\Admin\DashboardController;
 
 // Public Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', [\App\Http\Controllers\Public\PageController::class, 'about'])->name('about');
+Route::get('/contact', [\App\Http\Controllers\Public\PageController::class, 'contact'])->name('contact');
+
+// Catalog / Portfolio
+Route::get('/catalog', [\App\Http\Controllers\Public\BookController::class, 'index'])->name('catalog.index');
+Route::get('/book/{slug}', [\App\Http\Controllers\Public\BookController::class, 'show'])->name('book.show');
 
 // Admin Guest Routes (Login)
 Route::middleware('guest:admin')->prefix('admin')->name('admin.')->group(function () {
