@@ -16,4 +16,18 @@ class PageController extends Controller
     {
         return view('public.contact');
     }
+
+    public function submitContact(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'topic' => 'required|string|max:255',
+            'message' => 'required|string',
+        ]);
+
+        // Integrate with Mail / Database as needed
+        
+        return response()->json(['success' => true, 'message' => 'Signal received.']);
+    }
 }

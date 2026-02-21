@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\DashboardController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [\App\Http\Controllers\Public\PageController::class, 'about'])->name('about');
 Route::get('/contact', [\App\Http\Controllers\Public\PageController::class, 'contact'])->name('contact');
+Route::post('/contact/submit', [\App\Http\Controllers\Public\PageController::class, 'submitContact'])->name('contact.submit');
 
 // Catalog / Portfolio
 Route::get('/catalog', [\App\Http\Controllers\Public\BookController::class, 'index'])->name('catalog.index');
