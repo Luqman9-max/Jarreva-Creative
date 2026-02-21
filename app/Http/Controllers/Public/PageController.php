@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactFormMail;
 
 class PageController extends Controller
 {
@@ -26,8 +28,12 @@ class PageController extends Controller
             'message' => 'required|string',
         ]);
 
-        // Integrate with Mail / Database as needed
-        
-        return response()->json(['success' => true, 'message' => 'Signal received.']);
+        try {
+            Mail::to('jarrevacreative@gmail.com')->send(new ContactFormMail($validated));
+            
+            return response()->json(['success' => true, 'message' => 'Signal received.']);
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'message' => 'Transmission failed. Please try again.'], 500);
+        }
     }
 }

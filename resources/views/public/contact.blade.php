@@ -223,9 +223,9 @@
                         <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6 font-display">
                             Direct Signal
                         </h3>
-                        <a href="mailto:hello@jarreva.com" class="group flex items-center gap-4 text-3xl font-light text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors">
+                        <a href="mailto:jarrevacreative@gmail.com" class="group flex items-center gap-4 text-3xl font-light text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors">
                             <span class="material-symbols-outlined text-4xl font-light group-hover:scale-110 transition-transform">alternate_email</span>
-                            hello@jarreva.com
+                            jarrevacreative@gmail.com
                         </a>
                     </div>
 
@@ -236,7 +236,7 @@
                         </h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <!-- Instagram -->
-                            <a href="#" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
+                            <a href="https://www.instagram.com/jarrevacreative?igsh=bjlwazJlOHBsd2h0&utm_source=qr" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
                                 <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white shadow-sm group-hover:scale-110 transition-transform">
                                     <svg class="h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                         <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
@@ -248,7 +248,7 @@
                                 </div>
                             </a>
                             <!-- X (Twitter) -->
-                            <a href="#" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
+                            <a href="https://x.com/jarrevacreative?s=21" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
                                 <div class="w-10 h-10 rounded-full bg-black dark:bg-white border border-slate-200 dark:border-slate-700 flex items-center justify-center text-white dark:text-black shadow-sm group-hover:scale-110 transition-transform">
                                     <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                         <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
@@ -260,7 +260,7 @@
                                 </div>
                             </a>
                             <!-- TikTok -->
-                            <a href="#" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
+                            <a href="https://www.tiktok.com/@jarreva_creative?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
                                 <div class="w-10 h-10 rounded-full bg-black dark:bg-white border border-slate-200 dark:border-slate-700 flex items-center justify-center text-white dark:text-black shadow-sm group-hover:scale-110 transition-transform">
                                     <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                         <path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.9 162.9 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/>
@@ -272,7 +272,7 @@
                                 </div>
                             </a>
                             <!-- Medium -->
-                            <a href="#" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
+                            <a href="https://medium.com/@jarrevacreative" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
                                 <div class="w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-600 text-black dark:text-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
                                     <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                                         <path d="M180.5 74.3C80.8 74.3 0 155.6 0 256S80.8 437.7 180.5 437.7 361 356.4 361 256 280.2 74.3 180.5 74.3zm288.3 10.6c-49.8 0-90.2 76.6-90.2 171.1s40.4 171.1 90.2 171.1 90.2-76.6 90.2-171.1H559C559 161.5 518.6 84.9 468.8 84.9zm139.5 17.8c-17.5 0-31.7 68.6-31.7 153.3s14.2 153.3 31.7 153.3S640 340.6 640 256C640 171.4 625.8 102.7 608.3 102.7z"/>
