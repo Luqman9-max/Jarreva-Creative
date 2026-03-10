@@ -69,27 +69,15 @@ html {
             animation: pulse-glow 3s ease-in-out infinite;
         }
 
-        @keyframes spin-cylinder {
-            0% {
-                transform: rotateY(0deg);
-            }
-
-            100% {
-                transform: rotateY(-360deg);
-            }
-        }
-
         .carousel-scene {
             perspective: 2000px;
         }
 
         .carousel-cylinder {
             transform-style: preserve-3d;
-            animation: spin-cylinder 40s linear infinite;
         }
 
         .carousel-cylinder:hover {
-            animation-play-state: paused;
             cursor: grab;
         }
 
@@ -452,8 +440,12 @@ html {
 @section('content')
 <section
                 class="reveal-on-scroll relative z-0 flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-24 pb-24 lg:pt-32 bg-white dark:bg-background-dark">
+                
+                <!-- 3D Hero Background -->
+                @include('public.components.hero-3d-bg')
+
                 <div
-                    class="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none">
+                    class="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none mix-blend-overlay opacity-50 dark:opacity-20">
                 </div>
                 <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 flex flex-col items-center text-center">
                     <!-- System Intelligence Status -->
@@ -795,7 +787,7 @@ html {
                                                     <p class="text-slate-400 text-sm">Student, Singapore</p>
                                                 </div>
                                                 <span
-                                                    class="ml-auto material-symbols-outlined text-primary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
+                                                    class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
                                             </div>
                                         </div>
 
@@ -830,7 +822,7 @@ html {
                                                     <p class="text-slate-400 text-sm">Founder, Malaysia</p>
                                                 </div>
                                                 <span
-                                                    class="ml-auto material-symbols-outlined text-primary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
+                                                    class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
                                             </div>
                                         </div>
 
@@ -865,7 +857,7 @@ html {
                                                     <p class="text-slate-400 text-sm">Dev Lead, Australia</p>
                                                 </div>
                                                 <span
-                                                    class="ml-auto material-symbols-outlined text-primary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
+                                                    class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
                                             </div>
                                         </div>
 
@@ -900,7 +892,7 @@ html {
                                                     <p class="text-slate-400 text-sm">Content Creator, India</p>
                                                 </div>
                                                 <span
-                                                    class="ml-auto material-symbols-outlined text-primary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
+                                                    class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
                                             </div>
                                         </div>
 
@@ -935,7 +927,7 @@ html {
                                                     <p class="text-slate-400 text-sm">Entrepreneur, Korea</p>
                                                 </div>
                                                 <span
-                                                    class="ml-auto material-symbols-outlined text-primary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
+                                                    class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
                                             </div>
                                         </div>
 
@@ -970,7 +962,7 @@ html {
                                                     <p class="text-slate-400 text-sm">Engineer, Spain</p>
                                                 </div>
                                                 <span
-                                                    class="ml-auto material-symbols-outlined text-primary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
+                                                    class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
                                             </div>
                                         </div>
 
@@ -1005,7 +997,7 @@ html {
                                                     <p class="text-slate-400 text-sm">Coach, UK</p>
                                                 </div>
                                                 <span
-                                                    class="ml-auto material-symbols-outlined text-primary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
+                                                    class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
                                             </div>
                                         </div>
 
@@ -2163,6 +2155,66 @@ html {
                 requestAnimationFrame(updateParallax);
             });
             updateParallax();
+
+            // 4. Interactive 3D Carousel Drag to Explore
+            const carousel = document.querySelector('.carousel-cylinder');
+            if (carousel) {
+                let currentAngle = 0;
+                let isDragging = false;
+                let startX = 0;
+                let currentX = 0;
+                let dragVelocity = 0;
+
+                function spinCarousel() {
+                    if (!isDragging) {
+                        currentAngle -= 0.05; // Speed of auto spin (slowed down)
+                        if(Math.abs(dragVelocity) > 0.01) {
+                            currentAngle += dragVelocity;
+                            dragVelocity *= 0.95; // Friction
+                        } else {
+                            dragVelocity = 0;
+                        }
+                        carousel.style.transform = `rotateY(${currentAngle}deg) translateZ(0)`;
+                    }
+                    requestAnimationFrame(spinCarousel);
+                }
+                
+                requestAnimationFrame(spinCarousel);
+
+                const startDrag = (e) => {
+                    isDragging = true;
+                    startX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+                    currentX = startX;
+                    carousel.style.transition = 'none';
+                    dragVelocity = 0;
+                };
+
+                const drag = (e) => {
+                    if (!isDragging) return;
+                    const x = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+                    const dx = x - currentX;
+                    currentX = x;
+                    
+                    const deltaAngle = dx * 0.4; // Sensitivity
+                    currentAngle += deltaAngle;
+                    dragVelocity = deltaAngle;
+                    
+                    carousel.style.transform = `rotateY(${currentAngle}deg) translateZ(0)`;
+                };
+
+                const endDrag = () => {
+                    isDragging = false;
+                };
+
+                carousel.addEventListener('mousedown', startDrag);
+                carousel.addEventListener('touchstart', startDrag, {passive: true});
+                
+                window.addEventListener('mousemove', drag, {passive: false});
+                window.addEventListener('touchmove', drag, {passive: false});
+                
+                window.addEventListener('mouseup', endDrag);
+                window.addEventListener('touchend', endDrag);
+            }
         });
 </script>
 @endpush

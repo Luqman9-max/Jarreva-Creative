@@ -3,8 +3,10 @@
     class="relative bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pt-24 pb-12 overflow-hidden"
     id="contact">
     <!-- Background Elements -->
+    @include('public.components.footer-3d-bg')
+
     <div
-        class="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none">
+        class="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none mix-blend-overlay opacity-50 dark:opacity-20">
     </div>
     <div
         class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent opacity-50">
