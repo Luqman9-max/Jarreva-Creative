@@ -527,14 +527,14 @@ html {
                 </div>
             </section>
             <section
-                class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 py-24 rounded-[40px] shadow-2xl border border-slate-700/50">
-                <!-- Background FX -->
-                <div class="absolute inset-0 opacity-20 pointer-events-none">
+                class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 py-24 rounded-[40px] shadow-2xl border border-slate-800 hover:border-slate-700 transition-colors duration-700 group">
+                <!-- Clean Minimal Background -->
+                <div class="absolute inset-0 pointer-events-none overflow-hidden">
                     <div
-                        class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:24px_24px]">
+                        class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:48px_48px]">
                     </div>
                     <div
-                        class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-secondary/5 blur-[120px] rounded-full mix-blend-screen">
+                        class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-secondary/10 blur-[100px] rounded-full pointer-events-none mix-blend-screen">
                     </div>
                 </div>
 
@@ -560,7 +560,7 @@ html {
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
                         <div
-                            class="spotlight-card bg-white/5 backdrop-blur-sm rounded-[2rem] p-8 border border-white/10 shadow-xl flex flex-col items-center text-center transform transition-all duration-300 hover:-translate-y-2 group hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] relative overflow-hidden">
+                            class="spotlight-card bg-slate-900/40 backdrop-blur-sm rounded-[2rem] p-8 border border-slate-800 shadow-xl flex flex-col items-center text-center transform transition-all duration-300 hover:-translate-y-2 group hover:bg-slate-900/60 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] relative overflow-hidden">
                             <div
                                 class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform duration-300">
                                 <span class="material-symbols-outlined text-primary text-3xl font-bold">close</span>
@@ -573,7 +573,7 @@ html {
                             </p>
                         </div>
                         <div
-                            class="spotlight-card bg-white/5 backdrop-blur-sm rounded-[2rem] p-8 border border-white/10 shadow-xl flex flex-col items-center text-center transform transition-all duration-300 hover:-translate-y-2 group hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] relative overflow-hidden">
+                            class="spotlight-card bg-slate-900/40 backdrop-blur-sm rounded-[2rem] p-8 border border-slate-800 shadow-xl flex flex-col items-center text-center transform transition-all duration-300 hover:-translate-y-2 group hover:bg-slate-900/60 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] relative overflow-hidden">
                             <div
                                 class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform duration-300">
                                 <span
@@ -587,7 +587,7 @@ html {
                             </p>
                         </div>
                         <div
-                            class="spotlight-card bg-white/5 backdrop-blur-sm rounded-[2rem] p-8 border border-white/10 shadow-xl flex flex-col items-center text-center transform transition-all duration-300 hover:-translate-y-2 group hover:bg-white/10 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] relative overflow-hidden">
+                            class="spotlight-card bg-slate-900/40 backdrop-blur-sm rounded-[2rem] p-8 border border-slate-800 shadow-xl flex flex-col items-center text-center transform transition-all duration-300 hover:-translate-y-2 group hover:bg-slate-900/60 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] relative overflow-hidden">
                             <div
                                 class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform duration-300">
                                 <span
@@ -1234,11 +1234,11 @@ html {
 
             <!-- NEW: Why Solutions Fail Section -->
             <section
-                class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 pt-24 pb-48 rounded-[40px] mt-8 border border-slate-700/50">
-                <!-- Background FX -->
-                <div class="absolute inset-0 opacity-20 pointer-events-none">
+                class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 pt-24 pb-48 rounded-[40px] mt-8 border border-slate-800 hover:border-slate-700 transition-colors duration-700 group">
+                <!-- Clean Minimal Background -->
+                <div class="absolute inset-0 pointer-events-none overflow-hidden">
                     <div
-                        class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:24px_24px]">
+                        class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:48px_48px]">
                     </div>
                 </div>
 
@@ -1263,7 +1263,7 @@ html {
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <!-- Left: Visual Cycle -->
                         <div class="relative">
-                            <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                            <div class="bg-slate-900/40 backdrop-blur-sm rounded-3xl p-8 border border-slate-800">
                                 <h3 class="text-xl font-bold text-white mb-6 text-center">The Motivation Trap</h3>
                                 <div class="flex flex-col gap-4">
                                     <!-- Step 1 -->
@@ -1318,7 +1318,7 @@ html {
                                         <span class="material-symbols-outlined text-gray-600 text-2xl">sync</span>
                                     </div>
                                     <!-- Repeat indicator -->
-                                    <div class="text-center py-2 rounded-lg bg-white/5 border border-white/10">
+                                    <div class="text-center py-2 rounded-lg bg-slate-800/50 border border-slate-700">
                                         <span class="text-gray-300 font-bold text-sm uppercase tracking-wider">Repeat
                                             Forever</span>
                                     </div>
@@ -1851,19 +1851,15 @@ html {
                 </script>
             </section>
             <section
-                class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 py-24 rounded-[40px] shadow-2xl scroll-mt-28 border border-slate-700/50"
+                class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 py-24 rounded-[40px] shadow-2xl scroll-mt-28 border border-slate-800 hover:border-slate-700 transition-colors duration-700 group"
                 id="portfolio">
-                <!-- Background FX -->
-                <div class="absolute inset-0 opacity-20 pointer-events-none">
+                <!-- Clean Minimal Background -->
+                <div class="absolute inset-0 pointer-events-none overflow-hidden">
                     <div
-                        class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:24px_24px]">
+                        class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:48px_48px]">
                     </div>
-                    <div
-                        class="absolute top-0 right-0 w-96 h-96 bg-secondary/20 rounded-full mix-blend-overlay filter blur-3xl">
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full mix-blend-overlay filter blur-3xl">
-                    </div>
+                    <!-- Soft Top Glow -->
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
                 </div>
 
                 <div class="flex justify-center relative z-10">
@@ -1888,7 +1884,7 @@ html {
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <div
-                                class="group relative flex flex-col p-8 bg-white/5 rounded-[2rem] border border-white/10 hover:border-primary/50 hover:bg-white/10 hover:shadow-2xl hover:shadow-secondary/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden backdrop-blur-sm">
+                                class="group relative flex flex-col p-8 bg-slate-900/40 rounded-[2rem] border border-slate-800 hover:border-slate-600 hover:bg-slate-900/60 hover:shadow-2xl hover:shadow-secondary/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden backdrop-blur-sm">
                                 <div class="relative h-64 w-full flex items-center justify-center mb-6 z-0">
                                     <img alt="Book Layer 1"
                                         class="absolute w-40 h-60 object-cover rounded-lg shadow-md border border-white/20 transition-all duration-500 ease-out opacity-80 group-hover:opacity-100 group-hover:rotate-[-12deg] group-hover:-translate-x-12 z-10"
@@ -1907,7 +1903,7 @@ html {
                                 </p>
                             </div>
                             <div
-                                class="group relative flex flex-col p-8 bg-white/5 rounded-[2rem] border border-white/10 hover:border-primary/50 hover:bg-white/10 hover:shadow-2xl hover:shadow-secondary/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden backdrop-blur-sm">
+                                class="group relative flex flex-col p-8 bg-slate-900/40 rounded-[2rem] border border-slate-800 hover:border-slate-600 hover:bg-slate-900/60 hover:shadow-2xl hover:shadow-secondary/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden backdrop-blur-sm">
                                 <div class="relative h-64 w-full flex items-center justify-center mb-6 z-0">
                                     <img alt="Book Layer 1"
                                         class="absolute w-40 h-60 object-cover rounded-lg shadow-md border border-white/20 transition-all duration-500 ease-out opacity-80 group-hover:opacity-100 group-hover:rotate-[-12deg] group-hover:-translate-x-12 z-10"
@@ -1926,7 +1922,7 @@ html {
                                 </p>
                             </div>
                             <div
-                                class="group relative flex flex-col p-8 bg-white/5 rounded-[2rem] border border-white/10 hover:border-primary/50 hover:bg-white/10 hover:shadow-2xl hover:shadow-secondary/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden backdrop-blur-sm">
+                                class="group relative flex flex-col p-8 bg-slate-900/40 rounded-[2rem] border border-slate-800 hover:border-slate-600 hover:bg-slate-900/60 hover:shadow-2xl hover:shadow-secondary/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden backdrop-blur-sm">
                                 <div class="relative h-64 w-full flex items-center justify-center mb-6 z-0">
                                     <img alt="Book Layer 1"
                                         class="absolute w-40 h-60 object-cover rounded-lg shadow-md border border-white/20 transition-all duration-500 ease-out opacity-80 group-hover:opacity-100 group-hover:rotate-[-12deg] group-hover:-translate-x-12 z-10"
@@ -2055,50 +2051,75 @@ html {
             </section>
             <!-- NEW: Final CTA Section -->
             <section
-                class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 py-24 rounded-[40px] mt-8 border border-slate-700/50">
-                <!-- Background FX -->
-                <div class="absolute inset-0 opacity-20 pointer-events-none">
+                class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 py-32 rounded-[40px] mt-16 border border-slate-800 hover:border-slate-700 transition-colors duration-700 shadow-2xl group">
+                
+                <!-- Clean Minimal Background -->
+                <div class="absolute inset-0 pointer-events-none overflow-hidden">
+                    <!-- Subtle clean grid -->
                     <div
-                        class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:24px_24px]">
+                        class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:48px_48px]">
                     </div>
-                    <div
-                        class="absolute top-0 right-0 w-96 h-96 bg-secondary/20 rounded-full mix-blend-overlay filter blur-3xl">
-                    </div>
-                    <div
-                        class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full mix-blend-overlay filter blur-3xl">
-                    </div>
+                    <!-- Soft Top Glow (Not overpowering) -->
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
                 </div>
+
                 <div class="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
-                    <h2
-                        class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-8 tracking-tight leading-tight">
-                        The Choice Is <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Simple</span>
-                    </h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                            <span class="material-symbols-outlined text-white/80 text-3xl mb-4">swipe_down</span>
-                            <p class="text-white/90 font-medium">
-                                Keep scrolling, keep overthinking, keep breaking promises to yourself...
-                            </p>
-                        </div>
-                        <div class="bg-white rounded-2xl p-6 shadow-2xl">
-                            <span class="material-symbols-outlined text-primary text-3xl mb-4">rocket_launch</span>
-                            <p class="text-gray-900 font-bold">
-                                Or start building systems that pull your life out of chaos.
-                            </p>
+                    
+                    <!-- Minimal Badge -->
+                    <div class="inline-flex flex-col items-center mb-10 reveal-on-scroll">
+                        <span class="w-px h-8 bg-gradient-to-b from-transparent to-primary/30 mb-4 block"></span>
+                        <div class="inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 backdrop-blur-md">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                            <span class="text-xs font-bold text-slate-300 tracking-widest uppercase">The Turning Point</span>
                         </div>
                     </div>
-                    <a href="#library"
-                        class="group inline-flex items-center gap-3 bg-secondary text-white px-12 py-6 rounded-full font-bold text-xl hover:bg-orange-600 transition-all hover:scale-105 shadow-[0_0_30px_rgba(249,115,22,0.4)] hover:shadow-[0_0_40px_rgba(249,115,22,0.6)]">
-                        Get Discipline Blueprint Now
-                        <span
-                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                    </a>
-                    <p
-                        class="mt-12 text-gray-400 text-lg italic font-medium max-w-xl mx-auto reveal-on-scroll delay-200">
-                        "Your life does not need more motivation.<br />Your life needs <span
-                            class="font-black text-white">structure</span>."
-                    </p>
+
+                    <!-- Clean Headline -->
+                    <h2 class="text-5xl md:text-6xl font-black text-white mb-12 tracking-tight leading-[1.1] reveal-on-scroll delay-100">
+                        The Choice Is<br>
+                        <span class="text-slate-400">Absolutely Simple.</span>
+                    </h2>
+
+                    <!-- Clean Choices (Horizontal alignment for Side-by-Side look) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto reveal-on-scroll delay-200 text-left">
+                        
+                        <!-- Choice A: Subtle Box -->
+                        <div class="flex flex-col gap-6 p-8 rounded-[32px] border border-slate-800/50 bg-slate-900/30 hover:bg-slate-900/80 hover:border-slate-700 transition-all duration-300 group/item backdrop-blur-sm">
+                            <div class="w-14 h-14 rounded-full bg-slate-800/80 flex items-center justify-center shrink-0 group-hover/item:-translate-y-1 transition-transform duration-300 shadow-inner">
+                                <span class="material-symbols-outlined text-slate-500 text-2xl">swipe_down</span>
+                            </div>
+                            <p class="text-slate-400 font-medium text-lg leading-relaxed">
+                                Keep scrolling, keep overthinking, keep breaking promises to yourself.
+                            </p>
+                        </div>
+                        
+                        <!-- Choice B: Highlighted Box -->
+                        <div class="flex flex-col gap-6 p-8 rounded-[32px] border border-primary/30 bg-primary/5 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 group/item backdrop-blur-sm shadow-[0_0_30px_rgba(249,115,22,0.05)]">
+                            <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center shrink-0 group-hover/item:-translate-y-1 transition-transform duration-300">
+                                <span class="material-symbols-outlined text-primary text-2xl">rocket_launch</span>
+                            </div>
+                            <p class="text-white font-bold text-lg leading-relaxed">
+                                Or start building the systems that pull your life out of chaos.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Focus CTA Button -->
+                    <div class="relative inline-block group reveal-on-scroll delay-300">
+                        <!-- Subtle hover ring -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-primary to-orange-500 rounded-full blur opacity-30 group-hover:opacity-70 transition duration-500"></div>
+                        
+                        <a href="#library"
+                            class="relative inline-flex items-center gap-4 bg-white text-slate-900 px-10 md:px-12 py-5 rounded-full font-bold text-lg md:text-xl transform group-hover:scale-[1.02] transition-all duration-300 overflow-hidden isolate">
+                            
+                            <!-- Shimmer effect -->
+                            <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-slate-100/50 to-transparent group-hover:animate-[shimmer_1.5s_infinite] -z-10"></div>
+                            
+                            Get Discipline Blueprint Now
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
                 </div>
             </section>
 @endsection

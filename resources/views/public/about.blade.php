@@ -304,7 +304,7 @@
 </section>
 
 <!-- SECTION 3: CORE PRINCIPLES - BENTO GRID v2 -->
-<section id="principles" class="reveal-on-scroll py-32 bg-slate-50 dark:bg-slate-900 mx-4">
+<section id="principles" class="reveal-on-scroll py-32 bg-white dark:bg-background-dark mx-4">
     <div class="max-w-7xl mx-auto px-6 md:px-12 text-center mb-16">
         <span
             class="text-secondary font-bold tracking-widest uppercase text-xs border border-secondary/20 bg-secondary/10 px-3 py-1 rounded-full mb-4 inline-block">The
@@ -418,7 +418,7 @@
 </section>
 
 <!-- SECTION 4: METHODOLOGY - BLUEPRINT -->
-<section id="methodology" class="relative py-32 bg-slate-50 dark:bg-background-dark overflow-hidden">
+<section id="methodology" class="relative py-32 bg-white dark:bg-background-dark overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-slate-200 dark:bg-white/5"></div>
     <div
         class="process-line absolute top-0 left-1/2 -translate-x-1/2 w-[2px] bg-primary shadow-[0_0_15px_#f97316]">
@@ -479,15 +479,7 @@
 </section>
 
 <!-- SECTION 5: THE TEAM - COLLECTIVE INTELLIGENCE -->
-<section class="reveal-on-scroll py-32 bg-slate-50 dark:bg-slate-900 relative overflow-hidden">
-    <!-- Background decoration -->
-    <div
-        class="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none">
-    </div>
-    <div
-        class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none">
-    </div>
-
+<section class="reveal-on-scroll py-32 bg-white dark:bg-background-dark relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div class="flex flex-col lg:flex-row items-center gap-16">
 
@@ -552,7 +544,7 @@
                 <div class="space-y-6">
                     <div class="flex items-start gap-4">
                         <div
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
+                            class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center shrink-0 shadow-sm">
                             <span
                                 class="material-symbols-outlined text-slate-900 dark:text-white">groups</span>
                         </div>
@@ -564,7 +556,7 @@
                     </div>
                     <div class="flex items-start gap-4">
                         <div
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0">
+                            class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center shrink-0 shadow-sm">
                             <span
                                 class="material-symbols-outlined text-slate-900 dark:text-white">engineering</span>
                         </div>

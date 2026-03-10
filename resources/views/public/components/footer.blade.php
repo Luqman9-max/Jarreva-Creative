@@ -1,7 +1,5 @@
 {{-- Footer component --}}
-<footer
-    class="relative bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pt-24 pb-12 overflow-hidden"
-    id="contact">
+<footer class="relative bg-white dark:bg-background-dark pt-24 pb-12 overflow-hidden" id="contact">
     <!-- Background Elements -->
     @include('public.components.footer-3d-bg')
 
