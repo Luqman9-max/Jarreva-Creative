@@ -19,8 +19,10 @@
     --color-secondary: #1E3A8A;
     /* Jarreva Blue */
     --color-secondary-dark: #0f235a;
-    --color-background-light: #f8fafc;
-    --color-background-dark: #0f1323;
+    --color-background-light: #ffffff;
+    --color-background-dark: #101922;
+    --color-text-main: #111418;
+    --color-text-subtle: #637588;
     --color-sidebar-bg: #eff6ff;
     --color-sidebar-text: #1e3a8a;
     --color-sidebar-hover: #dbeafe;
