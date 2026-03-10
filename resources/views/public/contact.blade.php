@@ -186,8 +186,12 @@
 <div class="relative z-10">
     <!-- HERO SECTION -->
     <section class="reveal-on-scroll relative min-h-[60vh] flex items-center justify-center px-6 overflow-hidden">
+        
+        <!-- 3D Hero Background -->
+        @include('public.components.hero-3d-bg')
+
         <!-- Light theme grid background (local to hero) -->
-        <div class="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none">
+        <div class="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none mix-blend-overlay opacity-50 dark:opacity-20">
         </div>
 
         <!-- Abstract Background Element -->
