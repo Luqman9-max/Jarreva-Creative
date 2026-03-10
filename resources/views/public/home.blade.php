@@ -517,12 +517,12 @@ html {
                     </p>
                     <div
                         class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center reveal-on-scroll delay-200">
-                        <button
+                        <a href="{{ route('evolve') }}"
                             class="group relative flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-8 text-base font-bold text-white transition-all hover:bg-orange-600 hover:shadow-lg w-full sm:w-auto shadow-orange-200/50">
                             Explore Library
                             <span
                                 class="material-symbols-outlined text-white transition-transform group-hover:translate-x-1">arrow_forward</span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </section>

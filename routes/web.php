@@ -17,14 +17,21 @@ use App\Http\Controllers\Admin\DashboardController;
 |
 */
 
+use App\Http\Controllers\LeadController;
+
 // Public Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [\App\Http\Controllers\Public\PageController::class, 'about'])->name('about');
 Route::get('/contact', [\App\Http\Controllers\Public\PageController::class, 'contact'])->name('contact');
 Route::post('/contact/submit', [\App\Http\Controllers\Public\PageController::class, 'submitContact'])->name('contact.submit');
 
+// Lead Capture Routes
+Route::get('/evolve', [LeadController::class, 'evolve'])->name('evolve');
+Route::get('/lead-form', [LeadController::class, 'showForm'])->name('lead.form');
+Route::post('/lead-submit', [LeadController::class, 'submitForm'])->name('lead.submit');
+
 // Catalog / Portfolio
-Route::get('/catalog', [\App\Http\Controllers\Public\BookController::class, 'index'])->name('catalog.index');
+Route::get('/catalog', [\App\Http\Controllers\Public\BookController::class, 'index'])->middleware('lead.captured')->name('catalog.index');
 Route::get('/book/{slug}', [\App\Http\Controllers\Public\BookController::class, 'show'])->name('book.show');
 
 // Admin Guest Routes (Login)
