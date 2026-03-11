@@ -1,5 +1,7 @@
 <div id="three-bg" class="absolute inset-0 z-0 pointer-events-auto opacity-40 dark:opacity-70 dark:mix-blend-lighten"></div>
+@once
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+@endonce
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const container = document.getElementById('three-bg');

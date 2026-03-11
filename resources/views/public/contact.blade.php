@@ -185,7 +185,7 @@
 @section('content')
 <div class="relative z-10">
     <!-- HERO SECTION -->
-    <section class="reveal-on-scroll relative min-h-[60vh] flex items-center justify-center px-6 overflow-hidden">
+    <section class="reveal-on-scroll relative min-h-[60vh] flex items-center justify-center px-6 overflow-hidden bg-white dark:bg-background-dark">
         
         <!-- 3D Hero Background -->
         @include('public.components.hero-3d-bg')
@@ -195,8 +195,7 @@
         </div>
 
         <!-- Abstract Background Element -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-primary/5 to-secondary/5 rounded-full blur-[120px] pointer-events-none">
-        </div>
+        
 
         <div class="relative z-10 max-w-4xl text-center">
             <span class="inline-block py-1 px-3 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-secondary text-xs font-bold tracking-[0.2em] uppercase mb-8 relative z-10 reveal-on-scroll delay-100">
