@@ -71,10 +71,10 @@
 
             <!-- Actions -->
             <div class="flex items-center gap-4">
-                <a href="{{ route('admin.login') }}"
+                <a href="{{ route('catalog.index') }}"
                     class="hidden md:inline-flex items-center justify-center rounded-lg bg-slate-900 px-4 py-1.5 text-sm font-bold text-white transition-all hover:bg-secondary hover:shadow-[0_0_15px_rgba(249,115,22,0.4)] hover:-translate-y-0.5 active:scale-95 group/btn overflow-hidden relative">
                     <span class="relative z-10 flex items-center gap-1.5">
-                        Evolve
+                        Catalog
                         <span
                             class="material-symbols-outlined text-[12px] transition-transform group-hover/btn:rotate-10">trending_up</span>
                     </span>

@@ -517,7 +517,7 @@ html {
                     </p>
                     <div
                         class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center reveal-on-scroll delay-200">
-                        <a href="{{ route('evolve') }}"
+                        <a href="{{ route('catalog.index') }}"
                             class="group relative flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-8 text-base font-bold text-white transition-all hover:bg-orange-600 hover:shadow-lg w-full sm:w-auto shadow-orange-200/50">
                             Explore Library
                             <span
@@ -1943,11 +1943,11 @@ html {
                             </div>
                         </div>
                         <div class="mt-16 text-center">
-                            <button
+                            <a href="{{ route('catalog.index') }}"
                                 class="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-bold text-white transition-all hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 hover:-translate-y-0.5">
                                 View Full Portfolio
                                 <span class="material-symbols-outlined text-lg">arrow_forward</span>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>

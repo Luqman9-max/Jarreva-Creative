@@ -24,6 +24,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [\App\Http\Controllers\Public\PageController::class, 'about'])->name('about');
 Route::get('/contact', [\App\Http\Controllers\Public\PageController::class, 'contact'])->name('contact');
 Route::post('/contact/submit', [\App\Http\Controllers\Public\PageController::class, 'submitContact'])->name('contact.submit');
+Route::post('/subscribe', [\App\Http\Controllers\NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 
 // Lead Capture Routes
 Route::get('/evolve', [LeadController::class, 'evolve'])->name('evolve');
