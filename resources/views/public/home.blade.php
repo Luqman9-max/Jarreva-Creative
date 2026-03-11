@@ -721,7 +721,7 @@ html {
                 </div>
             </section>
             <section
-                class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-white dark:bg-background-dark py-24 rounded-[60px] mx-auto max-w-[98%] mb-8">
+                class="reveal-on-scroll relative z-0 w-full overflow-hidden bg-white dark:bg-background-dark pb-24 pt-32 -mt-12">
                 <div class="flex justify-center">
                     <div class="w-full max-w-7xl px-6 md:px-12">
                         <div class="flex flex-col items-center">
@@ -1234,7 +1234,7 @@ html {
 
             <!-- NEW: Why Solutions Fail Section -->
             <section
-                class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 pt-24 pb-48 rounded-[40px] mt-8 border border-slate-800 hover:border-slate-700 transition-colors duration-700 group">
+                class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 pt-24 pb-48 rounded-[40px] shadow-2xl border border-slate-800 hover:border-slate-700 transition-colors duration-700 group mt-8">
                 <!-- Clean Minimal Background -->
                 <div class="absolute inset-0 pointer-events-none overflow-hidden">
                     <div
@@ -2051,7 +2051,7 @@ html {
             </section>
             <!-- NEW: Final CTA Section -->
             <section
-                class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 py-32 rounded-[40px] mt-16 border border-slate-800 hover:border-slate-700 transition-colors duration-700 shadow-2xl group">
+                class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 py-20 rounded-[40px] mt-16 border border-slate-800 hover:border-slate-700 transition-colors duration-700 shadow-2xl group">
                 
                 <!-- Clean Minimal Background -->
                 <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -2060,14 +2060,14 @@ html {
                         class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:48px_48px]">
                     </div>
                     <!-- Soft Top Glow (Not overpowering) -->
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-primary/10 blur-[80px] rounded-full pointer-events-none"></div>
                 </div>
 
                 <div class="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
                     
                     <!-- Minimal Badge -->
-                    <div class="inline-flex flex-col items-center mb-10 reveal-on-scroll">
-                        <span class="w-px h-8 bg-gradient-to-b from-transparent to-primary/30 mb-4 block"></span>
+                    <div class="inline-flex flex-col items-center mb-8 reveal-on-scroll">
+                        <span class="w-px h-6 bg-gradient-to-b from-transparent to-primary/30 mb-4 block"></span>
                         <div class="inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 backdrop-blur-md">
                             <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
                             <span class="text-xs font-bold text-slate-300 tracking-widest uppercase">The Turning Point</span>
@@ -2075,30 +2075,30 @@ html {
                     </div>
 
                     <!-- Clean Headline -->
-                    <h2 class="text-5xl md:text-6xl font-black text-white mb-12 tracking-tight leading-[1.1] reveal-on-scroll delay-100">
+                    <h2 class="text-4xl md:text-5xl font-black text-white mb-8 tracking-tight leading-[1.1] reveal-on-scroll delay-100">
                         The Choice Is<br>
                         <span class="text-slate-400">Absolutely Simple.</span>
                     </h2>
 
                     <!-- Clean Choices (Horizontal alignment for Side-by-Side look) -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto reveal-on-scroll delay-200 text-left">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 max-w-4xl mx-auto reveal-on-scroll delay-200 text-left">
                         
                         <!-- Choice A: Subtle Box -->
-                        <div class="flex flex-col gap-6 p-8 rounded-[32px] border border-slate-800/50 bg-slate-900/30 hover:bg-slate-900/80 hover:border-slate-700 transition-all duration-300 group/item backdrop-blur-sm">
-                            <div class="w-14 h-14 rounded-full bg-slate-800/80 flex items-center justify-center shrink-0 group-hover/item:-translate-y-1 transition-transform duration-300 shadow-inner">
-                                <span class="material-symbols-outlined text-slate-500 text-2xl">swipe_down</span>
+                        <div class="flex flex-col gap-4 p-6 rounded-[24px] border border-slate-800/50 bg-slate-900/30 hover:bg-slate-900/80 hover:border-slate-700 transition-all duration-300 group/item backdrop-blur-sm">
+                            <div class="w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center shrink-0 group-hover/item:-translate-y-1 transition-transform duration-300 shadow-inner">
+                                <span class="material-symbols-outlined text-slate-500 text-xl">swipe_down</span>
                             </div>
-                            <p class="text-slate-400 font-medium text-lg leading-relaxed">
+                            <p class="text-slate-400 font-medium text-base leading-relaxed">
                                 Keep scrolling, keep overthinking, keep breaking promises to yourself.
                             </p>
                         </div>
                         
                         <!-- Choice B: Highlighted Box -->
-                        <div class="flex flex-col gap-6 p-8 rounded-[32px] border border-primary/30 bg-primary/5 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 group/item backdrop-blur-sm shadow-[0_0_30px_rgba(249,115,22,0.05)]">
-                            <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center shrink-0 group-hover/item:-translate-y-1 transition-transform duration-300">
-                                <span class="material-symbols-outlined text-primary text-2xl">rocket_launch</span>
+                        <div class="flex flex-col gap-4 p-6 rounded-[24px] border border-primary/30 bg-primary/5 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 group/item backdrop-blur-sm shadow-[0_0_30px_rgba(249,115,22,0.05)]">
+                            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center shrink-0 group-hover/item:-translate-y-1 transition-transform duration-300">
+                                <span class="material-symbols-outlined text-primary text-xl">rocket_launch</span>
                             </div>
-                            <p class="text-white font-bold text-lg leading-relaxed">
+                            <p class="text-white font-bold text-base leading-relaxed">
                                 Or start building the systems that pull your life out of chaos.
                             </p>
                         </div>
@@ -2111,13 +2111,13 @@ html {
                         <div class="absolute -inset-1 bg-gradient-to-r from-primary to-orange-500 rounded-full blur opacity-30 group-hover:opacity-70 transition duration-500"></div>
                         
                         <a href="#library"
-                            class="relative inline-flex items-center gap-4 bg-white text-slate-900 px-10 md:px-12 py-5 rounded-full font-bold text-lg md:text-xl transform group-hover:scale-[1.02] transition-all duration-300 overflow-hidden isolate">
+                            class="relative inline-flex items-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-full font-bold text-lg transform group-hover:scale-[1.02] transition-all duration-300 overflow-hidden isolate">
                             
                             <!-- Shimmer effect -->
                             <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-slate-100/50 to-transparent group-hover:animate-[shimmer_1.5s_infinite] -z-10"></div>
                             
                             Get Discipline Blueprint Now
-                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            <span class="material-symbols-outlined text-base group-hover:translate-x-1 transition-transform">arrow_forward</span>
                         </a>
                     </div>
                 </div>
