@@ -8,6 +8,8 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+@custom-variant dark (&:where(.never));
+
 @theme {
     /* Fonts */
     --font-display: 'Manrope', sans-serif;
