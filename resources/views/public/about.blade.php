@@ -97,7 +97,7 @@
 <!-- SECTION 1: HERO - THE MANIFESTO -->
 <section
     class="reveal-on-scroll relative min-h-[80vh] flex items-center justify-center px-6 overflow-hidden bg-white dark:bg-background-dark">
-    
+
     <!-- 3D Hero Background -->
     @include('public.components.hero-3d-bg')
 
@@ -140,8 +140,7 @@
             <div class="lg:w-1/2">
                 <span class="text-secondary font-mono text-xs tracking-widest mb-4 block">PHASE_01 //
                     DISCOVERY</span>
-                <h3
-                    class="text-4xl md:text-5xl font-black mb-6 text-slate-900 dark:text-white leading-tight">
+                <h3 class="text-4xl md:text-5xl font-black mb-6 text-slate-900 dark:text-white leading-tight">
                     It started with noise.</h3>
                 <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
                     The internet is deafening. We realized that true impact isn't about shouting
@@ -173,8 +172,7 @@
             <div class="lg:w-1/2">
                 <span class="text-primary font-mono text-xs tracking-widest mb-4 block">PHASE_02 //
                     ENGINEERING</span>
-                <h3
-                    class="text-4xl md:text-5xl font-black mb-6 text-slate-900 dark:text-white leading-tight">
+                <h3 class="text-4xl md:text-5xl font-black mb-6 text-slate-900 dark:text-white leading-tight">
                     Intellectual Architecture.</h3>
                 <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
                     We engineered a new approach. Content isn't just "filler"—it's a product. We began
@@ -218,8 +216,7 @@
                         </style>
                         <div class="w-full h-full rotate-3d">
                             <!-- Base Grid -->
-                            <div
-                                class="absolute inset-0 border border-primary/30 rounded-lg scale-125 opacity-30">
+                            <div class="absolute inset-0 border border-primary/30 rounded-lg scale-125 opacity-30">
                             </div>
                             <!-- Core Layers -->
                             <div
@@ -238,8 +235,7 @@
                         </div>
                     </div>
 
-                    <div
-                        class="absolute bottom-8 right-8 font-mono text-primary/50 text-xs tracking-widest">
+                    <div class="absolute bottom-8 right-8 font-mono text-primary/50 text-xs tracking-widest">
                         ARCH_V.2.0 // BUILDING...</div>
                 </div>
             </div>
@@ -250,8 +246,7 @@
             <div class="lg:w-1/2">
                 <span class="text-slate-400 font-mono text-xs tracking-widest mb-4 block">PHASE_03 //
                     EXECUTION</span>
-                <h3
-                    class="text-4xl md:text-5xl font-black mb-6 text-slate-900 dark:text-white leading-tight">
+                <h3 class="text-4xl md:text-5xl font-black mb-6 text-slate-900 dark:text-white leading-tight">
                     The Clarity Engine.</h3>
                 <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
                     Today, Jarreva isn't just a studio—it's a system. We build the frameworks (books,
@@ -365,8 +360,7 @@
                         </div>
                         <div
                             class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300 relative z-10 mx-auto group-hover:rotate-12">
-                            <span
-                                class="material-symbols-outlined text-3xl text-primary">filter_center_focus</span>
+                            <span class="material-symbols-outlined text-3xl text-primary">filter_center_focus</span>
                         </div>
                     </div>
                     <h3 class="text-3xl font-bold mb-2">Clarity is Power.</h3>
@@ -420,8 +414,7 @@
 <!-- SECTION 4: METHODOLOGY - BLUEPRINT -->
 <section id="methodology" class="relative py-32 bg-white dark:bg-background-dark overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-slate-200 dark:bg-white/5"></div>
-    <div
-        class="process-line absolute top-0 left-1/2 -translate-x-1/2 w-[2px] bg-primary shadow-[0_0_15px_#f97316]">
+    <div class="process-line absolute top-0 left-1/2 -translate-x-1/2 w-[2px] bg-primary shadow-[0_0_15px_#f97316]">
     </div>
 
     <div class="max-w-4xl mx-auto px-6 relative z-10">
@@ -470,8 +463,7 @@
             </div>
             <div
                 class="w-12 h-12 rounded-full bg-white dark:bg-background-dark border-2 border-slate-300 dark:border-white flex items-center justify-center shadow-lg dark:shadow-[0_0_20px_rgba(255,255,255,0.3)] z-10 transition-transform group-hover:scale-110 duration-500">
-                <span
-                    class="material-symbols-outlined text-slate-900 dark:text-white text-sm">diamond</span>
+                <span class="material-symbols-outlined text-slate-900 dark:text-white text-sm">diamond</span>
             </div>
             <div class="md:w-1/2"></div>
         </div>
@@ -508,14 +500,11 @@
                                 </div>
                                 <div class="flex -space-x-3">
                                     <!-- Avatars (Micro Representations) -->
-                                    <div
-                                        class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-700">
+                                    <div class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-700">
                                     </div>
-                                    <div
-                                        class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-600">
+                                    <div class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-600">
                                     </div>
-                                    <div
-                                        class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-500">
+                                    <div class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-500">
                                     </div>
                                     <div
                                         class="w-10 h-10 rounded-full border-2 border-slate-900 bg-secondary flex items-center justify-center text-xs font-bold">
@@ -532,8 +521,7 @@
                 <span
                     class="text-secondary font-bold tracking-widest uppercase text-xs border border-secondary/20 bg-secondary/10 px-3 py-1 rounded-full mb-6 inline-block">Our
                     People</span>
-                <h2
-                    class="text-4xl md:text-5xl font-black mb-6 leading-tight text-slate-900 dark:text-white">
+                <h2 class="text-4xl md:text-5xl font-black mb-6 leading-tight text-slate-900 dark:text-white">
                     Unified by <br><span class="text-blue-500">Purpose.</span>
                 </h2>
                 <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
@@ -545,8 +533,7 @@
                     <div class="flex items-start gap-4">
                         <div
                             class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center shrink-0 shadow-sm">
-                            <span
-                                class="material-symbols-outlined text-slate-900 dark:text-white">groups</span>
+                            <span class="material-symbols-outlined text-slate-900 dark:text-white">groups</span>
                         </div>
                         <div>
                             <h4 class="font-bold text-slate-900 dark:text-white">Shared Vision</h4>
@@ -557,8 +544,7 @@
                     <div class="flex items-start gap-4">
                         <div
                             class="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 flex items-center justify-center shrink-0 shadow-sm">
-                            <span
-                                class="material-symbols-outlined text-slate-900 dark:text-white">engineering</span>
+                            <span class="material-symbols-outlined text-slate-900 dark:text-white">engineering</span>
                         </div>
                         <div>
                             <h4 class="font-bold text-slate-900 dark:text-white">Relentless Craft</h4>

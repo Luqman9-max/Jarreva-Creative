@@ -1,6 +1,5 @@
 {{-- Navbar component --}}
-<header id="main-header"
-    class="fixed top-0 left-0 right-0 z-[100] transition-all duration-300 py-4 px-4 sm:px-6">
+<header id="main-header" class="fixed top-0 left-0 right-0 z-[100] transition-all duration-300 py-4 px-4 sm:px-6">
     <div
         class="w-full max-w-7xl mx-auto rounded-xl bg-white/80 backdrop-blur-xl border border-white/40 shadow-sm dark:bg-gray-900/80 dark:border-gray-700/50 transition-all duration-500 hover:shadow-md hover:border-secondary/20 relative overflow-hidden group">
 
