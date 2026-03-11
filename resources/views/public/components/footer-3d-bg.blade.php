@@ -1,5 +1,7 @@
 <div id="footer-three-bg" class="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-100 dark:opacity-80 transition-opacity duration-1000"></div>
+@once
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+@endonce
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const container = document.getElementById('footer-three-bg');
