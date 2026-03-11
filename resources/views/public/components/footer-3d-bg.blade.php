@@ -65,9 +65,19 @@
         }
 
         const clock = new THREE.Clock();
+        let isVisible = false; // Initially assume not visible to save first frames if footer is far down
+
+        const intersectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isVisible = entry.isIntersecting;
+            });
+        });
+        intersectionObserver.observe(container);
 
         function animate() {
             requestAnimationFrame(animate);
+            if (!isVisible) return;
+
             const elapsedTime = clock.getElapsedTime();
 
             // Intertwining wave effect

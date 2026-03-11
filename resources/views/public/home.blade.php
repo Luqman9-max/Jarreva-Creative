@@ -412,7 +412,7 @@ html {
             }
         }
 
-        .spotlight-card {
+        .spotlight-card will-change-transform {
             position: relative;
             overflow: hidden;
         }
@@ -449,7 +449,7 @@ html {
                 </div>
                 <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 flex flex-col items-center text-center">
                     <!-- System Intelligence Status -->
-                    <div class="group relative mb-12 inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/50 backdrop-blur-md px-4 py-2 shadow-sm hover:border-secondary/30 transition-all duration-500">
+                    <div class="group relative mb-12 inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/50 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner px-4 py-2 shadow-sm hover:border-secondary/30 transition-all duration-500">
                         <div class="relative flex h-3 w-3">
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
@@ -560,7 +560,7 @@ html {
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
                         <div
-                            class="spotlight-card bg-slate-900/40 backdrop-blur-sm rounded-[2rem] p-8 border border-slate-800 shadow-xl flex flex-col items-center text-center transform transition-all duration-300 hover:-translate-y-2 group hover:bg-slate-900/60 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] relative overflow-hidden">
+                            class="spotlight-card will-change-transform bg-slate-900/40 backdrop-blur-sm rounded-[2rem] p-8 border border-slate-800 shadow-xl flex flex-col items-center text-center transform transition-all duration-300 hover:-translate-y-2 group hover:bg-slate-900/60 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] relative overflow-hidden">
                             <div
                                 class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform duration-300">
                                 <span class="material-symbols-outlined text-primary text-3xl font-bold">close</span>
@@ -573,7 +573,7 @@ html {
                             </p>
                         </div>
                         <div
-                            class="spotlight-card bg-slate-900/40 backdrop-blur-sm rounded-[2rem] p-8 border border-slate-800 shadow-xl flex flex-col items-center text-center transform transition-all duration-300 hover:-translate-y-2 group hover:bg-slate-900/60 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] relative overflow-hidden">
+                            class="spotlight-card will-change-transform bg-slate-900/40 backdrop-blur-sm rounded-[2rem] p-8 border border-slate-800 shadow-xl flex flex-col items-center text-center transform transition-all duration-300 hover:-translate-y-2 group hover:bg-slate-900/60 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] relative overflow-hidden">
                             <div
                                 class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform duration-300">
                                 <span
@@ -587,7 +587,7 @@ html {
                             </p>
                         </div>
                         <div
-                            class="spotlight-card bg-slate-900/40 backdrop-blur-sm rounded-[2rem] p-8 border border-slate-800 shadow-xl flex flex-col items-center text-center transform transition-all duration-300 hover:-translate-y-2 group hover:bg-slate-900/60 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] relative overflow-hidden">
+                            class="spotlight-card will-change-transform bg-slate-900/40 backdrop-blur-sm rounded-[2rem] p-8 border border-slate-800 shadow-xl flex flex-col items-center text-center transform transition-all duration-300 hover:-translate-y-2 group hover:bg-slate-900/60 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] relative overflow-hidden">
                             <div
                                 class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform duration-300">
                                 <span
@@ -1628,7 +1628,7 @@ html {
                             </div>
                             <div class="absolute w-48 h-48 rounded-full border border-secondary/10 animate-ping opacity-30"
                                 style="animation-delay: 0.5s;"></div>
-                            <div class="w-10 h-10 rounded-full bg-white/90 backdrop-blur-md"></div>
+                            <div class="w-10 h-10 rounded-full bg-white/90 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner"></div>
                         </div>
 
                         <!-- Orbit Rings (Visual) -->
@@ -1711,7 +1711,7 @@ html {
                                     </div>
                                     
                                     <!-- EXPANDED CARD (Simplifed) -->
-                                    <div class="node-card absolute top-20 left-1/2 -translate-x-1/2 w-72 bg-white/95 backdrop-blur-xl border border-slate-200 shadow-2xl rounded-xl p-5 opacity-0 pointer-events-none scale-90 transition-all duration-300 origin-top z-50 text-center">
+                                    <div class="node-card absolute top-20 left-1/2 -translate-x-1/2 w-72 bg-white/95 bg-opacity-95 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner border-white/10 shadow-inner border border-slate-200 shadow-2xl rounded-xl p-5 opacity-0 pointer-events-none scale-90 transition-all duration-300 origin-top z-50 text-center">
                                         <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-t border-l border-slate-200 rotate-45 transform"></div>
                                         <h4 class="font-bold text-slate-900 text-lg mb-2">${item.title}</h4>
                                         <p class="text-sm text-slate-500 leading-relaxed">${item.content}</p>
@@ -2068,7 +2068,7 @@ html {
                     <!-- Minimal Badge -->
                     <div class="inline-flex flex-col items-center mb-8 reveal-on-scroll">
                         <span class="w-px h-6 bg-gradient-to-b from-transparent to-primary/30 mb-4 block"></span>
-                        <div class="inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 backdrop-blur-md">
+                        <div class="inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner">
                             <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
                             <span class="text-xs font-bold text-slate-300 tracking-widest uppercase">The Turning Point</span>
                         </div>
@@ -2149,19 +2149,27 @@ html {
 
             // 2. Spotlight Effect (Orange for Landing Page)
             document.querySelectorAll('.spotlight-card').forEach(card => {
+                let isTicking = false;
                 card.addEventListener('mousemove', e => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    card.style.setProperty('--mouse-x', `${x}px`);
-                    card.style.setProperty('--mouse-y', `${y}px`);
+                    if (!isTicking) {
+                        window.requestAnimationFrame(() => {
+                            const rect = card.getBoundingClientRect();
+                            const x = e.clientX - rect.left;
+                            const y = e.clientY - rect.top;
+                            card.style.setProperty('--mouse-x', `${x}px`);
+                            card.style.setProperty('--mouse-y', `${y}px`);
+                            isTicking = false;
+                        });
+                        isTicking = true;
+                    }
                 });
             });
 
             // 3. Parallax Logic (Existing)
             const parallaxElements = document.querySelectorAll('.parallax-target');
+            let isParallaxTicking = false;
+
             function updateParallax() {
-                const scrollY = window.scrollY;
                 parallaxElements.forEach(element => {
                     const speed = element.getAttribute('data-speed') || 0.1;
                     const rect = element.getBoundingClientRect();
@@ -2170,12 +2178,16 @@ html {
                         element.style.setProperty('--parallax-y', `${-offset}px`);
                     }
                 });
-                requestAnimationFrame(updateParallax);
+                isParallaxTicking = false;
             }
             window.addEventListener('scroll', () => {
-                requestAnimationFrame(updateParallax);
-            });
-            updateParallax();
+                if (!isParallaxTicking) {
+                    window.requestAnimationFrame(updateParallax);
+                    isParallaxTicking = true;
+                }
+            }, { passive: true });
+            // Initial call
+            window.requestAnimationFrame(updateParallax);
 
             // 4. Interactive 3D Carousel Drag to Explore
             const carousel = document.querySelector('.carousel-cylinder');

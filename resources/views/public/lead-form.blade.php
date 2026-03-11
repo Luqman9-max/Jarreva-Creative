@@ -270,9 +270,19 @@
             }, {passive: true});
 
             const clock = new THREE.Clock();
+            let isVisible = true;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    isVisible = entry.isIntersecting;
+                });
+            });
+            observer.observe(container);
 
             function animate() {
                 requestAnimationFrame(animate);
+                if (!isVisible) return;
+
                 const time = clock.getElapsedTime();
 
                 targetX = mouseX * 2;

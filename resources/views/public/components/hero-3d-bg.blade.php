@@ -26,7 +26,8 @@
         scene.add(group);
 
         // Core glowing abstract shape
-        const geometry = new THREE.TorusKnotGeometry(12, 3.5, 200, 32);
+        // Reduced segments from 200/32 to 100/16 to save geometry calculations
+        const geometry = new THREE.TorusKnotGeometry(12, 3.5, 100, 16);
         
         // Add a secondary wireframe for a complex techno-organic look
         const material = new THREE.MeshBasicMaterial({ 
@@ -95,9 +96,19 @@
         }, {passive: true});
 
         const clock = new THREE.Clock();
+        let isVisible = true;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                isVisible = entry.isIntersecting;
+            });
+        });
+        observer.observe(container);
 
         function animate() {
             requestAnimationFrame(animate);
+            if (!isVisible) return;
+
             const elapsedTime = clock.getElapsedTime();
 
             targetX = mouseX * 0.5;

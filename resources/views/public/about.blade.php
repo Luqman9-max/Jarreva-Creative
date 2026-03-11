@@ -51,7 +51,7 @@
     }
 
     /* Spotlight Card Effect */
-    .spotlight-card {
+    .spotlight-card will-change-transform {
         position: relative;
         overflow: hidden;
         /* Ensure bg color is set on element */
@@ -319,7 +319,7 @@
 
             <!-- Card 1: Systems > Hacks (Large Span) -->
             <div
-                class="spotlight-card md:col-span-4 bg-white dark:bg-slate-800 rounded-3xl p-10 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:border-blue-500/50 transition-all duration-300 relative overflow-hidden group">
+                class="spotlight-card will-change-transform md:col-span-4 bg-white dark:bg-slate-800 rounded-3xl p-10 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:border-blue-500/50 transition-all duration-300 relative overflow-hidden group">
                 <!-- Background Elements -->
                 <div
                     class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:20px_20px]">
@@ -351,7 +351,7 @@
 
             <!-- Card 2: Clarity (Tall/Vertical) -->
             <div
-                class="spotlight-card md:col-span-2 bg-slate-900 text-white rounded-3xl p-10 border border-slate-700 shadow-lg relative overflow-hidden group">
+                class="spotlight-card will-change-transform md:col-span-2 bg-slate-900 text-white rounded-3xl p-10 border border-slate-700 shadow-lg relative overflow-hidden group">
                 <!-- Animated Noise/Blur -->
                 <div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950 z-0"></div>
                 <div
@@ -376,7 +376,7 @@
 
             <!-- Card 3: Structure (Visual/Quote) - MOVED & RESIZED -->
             <div
-                class="spotlight-card md:col-span-2 bg-gradient-to-tr from-blue-500/10 to-slate-50 dark:to-slate-900 rounded-3xl p-10 border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden group flex items-center justify-center">
+                class="spotlight-card will-change-transform md:col-span-2 bg-gradient-to-tr from-blue-500/10 to-slate-50 dark:to-slate-900 rounded-3xl p-10 border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden group flex items-center justify-center">
                 <!-- Decorative Lines -->
                 <div
                     class="absolute inset-0 border-[1px] border-blue-500/20 scale-90 rounded-2xl opacity-0 group-hover:opacity-100 group-hover:scale-95 transition-all duration-500">
@@ -393,7 +393,7 @@
 
             <!-- Card 4: Premium Standard (Standard) - MOVED & RESIZED -->
             <div
-                class="spotlight-card md:col-span-4 bg-white dark:bg-slate-800 rounded-3xl p-10 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:border-secondary/50 transition-all duration-300 relative overflow-hidden group">
+                class="spotlight-card will-change-transform md:col-span-4 bg-white dark:bg-slate-800 rounded-3xl p-10 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:border-secondary/50 transition-all duration-300 relative overflow-hidden group">
                 <div
                     class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-full transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:rounded-none opacity-50">
                 </div>
@@ -500,7 +500,7 @@
 
                         <!-- Hover Reveal - Names/Roles (Optional) -->
                         <div
-                            class="absolute bottom-0 left-0 right-0 p-8 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out bg-slate-900/90 backdrop-blur-md border-t border-white/10">
+                            class="absolute bottom-0 left-0 right-0 p-8 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out bg-slate-900/90 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner border-t border-white/10">
                             <div class="flex items-center justify-between text-white">
                                 <div>
                                     <h4 class="font-bold text-lg">The Collective</h4>
@@ -597,12 +597,19 @@
 
         // 2. Spotlight Effect for Cards
         document.querySelectorAll('.spotlight-card').forEach(card => {
+            let isTicking = false;
             card.addEventListener('mousemove', e => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
+                if (!isTicking) {
+                    window.requestAnimationFrame(() => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        card.style.setProperty('--mouse-x', `${x}px`);
+                        card.style.setProperty('--mouse-y', `${y}px`);
+                        isTicking = false;
+                    });
+                    isTicking = true;
+                }
             });
         });
 
@@ -611,19 +618,26 @@
         const processLine = document.querySelector('.process-line');
 
         if (processSection && processLine) {
+            let isScrollTicking = false;
             window.addEventListener('scroll', () => {
-                const rect = processSection.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
+                if (!isScrollTicking) {
+                    window.requestAnimationFrame(() => {
+                        const rect = processSection.getBoundingClientRect();
+                        const windowHeight = window.innerHeight;
 
-                // Start animating when the section is in the viewport
-                if (rect.top < windowHeight * 0.6 && rect.bottom > 0) {
-                    const totalHeight = rect.height * 0.8; // Approximate track length
-                    const startOffset = windowHeight * 0.6;
-                    const scrolled = startOffset - rect.top;
-                    const percentage = Math.min(Math.max(scrolled / totalHeight, 0), 1);
-                    processLine.style.height = `${percentage * 100}%`;
+                        // Start animating when the section is in the viewport
+                        if (rect.top < windowHeight * 0.6 && rect.bottom > 0) {
+                            const totalHeight = rect.height * 0.8; // Approximate track length
+                            const startOffset = windowHeight * 0.6;
+                            const scrolled = startOffset - rect.top;
+                            const percentage = Math.min(Math.max(scrolled / totalHeight, 0), 1);
+                            processLine.style.height = `${percentage * 100}%`;
+                        }
+                        isScrollTicking = false;
+                    });
+                    isScrollTicking = true;
                 }
-            });
+            }, { passive: true });
         }
     });
 </script>
