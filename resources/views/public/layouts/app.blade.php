@@ -15,6 +15,9 @@
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+    
     @stack('styles')
 </head>
 <body class="bg-white dark:bg-background-dark text-text-main dark:text-white antialiased overflow-x-hidden">
