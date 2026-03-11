@@ -69,19 +69,19 @@
                 <h4 class="font-mono text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">
                     Frequencies</h4>
                 <ul class="space-y-4">
-                    <li><a href="#"
+                    <li><a href="https://www.instagram.com/jarrevacreative?igsh=bjlwazJlOHBsd2h0&utm_source=qr" target="_blank" rel="noopener noreferrer"
                             class="group flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-orange-400 transition-colors"><span
                                 class="text-slate-300 dark:text-slate-600 group-hover:text-orange-400 transition-colors">></span>
                             Instagram</a></li>
-                    <li><a href="#"
+                    <li><a href="https://x.com/jarrevacreative?s=21" target="_blank" rel="noopener noreferrer"
                             class="group flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-orange-400 transition-colors"><span
                                 class="text-slate-300 dark:text-slate-600 group-hover:text-orange-400 transition-colors">></span>
                             Twitter / X</a></li>
-                    <li><a href="#"
+                    <li><a href="https://www.tiktok.com/@jarreva_creative?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"
                             class="group flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-orange-400 transition-colors"><span
                                 class="text-slate-300 dark:text-slate-600 group-hover:text-orange-400 transition-colors">></span>
                             TikTok</a></li>
-                    <li><a href="#"
+                    <li><a href="https://medium.com/@jarrevacreative" target="_blank" rel="noopener noreferrer"
                             class="group flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-orange-400 transition-colors"><span
                                 class="text-slate-300 dark:text-slate-600 group-hover:text-orange-400 transition-colors">></span>
                             Medium</a></li>
@@ -94,14 +94,82 @@
                     Uplink</h4>
                 <p class="text-sm text-slate-500 mb-4">Subscribe for system updates and intellectual design
                     patterns.</p>
-                <form class="relative group">
-                    <input type="email" placeholder="Enter signal frequency..."
-                        class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg py-3 px-4 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-mono placeholder:text-slate-400 dark:text-white">
-                    <button type="button"
+                <form id="footer-newsletter-form" class="relative group" onsubmit="submitNewsletter(event)">
+                    @csrf
+                    <input type="email" id="footer-newsletter-email" placeholder="Enter signal frequency..."
+                        class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg py-3 px-4 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-mono placeholder:text-slate-400 dark:text-white" required>
+                    <button type="submit" id="footer-newsletter-btn"
                         class="absolute right-2 top-2 bottom-2 bg-slate-900 text-white rounded px-3 text-xs font-bold uppercase hover:bg-primary transition-colors">
                         Init
                     </button>
+                    <p id="footer-newsletter-msg" class="absolute -bottom-6 left-0 text-[10px] font-mono mt-1 hidden"></p>
                 </form>
+
+                <script>
+                    async function submitNewsletter(e) {
+                        e.preventDefault();
+                        const form = e.target;
+                        const emailInput = document.getElementById('footer-newsletter-email');
+                        const btn = document.getElementById('footer-newsletter-btn');
+                        const msg = document.getElementById('footer-newsletter-msg');
+                        const token = form.querySelector('input[name="_token"]').value;
+
+                        // Reset state
+                        msg.classList.add('hidden');
+                        msg.classList.remove('text-green-500', 'text-red-500');
+                        btn.disabled = true;
+                        btn.innerHTML = '<span class="material-symbols-outlined text-[14px] animate-spin">refresh</span>';
+
+                        try {
+                            const response = await fetch('{{ route('newsletter.subscribe') }}', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Accept': 'application/json',
+                                    'X-CSRF-TOKEN': token
+                                },
+                                body: JSON.stringify({ email: emailInput.value })
+                            });
+
+                            const data = await response.json();
+
+                            if (response.ok) {
+                                msg.textContent = 'Uplink established. Signal accepted.';
+                                msg.classList.add('text-green-500');
+                                msg.classList.remove('hidden');
+                                emailInput.value = '';
+                                btn.innerHTML = 'DONE';
+                                btn.classList.add('bg-green-500');
+                                btn.classList.remove('bg-slate-900', 'hover:bg-primary');
+                                
+                                setTimeout(() => {
+                                    msg.classList.add('hidden');
+                                    btn.innerHTML = 'Init';
+                                    btn.classList.remove('bg-green-500');
+                                    btn.classList.add('bg-slate-900', 'hover:bg-primary');
+                                }, 3000);
+                            } else {
+                                throw new Error(data.message || 'Transmission failed.');
+                            }
+                        } catch (error) {
+                            msg.textContent = error.message;
+                            msg.classList.add('text-red-500');
+                            msg.classList.remove('hidden');
+                            btn.innerHTML = 'ERR';
+                            btn.classList.add('bg-red-500');
+                            btn.classList.remove('bg-slate-900', 'hover:bg-primary');
+                            
+                            setTimeout(() => {
+                                msg.classList.add('hidden');
+                                btn.innerHTML = 'Init';
+                                btn.classList.remove('bg-red-500');
+                                btn.classList.add('bg-slate-900', 'hover:bg-primary');
+                            }, 3000);
+                        } finally {
+                            btn.disabled = false;
+                        }
+                    }
+                </script>
             </div>
         </div>
 
