@@ -22,13 +22,13 @@
 </head>
 <body class="bg-white dark:bg-background-dark text-text-main dark:text-white antialiased overflow-x-hidden">
     <div class="flex min-h-screen w-full flex-col">
-        @include('public.components.navbar')
+        @include ('public.components.navbar')
         
         <main class="flex-grow pt-24">
             @yield('content')
         </main>
         
-        @include('public.components.footer')
+        @include ('public.components.footer')
     </div>
     
     @stack('scripts')

@@ -85,12 +85,12 @@
                 </tr>
             </thead>
             <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
-                @forelse($stats['recent_books'] as $book)
+                @forelse ($stats['recent_books'] as $book)
                 <tr class="hover:bg-slate-50/80 dark:hover:bg-[#252f45] transition-colors group">
                     <td class="px-6 py-4">
                         <div class="flex items-center gap-4">
                             <div class="h-14 w-10 rounded shadow-sm bg-slate-100 flex-shrink-0 overflow-hidden relative">
-                                @if($book->cover_image)
+                                @if ($book->cover_image)
                                     <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ asset('storage/' . $book->cover_image) }}');"></div>
                                 @else
                                     <div class="w-full h-full flex items-center justify-center text-slate-400">
@@ -111,7 +111,7 @@
                         </div>
                     </td>
                     <td class="px-6 py-4">
-                        @if($book->is_published)
+                        @if ($book->is_published)
                             <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400">Published</span>
                         @else
                             <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-600">Draft</span>

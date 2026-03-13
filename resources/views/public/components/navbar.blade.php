@@ -122,7 +122,7 @@
     </div>
 </header>
 
-@push('scripts')
+@push ('scripts')
 <script>
     // Header Scroll Progress Logic
     window.addEventListener('scroll', () => {

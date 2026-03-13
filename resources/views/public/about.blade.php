@@ -2,7 +2,7 @@
 
 @section('title', 'Jarreva Creative - About Us')
 
-@push('styles')
+@push ('styles')
 <style>
     html {
         scroll-behavior: smooth;
@@ -99,7 +99,7 @@
     class="reveal-on-scroll relative min-h-[80vh] flex items-center justify-center px-6 overflow-hidden bg-white dark:bg-background-dark">
 
     <!-- 3D Hero Background -->
-    @include('public.components.hero-3d-bg')
+    @include ('public.components.hero-3d-bg')
 
     <div
         class="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none mix-blend-overlay opacity-50 dark:opacity-20">
@@ -560,7 +560,7 @@
 </section>
 @endsection
 
-@push('scripts')
+@push ('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         // 1. Intersection Observer for Reveals

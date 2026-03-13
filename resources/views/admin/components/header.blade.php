@@ -4,7 +4,7 @@
         <p class="text-[#64748b] dark:text-[#94a3b8] text-sm font-medium">@yield('header_subtitle', "Welcome back, " . Auth::guard('admin')->user()->name . "! Here's what's happening today.")</p>
     </div>
     <div class="flex items-center gap-4">
-        @unless(isset($hide_global_search))
+        @unless (isset($hide_global_search))
         <form action="{{ route('admin.books.index') }}" method="GET" class="hidden md:flex relative group">
             <div class="absolute left-3 top-1/2 -translate-y-1/2 flex items-center text-slate-400">
                 <span class="material-symbols-outlined text-[20px]">search</span>
@@ -18,7 +18,7 @@
         <div class="relative" x-data="{ open: false }">
             <button @click="open = !open" class="relative group p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-95" type="button">
                 <span class="material-symbols-outlined text-slate-500 dark:text-slate-400 group-hover:text-primary text-[24px]">notifications</span>
-                @if(isset($activities) && $activities->count() > 0)
+                @if (isset($activities) && $activities->count() > 0)
                     <span class="absolute top-2 right-2 h-2 w-2 rounded-full bg-primary ring-2 ring-background-light dark:ring-background-dark animate-pulse"></span>
                 @endif
             </button>
@@ -41,20 +41,20 @@
                 </div>
 
                 <div class="max-h-[400px] overflow-y-auto">
-                    @if(isset($activities) && $activities->count() > 0)
+                    @if (isset($activities) && $activities->count() > 0)
                         <div class="divide-y divide-slate-100 dark:divide-slate-700">
-                            @foreach($activities as $log)
+                            @foreach ($activities as $log)
                                 <div class="p-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors flex gap-3">
                                     <div class="flex-shrink-0 mt-1">
-                                        @if($log->action == 'created')
+                                        @if ($log->action == 'created')
                                             <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600">
                                                 <span class="material-symbols-outlined text-[16px]">add</span>
                                             </div>
-                                        @elseif($log->action == 'updated')
+                                        @elseif ($log->action == 'updated')
                                             <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
                                                 <span class="material-symbols-outlined text-[16px]">edit</span>
                                             </div>
-                                        @elseif($log->action == 'deleted')
+                                        @elseif ($log->action == 'deleted')
                                             <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-600">
                                                 <span class="material-symbols-outlined text-[16px]">delete</span>
                                             </div>

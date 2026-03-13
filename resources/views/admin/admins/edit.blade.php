@@ -23,7 +23,7 @@
         <div class="space-y-1">
             <label for="profile_photo" class="block text-sm font-semibold text-slate-700 ml-1">Profile Photo</label>
             
-            @if($admin->profile_photo_path)
+            @if ($admin->profile_photo_path)
             <div class="mb-2 p-2 bg-slate-50 rounded-lg flex items-center gap-4 w-fit">
                 <div class="h-16 w-16 rounded-full bg-cover bg-center ring-2 ring-white shadow-sm" style="background-image: url('{{ asset('storage/' . $admin->profile_photo_path) }}');"></div>
                 <div>
@@ -41,21 +41,21 @@
                     <p class="text-xs text-slate-400">Leave blank to keep current photo</p>
                 </div>
             </div>
-            @error('profile_photo') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+            @error ('profile_photo') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
         </div>
 
         {{-- Name --}}
         <div class="space-y-1">
             <label for="name" class="block text-sm font-semibold text-slate-700 ml-1">Full Name <span class="text-red-500">*</span></label>
             <input type="text" name="name" id="name" value="{{ old('name', $admin->name) }}" required class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary block p-3 outline-none transition-all">
-            @error('name') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+            @error ('name') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
         </div>
 
         {{-- Email --}}
         <div class="space-y-1">
             <label for="email" class="block text-sm font-semibold text-slate-700 ml-1">Email Information <span class="text-red-500">*</span></label>
             <input type="email" name="email" id="email" value="{{ old('email', $admin->email) }}" required class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary block p-3 outline-none transition-all">
-            @error('email') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+            @error ('email') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 border-t border-slate-100 mt-2">
@@ -68,7 +68,7 @@
             <div class="space-y-1">
                 <label for="password" class="block text-sm font-semibold text-slate-700 ml-1">New Password</label>
                 <input type="password" name="password" id="password" class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary block p-3 outline-none transition-all">
-                @error('password') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+                @error ('password') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
             </div>
 
             {{-- Confirm Password --}}

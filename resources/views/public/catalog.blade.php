@@ -47,7 +47,7 @@
 
     <!-- Grid Container -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        @forelse($books ?? [] as $book)
+        @forelse ($books ?? [] as $book)
         <!-- Book Card -->
         <div
             class="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-100 hover:border-primary/30 dark:border-gray-700 dark:hover:border-primary/50 shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 transform hover:-translate-y-2 flex flex-col h-full z-10 hover:z-20">
@@ -56,7 +56,7 @@
             <div
                 class="relative h-64 overflow-hidden border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
                 {{-- Assuming book has an image property in future, fallback to placeholder --}}
-                @if(isset($book->image))
+                @if (isset($book->image))
                 <img src="{{ asset('storage/' . $book->image) }}" alt="{{ $book->title }}"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 @else

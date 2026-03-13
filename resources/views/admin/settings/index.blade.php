@@ -11,7 +11,7 @@
     <div class="lg:col-span-1 space-y-6">
         <div class="bg-white dark:bg-[#1e293b] rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 p-6 flex flex-col items-center text-center">
             <div class="relative group mb-4">
-                @if($admin->profile_photo_path)
+                @if ($admin->profile_photo_path)
                     <div class="size-32 rounded-full bg-cover bg-center ring-4 ring-slate-50 dark:ring-slate-700 shadow-md" style="background-image: url('{{ asset('storage/' . $admin->profile_photo_path) }}');"></div>
                 @else
                     <div class="size-32 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-4xl font-bold ring-4 ring-slate-50 dark:ring-slate-700 shadow-md">
@@ -60,12 +60,12 @@
                     <div class="space-y-1">
                         <label for="name" class="block text-sm font-semibold text-slate-700 ml-1">Full Name</label>
                         <input type="text" name="name" id="name" value="{{ old('name', $admin->name) }}" class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary block p-3 outline-none transition-all">
-                        @error('name') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+                        @error ('name') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
                     </div>
                     <div class="space-y-1">
                         <label for="email" class="block text-sm font-semibold text-slate-700 ml-1">Email Address</label>
                         <input type="email" name="email" id="email" value="{{ old('email', $admin->email) }}" class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary block p-3 outline-none transition-all">
-                        @error('email') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+                        @error ('email') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
                     </div>
                 </div>
 
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                     </div>
-                     @error('profile_photo') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+                     @error ('profile_photo') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
                 </div>
                 
                 {{-- Preview Container --}}
@@ -105,14 +105,14 @@
                          <div class="space-y-1">
                             <label for="current_password" class="block text-sm font-semibold text-slate-700 ml-1">Current Password <span class="text-xs font-normal text-slate-400">(Leave blank if not changing)</span></label>
                             <input type="password" name="current_password" id="current_password" class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary block p-3 outline-none transition-all">
-                             @error('current_password') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+                             @error ('current_password') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="space-y-1">
                                 <label for="new_password" class="block text-sm font-semibold text-slate-700 ml-1">New Password</label>
                                 <input type="password" name="new_password" id="new_password" class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary block p-3 outline-none transition-all">
-                                @error('new_password') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+                                @error ('new_password') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
                             </div>
                             <div class="space-y-1">
                                 <label for="new_password_confirmation" class="block text-sm font-semibold text-slate-700 ml-1">Confirm New Password</label>

@@ -2,7 +2,7 @@
 
 @section('title', 'Jarreva Creative - Public Landing Page')
 
-@push('styles')
+@push ('styles')
 <style>
     html {
         scroll-behavior: smooth;
@@ -442,7 +442,7 @@
     class="reveal-on-scroll relative z-0 flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-24 pb-24 lg:pt-32 bg-white dark:bg-background-dark">
 
     <!-- 3D Hero Background -->
-    @include('public.components.hero-3d-bg')
+    @include ('public.components.hero-3d-bg')
 
     <div
         class="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none mix-blend-overlay opacity-50 dark:opacity-20">
@@ -2081,7 +2081,7 @@ class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-30
 </section>
 @endsection
 
-@push('scripts')
+@push ('scripts')
 <script>
 
     document.addEventListener('DOMContentLoaded', () => {
