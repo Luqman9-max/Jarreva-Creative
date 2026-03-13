@@ -82,11 +82,44 @@
                         class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300">
                     </div>
                 </a>
-                <button class="md:hidden p-2 text-slate-700 hover:bg-slate-100 rounded-lg transition-colors">
-                    <span class="material-symbols-outlined text-sm">dataset</span>
+                <button id="mobile-menu-toggle" class="md:hidden p-2 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-gray-800 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 group">
+                    <span id="mobile-menu-icon" class="material-symbols-outlined text-2xl transition-transform duration-300 group-active:scale-95">menu</span>
                 </button>
             </div>
         </div>
+    </div>
+    
+    <!-- Mobile Menu (Pop-up) -->
+    <div id="mobile-menu" class="md:hidden absolute top-[calc(100%+0.5rem)] left-4 right-4 sm:left-6 sm:right-6 origin-top overflow-hidden transition-all duration-300 ease-in-out scale-y-0 opacity-0 bg-white/95 backdrop-blur-xl dark:bg-gray-900/95 rounded-xl border border-gray-100 dark:border-gray-800 shadow-xl z-50 pointer-events-none">
+        <nav class="flex flex-col px-4 py-4 space-y-2">
+            <a class="px-4 py-2.5 rounded-lg text-sm {{ request()->routeIs('home') ? 'bg-primary/10 text-primary font-bold' : 'text-slate-600 font-medium dark:text-slate-400 hover:bg-white dark:hover:bg-gray-800 hover:text-slate-900 dark:hover:text-white hover:shadow-sm' }} transition-all"
+                href="{{ route('home') }}">
+                Home
+            </a>
+            <a class="px-4 py-2.5 rounded-lg text-sm {{ request()->routeIs('about') ? 'bg-primary/10 text-primary font-bold' : 'text-slate-600 font-medium dark:text-slate-400 hover:bg-white dark:hover:bg-gray-800 hover:text-slate-900 dark:hover:text-white hover:shadow-sm' }} transition-all"
+                href="{{ route('about') }}">
+                About
+            </a>
+            <a class="px-4 py-2.5 rounded-lg text-sm {{ request()->routeIs('catalog.index') ? 'bg-primary/10 text-primary font-bold' : 'text-slate-600 font-medium dark:text-slate-400 hover:bg-white dark:hover:bg-gray-800 hover:text-slate-900 dark:hover:text-white hover:shadow-sm' }} transition-all"
+                href="{{ route('catalog.index') }}">
+                Portfolio
+            </a>
+            <a class="px-4 py-2.5 rounded-lg text-sm {{ request()->routeIs('contact') ? 'bg-primary/10 text-primary font-bold' : 'text-slate-600 font-medium dark:text-slate-400 hover:bg-white dark:hover:bg-gray-800 hover:text-slate-900 dark:hover:text-white hover:shadow-sm' }} transition-all"
+                href="{{ route('contact') }}">
+                Contact
+            </a>
+            
+            <div class="pt-3 mt-1 border-t border-gray-200/50 dark:border-gray-700/50">
+                <a href="{{ route('catalog.index') }}"
+                    class="flex w-full items-center justify-center gap-2 rounded-lg bg-slate-900 dark:bg-slate-800 px-4 py-2.5 text-sm font-bold text-white transition-all hover:bg-secondary hover:shadow-[0_0_15px_rgba(249,115,22,0.4)] hover:-translate-y-0.5 active:scale-95 group relative overflow-hidden">
+                    <span class="relative z-10 flex items-center gap-1.5">
+                        Catalog
+                        <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-10">trending_up</span>
+                    </span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+            </div>
+        </nav>
     </div>
 </header>
 
@@ -115,5 +148,30 @@
             header.classList.remove('py-2');
         }
     });
+
+    // Mobile Menu Toggle Logic
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuIcon = document.getElementById('mobile-menu-icon');
+    let isMenuOpen = false;
+
+    if (mobileMenuToggle && mobileMenu && mobileMenuIcon) {
+        mobileMenuToggle.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                // Open menu
+                mobileMenu.classList.remove('scale-y-0', 'opacity-0', 'pointer-events-none');
+                mobileMenu.classList.add('scale-y-100', 'opacity-100');
+                mobileMenuIcon.innerText = 'close';
+                mobileMenuIcon.classList.add('rotate-90');
+            } else {
+                // Close menu
+                mobileMenu.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
+                mobileMenu.classList.remove('scale-y-100', 'opacity-100');
+                mobileMenuIcon.innerText = 'menu';
+                mobileMenuIcon.classList.remove('rotate-90');
+            }
+        });
+    }
 </script>
 @endpush
