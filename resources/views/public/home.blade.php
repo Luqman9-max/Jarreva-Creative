@@ -455,14 +455,10 @@
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 lg:h-3 lg:w-3 bg-primary"></span>
             </div>
-            <div
-                class="flex items-center gap-1.5 lg:gap-2 text-[11px] sm:text-xs lg:text-sm font-medium text-slate-600 font-mono truncate">
-                <span
-                    class="text-[10px] lg:text-xs text-slate-400 uppercase tracking-wider shrink-0 hidden sm:inline-block">System
-                    Status:</span>
+            <div class="flex items-center gap-1.5 lg:gap-2 text-[11px] sm:text-xs lg:text-sm font-medium text-slate-600 font-mono truncate">
+                <span class="text-[10px] lg:text-xs text-slate-400 uppercase tracking-wider shrink-0 hidden sm:inline-block">System Status:</span>
                 <span class="text-[10px] text-slate-400 uppercase tracking-wider shrink-0 sm:hidden">Status:</span>
-                <span id="system-status-text"
-                    class="text-slate-900 font-bold typing-effect truncate">Initializing...</span>
+                <span id="system-status-text" class="text-slate-900 font-bold typing-effect truncate">Initializing...</span>
                 <span class="animate-blink text-primary flex-shrink-0">_</span>
             </div>
         </div>
@@ -521,8 +517,7 @@
             You wake up. Grab your phone. Scroll. Just for a second, then one hour disappears. You know it's
             wrong, but you repeat it anyway.
         </p>
-        <div
-            class="flex flex-col sm:flex-row items-center gap-3 lg:gap-4 w-full justify-center reveal-on-scroll delay-200">
+        <div class="flex flex-col sm:flex-row items-center gap-3 lg:gap-4 w-full justify-center reveal-on-scroll delay-200">
             <a href="{{ route('catalog.index') }}"
                 class="group relative flex h-12 lg:h-14 items-center justify-center gap-2 rounded-full bg-primary px-6 lg:px-8 text-sm lg:text-base font-bold text-white transition-all hover:bg-orange-600 hover:shadow-lg w-full sm:w-auto shadow-orange-200/50">
                 Explore Library
