@@ -201,7 +201,7 @@
             <span class="inline-block py-1 px-3 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-secondary text-xs font-bold tracking-[0.2em] uppercase mb-8 relative z-10 reveal-on-scroll delay-100">
                 Transmission Open
             </span>
-            <h1 class="mb-6 font-display text-5xl font-bold tracking-tight leading-[1.1] sm:text-6xl md:text-7xl lg:text-7xl dark:text-white drop-shadow-sm max-w-5xl mx-auto reveal-on-scroll delay-200">
+            <h1 class="mb-4 md:mb-6 font-display text-4xl font-bold tracking-tight leading-[1.1] sm:text-6xl md:text-7xl lg:text-7xl dark:text-white drop-shadow-sm max-w-5xl mx-auto reveal-on-scroll delay-200">
                 Start the <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-orange-500 animate-gradient">Dialogue.</span>
             </h1>
             <p class="text-xl md:text-2xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium relative z-10 reveal-on-scroll delay-300">
@@ -226,8 +226,8 @@
                         <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6 font-display">
                             Direct Signal
                         </h3>
-                        <a href="mailto:jarrevacreative@gmail.com" class="group flex items-center gap-4 text-3xl font-light text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors">
-                            <span class="material-symbols-outlined text-4xl font-light group-hover:scale-110 transition-transform">alternate_email</span>
+                        <a href="mailto:jarrevacreative@gmail.com" class="group flex items-center gap-3 md:gap-4 text-xl sm:text-2xl md:text-3xl font-light text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary transition-colors break-all md:break-normal">
+                            <span class="material-symbols-outlined text-3xl md:text-4xl font-light group-hover:scale-110 transition-transform shrink-0">alternate_email</span>
                             jarrevacreative@gmail.com
                         </a>
                     </div>
@@ -239,51 +239,51 @@
                         </h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <!-- Instagram -->
-                            <a href="https://www.instagram.com/jarrevacreative?igsh=bjlwazJlOHBsd2h0&utm_source=qr" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white shadow-sm group-hover:scale-110 transition-transform">
+                            <a href="https://www.instagram.com/jarrevacreative?igsh=bjlwazJlOHBsd2h0&utm_source=qr" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white shadow-sm group-hover:scale-110 transition-transform shrink-0">
                                     <svg class="h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                         <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
                                     </svg>
                                 </div>
-                                <div>
-                                    <span class="block font-bold text-sm text-slate-900 dark:text-white group-hover:text-pink-400 transition-colors">Instagram</span>
-                                    <span class="block text-xs text-slate-500">Daily Visuals</span>
+                                <div class="overflow-hidden">
+                                    <span class="block font-bold text-sm text-slate-900 dark:text-white group-hover:text-pink-400 transition-colors truncate">Instagram</span>
+                                    <span class="block text-xs text-slate-500 truncate">Daily Visuals</span>
                                 </div>
                             </a>
                             <!-- X (Twitter) -->
-                            <a href="https://x.com/jarrevacreative?s=21" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                                <div class="w-10 h-10 rounded-full bg-black dark:bg-white border border-slate-200 dark:border-slate-700 flex items-center justify-center text-white dark:text-black shadow-sm group-hover:scale-110 transition-transform">
+                            <a href="https://x.com/jarrevacreative?s=21" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
+                                <div class="w-10 h-10 rounded-full bg-black dark:bg-white border border-slate-200 dark:border-slate-700 flex items-center justify-center text-white dark:text-black shadow-sm group-hover:scale-110 transition-transform shrink-0">
                                     <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                         <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
                                     </svg>
                                 </div>
-                                <div>
-                                    <span class="block font-bold text-sm text-slate-900 dark:text-white group-hover:text-primary transition-colors">X (Twitter)</span>
-                                    <span class="block text-xs text-slate-500">Thoughts</span>
+                                <div class="overflow-hidden">
+                                    <span class="block font-bold text-sm text-slate-900 dark:text-white group-hover:text-primary transition-colors truncate">X (Twitter)</span>
+                                    <span class="block text-xs text-slate-500 truncate">Thoughts</span>
                                 </div>
                             </a>
                             <!-- TikTok -->
-                            <a href="https://www.tiktok.com/@jarreva_creative?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                                <div class="w-10 h-10 rounded-full bg-black dark:bg-white border border-slate-200 dark:border-slate-700 flex items-center justify-center text-white dark:text-black shadow-sm group-hover:scale-110 transition-transform">
+                            <a href="https://www.tiktok.com/@jarreva_creative?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
+                                <div class="w-10 h-10 rounded-full bg-black dark:bg-white border border-slate-200 dark:border-slate-700 flex items-center justify-center text-white dark:text-black shadow-sm group-hover:scale-110 transition-transform shrink-0">
                                     <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                         <path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.9 162.9 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/>
                                     </svg>
                                 </div>
-                                <div>
-                                    <span class="block font-bold text-sm text-slate-900 dark:text-white group-hover:text-pink-400 transition-colors">TikTok</span>
-                                    <span class="block text-xs text-slate-500">Shorts</span>
+                                <div class="overflow-hidden">
+                                    <span class="block font-bold text-sm text-slate-900 dark:text-white group-hover:text-pink-400 transition-colors truncate">TikTok</span>
+                                    <span class="block text-xs text-slate-500 truncate">Shorts</span>
                                 </div>
                             </a>
                             <!-- Medium -->
-                            <a href="https://medium.com/@jarrevacreative" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-                                <div class="w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-600 text-black dark:text-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                            <a href="https://medium.com/@jarrevacreative" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:bg-white dark:hover:bg-slate-800 hover:border-secondary hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
+                                <div class="w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-600 text-black dark:text-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform shrink-0">
                                     <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                                         <path d="M180.5 74.3C80.8 74.3 0 155.6 0 256S80.8 437.7 180.5 437.7 361 356.4 361 256 280.2 74.3 180.5 74.3zm288.3 10.6c-49.8 0-90.2 76.6-90.2 171.1s40.4 171.1 90.2 171.1 90.2-76.6 90.2-171.1H559C559 161.5 518.6 84.9 468.8 84.9zm139.5 17.8c-17.5 0-31.7 68.6-31.7 153.3s14.2 153.3 31.7 153.3S640 340.6 640 256C640 171.4 625.8 102.7 608.3 102.7z"/>
                                     </svg>
                                 </div>
-                                <div>
-                                    <span class="block font-bold text-sm text-slate-900 dark:text-white group-hover:text-slate-500 transition-colors">Medium</span>
-                                    <span class="block text-xs text-slate-500">Deep Dives</span>
+                                <div class="overflow-hidden">
+                                    <span class="block font-bold text-sm text-slate-900 dark:text-white group-hover:text-slate-500 transition-colors truncate">Medium</span>
+                                    <span class="block text-xs text-slate-500 truncate">Deep Dives</span>
                                 </div>
                             </a>
                         </div>
@@ -300,7 +300,7 @@
                     </div>
 
                     <!-- Map Module -->
-                    <div class="relative group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-xl flex flex-col h-[320px]">
+                    <div class="relative group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-xl flex flex-col h-[280px] md:h-[320px]">
                         <div class="absolute top-0 left-0 right-0 z-10 px-6 py-4 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
                             <h3 class="text-xs font-bold uppercase tracking-widest text-slate-500 font-display">
                                 Operations Base</h3>
@@ -339,7 +339,7 @@
             </div>
 
             <!-- Right Column: The Form -->
-            <div class="lg:col-span-7 bg-white dark:bg-slate-900 rounded-3xl p-8 md:p-12 border border-slate-100 dark:border-slate-800 shadow-xl relative overflow-hidden">
+            <div class="lg:col-span-7 bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-12 border border-slate-100 dark:border-slate-800 shadow-xl relative overflow-hidden">
                 <!-- Ambient Glow -->
                 <div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none">
                 </div>
@@ -352,7 +352,7 @@
                 <form id="contactForm" class="space-y-12 relative z-10" onsubmit="transmitSignal(event)">
                     @csrf
                     <!-- Name & Contact Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                         <!-- Name Input -->
                         <div class="form-group relative group">
                             <input type="text" id="name" name="name" class="terminal-input w-full py-4 text-lg bg-transparent focus:ring-0 placeholder-transparent" placeholder="Your Name" required>
@@ -371,11 +371,11 @@
                     <!-- Topic Selection (formerly Project Type) -->
                     <div class="form-group relative group">
                         <label class="text-sm text-slate-400 mb-4 block">Topic of Inquiry</label>
-                        <div class="flex flex-wrap gap-4" id="projectTypes">
-                            <button type="button" class="px-6 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all focus:border-primary focus:bg-primary focus:text-white project-select icon-transition" onclick="selectProject(this)">Book Inquiry</button>
-                            <button type="button" class="px-6 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all focus:border-primary focus:bg-primary focus:text-white project-select icon-transition" onclick="selectProject(this)">Creative Collaboration</button>
-                            <button type="button" class="px-6 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all focus:border-primary focus:bg-primary focus:text-white project-select icon-transition" onclick="selectProject(this)">Speaking / Workshop</button>
-                            <button type="button" class="px-6 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all focus:border-primary focus:bg-primary focus:text-white project-select icon-transition" onclick="selectProject(this)">General Signal</button>
+                        <div class="flex flex-wrap gap-2 md:gap-4" id="projectTypes">
+                            <button type="button" class="px-4 py-1.5 md:px-6 md:py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm md:text-base text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all focus:border-primary focus:bg-primary focus:text-white project-select icon-transition" onclick="selectProject(this)">Book Inquiry</button>
+                            <button type="button" class="px-4 py-1.5 md:px-6 md:py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm md:text-base text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all focus:border-primary focus:bg-primary focus:text-white project-select icon-transition" onclick="selectProject(this)">Creative Collaboration</button>
+                            <button type="button" class="px-4 py-1.5 md:px-6 md:py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm md:text-base text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all focus:border-primary focus:bg-primary focus:text-white project-select icon-transition" onclick="selectProject(this)">Speaking / Workshop</button>
+                            <button type="button" class="px-4 py-1.5 md:px-6 md:py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm md:text-base text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all focus:border-primary focus:bg-primary focus:text-white project-select icon-transition" onclick="selectProject(this)">General Signal</button>
                         </div>
                         <input type="hidden" id="selectedProject" name="topic" required>
                     </div>
@@ -388,13 +388,13 @@
                     </div>
 
                     <!-- Submit Action -->
-                    <div class="flex items-center justify-between pt-8 border-t border-slate-100 dark:border-slate-800">
-                        <div class="text-xs text-gray-500">
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-slate-100 dark:border-slate-800">
+                        <div class="text-xs text-gray-500 w-full sm:w-auto text-center sm:text-left">
                             <span class="inline-block w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
                             System Online
                         </div>
-                        <button type="submit" id="submitBtn" class="group relative px-8 py-4 bg-primary text-white font-bold rounded-lg overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
-                            <span class="relative z-10 flex items-center gap-2">
+                        <button type="submit" id="submitBtn" class="w-full sm:w-auto group relative px-8 py-3 md:py-4 bg-primary text-white font-bold rounded-lg overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
+                            <span class="relative z-10 flex items-center justify-center sm:justify-start gap-2 text-sm md:text-base">
                                 TRANSMIT SIGNAL
                                 <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">send</span>
                             </span>
