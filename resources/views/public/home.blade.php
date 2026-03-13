@@ -450,15 +450,15 @@
     <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 flex flex-col items-center text-center">
         <!-- System Intelligence Status -->
         <div
-            class="group relative mb-12 inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/50 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner px-4 py-2 shadow-sm hover:border-secondary/30 transition-all duration-500">
-            <div class="relative flex h-3 w-3">
+            class="group relative mb-8 lg:mb-12 inline-flex items-center gap-2 lg:gap-3 rounded-full border border-slate-200 bg-white/50 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner px-3 py-1.5 lg:px-4 lg:py-2 shadow-sm hover:border-secondary/30 transition-all duration-500 max-w-[90vw] sm:max-w-[95vw] md:max-w-full">
+            <div class="relative flex h-2 w-2 lg:h-3 lg:w-3 shrink-0">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
-            </div>
-            <div class="flex items-center gap-2 text-sm font-medium text-slate-600 font-mono">
-                <span class="text-xs text-slate-400 uppercase tracking-wider">System Status:</span>
-                <span id="system-status-text" class="text-slate-900 font-bold typing-effect">Initializing...</span>
-                <span class="animate-blink text-primary">_</span>
+<span class="relative inline-flex rounded-full h-2 w-2 lg:h-3 lg:w-3 bg-primary"></span>            </div>
+            <div class="flex items-center gap-1.5 lg:gap-2 text-[11px] sm:text-xs lg:text-sm font-medium text-slate-600 font-mono truncate">
+                <span class="text-[10px] lg:text-xs text-slate-400 uppercase tracking-wider shrink-0 hidden sm:inline-block">System Status:</span>
+                <span class="text-[10px] text-slate-400 uppercase tracking-wider shrink-0 sm:hidden">Status:</span>
+                <span id="system-status-text" class="text-slate-900 font-bold typing-effect truncate">Initializing...</span>
+                <span class="animate-blink text-primary flex-shrink-0">_</span>
             </div>
         </div>
 
@@ -505,20 +505,18 @@
             });
         </script>
         <h1
-            class="mb-6 font-display text-5xl font-bold tracking-tight leading-[1.1] sm:text-6xl md:text-7xl lg:text-7xl dark:text-white drop-shadow-sm max-w-5xl">
-            Why Does Your Life<br class="hidden md:block" />
+            class="mb-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] dark:text-white drop-shadow-sm max-w-5xl">
             <span
                 class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-orange-500 animate-gradient">Feel
                 Stuck Like This?</span>
         </h1>
         <p
-            class="max-w-2xl text-lg text-gray-600 dark:text-gray-300 sm:text-xl leading-relaxed mb-10 font-medium reveal-on-scroll delay-100">
-            You wake up. Grab your phone. Scroll. Just for a second, then one hour disappears. You know it's
+class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8 lg:mb-10 font-medium reveal-on-scroll delay-100">            You wake up. Grab your phone. Scroll. Just for a second, then one hour disappears. You know it's
             wrong, but you repeat it anyway.
         </p>
-        <div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center reveal-on-scroll delay-200">
+        <div class="flex flex-col sm:flex-row items-center gap-3 lg:gap-4 w-full justify-center reveal-on-scroll delay-200">
             <a href="{{ route('catalog.index') }}"
-                class="group relative flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-8 text-base font-bold text-white transition-all hover:bg-orange-600 hover:shadow-lg w-full sm:w-auto shadow-orange-200/50">
+                class="group relative flex h-12 lg:h-14 items-center justify-center gap-2 rounded-full bg-primary px-6 lg:px-8 text-sm lg:text-base font-bold text-white transition-all hover:bg-orange-600 hover:shadow-lg w-full sm:w-auto shadow-orange-200/50">
                 Explore Library
                 <span
                     class="material-symbols-outlined text-white transition-transform group-hover:translate-x-1">arrow_forward</span>
