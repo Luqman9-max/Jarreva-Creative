@@ -751,10 +751,10 @@
                         style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
 
                         <div
-                            class="flex animate-scroll-marquee w-max gap-8 py-10 px-4 hover:[animation-play-state:paused]">
+                            class="flex animate-scroll-marquee w-max gap-4 md:gap-8 py-6 md:py-10 px-4 hover:[animation-play-state:paused]">
                             <!-- Testimonial 1 -->
                             <div
-                                class="w-[400px] bg-white rounded-[32px] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -768,14 +768,14 @@
                                         <span
                                             class="material-symbols-outlined text-yellow-500 text-sm filled">star</span>
                                     </div>
-                                    <p class="text-slate-700 leading-relaxed font-medium text-lg">
+                                    <p class="text-slate-700 leading-relaxed font-medium text-base md:text-lg">
                                         "I used to watch motivational videos every morning. Now I just
                                         follow my system. No hype needed. It's liberating."
                                     </p>
                                 </div>
-                                <div class="flex items-center gap-4 pt-6 border-t border-slate-50">
+                                <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-lg">
+                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         MC
                                     </div>
                                     <div>
@@ -789,7 +789,7 @@
 
                             <!-- Testimonial 2 -->
                             <div
-                                class="w-[400px] bg-white rounded-[32px] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -803,14 +803,14 @@
                                         <span
                                             class="material-symbols-outlined text-yellow-500 text-sm filled">star</span>
                                     </div>
-                                    <p class="text-slate-700 leading-relaxed font-medium text-lg">
+                                    <p class="text-slate-700 leading-relaxed font-medium text-base md:text-lg">
                                         "The 'Intellectual Architecture' concept changed how I structure my
                                         entire business. Content is finally an asset, not a chore."
                                     </p>
                                 </div>
-                                <div class="flex items-center gap-4 pt-6 border-t border-slate-50">
+                                <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-lg">
+                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         AR
                                     </div>
                                     <div>
@@ -824,7 +824,7 @@
 
                             <!-- Testimonial 3 -->
                             <div
-                                class="w-[400px] bg-white rounded-[32px] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -838,14 +838,14 @@
                                         <span
                                             class="material-symbols-outlined text-yellow-500 text-sm filled">star</span>
                                     </div>
-                                    <p class="text-slate-700 leading-relaxed font-medium text-lg">
+                                    <p class="text-slate-700 leading-relaxed font-medium text-base md:text-lg">
                                         "Finally, something that doesn't promise overnight success. It's a
                                         brutal reality check that I needed. Pure signal."
                                     </p>
                                 </div>
-                                <div class="flex items-center gap-4 pt-6 border-t border-slate-50">
+                                <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-lg">
+                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         JM
                                     </div>
                                     <div>
@@ -859,7 +859,7 @@
 
                             <!-- Testimonial 4 -->
                             <div
-                                class="w-[400px] bg-white rounded-[32px] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -873,14 +873,14 @@
                                         <span
                                             class="material-symbols-outlined text-yellow-500 text-sm filled">star</span>
                                     </div>
-                                    <p class="text-slate-700 leading-relaxed font-medium text-lg">
+                                    <p class="text-slate-700 leading-relaxed font-medium text-base md:text-lg">
                                         "I stopped waiting for motivation. This framework gave me the tools
                                         to build even when I don't 'feel' like it."
                                     </p>
                                 </div>
-                                <div class="flex items-center gap-4 pt-6 border-t border-slate-50">
+                                <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-lg">
+                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         PS
                                     </div>
                                     <div>
@@ -894,7 +894,7 @@
 
                             <!-- Testimonial 5 -->
                             <div
-                                class="w-[400px] bg-white rounded-[32px] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -908,14 +908,14 @@
                                         <span
                                             class="material-symbols-outlined text-yellow-500 text-sm filled">star</span>
                                     </div>
-                                    <p class="text-slate-700 leading-relaxed font-medium text-lg">
+                                    <p class="text-slate-700 leading-relaxed font-medium text-base md:text-lg">
                                         "The discipline systems in this book helped me launch my startup
                                         while working 9-5. It's a blueprint for action."
                                     </p>
                                 </div>
-                                <div class="flex items-center gap-4 pt-6 border-t border-slate-50">
+                                <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-lg">
+                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         DP
                                     </div>
                                     <div>
@@ -929,7 +929,7 @@
 
                             <!-- Testimonial 6 (Duplicate for Loop) -->
                             <div
-                                class="w-[400px] bg-white rounded-[32px] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -943,14 +943,14 @@
                                         <span
                                             class="material-symbols-outlined text-yellow-500 text-sm filled">star</span>
                                     </div>
-                                    <p class="text-slate-700 leading-relaxed font-medium text-lg">
+                                    <p class="text-slate-700 leading-relaxed font-medium text-base md:text-lg">
                                         "One of the few guides that respects your intelligence. No vague
                                         advice, just operational logic."
                                     </p>
                                 </div>
-                                <div class="flex items-center gap-4 pt-6 border-t border-slate-50">
+                                <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-lg">
+                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         SM
                                     </div>
                                     <div>
@@ -964,7 +964,7 @@
 
                             <!-- Testimonial 7 (Duplicate for Loop) -->
                             <div
-                                class="w-[400px] bg-white rounded-[32px] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -978,14 +978,14 @@
                                         <span
                                             class="material-symbols-outlined text-yellow-500 text-sm filled">star</span>
                                     </div>
-                                    <p class="text-slate-700 leading-relaxed font-medium text-lg">
+                                    <p class="text-slate-700 leading-relaxed font-medium text-base md:text-lg">
                                         "Worth every second. The 'Identity Shifting' framework is now the
                                         basis for all my coaching."
                                     </p>
                                 </div>
-                                <div class="flex items-center gap-4 pt-6 border-t border-slate-50">
+                                <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-lg">
+                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         RT
                                     </div>
                                     <div>
