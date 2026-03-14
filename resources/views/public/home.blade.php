@@ -519,7 +519,7 @@
         </p>
         <div class="flex flex-col sm:flex-row items-center gap-3 lg:gap-4 w-full justify-center reveal-on-scroll delay-200">
             <a href="{{ route('catalog.index') }}"
-                class="group relative flex h-12 lg:h-14 items-center justify-center gap-2 rounded-full bg-primary px-6 lg:px-8 text-sm lg:text-base font-bold text-white transition-all hover:bg-orange-600 hover:shadow-lg w-full sm:w-auto shadow-orange-200/50">
+                class="group relative flex h-12 lg:h-14 items-center justify-center gap-2 rounded-full bg-primary px-6 lg:px-8 text-sm lg:text-base font-bold text-white transition-all hover:bg-orange-600 hover:shadow-lg w-[85%] max-w-[280px] sm:max-w-none sm:w-auto shadow-orange-200/50">
                 Explore Library
                 <span
                     class="material-symbols-outlined text-white transition-transform group-hover:translate-x-1">arrow_forward</span>
@@ -544,18 +544,18 @@
             <div
                 class="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-white shadow-sm px-4 py-1.5 mb-6">
                 <div class="h-2 w-2 rounded-full bg-secondary animate-pulse"></div>
-                <span class="text-xs font-bold text-secondary uppercase tracking-widest">Stop
+                <span class="text-[10px] sm:text-xs font-bold text-secondary uppercase tracking-widest">Stop
                     wasting opportunities</span>
             </div>
         </div>
         <h2
-            class="font-display text-4xl md:text-5xl font-bold text-white text-center mb-6 leading-tight max-w-4xl mx-auto">
+            class="font-display text-3xl md:text-5xl font-bold text-white text-center mb-6 leading-tight max-w-4xl mx-auto">
             The Big Problem With Gen Z Is <span
                 class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-orange-500">Not Lack Of
                 Motivation</span>
         </h2>
-        <p class="text-lg md:text-xl font-medium text-gray-400 text-center max-w-2xl mx-auto mb-16 leading-relaxed">
-            You know you need products, offers, and lead magnets to grow. But instead of selling and
+        <p class="text-base sm:text-lg md:text-xl font-medium text-gray-400 text-center w-full px-4 sm:px-0 sm:max-w-[95%] md:max-w-3xl mx-auto mb-16 leading-relaxed">
+            You know you need products, offers, and lead magnets to grow.<br class="hidden md:block"> But instead of selling and
             scaling, you’re stuck:
         </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
@@ -731,17 +731,17 @@
                         <div
                             class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white shadow-sm px-4 py-1.5 mb-6">
                             <div class="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
-                            <span class="text-xs font-bold text-primary uppercase tracking-widest">Protocol
+                            <span class="text-[10px] sm:text-xs font-bold text-primary uppercase tracking-widest">Protocol
                                 Validated</span>
                         </div>
                         <h2
-                            class="text-4xl font-black leading-[1.1] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl mb-6">
+                            class="text-3xl font-black leading-[1.1] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl mb-6">
                             Real Result. <br><span
                                 class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Real
                                 Impact.</span>
                         </h2>
-                        <p class="text-slate-500 text-xl max-w-2xl text-center leading-relaxed">
-                            Join thousands of high-performers who stopped relying on motivation and started
+                        <p class="text-base sm:text-lg md:text-xl font-medium text-slate-500 w-full px-4 sm:px-0 sm:max-w-[95%] md:max-w-3xl mx-auto text-center leading-relaxed">
+                            Join thousands of high-performers who stopped relying on motivation<br class="hidden md:block"> and started
                             building systems.
                         </p>
                     </div>
@@ -1004,16 +1004,16 @@
                     <div
                         class="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-white shadow-sm px-4 py-1.5 mb-6">
                         <div class="h-2 w-2 rounded-full bg-secondary animate-pulse"></div>
-                        <span class="text-xs font-bold text-secondary uppercase tracking-widest">Take It
+                        <span class="text-[10px] sm:text-xs font-bold text-secondary uppercase tracking-widest">Take It
                             Further</span>
                     </div>
                     <h2
-                        class="text-4xl font-black leading-[1.1] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl mb-6">
+                        class="text-3xl font-black leading-[1.1] tracking-tight text-gray-900 sm:text-5xl lg:text-6xl mb-6">
                         Build Your <span
                             class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Personal
                             System</span>
                     </h2>
-                    <p class="text-lg font-normal leading-relaxed text-gray-600 max-w-2xl mx-auto">
+                    <p class="text-base sm:text-lg md:text-xl font-medium leading-relaxed text-gray-600 max-w-[90%] sm:max-w-2xl mx-auto">
                         Stop relying on willpower. Install a proven operating system for your life that
                         makes discipline automatic and success inevitable.
                     </p>
@@ -1227,15 +1227,15 @@
             <div
                 class="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-white shadow-sm px-4 py-1.5 mb-6">
                 <div class="h-2 w-2 rounded-full bg-secondary animate-pulse"></div>
-                <span class="text-xs font-bold text-secondary uppercase tracking-widest">The Hard
+                <span class="text-[10px] sm:text-xs font-bold text-secondary uppercase tracking-widest">The Hard
                     Truth</span>
             </div>
-            <h2 class="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
+            <h2 class="text-3xl md:text-5xl font-black text-white mb-6 tracking-tight">
                 Why Most Solutions <span
                     class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Fail
                     Completely</span>
             </h2>
-            <p class="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <p class="text-base sm:text-lg md:text-xl font-medium text-gray-400 max-w-[90%] sm:max-w-2xl mx-auto leading-relaxed">
                 You've tried motivational videos, inspiring quotes, and hype seminars. They all end the same
                 way.
             </p>
@@ -1355,18 +1355,17 @@
             <div
                 class="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-white shadow-sm px-4 py-1.5 mb-6">
                 <div class="h-2 w-2 rounded-full bg-secondary animate-pulse"></div>
-                <span class="text-xs font-bold text-secondary uppercase tracking-widest">Spread The
+                <span class="text-[10px] sm:text-xs font-bold text-secondary uppercase tracking-widest">Spread The
                     Impact</span>
             </div>
-            <h2 class="text-4xl md:text-5xl font-black text-gray-900 tracking-tight leading-[1.1]">
+            <h2 class="text-3xl md:text-5xl font-black text-gray-900 tracking-tight leading-[1.1]">
                 Help Others<br /><span
                     class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Break
                     Free</span>
             </h2>
-            <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Know someone stuck in the motivation trap? Share this book with friends, teams, or
-                communities.
-                Help them build systems that actually work.
+            <p class="mt-6 text-base sm:text-lg md:text-xl font-medium text-gray-600 w-full px-4 sm:px-0 sm:max-w-[95%] md:max-w-3xl mx-auto leading-relaxed text-balance tracking-tighter md:tracking-normal">
+                Know someone stuck in the motivation trap? Share this book with friends,<br class="hidden md:block"> teams, or
+                communities. Help them build systems that actually work.
             </p>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-center relative z-10">
@@ -1548,13 +1547,13 @@
         <div
             class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white shadow-sm px-4 py-1.5 mb-4">
             <div class="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
-            <span class="text-xs font-bold text-primary uppercase tracking-widest">Your Roadmap</span>
+            <span class="text-[10px] sm:text-xs font-bold text-primary uppercase tracking-widest">Your Roadmap</span>
         </div>
-        <h2 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight mb-6">
+        <h2 class="text-3xl md:text-6xl font-black text-slate-900 tracking-tight mb-6">
             The Learning <span
                 class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Journey</span>
         </h2>
-        <p class="text-slate-500 text-xl leading-relaxed">
+        <p class="text-base sm:text-lg md:text-xl font-medium text-slate-500 max-w-[90%] sm:max-w-2xl mx-auto leading-relaxed">
             Explore the interconnected areas of personal development covered in our discipline system.
         </p>
     </div>
@@ -1816,16 +1815,16 @@
                 <div
                     class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white shadow-sm px-4 py-1.5 mb-6">
                     <div class="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
-                    <span class="text-xs font-bold text-primary uppercase tracking-widest">The
+                    <span class="text-[10px] sm:text-xs font-bold text-primary uppercase tracking-widest">The
                         Collection</span>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6">Complete
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-6">Complete
                     Book
                     Series</h2>
                 <div class="h-1.5 w-24 bg-primary rounded-full mx-auto shadow-[0_0_15px_rgba(249,115,22,0.5)]">
                 </div>
-                <p class="mt-8 text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-                    Our discipline framework spans multiple volumes, each targeting specific areas of
+                <p class="mt-8 text-base sm:text-lg md:text-xl font-medium text-gray-400 w-full px-4 sm:px-0 sm:max-w-[95%] md:max-w-3xl mx-auto leading-relaxed">
+                    Our discipline framework spans multiple volumes, each targeting specific<br class="hidden md:block"> areas of
                     personal growth.
                 </p>
             </div>
@@ -1908,15 +1907,15 @@
             <div
                 class="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-white shadow-sm px-4 py-1.5 mb-6">
                 <div class="h-2 w-2 rounded-full bg-secondary animate-pulse"></div>
-                <span class="text-xs font-bold text-secondary uppercase tracking-widest">Important
+                <span class="text-[10px] sm:text-xs font-bold text-secondary uppercase tracking-widest">Important
                     Warning</span>
             </div>
-            <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
+            <h2 class="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
                 This Is <span
                     class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Not</span>
                 For Everyone
             </h2>
-            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <p class="text-base sm:text-lg md:text-xl font-medium text-gray-600 dark:text-gray-400 max-w-[90%] sm:max-w-2xl mx-auto leading-relaxed">
                 Before you continue, be honest with yourself. This requires work.
             </p>
         </div>
@@ -2020,13 +2019,13 @@
             <div
                 class="inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner">
                 <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-                <span class="text-xs font-bold text-slate-300 tracking-widest uppercase">The Turning Point</span>
+                <span class="text-[10px] sm:text-xs font-bold text-slate-300 tracking-widest uppercase">The Turning Point</span>
             </div>
         </div>
 
         <!-- Clean Headline -->
         <h2
-            class="text-4xl md:text-5xl font-black text-white mb-8 tracking-tight leading-[1.1] reveal-on-scroll delay-100">
+            class="text-3xl md:text-5xl font-black text-white mb-8 tracking-tight leading-[1.1] reveal-on-scroll delay-100">
             The Choice Is<br>
             <span class="text-slate-400">Absolutely Simple.</span>
         </h2>
