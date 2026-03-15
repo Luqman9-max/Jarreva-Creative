@@ -197,14 +197,14 @@
         <!-- Abstract Background Element -->
         
 
-        <div class="relative z-10 max-w-4xl text-center">
-            <span class="inline-block py-1 px-3 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-secondary text-xs font-bold tracking-[0.2em] uppercase mb-8 relative z-10 reveal-on-scroll delay-100">
+        <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 mx-auto flex flex-col items-center text-center">
+            <span class="inline-block px-3 py-1.5 lg:px-4 lg:py-2 rounded-full border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm shadow-inner shadow-sm text-[11px] sm:text-xs lg:text-sm font-medium text-slate-600 dark:text-slate-300 font-mono mb-8 relative z-10 reveal-on-scroll delay-100">
                 Transmission Open
             </span>
-            <h1 class="mb-4 md:mb-6 font-display text-4xl font-bold tracking-tight leading-[1.1] sm:text-6xl md:text-7xl lg:text-7xl dark:text-white drop-shadow-sm max-w-5xl mx-auto reveal-on-scroll delay-200">
+            <h1 class="mb-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] dark:text-white drop-shadow-sm max-w-5xl mx-auto reveal-on-scroll delay-200">
                 Start the <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-orange-500 animate-gradient">Dialogue.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium relative z-10 reveal-on-scroll delay-300">
+            <p class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mx-auto leading-relaxed mb-8 lg:mb-10 font-medium relative z-10 reveal-on-scroll delay-300">
                 We respond to meaningful inquiries within 24 hours.<br class="hidden md:block"> No bots,
                 just
                 builders.

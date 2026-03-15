@@ -18,21 +18,21 @@
         </div>
     </div>
 
-    <div class="container mx-auto px-4 relative z-10 text-center">
+    <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 mx-auto flex flex-col items-center text-center">
         <!-- Badge -->
         <div
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 shadow-sm mb-6 animate-float">
-            <span class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(249,115,22,0.8)]"></span>
-            <span class="text-sm font-bold text-gray-800 dark:text-gray-200 uppercase tracking-widest">Our Creative
+            class="inline-flex items-center gap-1.5 lg:gap-2 px-3 py-1.5 lg:px-4 lg:py-2 rounded-full border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm shadow-inner shadow-sm mb-6 animate-float">
+            <span class="w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(249,115,22,0.8)]"></span>
+            <span class="text-[11px] sm:text-xs lg:text-sm font-medium text-slate-600 dark:text-slate-300 font-mono">Our Creative
                 Works</span>
         </div>
 
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">
-            Discover Our <span
+        <h1 class="mb-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] dark:text-white drop-shadow-sm max-w-5xl mx-auto">
+            Discover Our<br class="hidden md:block" /> <span
                 class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Portfolio</span>
         </h1>
 
-        <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-10 leading-relaxed">
+        <p class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mx-auto leading-relaxed mb-8 lg:mb-10 font-medium">
             Explore a curated collection of our best projects, publications, and creative endeavors that define Jarreva
             Creative's commitment to excellence.
         </p>

@@ -110,21 +110,21 @@
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-tr from-primary/5 to-secondary/5 rounded-full blur-[120px] pointer-events-none">
     </div>
 
-    <div class="relative z-10 max-w-4xl text-center">
+    <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 flex flex-col items-center text-center">
         <span
-            class="inline-block py-1 px-3 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 text-xs font-bold tracking-[0.2em] uppercase mb-8 border border-slate-200 dark:border-slate-700 reveal-on-scroll delay-100">
+            class="inline-block px-3 py-1.5 lg:px-4 lg:py-2 rounded-full border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm shadow-inner shadow-sm text-[11px] sm:text-xs lg:text-sm font-medium text-slate-600 dark:text-slate-300 font-mono mb-8 reveal-on-scroll delay-100">
             Est. 2025
         </span>
         <h1
-            class="mb-6 font-display text-5xl font-bold tracking-tight leading-[1.1] sm:text-6xl md:text-7xl lg:text-7xl dark:text-white drop-shadow-sm max-w-5xl mx-auto reveal-on-scroll delay-200">
-            We don't just design.<br>
+            class="mb-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] dark:text-white drop-shadow-sm max-w-5xl mx-auto reveal-on-scroll delay-200">
+            <span class="whitespace-nowrap tracking-tighter sm:tracking-tight">We don't just design.</span><br>
             We build <span
                 class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-orange-500 animate-gradient">Systems
-                for<br>
+                for<br class="hidden md:block" />
                 the Mind.</span>
         </h1>
         <p
-            class="text-xl md:text-2xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium reveal-on-scroll delay-300">
+            class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mx-auto leading-relaxed mb-8 lg:mb-10 font-medium reveal-on-scroll delay-300">
             Jarreva Creative is an intellectual design studio dedicated to turning chaos into clarity
             through structure, content, and digital craftsmanship.
         </p>
@@ -132,17 +132,17 @@
 </section>
 
 <!-- SECTION 2: ORIGIN STORY - INTERACTIVE EVOLUTION -->
-<section class="relative py-32 bg-white dark:bg-background-dark overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col gap-32">
+<section class="relative py-24 bg-white dark:bg-background-dark overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col gap-12 md:gap-32">
 
         <!-- ROW 1: DISCOVERY (Text Left, Visual Right) -->
         <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-32 reveal-on-scroll">
             <div class="lg:w-1/2">
                 <span class="text-secondary font-mono text-xs tracking-widest mb-4 block">PHASE_01 //
                     DISCOVERY</span>
-                <h3 class="text-4xl md:text-5xl font-black mb-6 text-slate-900 dark:text-white leading-tight">
+                <h3 class="text-3xl md:text-5xl font-black mb-6 text-slate-900 dark:text-white leading-tight">
                     It started with noise.</h3>
-                <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
+                <p class="text-base sm:text-lg md:text-xl font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
                     The internet is deafening. We realized that true impact isn't about shouting
                     louder—it's about speaking clearer. We stopped chasing algorithms and started
                     chasing truth.
@@ -172,9 +172,9 @@
             <div class="lg:w-1/2">
                 <span class="text-primary font-mono text-xs tracking-widest mb-4 block">PHASE_02 //
                     ENGINEERING</span>
-                <h3 class="text-4xl md:text-5xl font-black mb-6 text-slate-900 dark:text-white leading-tight">
+                <h3 class="text-3xl md:text-5xl font-black mb-6 text-slate-900 dark:text-white leading-tight">
                     Intellectual Architecture.</h3>
-                <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
+                <p class="text-base sm:text-lg md:text-xl font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
                     We engineered a new approach. Content isn't just "filler"—it's a product. We began
                     designing information with the same rigor an architect designs a skyscraper.
                 </p>
@@ -246,9 +246,9 @@
             <div class="lg:w-1/2">
                 <span class="text-slate-400 font-mono text-xs tracking-widest mb-4 block">PHASE_03 //
                     EXECUTION</span>
-                <h3 class="text-4xl md:text-5xl font-black mb-6 text-slate-900 dark:text-white leading-tight">
+                <h3 class="text-3xl md:text-5xl font-black mb-6 text-slate-900 dark:text-white leading-tight">
                     The Clarity Engine.</h3>
-                <p class="text-lg text-slate-500 dark:text-slate-400 leading-relaxed">
+                <p class="text-base sm:text-lg md:text-xl font-medium text-slate-500 dark:text-slate-400 leading-relaxed">
                     Today, Jarreva isn't just a studio—it's a system. We build the frameworks (books,
                     courses, platforms) that help you turn your chaotic potential into tangible mastery.
                 </p>
@@ -299,13 +299,13 @@
 </section>
 
 <!-- SECTION 3: CORE PRINCIPLES - BENTO GRID v2 -->
-<section id="principles" class="reveal-on-scroll py-32 bg-white dark:bg-background-dark mx-4">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 text-center mb-16">
+<section id="principles" class="reveal-on-scroll py-24 bg-white dark:bg-background-dark mx-4">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 text-center mb-10 md:mb-16">
         <span
-            class="text-secondary font-bold tracking-widest uppercase text-xs border border-secondary/20 bg-secondary/10 px-3 py-1 rounded-full mb-4 inline-block">The
+            class="text-secondary font-bold tracking-widest uppercase text-[10px] sm:text-xs border border-secondary/20 bg-secondary/10 px-3 py-1 rounded-full mb-4 inline-block">The
             Codec</span>
-        <h2 class="text-4xl md:text-5xl font-black mb-6">Built on Principles.</h2>
-        <p class="max-w-2xl mx-auto text-slate-500 text-lg">We don't follow trends. We observe first
+        <h2 class="text-3xl md:text-5xl font-black mb-6">Built on Principles.</h2>
+        <p class="max-w-2xl mx-auto text-slate-500 text-base sm:text-lg md:text-xl font-medium">We don't follow trends. We observe first
             principles.</p>
     </div>
 
@@ -336,7 +336,7 @@
                     <div>
                         <h3 class="text-3xl font-bold mb-2 group-hover:text-blue-500 transition-colors">
                             Systems &gt; Hacks</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-lg leading-relaxed max-w-md">
+                        <p class="text-slate-500 dark:text-slate-400 text-base sm:text-lg md:text-xl font-medium leading-relaxed max-w-md">
                             Overnight success is a myth. We build robust, scalable architectures for your
                             mind and business that compound over time.
                         </p>
@@ -364,7 +364,7 @@
                         </div>
                     </div>
                     <h3 class="text-3xl font-bold mb-2">Clarity is Power.</h3>
-                    <p class="text-slate-400 text-lg">Signal vs Noise. We cut through the clutter.</p>
+                    <p class="text-slate-400 text-base sm:text-lg md:text-xl font-medium">Signal vs Noise. We cut through the clutter.</p>
                 </div>
             </div>
 
@@ -399,7 +399,7 @@
                     </div>
                     <div>
                         <h3 class="text-3xl font-bold mb-2">The Premium Standard</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-lg">
+                        <p class="text-slate-500 dark:text-slate-400 text-base sm:text-lg md:text-xl font-medium">
                             Mediocrity is a disease. We craft experiences that feel inevitable, polished,
                             and world-class.
                         </p>
@@ -412,16 +412,16 @@
 </section>
 
 <!-- SECTION 4: METHODOLOGY - BLUEPRINT -->
-<section id="methodology" class="relative py-32 bg-white dark:bg-background-dark overflow-hidden">
+<section id="methodology" class="relative py-24 bg-white dark:bg-background-dark overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-slate-200 dark:bg-white/5"></div>
     <div class="process-line absolute top-0 left-1/2 -translate-x-1/2 w-[2px] bg-primary shadow-[0_0_15px_#f97316]">
     </div>
 
     <div class="max-w-4xl mx-auto px-6 relative z-10">
-        <div class="text-center mb-20 reveal-on-scroll">
-            <h2 class="font-display text-5xl font-bold text-slate-900 dark:text-white">Thought Architecture
+        <div class="text-center mb-16 md:mb-20 reveal-on-scroll">
+            <h2 class="font-display text-3xl md:text-5xl font-bold text-slate-900 dark:text-white">Thought Architecture
             </h2>
-            <p class="text-slate-500 dark:text-gray-400 mt-2 text-lg">How we engineer your digital legacy.
+            <p class="text-slate-500 dark:text-gray-400 mt-2 text-base sm:text-lg md:text-xl font-medium">How we engineer your digital legacy.
             </p>
         </div>
 
@@ -429,7 +429,7 @@
         <div class="relative flex flex-col md:flex-row items-center gap-8 mb-24 group reveal-on-scroll">
             <div class="md:w-1/2 md:text-right">
                 <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">01. Deconstruct</h3>
-                <p class="text-slate-600 dark:text-gray-400">Dismantling the problem to its core.
+                <p class="text-slate-600 dark:text-gray-400 text-base sm:text-lg md:text-xl font-medium mt-2">Dismantling the problem to its core.
                     Understanding First Principles before design begins.</p>
             </div>
             <div
@@ -444,7 +444,7 @@
             class="relative flex flex-col md:flex-row-reverse items-center gap-8 mb-24 group reveal-on-scroll delay-100">
             <div class="md:w-1/2 md:text-left">
                 <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">02. Architecture</h3>
-                <p class="text-slate-600 dark:text-gray-400">Structuring the cognitive framework. Grids,
+                <p class="text-slate-600 dark:text-gray-400 text-base sm:text-lg md:text-xl font-medium mt-2">Structuring the cognitive framework. Grids,
                     color systems, and information hierarchy arranged with precision.</p>
             </div>
             <div
@@ -458,7 +458,7 @@
         <div class="relative flex flex-col md:flex-row items-center gap-8 group reveal-on-scroll delay-200">
             <div class="md:w-1/2 md:text-right">
                 <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">03. Materialize</h3>
-                <p class="text-slate-600 dark:text-gray-400">Visual execution with the highest aesthetic
+                <p class="text-slate-600 dark:text-gray-400 text-base sm:text-lg md:text-xl font-medium mt-2">Visual execution with the highest aesthetic
                     standards. Every pixel has a reason.</p>
             </div>
             <div
@@ -471,7 +471,7 @@
 </section>
 
 <!-- SECTION 5: THE TEAM - COLLECTIVE INTELLIGENCE -->
-<section class="reveal-on-scroll py-32 bg-white dark:bg-background-dark relative overflow-hidden">
+<section class="reveal-on-scroll py-24 bg-white dark:bg-background-dark relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div class="flex flex-col lg:flex-row items-center gap-16">
 
@@ -519,12 +519,12 @@
             <!-- Right: Content -->
             <div class="w-full lg:w-2/5 order-1 lg:order-2">
                 <span
-                    class="text-secondary font-bold tracking-widest uppercase text-xs border border-secondary/20 bg-secondary/10 px-3 py-1 rounded-full mb-6 inline-block">Our
+                    class="text-secondary font-bold tracking-widest uppercase text-[10px] sm:text-xs border border-secondary/20 bg-secondary/10 px-3 py-1 rounded-full mb-6 inline-block">Our
                     People</span>
-                <h2 class="text-4xl md:text-5xl font-black mb-6 leading-tight text-slate-900 dark:text-white">
+                <h2 class="text-3xl md:text-5xl font-black mb-6 leading-tight text-slate-900 dark:text-white">
                     Unified by <br><span class="text-blue-500">Purpose.</span>
                 </h2>
-                <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                <p class="text-base sm:text-lg md:text-xl font-medium text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
                     Jarreva isn't just one person—it's a collective of builders obsessed with quality. We
                     operate as a single unit, combining diverse skills into a cohesive force for clarity.
                 </p>
