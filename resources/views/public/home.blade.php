@@ -1530,7 +1530,7 @@ class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-30
 </section>
 <!-- NEW: Radial Orbital Timeline Section -->
 <section
-    class="reveal-on-scroll relative z-0 w-full overflow-hidden bg-white py-16 min-h-[1000px] flex flex-col items-center justify-center scroll-mt-28"
+    class="reveal-on-scroll relative z-0 w-full overflow-hidden bg-white py-16 min-h-[700px] md:min-h-[1000px] flex flex-col items-center justify-center scroll-mt-28"
     id="about">
     <!-- Premium Light Texture Background -->
     <div class="absolute inset-0 pointer-events-none">
@@ -1558,31 +1558,31 @@ class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-30
 
     <!-- Radial Orbital Timeline Container -->
     <div id="radial-timeline-container"
-        class="relative w-full h-[800px] flex items-center justify-center cursor-pointer select-none overflow-visible">
+        class="relative w-full h-[500px] md:h-[800px] flex items-center justify-center cursor-pointer select-none overflow-visible">
         <!-- Orbit Container (Rotates) -->
         <div id="orbit-container" class="absolute w-full h-full flex items-center justify-center">
 
             <!-- Center Core -->
             <div
-                class="absolute z-10 w-24 h-24 rounded-full bg-gradient-to-br from-secondary to-orange-600 shadow-2xl flex items-center justify-center animate-pulse">
-                <div class="absolute w-32 h-32 rounded-full border border-secondary/30 animate-ping opacity-50">
+                class="absolute z-10 w-16 h-16 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-secondary to-orange-600 shadow-2xl flex items-center justify-center animate-pulse">
+                <div class="absolute w-24 h-24 md:w-32 md:h-32 rounded-full border border-secondary/30 animate-ping opacity-50">
                 </div>
-                <div class="absolute w-48 h-48 rounded-full border border-secondary/10 animate-ping opacity-30"
+                <div class="absolute w-32 h-32 md:w-48 md:h-48 rounded-full border border-secondary/10 animate-ping opacity-30"
                     style="animation-delay: 0.5s;"></div>
                 <div
-                    class="w-10 h-10 rounded-full bg-white/90 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner">
+                    class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/90 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner">
                 </div>
             </div>
 
             <!-- Orbit Rings (Visual) -->
             <div
-                class="absolute w-[300px] h-[300px] rounded-full border border-slate-200 pointer-events-none opacity-60">
+                class="absolute w-[160px] h-[160px] md:w-[300px] md:h-[300px] rounded-full border border-slate-200 pointer-events-none opacity-60">
             </div>
             <div
-                class="absolute w-[500px] h-[500px] rounded-full border border-slate-200 pointer-events-none opacity-40">
+                class="absolute w-[240px] h-[240px] md:w-[500px] md:h-[500px] rounded-full border border-slate-200 pointer-events-none opacity-40">
             </div>
             <div
-                class="absolute w-[700px] h-[700px] rounded-full border border-slate-100 pointer-events-none opacity-30">
+                class="absolute w-[320px] h-[320px] md:w-[700px] md:h-[700px] rounded-full border border-slate-100 pointer-events-none opacity-30">
             </div>
 
             <!-- Nodes will be injected here by JS -->
@@ -1630,8 +1630,17 @@ class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-30
             let rotationAngle = 0;
             let autoRotate = true;
             let activeNodeId = null;
-            const radius = 250;
+            let radius = window.innerWidth < 768 ? 120 : 250;
             const total = timelineData.length;
+
+            // Update radius on resize for responsiveness
+            window.addEventListener('resize', () => {
+                const newRadius = window.innerWidth < 768 ? 120 : 250;
+                if (radius !== newRadius) {
+                    radius = newRadius;
+                    updatePositions();
+                }
+            });
 
             function createNodes() {
                 timelineData.forEach((item, index) => {
@@ -1646,18 +1655,19 @@ class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-30
                     // Inner Content
                     nodeEl.innerHTML = `
                                     <div class="node-pulse absolute inset-0 rounded-full bg-secondary/10 opacity-0 transition-opacity duration-300 scale-150"></div>
-                                    <div class="node-core relative w-12 h-12 rounded-full bg-white border-2 border-slate-200 shadow-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-secondary/20 z-20">
-                                        <span class="material-symbols-outlined text-slate-500 text-xl transition-colors group-hover:text-secondary">${item.icon}</span>
+                                    <div class="node-core relative w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border-2 border-slate-200 shadow-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-secondary/20 z-20">
+                                        <span class="material-symbols-outlined text-slate-500 text-lg md:text-xl transition-colors group-hover:text-secondary">${item.icon}</span>
                                     </div>
-                                    <div class="node-label absolute top-14 text-sm font-bold text-slate-600 bg-white/80 px-2 py-1 rounded backdrop-blur-sm shadow-sm opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-10">
+                                    <div class="node-label absolute top-12 md:top-14 text-[11px] md:text-sm font-extrabold tracking-wide text-slate-700 bg-white/95 px-3 md:px-4 py-1.5 rounded-full backdrop-blur-md shadow-md opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-10 border border-slate-200/60 ring-1 ring-slate-900/5">
                                         ${item.title}
                                     </div>
                                     
-                                    <!-- EXPANDED CARD (Simplifed) -->
-                                    <div class="node-card absolute top-20 left-1/2 -translate-x-1/2 w-72 bg-white/95 bg-opacity-95 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner border-white/10 shadow-inner border border-slate-200 shadow-2xl rounded-xl p-5 opacity-0 pointer-events-none scale-90 transition-all duration-300 origin-top z-50 text-center">
-                                        <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-t border-l border-slate-200 rotate-45 transform"></div>
-                                        <h4 class="font-bold text-slate-900 text-lg mb-2">${item.title}</h4>
-                                        <p class="text-sm text-slate-500 leading-relaxed">${item.content}</p>
+                                    <!-- EXPANDED CARD -->
+                                    <div class="node-card absolute top-14 md:top-20 left-1/2 -translate-x-1/2 w-[260px] md:w-[320px] bg-white/95 backdrop-blur-xl border border-slate-200/60 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] rounded-2xl p-5 md:p-7 opacity-0 pointer-events-none scale-90 transition-all duration-400 ease-out origin-top z-50 text-center ring-1 ring-slate-900/5">
+                                        <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-t border-l border-slate-200/60 rotate-45 transform"></div>
+                                        <h4 class="font-black text-slate-900 text-[15px] md:text-xl mb-2 tracking-tight">${item.title}</h4>
+                                        <div class="h-[3px] w-8 md:w-12 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-3 md:mb-4 opacity-90 shadow-[0_0_10px_rgba(249,115,22,0.3)]"></div>
+                                        <p class="text-[13px] md:text-[15px] text-slate-600 leading-[1.7] font-medium">${item.content}</p>
                                     </div>
                                 `;
 
