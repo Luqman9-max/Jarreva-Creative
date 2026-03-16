@@ -746,6 +746,33 @@
                         </p>
                     </div>
 
+                    <style>
+                        @media (max-width: 767px) {
+                            .mobile-testimonial-card { 
+                                width: 240px !important; 
+                                padding: 16px !important; 
+                                border-radius: 16px !important;
+                            }
+                            .mobile-testimonial-card p {
+                                font-size: 13px !important;
+                                line-height: 1.5 !important;
+                            }
+                            .mobile-testimonial-card .material-symbols-outlined {
+                                font-size: 12px !important;
+                            }
+                            .mobile-testimonial-card .avatar {
+                                width: 32px !important;
+                                height: 32px !important;
+                                font-size: 12px !important;
+                            }
+                            .mobile-testimonial-card h4 {
+                                font-size: 13px !important;
+                            }
+                            .mobile-testimonial-card .subtitle {
+                                font-size: 11px !important;
+                            }
+                        }
+                    </style>
                     <!-- Infinite Scroll Marquee -->
                     <div class="relative w-full overflow-hidden"
                         style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
@@ -754,7 +781,7 @@
                             class="flex animate-scroll-marquee w-max gap-4 md:gap-8 py-6 md:py-10 px-4 hover:[animation-play-state:paused]">
                             <!-- Testimonial 1 -->
                             <div
-                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="mobile-testimonial-card w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -775,12 +802,12 @@
                                 </div>
                                 <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
+                                        class="avatar w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         MC
                                     </div>
                                     <div>
                                         <h4 class="text-slate-900 font-bold">Marcus Chen</h4>
-                                        <p class="text-slate-400 text-sm">Student, Singapore</p>
+                                        <p class="subtitle text-slate-400 text-sm">Student, Singapore</p>
                                     </div>
                                     <span
                                         class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
@@ -789,7 +816,7 @@
 
                             <!-- Testimonial 2 -->
                             <div
-                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="mobile-testimonial-card w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -810,12 +837,12 @@
                                 </div>
                                 <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
+                                        class="avatar w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         AR
                                     </div>
                                     <div>
                                         <h4 class="text-slate-900 font-bold">Aisha Rahman</h4>
-                                        <p class="text-slate-400 text-sm">Founder, Malaysia</p>
+                                        <p class="subtitle text-slate-400 text-sm">Founder, Malaysia</p>
                                     </div>
                                     <span
                                         class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
@@ -824,7 +851,7 @@
 
                             <!-- Testimonial 3 -->
                             <div
-                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="mobile-testimonial-card w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -845,12 +872,12 @@
                                 </div>
                                 <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
+                                        class="avatar w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         JM
                                     </div>
                                     <div>
                                         <h4 class="text-slate-900 font-bold">Jake Morrison</h4>
-                                        <p class="text-slate-400 text-sm">Dev Lead, Australia</p>
+                                        <p class="subtitle text-slate-400 text-sm">Dev Lead, Australia</p>
                                     </div>
                                     <span
                                         class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
@@ -859,7 +886,7 @@
 
                             <!-- Testimonial 4 -->
                             <div
-                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="mobile-testimonial-card w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -880,12 +907,12 @@
                                 </div>
                                 <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
+                                        class="avatar w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         PS
                                     </div>
                                     <div>
                                         <h4 class="text-slate-900 font-bold">Priya Sharma</h4>
-                                        <p class="text-slate-400 text-sm">Content Creator, India</p>
+                                        <p class="subtitle text-slate-400 text-sm">Content Creator, India</p>
                                     </div>
                                     <span
                                         class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
@@ -894,7 +921,7 @@
 
                             <!-- Testimonial 5 -->
                             <div
-                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="mobile-testimonial-card w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -915,12 +942,12 @@
                                 </div>
                                 <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
+                                        class="avatar w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         DP
                                     </div>
                                     <div>
                                         <h4 class="text-slate-900 font-bold">Daniel Park</h4>
-                                        <p class="text-slate-400 text-sm">Entrepreneur, Korea</p>
+                                        <p class="subtitle text-slate-400 text-sm">Entrepreneur, Korea</p>
                                     </div>
                                     <span
                                         class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
@@ -929,7 +956,7 @@
 
                             <!-- Testimonial 6 (Duplicate for Loop) -->
                             <div
-                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="mobile-testimonial-card w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -950,12 +977,12 @@
                                 </div>
                                 <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
+                                        class="avatar w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         SM
                                     </div>
                                     <div>
                                         <h4 class="text-slate-900 font-bold">Sofia Martinez</h4>
-                                        <p class="text-slate-400 text-sm">Engineer, Spain</p>
+                                        <p class="subtitle text-slate-400 text-sm">Engineer, Spain</p>
                                     </div>
                                     <span
                                         class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
@@ -964,7 +991,7 @@
 
                             <!-- Testimonial 7 (Duplicate for Loop) -->
                             <div
-                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="mobile-testimonial-card w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -985,12 +1012,12 @@
                                 </div>
                                 <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
+                                        class="avatar w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         RT
                                     </div>
                                     <div>
                                         <h4 class="text-slate-900 font-bold">Ryan Thompson</h4>
-                                        <p class="text-slate-400 text-sm">Coach, UK</p>
+                                        <p class="subtitle text-slate-400 text-sm">Coach, UK</p>
                                     </div>
                                     <span
                                         class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
@@ -1113,31 +1140,41 @@
                             </defs>
                         </svg>
                     </div>
+                    <style>
+                        @media (max-width: 767px) {
+                            .mobile-builder-item { gap: 12px !important; margin-bottom: 8px !important; }
+                            .mobile-builder-item h3 { font-size: 15px !important; line-height: 1.3 !important; }
+                            .mobile-builder-check { width: 26px !important; height: 26px !important; }
+                            .mobile-builder-check span { font-size: 15px !important; }
+                            .mobile-builder-book { transform: scale(0.65) !important; margin-top: -30px !important; margin-bottom: -30px !important; }
+                            .mobile-builder-bottom-wrapper { margin-top: 56px !important; }
+                        }
+                    </style>
                     <div
-                        class="relative mt-8 lg:mt-0 flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24">
+                        class="mobile-builder-bottom-wrapper relative mt-8 lg:mt-0 flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24">
                         <div class="flex flex-col gap-10 lg:items-end lg:text-right w-full lg:w-1/3">
-                            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-4">
+                            <div class="mobile-builder-item flex flex-col lg:flex-row items-center lg:items-start gap-4">
                                 <div class="order-2 lg:order-1 flex flex-col gap-1">
                                     <h3 class="text-lg font-bold text-gray-800">
                                         Hyper-Personalized<br />Protocols</h3>
                                 </div>
                                 <div
-                                    class="order-1 lg:order-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
+                                    class="mobile-builder-check order-1 lg:order-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
                                     <span class="material-symbols-outlined text-[16px] font-bold">check</span>
                                 </div>
                             </div>
-                            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-4">
+                            <div class="mobile-builder-item flex flex-col lg:flex-row items-center lg:items-start gap-4">
                                 <div class="order-2 lg:order-1 flex flex-col gap-1">
                                     <h3 class="text-lg font-bold text-gray-800">Plug & Play<br />System
                                         Tools</h3>
                                 </div>
                                 <div
-                                    class="order-1 lg:order-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
+                                    class="mobile-builder-check order-1 lg:order-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
                                     <span class="material-symbols-outlined text-[16px] font-bold">check</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="relative z-10 mx-auto book-pulse">
+                        <div class="mobile-builder-book relative z-10 mx-auto book-pulse">
                             <div
                                 class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[280px] h-10 bg-gray-800 rounded-sm transform rotate(6deg) shadow-xl z-0 border-l border-b border-gray-600">
                             </div>
@@ -1184,9 +1221,9 @@
                             </div>
                         </div>
                         <div class="flex flex-col gap-10 lg:items-start lg:text-left w-full lg:w-1/3">
-                            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-4">
+                            <div class="mobile-builder-item flex flex-col lg:flex-row items-center lg:items-start gap-4">
                                 <div
-                                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
+                                    class="mobile-builder-check w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
                                     <span class="material-symbols-outlined text-[16px] font-bold">check</span>
                                 </div>
                                 <div class="flex flex-col gap-1">
@@ -1194,9 +1231,9 @@
                                         Experts</h3>
                                 </div>
                             </div>
-                            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-4">
+                            <div class="mobile-builder-item flex flex-col lg:flex-row items-center lg:items-start gap-4">
                                 <div
-                                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
+                                    class="mobile-builder-check w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
                                     <span class="material-symbols-outlined text-[16px] font-bold">check</span>
                                 </div>
                                 <div class="flex flex-col gap-1">
