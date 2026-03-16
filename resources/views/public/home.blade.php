@@ -1534,6 +1534,25 @@
 <section
     class="reveal-on-scroll relative z-0 w-full overflow-hidden bg-white py-16 min-h-[1000px] flex flex-col items-center justify-center scroll-mt-28"
     id="about">
+    <style>
+        @media (max-width: 767px) {
+            #about { min-height: 700px !important; }
+            #radial-timeline-container { height: 500px !important; }
+            .orbit-center-core { width: 80px !important; height: 80px !important; }
+            .orbit-center-pulse-1 { width: 112px !important; height: 112px !important; }
+            .orbit-center-pulse-2 { width: 160px !important; height: 160px !important; }
+            .orbit-center-inner { width: 32px !important; height: 32px !important; }
+            .orbit-ring-1 { width: 180px !important; height: 180px !important; }
+            .orbit-ring-2 { width: 280px !important; height: 280px !important; }
+            .orbit-ring-3 { width: 380px !important; height: 380px !important; }
+            .node-core { width: 40px !important; height: 40px !important; }
+            .node-core span { font-size: 18px !important; }
+            .node-label { top: 48px !important; font-size: 12px !important; }
+            .node-card { width: 256px !important; top: 64px !important; padding: 16px !important; }
+            .node-card h4 { font-size: 16px !important; margin-bottom: 4px !important; }
+            .node-card p { font-size: 12px !important; }
+        }
+    </style>
     <!-- Premium Light Texture Background -->
     <div class="absolute inset-0 pointer-events-none">
         <div
@@ -1566,25 +1585,25 @@
 
             <!-- Center Core -->
             <div
-                class="absolute z-10 w-24 h-24 rounded-full bg-gradient-to-br from-secondary to-orange-600 shadow-2xl flex items-center justify-center animate-pulse">
-                <div class="absolute w-32 h-32 rounded-full border border-secondary/30 animate-ping opacity-50">
+                class="orbit-center-core absolute z-10 w-24 h-24 rounded-full bg-gradient-to-br from-secondary to-orange-600 shadow-2xl flex items-center justify-center animate-pulse">
+                <div class="orbit-center-pulse-1 absolute w-32 h-32 rounded-full border border-secondary/30 animate-ping opacity-50">
                 </div>
-                <div class="absolute w-48 h-48 rounded-full border border-secondary/10 animate-ping opacity-30"
+                <div class="orbit-center-pulse-2 absolute w-48 h-48 rounded-full border border-secondary/10 animate-ping opacity-30"
                     style="animation-delay: 0.5s;"></div>
                 <div
-                    class="w-10 h-10 rounded-full bg-white/90 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner">
+                    class="orbit-center-inner w-10 h-10 rounded-full bg-white/90 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner">
                 </div>
             </div>
 
             <!-- Orbit Rings (Visual) -->
             <div
-                class="absolute w-[300px] h-[300px] rounded-full border border-slate-200 pointer-events-none opacity-60">
+                class="orbit-ring-1 absolute w-[300px] h-[300px] rounded-full border border-slate-200 pointer-events-none opacity-60">
             </div>
             <div
-                class="absolute w-[500px] h-[500px] rounded-full border border-slate-200 pointer-events-none opacity-40">
+                class="orbit-ring-2 absolute w-[500px] h-[500px] rounded-full border border-slate-200 pointer-events-none opacity-40">
             </div>
             <div
-                class="absolute w-[700px] h-[700px] rounded-full border border-slate-100 pointer-events-none opacity-30">
+                class="orbit-ring-3 absolute w-[700px] h-[700px] rounded-full border border-slate-100 pointer-events-none opacity-30">
             </div>
 
             <!-- Nodes will be injected here by JS -->
@@ -1632,8 +1651,12 @@
             let rotationAngle = 0;
             let autoRotate = true;
             let activeNodeId = null;
-            const radius = 250;
+            let radius = window.innerWidth < 768 ? 140 : 250;
             const total = timelineData.length;
+
+            window.addEventListener('resize', () => {
+                radius = window.innerWidth < 768 ? 140 : 250;
+            });
 
             function createNodes() {
                 timelineData.forEach((item, index) => {
