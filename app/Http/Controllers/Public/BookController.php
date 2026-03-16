@@ -26,6 +26,14 @@ class BookController extends Controller
     {
         // Find book by slug
         $book = Book::where('slug', $slug)->firstOrFail();
-        return view('public.book-detail', compact('book'));
+
+        // Fetch related books (other published books, excluding the current one)
+        $relatedBooks = Book::where('id', '!=', $book->id)
+            ->where('is_published', true)
+            ->latest()
+            ->take(4)
+            ->get();
+
+        return view('public.book-detail', compact('book', 'relatedBooks'));
     }
 }
