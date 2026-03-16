@@ -151,17 +151,7 @@
         animation: ripple 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
     }
 
-    .reveal-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        will-change: opacity, transform;
-    }
 
-    .reveal-on-scroll.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
 
     @keyframes node-pulse-blue {
         0% {
@@ -373,29 +363,6 @@
     }
 
     /* NEW ANIMATIONS FROM ABOUT.HTML */
-    .reveal-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-        will-change: opacity, transform;
-    }
-
-    .reveal-on-scroll.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .delay-100 {
-        transition-delay: 100ms;
-    }
-
-    .delay-200 {
-        transition-delay: 200ms;
-    }
-
-    .delay-300 {
-        transition-delay: 300ms;
-    }
 
     .animate-gradient {
         background-size: 200% auto;
@@ -439,7 +406,7 @@
 
 @section('content')
 <section
-    class="reveal-on-scroll relative z-0 flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-24 pb-24 lg:pt-32 bg-white dark:bg-background-dark">
+    class="reveal-element reveal-scale relative z-0 flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-24 pb-24 lg:pt-32 bg-white dark:bg-background-dark">
 
     <!-- 3D Hero Background -->
     @include('public.components.hero-3d-bg')
@@ -513,11 +480,11 @@
                 Stuck Like This?</span>
         </h1>
         <p
-            class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8 lg:mb-10 font-medium reveal-on-scroll delay-100">
+            class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8 lg:mb-10 font-medium reveal-element reveal-up delay-100">
             You wake up. Grab your phone. Scroll. Just for a second, then one hour disappears. You know it's
             wrong, but you repeat it anyway.
         </p>
-        <div class="flex flex-col sm:flex-row items-center gap-3 lg:gap-4 w-full justify-center reveal-on-scroll delay-200">
+        <div class="flex flex-col sm:flex-row items-center gap-3 lg:gap-4 w-full justify-center reveal-element reveal-up delay-200">
             <a href="{{ route('catalog.index') }}"
                 class="group relative flex h-12 lg:h-14 items-center justify-center gap-2 rounded-full bg-primary px-6 lg:px-8 text-sm lg:text-base font-bold text-white transition-all hover:bg-orange-600 hover:shadow-lg w-[85%] max-w-[280px] sm:max-w-none sm:w-auto shadow-orange-200/50">
                 Explore Library
@@ -528,7 +495,7 @@
     </div>
 </section>
 <section
-    class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 py-24 rounded-[40px] shadow-2xl border border-slate-800 hover:border-slate-700 transition-colors duration-700 group">
+    class="reveal-element reveal-up relative z-10 w-full overflow-hidden bg-slate-950 py-24 rounded-[40px] shadow-2xl border border-slate-800 hover:border-slate-700 transition-colors duration-700 group">
     <!-- Clean Minimal Background -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
         <div
@@ -729,7 +696,7 @@
     </div>
 </section>
 <section
-    class="reveal-on-scroll relative z-0 w-full overflow-hidden bg-white dark:bg-background-dark pb-24 pt-32 -mt-12">
+    class="reveal-element reveal-up relative z-0 w-full overflow-hidden bg-white dark:bg-background-dark pb-24 pt-32 -mt-12">
     <div class="flex justify-center">
         <div class="w-full max-w-7xl px-6 md:px-12">
             <div class="flex flex-col items-center">
@@ -1263,7 +1230,7 @@
 
 <!-- NEW: Why Solutions Fail Section -->
 <section
-    class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 pt-24 pb-48 rounded-[40px] shadow-2xl border border-slate-800 hover:border-slate-700 transition-colors duration-700 group mt-8">
+    class="reveal-element reveal-up relative z-10 w-full overflow-hidden bg-slate-950 pt-24 pb-48 rounded-[40px] shadow-2xl border border-slate-800 hover:border-slate-700 transition-colors duration-700 group mt-8">
     <!-- Clean Minimal Background -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
         <div
@@ -1409,7 +1376,7 @@
         </div>
     </div>
 </section>
-<section class="reveal-on-scroll w-full max-w-7xl mx-auto px-6 -mt-24 mb-20 relative z-20">
+<section class="reveal-element reveal-up w-full max-w-7xl mx-auto px-6 -mt-24 mb-20 relative z-20">
     <div class="bg-[#F7F9FB] rounded-[60px] p-12 lg:p-16 shadow-2xl relative overflow-hidden">
         <div class="text-center mb-16 relative z-10">
             <div
@@ -1601,7 +1568,7 @@
 </section>
 <!-- NEW: Radial Orbital Timeline Section -->
 <section
-    class="reveal-on-scroll relative z-0 w-full overflow-hidden bg-white py-16 min-h-[1000px] flex flex-col items-center justify-center scroll-mt-28"
+    class="reveal-element reveal-up relative z-0 w-full overflow-hidden bg-white py-16 min-h-[1000px] flex flex-col items-center justify-center scroll-mt-28"
     id="about">
     <style>
         @media (max-width: 767px) {
@@ -1888,7 +1855,7 @@
     </script>
 </section>
 <section
-    class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 py-24 rounded-[40px] shadow-2xl scroll-mt-28 border border-slate-800 hover:border-slate-700 transition-colors duration-700 group"
+    class="reveal-element reveal-up relative z-10 w-full overflow-hidden bg-slate-950 py-24 rounded-[40px] shadow-2xl scroll-mt-28 border border-slate-800 hover:border-slate-700 transition-colors duration-700 group"
     id="portfolio">
     <!-- Clean Minimal Background -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -1992,7 +1959,7 @@
 </section>
 <!-- NEW: Transformation/Benefits Section -->
 <section
-    class="reveal-on-scroll relative z-0 w-full overflow-hidden bg-white dark:bg-background-dark py-24 min-h-[900px] flex flex-col items-center justify-center scroll-mt-28">
+    class="reveal-element reveal-up relative z-0 w-full overflow-hidden bg-white dark:bg-background-dark py-24 min-h-[900px] flex flex-col items-center justify-center scroll-mt-28">
     <!-- Qualifiers Content (merged) -->
     <div class="max-w-5xl mx-auto px-6 md:px-12">
         <div class="text-center mb-16">
@@ -2089,7 +2056,7 @@
 </section>
 <!-- NEW: Final CTA Section -->
 <section
-    class="mobile-turning-section reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 py-20 rounded-[40px] mt-16 border border-slate-800 hover:border-slate-700 transition-colors duration-700 shadow-2xl group">
+    class="mobile-turning-section reveal-element reveal-up relative z-10 w-full overflow-hidden bg-slate-950 py-20 rounded-[40px] mt-16 border border-slate-800 hover:border-slate-700 transition-colors duration-700 shadow-2xl group">
 
     <style>
         @media (max-width: 767px) {
@@ -2118,7 +2085,7 @@
     <div class="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
 
         <!-- Minimal Badge -->
-        <div class="inline-flex flex-col items-center mb-8 reveal-on-scroll">
+        <div class="inline-flex flex-col items-center mb-8 reveal-element reveal-up">
             <span class="w-px h-6 bg-gradient-to-b from-transparent to-primary/30 mb-4 block"></span>
             <div
                 class="inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner">
@@ -2129,13 +2096,13 @@
 
         <!-- Clean Headline -->
         <h2
-            class="mobile-turning-title text-3xl md:text-5xl font-black text-white mb-8 tracking-tight leading-[1.1] reveal-on-scroll delay-100">
+            class="mobile-turning-title text-3xl md:text-5xl font-black text-white mb-8 tracking-tight leading-[1.1] reveal-element reveal-up delay-100">
             The Choice Is<br>
             <span class="text-slate-400">Absolutely Simple.</span>
         </h2>
 
         <!-- Clean Choices (Horizontal alignment for Side-by-Side look) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 max-w-4xl mx-auto reveal-on-scroll delay-200 text-left">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 max-w-4xl mx-auto reveal-element reveal-up delay-200 text-left">
 
             <!-- Choice A: Subtle Box -->
             <div
@@ -2164,7 +2131,7 @@
         </div>
 
         <!-- Focus CTA Button -->
-        <div class="relative inline-block group reveal-on-scroll delay-300">
+        <div class="relative inline-block group reveal-element reveal-up delay-300">
             <!-- Subtle hover ring -->
             <div
                 class="absolute -inset-1 bg-gradient-to-r from-primary to-orange-500 rounded-full blur opacity-30 group-hover:opacity-70 transition duration-500">
@@ -2191,24 +2158,6 @@
 <script>
 
     document.addEventListener('DOMContentLoaded', () => {
-        // 1. Reveal Animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal-on-scroll').forEach(section => {
-            observer.observe(section);
-        });
 
         // 2. Spotlight Effect (Orange for Landing Page)
         document.querySelectorAll('.spotlight-card').forEach(card => {

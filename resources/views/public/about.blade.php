@@ -8,32 +8,6 @@
         scroll-behavior: smooth;
     }
 
-    /* Unified Reveal Animation */
-    .reveal-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-        will-change: opacity, transform;
-    }
-
-    .reveal-on-scroll.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Stagger Delays */
-    .delay-100 {
-        transition-delay: 100ms;
-    }
-
-    .delay-200 {
-        transition-delay: 200ms;
-    }
-
-    .delay-300 {
-        transition-delay: 300ms;
-    }
-
     /* Text Gradient Animation */
     .animate-gradient {
         background-size: 200% auto;
@@ -96,7 +70,7 @@
 @section('content')
 <!-- SECTION 1: HERO - THE MANIFESTO -->
 <section
-    class="reveal-on-scroll relative min-h-[80vh] flex items-center justify-center px-6 overflow-hidden bg-white dark:bg-background-dark">
+    class="reveal-element reveal-up relative min-h-[80vh] flex items-center justify-center px-6 overflow-hidden bg-white dark:bg-background-dark">
 
     <!-- 3D Hero Background -->
     @include('public.components.hero-3d-bg')
@@ -112,11 +86,11 @@
 
     <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 flex flex-col items-center text-center">
         <span
-            class="inline-block px-3 py-1.5 lg:px-4 lg:py-2 rounded-full border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm shadow-inner shadow-sm text-[11px] sm:text-xs lg:text-sm font-medium text-slate-600 dark:text-slate-300 font-mono mb-8 reveal-on-scroll delay-100">
+            class="inline-block px-3 py-1.5 lg:px-4 lg:py-2 rounded-full border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm shadow-inner shadow-sm text-[11px] sm:text-xs lg:text-sm font-medium text-slate-600 dark:text-slate-300 font-mono mb-8 reveal-element reveal-up delay-100">
             Est. 2025
         </span>
         <h1
-            class="mb-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] dark:text-white drop-shadow-sm max-w-5xl mx-auto reveal-on-scroll delay-200">
+            class="mb-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] dark:text-white drop-shadow-sm max-w-5xl mx-auto reveal-element reveal-up delay-200">
             <span class="whitespace-nowrap tracking-tighter sm:tracking-tight">We don't just design.</span><br>
             We build <span
                 class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-orange-500 animate-gradient">Systems
@@ -124,7 +98,7 @@
                 the Mind.</span>
         </h1>
         <p
-            class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mx-auto leading-relaxed mb-8 lg:mb-10 font-medium reveal-on-scroll delay-300">
+            class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mx-auto leading-relaxed mb-8 lg:mb-10 font-medium reveal-element reveal-up delay-300">
             Jarreva Creative is an intellectual design studio dedicated to turning chaos into clarity
             through structure, content, and digital craftsmanship.
         </p>
@@ -139,7 +113,7 @@
     <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col gap-12 md:gap-32">
 
         <!-- ROW 1: DISCOVERY (Text Left, Visual Right) -->
-        <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-32 reveal-on-scroll">
+        <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-32 reveal-element reveal-up">
             <div class="lg:w-1/2">
                 <span class="text-secondary font-mono text-xs tracking-widest mb-4 block">PHASE_01 //
                     DISCOVERY</span>
@@ -171,7 +145,7 @@
         </div>
 
         <!-- ROW 2: ENGINEERING (Visual Left, Text Right) -->
-        <div class="flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-32 reveal-on-scroll">
+        <div class="flex flex-col lg:flex-row-reverse items-center gap-16 lg:gap-32 reveal-element reveal-up">
             <div class="lg:w-1/2">
                 <span class="text-primary font-mono text-xs tracking-widest mb-4 block">PHASE_02 //
                     ENGINEERING</span>
@@ -245,7 +219,7 @@
         </div>
 
         <!-- ROW 3: EXECUTION (Text Left, Visual Right) -->
-        <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-32 reveal-on-scroll">
+        <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-32 reveal-element reveal-up">
             <div class="lg:w-1/2">
                 <span class="text-slate-400 font-mono text-xs tracking-widest mb-4 block">PHASE_03 //
                     EXECUTION</span>
@@ -302,7 +276,7 @@
 </section>
 
 <!-- SECTION 3: CORE PRINCIPLES - BENTO GRID v2 -->
-<section id="principles" class="reveal-on-scroll py-24 bg-white dark:bg-background-dark mx-4">
+<section id="principles" class="reveal-element reveal-up py-24 bg-white dark:bg-background-dark mx-4">
     <div class="max-w-7xl mx-auto px-6 md:px-12 text-center mb-10 md:mb-16">
         <span
             class="text-secondary font-bold tracking-widest uppercase text-[10px] sm:text-xs border border-secondary/20 bg-secondary/10 px-3 py-1 rounded-full mb-4 inline-block">The
@@ -447,7 +421,7 @@
     </div>
 
     <div class="max-w-4xl mx-auto px-6 relative z-10">
-        <div class="mobile-methodology-header text-center mb-16 md:mb-20 reveal-on-scroll">
+        <div class="mobile-methodology-header text-center mb-16 md:mb-20 reveal-element reveal-up">
             <h2 class="mobile-methodology-title font-display text-3xl md:text-5xl font-bold text-slate-900 dark:text-white">Thought Architecture
             </h2>
             <p class="mobile-methodology-subtitle text-slate-500 dark:text-gray-400 mt-2 text-base sm:text-lg md:text-xl font-medium">How we engineer your digital legacy.
@@ -455,7 +429,7 @@
         </div>
 
         <!-- Step 1 -->
-        <div class="mobile-methodology-step relative flex flex-col md:flex-row items-center gap-8 mb-24 group reveal-on-scroll">
+        <div class="mobile-methodology-step relative flex flex-col md:flex-row items-center gap-8 mb-24 group reveal-element reveal-up">
             <div class="md:w-1/2 text-center md:text-right">
                 <h3 class="mobile-methodology-step-title text-2xl font-bold text-slate-900 dark:text-white mb-2">01. Deconstruct</h3>
                 <p class="mobile-methodology-step-text text-slate-600 dark:text-gray-400 text-base sm:text-lg md:text-xl font-medium mt-2">Dismantling the problem to its core.
@@ -470,7 +444,7 @@
 
         <!-- Step 2 -->
         <div
-            class="mobile-methodology-step relative flex flex-col md:flex-row-reverse items-center gap-8 mb-24 group reveal-on-scroll delay-100">
+            class="mobile-methodology-step relative flex flex-col md:flex-row-reverse items-center gap-8 mb-24 group reveal-element reveal-up delay-100">
             <div class="md:w-1/2 text-center md:text-left">
                 <h3 class="mobile-methodology-step-title text-2xl font-bold text-slate-900 dark:text-white mb-2">02. Architecture</h3>
                 <p class="mobile-methodology-step-text text-slate-600 dark:text-gray-400 text-base sm:text-lg md:text-xl font-medium mt-2">Structuring the cognitive framework. Grids,
@@ -484,7 +458,7 @@
         </div>
 
         <!-- Step 3 -->
-        <div class="mobile-methodology-step relative flex flex-col md:flex-row items-center gap-8 group reveal-on-scroll delay-200">
+        <div class="mobile-methodology-step relative flex flex-col md:flex-row items-center gap-8 group reveal-element reveal-up delay-200">
             <div class="md:w-1/2 text-center md:text-right">
                 <h3 class="mobile-methodology-step-title text-2xl font-bold text-slate-900 dark:text-white mb-2">03. Materialize</h3>
                 <p class="mobile-methodology-step-text text-slate-600 dark:text-gray-400 text-base sm:text-lg md:text-xl font-medium mt-2">Visual execution with the highest aesthetic
@@ -500,7 +474,7 @@
 </section>
 
 <!-- SECTION 5: THE TEAM - COLLECTIVE INTELLIGENCE -->
-<section class="reveal-on-scroll py-24 bg-white dark:bg-background-dark relative overflow-hidden">
+<section class="reveal-element reveal-up py-24 bg-white dark:bg-background-dark relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div class="flex flex-col lg:flex-row items-center gap-16">
 
@@ -592,24 +566,6 @@
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // 1. Intersection Observer for Reveals
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal-on-scroll').forEach(section => {
-            observer.observe(section);
-        });
-
         // 2. Spotlight Effect for Cards
         document.querySelectorAll('.spotlight-card').forEach(card => {
             let isTicking = false;

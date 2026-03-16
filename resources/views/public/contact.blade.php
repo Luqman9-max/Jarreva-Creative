@@ -5,12 +5,6 @@
 @push('styles')
 <style>
     /* Content specifically for contact page */
-    .reveal-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        will-change: opacity, transform;
-    }
 
     @keyframes blink {
         50% {
@@ -94,10 +88,7 @@
         color: white;
     }
 
-    .reveal-on-scroll.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
+
 
     /* Stagger Delays */
     .delay-100 {
@@ -185,7 +176,7 @@
 @section('content')
 <div class="relative z-10">
     <!-- HERO SECTION -->
-    <section class="reveal-on-scroll relative min-h-[60vh] flex items-center justify-center px-6 overflow-hidden bg-white dark:bg-background-dark">
+    <section class="reveal-element reveal-up relative min-h-[60vh] flex items-center justify-center px-6 overflow-hidden bg-white dark:bg-background-dark">
         
         <!-- 3D Hero Background -->
         @include('public.components.hero-3d-bg')
@@ -198,13 +189,13 @@
         
 
         <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 mx-auto flex flex-col items-center text-center">
-            <span class="inline-block px-3 py-1.5 lg:px-4 lg:py-2 rounded-full border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm shadow-inner shadow-sm text-[11px] sm:text-xs lg:text-sm font-medium text-slate-600 dark:text-slate-300 font-mono mb-8 relative z-10 reveal-on-scroll delay-100">
+            <span class="inline-block px-3 py-1.5 lg:px-4 lg:py-2 rounded-full border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm shadow-inner shadow-sm text-[11px] sm:text-xs lg:text-sm font-medium text-slate-600 dark:text-slate-300 font-mono mb-8 relative z-10 reveal-element reveal-up delay-100">
                 Transmission Open
             </span>
-            <h1 class="mb-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] dark:text-white drop-shadow-sm max-w-5xl mx-auto reveal-on-scroll delay-200">
+            <h1 class="mb-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] dark:text-white drop-shadow-sm max-w-5xl mx-auto reveal-element reveal-up delay-200">
                 Start the <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-orange-500 animate-gradient">Dialogue.</span>
             </h1>
-            <p class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mx-auto leading-relaxed mb-8 lg:mb-10 font-medium relative z-10 reveal-on-scroll delay-300">
+            <p class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mx-auto leading-relaxed mb-8 lg:mb-10 font-medium relative z-10 reveal-element reveal-up delay-300">
                 We respond to meaningful inquiries within 24 hours.<br class="hidden md:block"> No bots,
                 just
                 builders.
@@ -223,7 +214,7 @@
             <div class="lg:col-span-5 flex flex-col">
 
                 <!-- Top Group: Signal & Frequencies -->
-                <div class="space-y-10 reveal-on-scroll delay-100">
+                <div class="space-y-10 reveal-element reveal-up delay-100">
                     <!-- Email Block -->
                     <div>
                         <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6 font-display">
@@ -305,7 +296,7 @@
                 </div>
 
                 <!-- Map Anchor Section -->
-                <div class="mt-auto reveal-on-scroll delay-200">
+                <div class="mt-auto reveal-element reveal-up delay-200">
                     <!-- Context/Boundaries -->
                     <div class="mb-6 pt-6 border-t border-slate-100 dark:border-slate-800">
                         <p class="text-xs text-slate-400 font-medium italic">
@@ -477,23 +468,7 @@
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, observerOptions);
-        const sections = document.querySelectorAll('.reveal-on-scroll');
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-        
+
         // INPUT ANIMATION LISTENERS
         document.querySelectorAll('.terminal-input').forEach(input => {
             input.addEventListener('focus', () => {
