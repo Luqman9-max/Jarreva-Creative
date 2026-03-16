@@ -1429,46 +1429,55 @@
             </p>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-center relative z-10">
+            <style>
+                @media (max-width: 767px) {
+                    .mobile-share-list > li { margin-top: 16px !important; }
+                    .mobile-share-item { gap: 12px !important; }
+                    .mobile-share-item .icon-wrapper { width: 20px !important; height: 20px !important; }
+                    .mobile-share-item .icon-wrapper span { font-size: 13px !important; }
+                    .mobile-share-item .list-text { font-size: 14px !important; }
+                }
+            </style>
             <div class="lg:text-right flex flex-col lg:items-end">
                 <span class="text-gray-400 font-bold tracking-widest text-xs uppercase mb-4">Who to share
                     with</span>
                 <h3 class="text-2xl font-black text-gray-900 mb-8">Perfect for</h3>
-                <ul class="space-y-6">
-                    <li class="flex items-center lg:flex-row-reverse gap-4 text-right">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                <ul class="mobile-share-list space-y-6">
+                    <li class="mobile-share-item flex items-center lg:flex-row-reverse gap-4 text-right">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Friends who feel stuck</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Friends who feel stuck</span>
                     </li>
-                    <li class="flex items-center lg:flex-row-reverse gap-4 text-right">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center lg:flex-row-reverse gap-4 text-right">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Startup teams needing focus</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Startup teams needing focus</span>
                     </li>
-                    <li class="flex items-center lg:flex-row-reverse gap-4 text-right">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center lg:flex-row-reverse gap-4 text-right">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">School counselors</span>
+                        <span class="list-text text-gray-600 font-medium text-base">School counselors</span>
                     </li>
-                    <li class="flex items-center lg:flex-row-reverse gap-4 text-right">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center lg:flex-row-reverse gap-4 text-right">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Youth group leaders</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Youth group leaders</span>
                     </li>
-                    <li class="flex items-center lg:flex-row-reverse gap-4 text-right">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center lg:flex-row-reverse gap-4 text-right">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Parents of teenagers</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Parents of teenagers</span>
                     </li>
-                    <li class="flex items-center lg:flex-row-reverse gap-4 text-right">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center lg:flex-row-reverse gap-4 text-right">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Community organizations</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Community organizations</span>
                     </li>
                 </ul>
             </div>
@@ -1545,44 +1554,44 @@
                 <span class="text-gray-400 font-bold tracking-widest text-xs uppercase mb-4">Beyond
                     Yourself</span>
                 <h3 class="text-2xl font-black text-gray-900 mb-8">Create big things</h3>
-                <ul class="space-y-6">
-                    <li class="flex items-center gap-4">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                <ul class="mobile-share-list space-y-6">
+                    <li class="mobile-share-item flex items-center gap-4">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Build accountability
+                        <span class="list-text text-gray-600 font-medium text-base">Build accountability
                             circles</span>
                     </li>
-                    <li class="flex items-center gap-4">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center gap-4">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Transform team dynamics</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Transform team dynamics</span>
                     </li>
-                    <li class="flex items-center gap-4">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center gap-4">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Mentor future leaders</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Mentor future leaders</span>
                     </li>
-                    <li class="flex items-center gap-4">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center gap-4">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Teach system-based
+                        <span class="list-text text-gray-600 font-medium text-base">Teach system-based
                             thinking</span>
                     </li>
-                    <li class="flex items-center gap-4">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center gap-4">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Replace hype with habits</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Replace hype with habits</span>
                     </li>
-                    <li class="flex items-center gap-4">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center gap-4">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Build a culture of
+                        <span class="list-text text-gray-600 font-medium text-base">Build a culture of
                             execution</span>
                     </li>
                 </ul>
