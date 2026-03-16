@@ -210,6 +210,9 @@
                 builders.
             </p>
         </div>
+
+        <!-- Seamless Bottom Gradient for transition -->
+        <div class="absolute bottom-0 left-0 w-full h-32 lg:h-48 bg-gradient-to-b from-transparent to-white dark:to-background-dark pointer-events-none z-20"></div>
     </section>
 
     <div class="max-w-7xl mx-auto px-6 pb-20">

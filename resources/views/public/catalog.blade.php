@@ -5,6 +5,9 @@
 @section('content')
 <!-- Header Section with Dynamic Background & Gradient Text -->
 <div class="relative py-20 lg:py-28 overflow-hidden bg-white dark:bg-background-dark">
+    <!-- Seamless Top Gradient for transition -->
+    <div class="absolute top-0 left-0 w-full h-32 lg:h-48 bg-gradient-to-t from-transparent to-white dark:to-background-dark pointer-events-none z-20"></div>
+
     <!-- Background decorative elements -->
     <div class="absolute inset-0 z-0 pointer-events-none">
         <div
@@ -37,6 +40,9 @@
             Creative's commitment to excellence.
         </p>
     </div>
+
+    <!-- Seamless Bottom Gradient for transition -->
+    <div class="absolute bottom-0 left-0 w-full h-32 lg:h-48 bg-gradient-to-b from-transparent to-white dark:to-background-dark pointer-events-none z-20"></div>
 </div>
 
 <!-- Catalog Grid Section -->

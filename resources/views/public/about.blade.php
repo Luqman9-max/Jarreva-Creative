@@ -129,6 +129,9 @@
             through structure, content, and digital craftsmanship.
         </p>
     </div>
+
+    <!-- Seamless Bottom Gradient for transition -->
+    <div class="absolute bottom-0 left-0 w-full h-32 lg:h-48 bg-gradient-to-b from-transparent to-white dark:to-background-dark pointer-events-none z-20"></div>
 </section>
 
 <!-- SECTION 2: ORIGIN STORY - INTERACTIVE EVOLUTION -->
