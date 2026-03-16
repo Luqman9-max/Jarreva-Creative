@@ -607,13 +607,25 @@
         </div>
     </div>
     <!-- Carousel Container -->
-    <div class="relative w-full h-[500px] flex items-center justify-center overflow-visible">
+    <style>
+        @media (max-width: 767px) {
+            .mobile-books-carousel-wrapper {
+                height: 380px !important;
+                margin-top: -20px !important;
+                margin-bottom: -20px !important;
+            }
+            .mobile-books-carousel {
+                transform: scale(0.60) !important;
+            }
+        }
+    </style>
+    <div class="mobile-books-carousel-wrapper relative w-full h-[500px] flex items-center justify-center overflow-visible">
         <!-- Glow behind carousel -->
         <div
             class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[100px] pointer-events-none">
         </div>
 
-        <div class="carousel-scene relative flex h-[350px] w-full items-center justify-center overflow-visible">
+        <div class="mobile-books-carousel carousel-scene relative flex h-[350px] w-full items-center justify-center overflow-visible">
             <div class="carousel-cylinder relative h-[280px] w-[180px]">
                 <!-- Reduced number of books for performance, high quality only -->
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
