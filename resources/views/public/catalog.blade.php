@@ -80,8 +80,8 @@
             <div
                 class="mobile-catalog-img relative h-64 overflow-hidden border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
                 {{-- Assuming book has an image property in future, fallback to placeholder --}}
-                @if(isset($book->image))
-                <img src="{{ asset('storage/' . $book->image) }}" alt="{{ $book->title }}"
+                @if($book->cover_image)
+                <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 @else
                 <!-- Enhanced Placeholder -->
