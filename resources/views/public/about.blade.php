@@ -310,11 +310,24 @@
     </div>
 
     <div class="max-w-6xl mx-auto px-6 md:px-12">
-        <div class="grid grid-cols-1 md:grid-cols-6 gap-6 auto-rows-[340px]">
+        <style>
+            @media (max-width: 767px) {
+                .mobile-about-grid { grid-auto-rows: minmax(280px, auto) !important; gap: 16px !important; }
+                .mobile-about-card { padding: 24px !important; gap: 24px !important; }
+                .mobile-about-icon { width: 44px !important; height: 44px !important; }
+                .mobile-about-icon span { font-size: 24px !important; }
+                .mobile-about-title { font-size: 24px !important; margin-bottom: 8px !important; }
+                .mobile-about-text { font-size: 14px !important; line-height: 1.5 !important; }
+                .mobile-about-badge { font-size: 10px !important; padding: 2px 6px !important; }
+                .mobile-about-quote { font-size: 28px !important; }
+                .mobile-about-principle { font-size: 10px !important; margin-bottom: 8px !important; }
+            }
+        </style>
+        <div class="mobile-about-grid grid grid-cols-1 md:grid-cols-6 gap-6 auto-rows-[340px]">
 
             <!-- Card 1: Systems > Hacks (Large Span) -->
             <div
-                class="spotlight-card will-change-transform md:col-span-4 bg-white dark:bg-slate-800 rounded-3xl p-10 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:border-blue-500/50 transition-all duration-300 relative overflow-hidden group">
+                class="mobile-about-card spotlight-card will-change-transform md:col-span-4 bg-white dark:bg-slate-800 rounded-3xl p-10 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:border-blue-500/50 transition-all duration-300 relative overflow-hidden group">
                 <!-- Background Elements -->
                 <div
                     class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:20px_20px]">
@@ -326,17 +339,17 @@
                 <div class="relative z-10 h-full flex flex-col gap-12">
                     <div class="w-full flex justify-between items-start">
                         <div
-                            class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500 group-hover:scale-110 transition-transform duration-300">
+                            class="mobile-about-icon w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500 group-hover:scale-110 transition-transform duration-300">
                             <span class="material-symbols-outlined text-3xl">hub</span>
                         </div>
                         <span
-                            class="font-mono text-xs text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded">SYS_01</span>
+                            class="mobile-about-badge font-mono text-xs text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded">SYS_01</span>
                     </div>
 
                     <div>
-                        <h3 class="text-3xl font-bold mb-2 group-hover:text-blue-500 transition-colors">
+                        <h3 class="mobile-about-title text-3xl font-bold mb-2 group-hover:text-blue-500 transition-colors">
                             Systems &gt; Hacks</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-base sm:text-lg md:text-xl font-medium leading-relaxed max-w-md">
+                        <p class="mobile-about-text text-slate-500 dark:text-slate-400 text-base sm:text-lg md:text-xl font-medium leading-relaxed max-w-md">
                             Overnight success is a myth. We build robust, scalable architectures for your
                             mind and business that compound over time.
                         </p>
@@ -346,7 +359,7 @@
 
             <!-- Card 2: Clarity (Tall/Vertical) -->
             <div
-                class="spotlight-card will-change-transform md:col-span-2 bg-slate-900 text-white rounded-3xl p-10 border border-slate-700 shadow-lg relative overflow-hidden group">
+                class="mobile-about-card spotlight-card will-change-transform md:col-span-2 bg-slate-900 text-white rounded-3xl p-10 border border-slate-700 shadow-lg relative overflow-hidden group">
                 <!-- Animated Noise/Blur -->
                 <div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950 z-0"></div>
                 <div
@@ -359,18 +372,18 @@
                             class="absolute inset-0 bg-primary/20 blur-xl rounded-full scale-0 group-hover:scale-150 transition-transform duration-500">
                         </div>
                         <div
-                            class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300 relative z-10 mx-auto group-hover:rotate-12">
+                            class="mobile-about-icon w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300 relative z-10 mx-auto group-hover:rotate-12">
                             <span class="material-symbols-outlined text-3xl text-primary">filter_center_focus</span>
                         </div>
                     </div>
-                    <h3 class="text-3xl font-bold mb-2">Clarity is Power.</h3>
-                    <p class="text-slate-400 text-base sm:text-lg md:text-xl font-medium">Signal vs Noise. We cut through the clutter.</p>
+                    <h3 class="mobile-about-title text-3xl font-bold mb-2">Clarity is Power.</h3>
+                    <p class="mobile-about-text text-slate-400 text-base sm:text-lg md:text-xl font-medium">Signal vs Noise. We cut through the clutter.</p>
                 </div>
             </div>
 
             <!-- Card 3: Structure (Visual/Quote) - MOVED & RESIZED -->
             <div
-                class="spotlight-card will-change-transform md:col-span-2 bg-gradient-to-tr from-blue-500/10 to-slate-50 dark:to-slate-900 rounded-3xl p-10 border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden group flex items-center justify-center">
+                class="mobile-about-card spotlight-card will-change-transform md:col-span-2 bg-gradient-to-tr from-blue-500/10 to-slate-50 dark:to-slate-900 rounded-3xl p-10 border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden group flex items-center justify-center">
                 <!-- Decorative Lines -->
                 <div
                     class="absolute inset-0 border-[1px] border-blue-500/20 scale-90 rounded-2xl opacity-0 group-hover:opacity-100 group-hover:scale-95 transition-all duration-500">
@@ -378,8 +391,8 @@
 
                 <div class="text-center relative z-10">
                     <span
-                        class="block text-blue-500 font-mono text-xs mb-2 tracking-widest opacity-60">PRINCIPLE_04</span>
-                    <h3 class="text-3xl font-black text-slate-900 dark:text-white leading-tight">
+                        class="mobile-about-principle block text-blue-500 font-mono text-xs mb-2 tracking-widest opacity-60">PRINCIPLE_04</span>
+                    <h3 class="mobile-about-quote text-3xl font-black text-slate-900 dark:text-white leading-tight">
                         "Structure<br>Creates<br><span class="text-blue-500">Freedom.</span>"
                     </h3>
                 </div>
@@ -387,19 +400,19 @@
 
             <!-- Card 4: Premium Standard (Standard) - MOVED & RESIZED -->
             <div
-                class="spotlight-card will-change-transform md:col-span-4 bg-white dark:bg-slate-800 rounded-3xl p-10 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:border-secondary/50 transition-all duration-300 relative overflow-hidden group">
+                class="mobile-about-card spotlight-card will-change-transform md:col-span-4 bg-white dark:bg-slate-800 rounded-3xl p-10 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl hover:border-secondary/50 transition-all duration-300 relative overflow-hidden group">
                 <div
                     class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-full transition-all duration-500 group-hover:w-full group-hover:h-full group-hover:rounded-none opacity-50">
                 </div>
 
                 <div class="relative z-10 h-full flex flex-col gap-12">
                     <div
-                        class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                        class="mobile-about-icon w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
                         <span class="material-symbols-outlined text-3xl">diamond</span>
                     </div>
                     <div>
-                        <h3 class="text-3xl font-bold mb-2">The Premium Standard</h3>
-                        <p class="text-slate-500 dark:text-slate-400 text-base sm:text-lg md:text-xl font-medium">
+                        <h3 class="mobile-about-title text-3xl font-bold mb-2">The Premium Standard</h3>
+                        <p class="mobile-about-text text-slate-500 dark:text-slate-400 text-base sm:text-lg md:text-xl font-medium">
                             Mediocrity is a disease. We craft experiences that feel inevitable, polished,
                             and world-class.
                         </p>
@@ -412,28 +425,41 @@
 </section>
 
 <!-- SECTION 4: METHODOLOGY - BLUEPRINT -->
-<section id="methodology" class="relative py-24 bg-white dark:bg-background-dark overflow-hidden">
+<section id="methodology" class="mobile-methodology-section relative py-24 bg-white dark:bg-background-dark overflow-hidden">
+    <style>
+        @media (max-width: 767px) {
+            .mobile-methodology-section { padding-top: 48px !important; padding-bottom: 48px !important; }
+            .mobile-methodology-header { margin-bottom: 32px !important; }
+            .mobile-methodology-title { font-size: 28px !important; line-height: 1.2 !important; }
+            .mobile-methodology-subtitle { font-size: 14px !important; margin-top: 8px !important; }
+            .mobile-methodology-step { gap: 16px !important; margin-bottom: 40px !important; }
+            .mobile-methodology-step-title { font-size: 20px !important; margin-bottom: 4px !important; }
+            .mobile-methodology-step-text { font-size: 14px !important; line-height: 1.5 !important; margin-top: 4px !important; }
+            .mobile-methodology-icon { width: 36px !important; height: 36px !important; }
+            .mobile-methodology-icon span { font-size: 16px !important; }
+        }
+    </style>
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-slate-200 dark:bg-white/5"></div>
     <div class="process-line absolute top-0 left-1/2 -translate-x-1/2 w-[2px] bg-primary shadow-[0_0_15px_#f97316]">
     </div>
 
     <div class="max-w-4xl mx-auto px-6 relative z-10">
-        <div class="text-center mb-16 md:mb-20 reveal-on-scroll">
-            <h2 class="font-display text-3xl md:text-5xl font-bold text-slate-900 dark:text-white">Thought Architecture
+        <div class="mobile-methodology-header text-center mb-16 md:mb-20 reveal-on-scroll">
+            <h2 class="mobile-methodology-title font-display text-3xl md:text-5xl font-bold text-slate-900 dark:text-white">Thought Architecture
             </h2>
-            <p class="text-slate-500 dark:text-gray-400 mt-2 text-base sm:text-lg md:text-xl font-medium">How we engineer your digital legacy.
+            <p class="mobile-methodology-subtitle text-slate-500 dark:text-gray-400 mt-2 text-base sm:text-lg md:text-xl font-medium">How we engineer your digital legacy.
             </p>
         </div>
 
         <!-- Step 1 -->
-        <div class="relative flex flex-col md:flex-row items-center gap-8 mb-24 group reveal-on-scroll">
-            <div class="md:w-1/2 md:text-right">
-                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">01. Deconstruct</h3>
-                <p class="text-slate-600 dark:text-gray-400 text-base sm:text-lg md:text-xl font-medium mt-2">Dismantling the problem to its core.
+        <div class="mobile-methodology-step relative flex flex-col md:flex-row items-center gap-8 mb-24 group reveal-on-scroll">
+            <div class="md:w-1/2 text-center md:text-right">
+                <h3 class="mobile-methodology-step-title text-2xl font-bold text-slate-900 dark:text-white mb-2">01. Deconstruct</h3>
+                <p class="mobile-methodology-step-text text-slate-600 dark:text-gray-400 text-base sm:text-lg md:text-xl font-medium mt-2">Dismantling the problem to its core.
                     Understanding First Principles before design begins.</p>
             </div>
             <div
-                class="w-12 h-12 rounded-full bg-white dark:bg-background-dark border-2 border-secondary flex items-center justify-center shadow-[0_0_20px_rgba(249,115,22,0.3)] z-10 transition-transform group-hover:scale-110 duration-500">
+                class="mobile-methodology-icon w-12 h-12 rounded-full bg-white dark:bg-background-dark border-2 border-secondary flex items-center justify-center shadow-[0_0_20px_rgba(249,115,22,0.3)] z-10 transition-transform group-hover:scale-110 duration-500">
                 <span class="material-symbols-outlined text-secondary text-sm">search</span>
             </div>
             <div class="md:w-1/2"></div>
@@ -441,28 +467,28 @@
 
         <!-- Step 2 -->
         <div
-            class="relative flex flex-col md:flex-row-reverse items-center gap-8 mb-24 group reveal-on-scroll delay-100">
-            <div class="md:w-1/2 md:text-left">
-                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">02. Architecture</h3>
-                <p class="text-slate-600 dark:text-gray-400 text-base sm:text-lg md:text-xl font-medium mt-2">Structuring the cognitive framework. Grids,
+            class="mobile-methodology-step relative flex flex-col md:flex-row-reverse items-center gap-8 mb-24 group reveal-on-scroll delay-100">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h3 class="mobile-methodology-step-title text-2xl font-bold text-slate-900 dark:text-white mb-2">02. Architecture</h3>
+                <p class="mobile-methodology-step-text text-slate-600 dark:text-gray-400 text-base sm:text-lg md:text-xl font-medium mt-2">Structuring the cognitive framework. Grids,
                     color systems, and information hierarchy arranged with precision.</p>
             </div>
             <div
-                class="w-12 h-12 rounded-full bg-white dark:bg-background-dark border-2 border-primary flex items-center justify-center shadow-[0_0_20px_rgba(19,127,236,0.3)] z-10 transition-transform group-hover:scale-110 duration-500">
+                class="mobile-methodology-icon w-12 h-12 rounded-full bg-white dark:bg-background-dark border-2 border-primary flex items-center justify-center shadow-[0_0_20px_rgba(19,127,236,0.3)] z-10 transition-transform group-hover:scale-110 duration-500">
                 <span class="material-symbols-outlined text-primary text-sm">architecture</span>
             </div>
             <div class="md:w-1/2"></div>
         </div>
 
         <!-- Step 3 -->
-        <div class="relative flex flex-col md:flex-row items-center gap-8 group reveal-on-scroll delay-200">
-            <div class="md:w-1/2 md:text-right">
-                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">03. Materialize</h3>
-                <p class="text-slate-600 dark:text-gray-400 text-base sm:text-lg md:text-xl font-medium mt-2">Visual execution with the highest aesthetic
+        <div class="mobile-methodology-step relative flex flex-col md:flex-row items-center gap-8 group reveal-on-scroll delay-200">
+            <div class="md:w-1/2 text-center md:text-right">
+                <h3 class="mobile-methodology-step-title text-2xl font-bold text-slate-900 dark:text-white mb-2">03. Materialize</h3>
+                <p class="mobile-methodology-step-text text-slate-600 dark:text-gray-400 text-base sm:text-lg md:text-xl font-medium mt-2">Visual execution with the highest aesthetic
                     standards. Every pixel has a reason.</p>
             </div>
             <div
-                class="w-12 h-12 rounded-full bg-white dark:bg-background-dark border-2 border-slate-300 dark:border-white flex items-center justify-center shadow-lg dark:shadow-[0_0_20px_rgba(255,255,255,0.3)] z-10 transition-transform group-hover:scale-110 duration-500">
+                class="mobile-methodology-icon w-12 h-12 rounded-full bg-white dark:bg-background-dark border-2 border-slate-300 dark:border-white flex items-center justify-center shadow-lg dark:shadow-[0_0_20px_rgba(255,255,255,0.3)] z-10 transition-transform group-hover:scale-110 duration-500">
                 <span class="material-symbols-outlined text-slate-900 dark:text-white text-sm">diamond</span>
             </div>
             <div class="md:w-1/2"></div>
