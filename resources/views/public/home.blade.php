@@ -2089,7 +2089,19 @@
 </section>
 <!-- NEW: Final CTA Section -->
 <section
-    class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 py-20 rounded-[40px] mt-16 border border-slate-800 hover:border-slate-700 transition-colors duration-700 shadow-2xl group">
+    class="mobile-turning-section reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 py-20 rounded-[40px] mt-16 border border-slate-800 hover:border-slate-700 transition-colors duration-700 shadow-2xl group">
+
+    <style>
+        @media (max-width: 767px) {
+            .mobile-turning-section { padding-top: 48px !important; padding-bottom: 48px !important; margin-top: 32px !important; border-radius: 32px !important; }
+            .mobile-turning-title { font-size: 28px !important; margin-bottom: 24px !important; line-height: 1.2 !important; }
+            .mobile-turning-card { padding: 20px !important; gap: 12px !important; border-radius: 20px !important; }
+            .mobile-turning-icon { width: 40px !important; height: 40px !important; }
+            .mobile-turning-icon span { font-size: 18px !important; }
+            .mobile-turning-text { font-size: 14px !important; line-height: 1.5 !important; }
+            .mobile-turning-btn { padding: 12px 24px !important; font-size: 15px !important; }
+        }
+    </style>
 
     <!-- Clean Minimal Background -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -2117,7 +2129,7 @@
 
         <!-- Clean Headline -->
         <h2
-            class="text-3xl md:text-5xl font-black text-white mb-8 tracking-tight leading-[1.1] reveal-on-scroll delay-100">
+            class="mobile-turning-title text-3xl md:text-5xl font-black text-white mb-8 tracking-tight leading-[1.1] reveal-on-scroll delay-100">
             The Choice Is<br>
             <span class="text-slate-400">Absolutely Simple.</span>
         </h2>
@@ -2127,24 +2139,24 @@
 
             <!-- Choice A: Subtle Box -->
             <div
-                class="flex flex-col gap-4 p-6 rounded-[24px] border border-slate-800/50 bg-slate-900/30 hover:bg-slate-900/80 hover:border-slate-700 transition-all duration-300 group/item backdrop-blur-sm">
+                class="mobile-turning-card flex flex-col gap-4 p-6 rounded-[24px] border border-slate-800/50 bg-slate-900/30 hover:bg-slate-900/80 hover:border-slate-700 transition-all duration-300 group/item backdrop-blur-sm">
                 <div
-                    class="w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center shrink-0 group-hover/item:-translate-y-1 transition-transform duration-300 shadow-inner">
+                    class="mobile-turning-icon w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center shrink-0 group-hover/item:-translate-y-1 transition-transform duration-300 shadow-inner">
                     <span class="material-symbols-outlined text-slate-500 text-xl">swipe_down</span>
                 </div>
-                <p class="text-slate-400 font-medium text-base leading-relaxed">
+                <p class="mobile-turning-text text-slate-400 font-medium text-base leading-relaxed">
                     Keep scrolling, keep overthinking, keep breaking promises to yourself.
                 </p>
             </div>
 
             <!-- Choice B: Highlighted Box -->
             <div
-                class="flex flex-col gap-4 p-6 rounded-[24px] border border-primary/30 bg-primary/5 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 group/item backdrop-blur-sm shadow-[0_0_30px_rgba(249,115,22,0.05)]">
+                class="mobile-turning-card flex flex-col gap-4 p-6 rounded-[24px] border border-primary/30 bg-primary/5 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 group/item backdrop-blur-sm shadow-[0_0_30px_rgba(249,115,22,0.05)]">
                 <div
-                    class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center shrink-0 group-hover/item:-translate-y-1 transition-transform duration-300">
+                    class="mobile-turning-icon w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center shrink-0 group-hover/item:-translate-y-1 transition-transform duration-300">
                     <span class="material-symbols-outlined text-primary text-xl">rocket_launch</span>
                 </div>
-                <p class="text-white font-bold text-base leading-relaxed">
+                <p class="mobile-turning-text text-white font-bold text-base leading-relaxed">
                     Or start building the systems that pull your life out of chaos.
                 </p>
             </div>
@@ -2159,7 +2171,7 @@
             </div>
 
             <a href="#library"
-                class="relative inline-flex items-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-full font-bold text-lg transform group-hover:scale-[1.02] transition-all duration-300 overflow-hidden isolate">
+                class="mobile-turning-btn relative inline-flex items-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-full font-bold text-lg transform group-hover:scale-[1.02] transition-all duration-300 overflow-hidden isolate">
 
                 <!-- Shimmer effect -->
                 <div
