@@ -1350,9 +1350,20 @@
                 </div>
             </div>
             <!-- Right: Text Explanation -->
+            <style>
+                @media (max-width: 767px) {
+                    .mobile-fail-item { gap: 12px !important; margin-bottom: 8px !important; }
+                    .mobile-fail-item .icon-wrapper { width: 32px !important; height: 32px !important; }
+                    .mobile-fail-item .icon-wrapper span { font-size: 16px !important; }
+                    .mobile-fail-item h4 { font-size: 16px !important; margin-bottom: 6px !important; line-height: 1.3 !important; }
+                    .mobile-fail-item p { font-size: 14px !important; line-height: 1.5 !important; }
+                    .mobile-fail-quote { padding: 16px !important; margin-top: 20px !important; }
+                    .mobile-fail-quote p { font-size: 15px !important; }
+                }
+            </style>
             <div class="space-y-8">
-                <div class="flex gap-4">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div class="mobile-fail-item flex gap-4">
+                    <div class="icon-wrapper w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <span class="material-symbols-outlined text-primary">close</span>
                     </div>
                     <div>
@@ -1364,8 +1375,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex gap-4">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div class="mobile-fail-item flex gap-4">
+                    <div class="icon-wrapper w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <span class="material-symbols-outlined text-primary">close</span>
                     </div>
                     <div>
@@ -1376,8 +1387,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex gap-4">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div class="mobile-fail-item flex gap-4">
+                    <div class="icon-wrapper w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <span class="material-symbols-outlined text-primary">close</span>
                     </div>
                     <div>
@@ -1388,7 +1399,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="mt-8 p-6 bg-secondary/5 rounded-2xl border border-secondary/20">
+                <div class="mobile-fail-quote mt-8 p-6 bg-secondary/5 rounded-2xl border border-secondary/20">
                     <p class="text-white font-bold text-lg">
                         "Your life doesn't need more motivation. Your life needs <span
                             class="text-primary">structure</span>."
