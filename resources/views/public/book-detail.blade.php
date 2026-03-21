@@ -88,26 +88,32 @@
             {{-- Kolom Kanan: Info Buku --}}
             <div class="lg:col-span-7 flex flex-col pt-4 lg:pt-10">
 
-                {{-- Badge Removed --}}
+                {{-- Minimal Go Back Button --}}
+                <div class="mb-10 reveal-immediate" style="animation-delay: 0.2s;">
+                    <a href="{{ route('catalog.index') }}" class="inline-flex items-center gap-3 text-sm font-bold text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors group px-5 py-2.5 bg-slate-50 dark:bg-slate-800/50 rounded-full w-max border border-slate-100 dark:border-slate-800">
+                        <span class="material-symbols-outlined text-[18px] transform transition-transform group-hover:-translate-x-1">arrow_back</span>
+                        Go Back
+                    </a>
+                </div>
 
                 {{-- Judul --}}
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black text-slate-900 dark:text-white leading-[1.1] mb-8 tracking-tight reveal-immediate" style="animation-delay: 0.3s; font-family: 'Montserrat', sans-serif;">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black text-slate-900 dark:text-white leading-[1.1] mb-10 tracking-tight reveal-immediate" style="animation-delay: 0.3s; font-family: 'Montserrat', sans-serif;">
                     {{ $book->title }}
                 </h1>
 
-                {{-- Meta: Penulis, Kategori, Tanggal (Clean Editorial List) --}}
-                <div class="flex flex-wrap items-center gap-x-10 gap-y-6 mb-10 pb-10 border-b border-slate-200 dark:border-slate-800 reveal-immediate" style="animation-delay: 0.4s;">
-                    <div class="flex flex-col gap-1">
-                        <span class="text-[11px] uppercase font-bold tracking-widest text-slate-400 dark:text-slate-500">Category</span>
-                        <span class="text-base font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-[18px] text-primary">category</span>
+                {{-- Meta: Kategori & Tanggal (Clean Editorial List) --}}
+                <div class="flex items-center mb-10 pb-10 border-b border-slate-200 dark:border-slate-800 reveal-immediate" style="animation-delay: 0.4s; gap: 2rem;">
+                    <div class="flex flex-col mt-4">
+                        <span class="text-xs uppercase font-bold tracking-widest text-slate-400 dark:text-slate-500 mb-1">Category</span>
+                        <span class="text-lg font-bold text-slate-800 dark:text-slate-200 flex items-center">
+                            <span class="material-symbols-outlined text-[24px] text-primary mr-2">category</span>
                             {{ $book->category ?? 'Uncategorized' }}
                         </span>
                     </div>
-                    <div class="flex flex-col gap-1">
-                        <span class="text-[11px] uppercase font-bold tracking-widest text-slate-400 dark:text-slate-500">Published</span>
-                        <span class="text-base font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-2">
-                            <span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
+                    <div class="flex flex-col mt-4">
+                        <span class="text-xs uppercase font-bold tracking-widest text-slate-400 dark:text-slate-500 mb-1">Published</span>
+                        <span class="text-lg font-bold text-slate-800 dark:text-slate-200 flex items-center">
+                            <span class="material-symbols-outlined text-[24px] text-primary mr-2">calendar_today</span>
                             {{ $book->year ?? $book->created_at->format('Y') }}
                         </span>
                     </div>
@@ -118,17 +124,6 @@
                     <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                         {{ $book->description }}
                     </p>
-                </div>
-
-                {{-- Tombol Aksi --}}
-                <div class="flex flex-col sm:flex-row items-center gap-4 pt-4 reveal-immediate" style="animation-delay: 0.6s;">
-                    <a
-                        href="{{ route('catalog.index') }}"
-                        class="w-full sm:w-max px-12 h-14 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900 font-bold rounded-full transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-2 active:scale-95"
-                    >
-                        <span class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span>
-                        Go Back To Catalog
-                    </a>
                 </div>
 
             </div>
