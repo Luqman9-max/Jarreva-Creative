@@ -73,99 +73,34 @@
     <div class="mobile-catalog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         @forelse($books ?? [] as $book)
         <!-- Book Card -->
-        <div
-            class="mobile-catalog-card group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-100 hover:border-primary/30 dark:border-gray-700 dark:hover:border-primary/50 shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 transform hover:-translate-y-2 flex flex-col h-full z-10 hover:z-20">
-
-            <!-- Card Image Header -->
-            <div
-                class="mobile-catalog-img relative h-64 overflow-hidden border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
-                {{-- Assuming book has an image property in future, fallback to placeholder --}}
+        <!-- Book Card (Unified Design) -->
+        <a href="{{ route('book.show', $book->slug ?? '#') }}" class="mobile-catalog-card group flex flex-col bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800/60 hover:border-slate-200 dark:hover:border-slate-700/80 shadow-sm hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-black/50 transition-all duration-500 hover:-translate-y-2">
+            <div class="mobile-catalog-img w-full h-[240px] bg-slate-50 dark:bg-slate-800/50 p-6 flex items-center justify-center relative overflow-hidden">
+                {{-- Soft radial glow --}}
+                <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/0 to-blue-500/0 group-hover:from-orange-500/5 group-hover:to-blue-500/5 transition-colors duration-500"></div>
+                
                 @if($book->cover_image)
-                <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}"
-                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="h-full w-auto object-cover rounded-md shadow-lg transform transition-transform duration-700 cubic-bezier(0.2, 0.8, 0.2, 1) group-hover:scale-105 group-hover:-rotate-2 border-l-[4px] border-slate-900/10 relative z-10" />
                 @else
-                <!-- Enhanced Placeholder -->
-                <div
-                    class="w-full h-full flex flex-col items-center justify-center text-primary/40 bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-800 dark:to-gray-900 transition-transform duration-700 group-hover:scale-110 relative">
-                    <!-- Decorative background elements inside placeholder -->
-                    <div class="absolute inset-0 opacity-10"
-                        style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 16px 16px;">
+                    <div class="h-full w-32 flex flex-col items-center justify-center bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 rounded-md shadow-xl border-l-[4px] border-slate-900/10 transform transition-transform duration-700 cubic-bezier(0.2, 0.8, 0.2, 1) group-hover:scale-105 group-hover:-rotate-2 relative z-10">
+                        <span class="mobile-catalog-icon-empty material-symbols-outlined text-4xl text-slate-400 dark:text-slate-500">auto_stories</span>
                     </div>
-                    <div
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-colors duration-500">
-                    </div>
-                    <span
-                        class="mobile-catalog-icon-empty material-symbols-outlined text-6xl mb-2 opacity-70 z-10 group-hover:rotate-12 transition-transform duration-500">auto_stories</span>
-                    <span class="mobile-catalog-date text-xs font-bold tracking-widest uppercase opacity-70 z-10">Jarreva Project</span>
-                </div>
                 @endif
-
-                <!-- Overlay & Category Badge -->
-                <div
-                    class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
-                </div>
-
-                <!-- Hover specific action button overlay -->
-                <div
-                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 z-20 pointer-events-none group-hover:pointer-events-auto">
-                    <a href="{{ route('book.show', $book->slug ?? '#') }}"
-                        class="px-6 py-2.5 bg-white/95 text-primary text-sm font-bold rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 hover:bg-primary hover:text-white">
-                        Quick View
-                    </a>
-                </div>
-
-                <div class="absolute top-4 left-4 z-20">
-                    <span
-                        class="mobile-catalog-badge px-3 py-1.5 text-xs font-extrabold uppercase tracking-widest text-white bg-primary/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/20">
-                        {{ $book->category ?? 'Publication' }}
-                    </span>
+            </div>
+            <div class="mobile-catalog-body p-6 flex flex-col flex-grow">
+                <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-2">{{ $book->category ?? 'Publication' }}</span>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-primary transition-colors mobile-catalog-title">
+                    {{ $book->title ?? 'Untitled Masterpiece' }}
+                </h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2 mb-6 mobile-catalog-desc">
+                    {{ $book->description ?? 'Dive into the details of this amazing project. Discover the creative process, design elements, and the profound impact it delivers.' }}
+                </p>
+                <div class="mt-auto flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400 group-hover:text-primary transition-colors mobile-catalog-footer mobile-catalog-readmore">
+                    <span>Read More</span>
+                    <span class="material-symbols-outlined text-sm transform transition-transform group-hover:translate-x-1">trending_flat</span>
                 </div>
             </div>
-
-            <!-- Card Body -->
-            <div class="mobile-catalog-body p-6 flex flex-col flex-grow relative bg-white dark:bg-gray-800">
-                <!-- Floating decorative shape -->
-                <div
-                    class="absolute right-0 top-0 w-24 h-24 bg-gradient-to-br from-primary/5 to-transparent rounded-bl-full transition-transform duration-500 group-hover:scale-150">
-                </div>
-
-                <div class="flex-grow z-10">
-                    <!-- Title -->
-                    <h3
-                        class="mobile-catalog-title font-bold text-xl text-gray-900 dark:text-white mb-3 line-clamp-2 group-hover:text-primary transition-colors duration-300">
-                        {{ $book->title ?? 'Untitled Masterpiece' }}
-                    </h3>
-
-                    <!-- Excerpt/Description -->
-                    <p
-                        class="mobile-catalog-desc text-gray-500 dark:text-gray-400 text-sm line-clamp-3 mb-4 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
-                        {{ $book->description ?? 'Dive into the details of this amazing project. Discover the creative
-                        process, design elements, and the profound impact it delivers.' }}
-                    </p>
-                </div>
-
-                <!-- Footer / Actions -->
-                <div
-                    class="mobile-catalog-footer pt-5 mt-auto border-t border-gray-50 dark:border-gray-700 flex items-center justify-between z-10">
-                    <div class="flex items-center gap-2">
-                        <div
-                            class="mobile-catalog-date-icon w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-700 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300 shadow-sm border border-gray-100 dark:border-gray-600">
-                            <span class="material-symbols-outlined text-sm">calendar_month</span>
-                        </div>
-                        <span
-                            class="mobile-catalog-date text-xs text-gray-400 dark:text-gray-500 font-semibold group-hover:text-gray-600 transition-colors duration-300">
-                            {{ isset($book->created_at) ? $book->created_at->format('M Y') : '2026' }}
-                        </span>
-                    </div>
-                    <a href="{{ route('book.show', $book->slug ?? '#') }}"
-                        class="mobile-catalog-readmore inline-flex items-center gap-2 text-sm font-bold text-secondary dark:text-primary hover:text-primary dark:hover:text-white transition-all duration-300 relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 group-hover:after:w-full">
-                        Read More
-                        <span
-                            class="material-symbols-outlined text-sm transform group-hover:translate-x-2 transition-transform duration-300">trending_flat</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+        </a>
         @empty
         <!-- Empty State -->
         <div

@@ -17,191 +17,168 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 120%;
-        height: 120%;
-        background: radial-gradient(circle, rgba(19, 127, 236, 0.15) 0%, rgba(249, 115, 22, 0.1) 50%, transparent 70%);
+        width: 140%;
+        height: 140%;
+        background: radial-gradient(circle, rgba(19, 127, 236, 0.15) 0%, rgba(249, 115, 22, 0.1) 40%, transparent 70%);
         z-index: -1;
-        filter: blur(40px);
+        filter: blur(50px);
     }
     .perspective-1000 {
-        perspective: 1000px;
+        perspective: 1200px;
     }
     .book-3d-mockup {
-        transform: rotateY(-15deg) rotateX(5deg);
-        transition: transform 0.5s ease;
+        transform: rotateY(-18deg) rotateX(8deg);
+        transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s ease;
+        transform-style: preserve-3d;
     }
     .book-3d-mockup:hover {
-        transform: rotateY(-5deg) rotateX(2deg);
+        transform: rotateY(-5deg) rotateX(2deg) translateY(-10px);
+        box-shadow: 25px 35px 50px -12px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Reveal Reset for immediate view */
+    .reveal-immediate {
+        animation: fadeSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    @keyframes fadeSlideUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 </style>
 
-{{-- ===== HERO BACKGROUND 3D ===== --}}
-@include('public.components.hero-3d-bg')
+{{-- ===== HERO BACKGROUND 3D (SOFT BLOBS) ===== --}}
+@include('public.components.book-detail-bg')
 
-<main class="flex-grow pt-32 pb-24">
+<main class="flex-grow pt-24 pb-32 relative z-10 w-full overflow-hidden">
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {{-- ===== DETAIL BUKU UTAMA ===== --}}
-        <div class="bg-white dark:bg-gray-900/40 rounded-[2rem] border border-gray-100 dark:border-gray-800 shadow-2xl shadow-gray-200/50 dark:shadow-none overflow-hidden p-6 sm:p-10 lg:p-16 mb-16">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        {{-- ===== DETAIL BUKU UTAMA (EDITORIAL LAYOUT) ===== --}}
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mt-12 mb-24 w-full">
 
-                {{-- Kolom Kiri: Cover --}}
-                <div class="flex flex-col items-center">
-
-                    {{-- Cover Buku 3D --}}
-                    <div class="flex justify-center items-center perspective-1000 py-6 mb-8">
-                        <div class="book-glow">
-                            <div class="book-3d-mockup relative w-[280px] sm:w-[350px] lg:w-[400px] aspect-[2/3] shadow-2xl rounded-r-lg">
-                                @if($book->cover_image)
-                                    <img
-                                        src="{{ asset('storage/' . $book->cover_image) }}"
-                                        alt="{{ $book->title }}"
-                                        class="h-full w-full object-cover rounded-r-lg shadow-2xl border-l-[12px] border-gray-900/10"
-                                    />
-                                @else
-                                    <div class="h-full w-full flex flex-col items-center justify-center bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-700 dark:to-gray-900 rounded-r-lg border-l-[12px] border-gray-900/10">
-                                        <span class="material-symbols-outlined text-7xl text-gray-400 dark:text-gray-500 mb-3">auto_stories</span>
-                                        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">No Cover</span>
-                                    </div>
-                                @endif
-                                <div class="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent pointer-events-none rounded-r-lg"></div>
-                            </div>
+            {{-- Kolom Kiri: Cover --}}
+            <div class="lg:col-span-5 flex flex-col items-center lg:items-end lg:sticky lg:top-32 reveal-immediate" style="animation-delay: 0.1s;">
+                <div class="flex justify-center items-center perspective-1000 py-6 w-full max-w-md">
+                    <div class="book-glow w-full flex justify-center">
+                        <div class="book-3d-mockup relative w-[260px] sm:w-[320px] lg:w-[380px] aspect-[2/3] rounded-r-lg shadow-2xl shadow-slate-900/40">
+                            @if($book->cover_image)
+                                <img
+                                    src="{{ asset('storage/' . $book->cover_image) }}"
+                                    alt="{{ $book->title }}"
+                                    class="h-full w-full object-cover rounded-r-lg border-l-[14px] border-slate-900/20 dark:border-slate-800/60"
+                                />
+                            @else
+                                <div class="h-full w-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 rounded-r-lg border-l-[14px] border-slate-900/20 dark:border-slate-800/60">
+                                    <span class="material-symbols-outlined text-7xl text-slate-300 dark:text-slate-600 mb-4">auto_stories</span>
+                                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">No Cover</span>
+                                </div>
+                            @endif
+                            <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent pointer-events-none rounded-r-lg"></div>
+                            
+                            {{-- Pages effect on the right edge (optional realism) --}}
+                            <div class="absolute right-0 top-[2%] bottom-[2%] w-[4px] bg-white rounded-r-sm shadow-inner transform translate-x-full"></div>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    {{-- Info Ringkas Buku --}}
-                    <div class="w-full grid grid-cols-3 gap-px bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-800">
-                        <div class="bg-white dark:bg-gray-900/60 p-4 flex flex-col items-center text-center">
-                            <span class="text-lg font-black text-primary block">{{ $book->category ?? '-' }}</span>
-                            <span class="text-[9px] uppercase font-bold tracking-widest text-text-subtle dark:text-gray-500">Category</span>
-                        </div>
-                        <div class="bg-white dark:bg-gray-900/60 p-4 flex flex-col items-center text-center">
-                            <span class="text-lg font-black text-secondary block">{{ $book->year ?? '-' }}</span>
-                            <span class="text-[9px] uppercase font-bold tracking-widest text-text-subtle dark:text-gray-500">Year</span>
-                        </div>
-                        <div class="bg-white dark:bg-gray-900/60 p-4 flex flex-col items-center text-center">
-                            <span class="text-lg font-black text-primary block">{{ $book->is_featured ? 'Yes' : 'No' }}</span>
-                            <span class="text-[9px] uppercase font-bold tracking-widest text-text-subtle dark:text-gray-500">Featured</span>
-                        </div>
+            {{-- Kolom Kanan: Info Buku --}}
+            <div class="lg:col-span-7 flex flex-col pt-4 lg:pt-10">
+
+                {{-- Badge Removed --}}
+
+                {{-- Judul --}}
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black text-slate-900 dark:text-white leading-[1.1] mb-8 tracking-tight reveal-immediate" style="animation-delay: 0.3s; font-family: 'Montserrat', sans-serif;">
+                    {{ $book->title }}
+                </h1>
+
+                {{-- Meta: Penulis, Kategori, Tanggal (Clean Editorial List) --}}
+                <div class="flex flex-wrap items-center gap-x-10 gap-y-6 mb-10 pb-10 border-b border-slate-200 dark:border-slate-800 reveal-immediate" style="animation-delay: 0.4s;">
+                    <div class="flex flex-col gap-1">
+                        <span class="text-[11px] uppercase font-bold tracking-widest text-slate-400 dark:text-slate-500">Category</span>
+                        <span class="text-base font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-primary">category</span>
+                            {{ $book->category ?? 'Uncategorized' }}
+                        </span>
                     </div>
-
+                    <div class="flex flex-col gap-1">
+                        <span class="text-[11px] uppercase font-bold tracking-widest text-slate-400 dark:text-slate-500">Published</span>
+                        <span class="text-base font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
+                            {{ $book->year ?? $book->created_at->format('Y') }}
+                        </span>
+                    </div>
                 </div>
 
-                {{-- Kolom Kanan: Info Buku --}}
-                <div class="flex flex-col">
-
-                    {{-- Badge --}}
-                    @if($book->is_featured)
-                    <div class="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-primary text-xs font-bold uppercase tracking-wider dark:bg-blue-900/30 dark:text-blue-300 w-fit">
-                        <span class="material-symbols-outlined text-sm">star</span>
-                        Featured Publication
-                    </div>
-                    @endif
-
-                    {{-- Judul --}}
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white leading-tight mb-6">
-                        {{ $book->title }}
-                    </h1>
-
-                    {{-- Meta: Penulis, Kategori, Tanggal --}}
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8 py-6 border-y border-gray-100 dark:border-gray-800">
-                        <div class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-primary">person</span>
-                            <div>
-                                <p class="text-[10px] uppercase font-bold text-text-subtle dark:text-gray-500">Author</p>
-                                <p class="text-sm font-bold text-gray-900 dark:text-white">{{ $book->author ?? '-' }}</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-primary">category</span>
-                            <div>
-                                <p class="text-[10px] uppercase font-bold text-text-subtle dark:text-gray-500">Category</p>
-                                <p class="text-sm font-bold text-gray-900 dark:text-white">{{ $book->category ?? '-' }}</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-primary">calendar_today</span>
-                            <div>
-                                <p class="text-[10px] uppercase font-bold text-text-subtle dark:text-gray-500">Published</p>
-                                <p class="text-sm font-bold text-gray-900 dark:text-white">
-                                    {{ $book->year ?? $book->created_at->format('Y') }}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Deskripsi --}}
-                    <div class="prose prose-blue dark:prose-invert max-w-none mb-10">
-                        <p class="text-lg text-text-subtle dark:text-gray-400 leading-relaxed">
-                            {{ $book->description }}
-                        </p>
-                    </div>
-
-                    {{-- Tombol Aksi --}}
-                    <div class="flex flex-col sm:flex-row items-center gap-4 pt-4">
-                        <a
-                            href="{{ route('catalog.index') }}"
-                            class="w-full sm:w-auto px-10 h-14 bg-primary hover:bg-blue-600 text-white font-bold rounded-full transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 flex items-center justify-center gap-2 active:scale-95"
-                        >
-                            <span class="material-symbols-outlined">collections_bookmark</span>
-                            Browse All Books
-                        </a>
-                        <a
-                            href="{{ url()->previous() }}"
-                            class="w-full sm:w-auto px-10 h-14 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-text-main dark:text-white font-bold rounded-full hover:bg-gray-50 dark:hover:bg-gray-700 transition-all flex items-center justify-center gap-2 group active:scale-95"
-                        >
-                            <span class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span>
-                            Back
-                        </a>
-                    </div>
-
+                {{-- Deskripsi --}}
+                <div class="prose prose-lg prose-slate dark:prose-invert max-w-none mb-12 reveal-immediate" style="animation-delay: 0.5s;">
+                    <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
+                        {{ $book->description }}
+                    </p>
                 </div>
+
+                {{-- Tombol Aksi --}}
+                <div class="flex flex-col sm:flex-row items-center gap-4 pt-4 reveal-immediate" style="animation-delay: 0.6s;">
+                    <a
+                        href="{{ route('catalog.index') }}"
+                        class="w-full sm:w-max px-12 h-14 bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900 font-bold rounded-full transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 flex items-center justify-center gap-2 active:scale-95"
+                    >
+                        <span class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span>
+                        Go Back To Catalog
+                    </a>
+                </div>
+
             </div>
         </div>
 
         {{-- ===== BUKU LAINNYA ===== --}}
         @if(isset($relatedBooks) && $relatedBooks->count())
-        <div class="w-full py-12">
+        <div class="w-full py-20 border-t border-slate-200 dark:border-slate-800/50 relative z-10 m-auto mt-10">
 
             {{-- Judul Seksi --}}
-            <div class="flex flex-col items-center text-center mb-16 max-w-3xl mx-auto px-4">
-                <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">More from Jarreva Creative</h2>
-                <div class="h-1.5 w-24 bg-gradient-to-r from-primary to-secondary rounded-full mb-8"></div>
-                <p class="text-lg text-text-subtle dark:text-gray-400 font-medium leading-relaxed">
-                    Explore our other publications, crafted with passion and precision to elevate your creative potential.
+            <div class="flex flex-col items-center text-center mb-16 max-w-3xl mx-auto px-4 reveal-immediate" style="animation-delay: 0.2s;">
+                <span class="text-primary font-bold tracking-widest uppercase text-xs mb-3">Keep Exploring</span>
+                <h2 class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-6 font-display" style="font-family: 'Montserrat', sans-serif;">More from Jarreva</h2>
+                <p class="text-base text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-xl mx-auto">
+                    Discover other publications crafted to help you focus, grow, and achieve your true potential.
                 </p>
             </div>
 
             {{-- Grid Buku Terkait --}}
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-                @foreach ($relatedBooks as $related)
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+                @foreach ($relatedBooks as $index => $related)
                 <a
                     href="{{ route('book.show', $related->slug) }}"
-                    class="group relative flex flex-col p-8 bg-white dark:bg-gray-800 rounded-[2.5rem] border border-gray-100 dark:border-gray-700 hover:shadow-2xl hover:shadow-gray-200/50 dark:hover:shadow-none transition-all duration-300"
+                    class="group flex flex-col bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800/60 hover:border-slate-200 dark:hover:border-slate-700/80 shadow-sm hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-black/50 transition-all duration-500 hover:-translate-y-2 reveal-immediate"
+                    style="animation-delay: {{ 0.2 + ($index * 0.1) }}s;"
                 >
-                    <div class="w-full h-[280px] flex items-center justify-center mb-8">
-                        <div class="relative w-full h-full flex justify-center items-center transition-transform duration-500 group-hover:-translate-y-2">
-                            @if($related->cover_image)
-                                <img
-                                    src="{{ asset('storage/' . $related->cover_image) }}"
-                                    alt="{{ $related->title }}"
-                                    class="h-full w-auto object-cover rounded-md shadow-xl"
-                                />
-                            @else
-                                <div class="h-full w-48 flex flex-col items-center justify-center bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-700 dark:to-gray-900 rounded-md shadow-xl">
-                                    <span class="material-symbols-outlined text-5xl text-gray-400 dark:text-gray-500 mb-2">auto_stories</span>
-                                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">No Cover</span>
-                                </div>
-                            @endif
-                        </div>
+                    <div class="w-full h-[240px] bg-slate-50 dark:bg-slate-800/50 p-6 flex items-center justify-center relative overflow-hidden">
+                        {{-- Soft radial glow --}}
+                        <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/0 to-blue-500/0 group-hover:from-orange-500/5 group-hover:to-blue-500/5 transition-colors duration-500"></div>
+                        
+                        @if($related->cover_image)
+                            <img src="{{ asset('storage/' . $related->cover_image) }}" alt="{{ $related->title }}" class="h-full w-auto object-cover rounded-md shadow-lg transform transition-transform duration-700 cubic-bezier(0.2, 0.8, 0.2, 1) group-hover:scale-105 group-hover:-rotate-2 border-l-[4px] border-slate-900/10 relative z-10" />
+                        @else
+                            <div class="h-full w-32 flex flex-col items-center justify-center bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 rounded-md shadow-xl border-l-[4px] border-slate-900/10 transform transition-transform duration-700 cubic-bezier(0.2, 0.8, 0.2, 1) group-hover:scale-105 group-hover:-rotate-2 relative z-10">
+                                <span class="material-symbols-outlined text-4xl text-slate-400 dark:text-slate-500">auto_stories</span>
+                            </div>
+                        @endif
                     </div>
-                    <div class="flex flex-col">
-                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 tracking-tight">
+                    <div class="p-6 flex flex-col flex-grow">
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400 mb-2">{{ $related->category ?? 'Publication' }}</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight group-hover:text-primary transition-colors">
                             {{ $related->title }}
                         </h3>
-                        <p class="text-sm text-text-subtle dark:text-gray-400 leading-relaxed line-clamp-2">
+                        <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2 mb-6">
                             {{ $related->description }}
                         </p>
+                        <div class="mt-auto flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400 group-hover:text-primary transition-colors">
+                            <span>Read More</span>
+                            <span class="material-symbols-outlined text-sm transform transition-transform group-hover:translate-x-1">trending_flat</span>
+                        </div>
                     </div>
                 </a>
                 @endforeach
