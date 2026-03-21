@@ -56,7 +56,7 @@
         @media (max-width: 767px) {
             .mobile-catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; }
             .mobile-catalog-card { border-radius: 12px !important; }
-            .mobile-catalog-img { height: 140px !important; }
+            .mobile-catalog-img { height: 180px !important; padding: 12px !important; }
             .mobile-catalog-icon-empty { font-size: 36px !important; }
             .mobile-catalog-badge { padding: 4px 8px !important; font-size: 9px !important; top: 8px !important; left: 8px !important; border-radius: 6px !important; }
             .mobile-catalog-body { padding: 12px !important; }

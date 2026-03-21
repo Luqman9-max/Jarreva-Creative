@@ -8,6 +8,16 @@
 {{-- Navbar is already included in app.blade.php --}}
 
 <style>
+    /* Custom Responsive Classes (Tailwind JIT bypass) */
+    .mobile-only, .mobile-flex-only { display: none !important; }
+    .desktop-only { display: block !important; }
+    .desktop-flex-only { display: flex !important; }
+    @media (max-width: 1023px) {
+        .mobile-only { display: block !important; }
+        .mobile-flex-only { display: flex !important; }
+        .desktop-only, .desktop-flex-only { display: none !important; }
+    }
+
     .book-glow {
         position: relative;
     }
@@ -57,7 +67,13 @@
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {{-- ===== DETAIL BUKU UTAMA (EDITORIAL LAYOUT) ===== --}}
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mt-12 mb-24 w-full">
+        
+        {{-- MOBILE ONLY: Judul Buku di atas gambar, di tengah --}}
+        <h1 class="mobile-only text-center text-3xl sm:text-4xl font-black text-slate-900 dark:text-white leading-[1.2] mb-0 pt-8 tracking-tight reveal-immediate" style="animation-delay: 0.1s; font-family: 'Montserrat', sans-serif;">
+            {{ $book->title }}
+        </h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 items-start mt-8 lg:mt-12 mb-24 w-full">
 
             {{-- Kolom Kiri: Cover --}}
             <div class="lg:col-span-5 flex flex-col items-center lg:items-end lg:sticky lg:top-32 reveal-immediate" style="animation-delay: 0.1s;">
@@ -83,13 +99,34 @@
                         </div>
                     </div>
                 </div>
+
+                {{-- MOBILE ONLY: Kategori & Published di bawah gambar, di tengah --}}
+                <div class="mobile-flex-only justify-center items-center mt-4 w-full gap-8 reveal-immediate" style="animation-delay: 0.2s;">
+                    <div class="flex flex-col items-center mt-4 text-center">
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400 dark:text-slate-500 mb-1.5">Category</span>
+                        <span class="text-sm font-bold text-slate-800 dark:text-slate-200 flex items-center">
+                            <span class="material-symbols-outlined text-[18px] text-primary mr-1.5">category</span>
+                            {{ $book->category ?? 'Uncategorized' }}
+                        </span>
+                    </div>
+                    <div class="flex flex-col items-center mt-4 text-center">
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400 dark:text-slate-500 mb-1.5">Published</span>
+                        <span class="text-sm font-bold text-slate-800 dark:text-slate-200 flex items-center">
+                            <span class="material-symbols-outlined text-[18px] text-primary mr-1.5">calendar_today</span>
+                            {{ $book->year ?? $book->created_at->format('Y') }}
+                        </span>
+                    </div>
+                </div>
+
+                {{-- Border divider for mobile --}}
+                <div class="mobile-only w-full h-px bg-slate-200 dark:bg-slate-800 mt-8 mb-2"></div>
             </div>
 
             {{-- Kolom Kanan: Info Buku --}}
-            <div class="lg:col-span-7 flex flex-col pt-4 lg:pt-10">
+            <div class="lg:col-span-7 flex flex-col pt-0 lg:pt-10">
 
                 {{-- Minimal Go Back Button --}}
-                <div class="mb-10 reveal-immediate" style="animation-delay: 0.2s;">
+                <div class="desktop-only mb-10 reveal-immediate" style="animation-delay: 0.2s;">
                     <a href="{{ route('catalog.index') }}" class="inline-flex items-center gap-3 text-sm font-bold text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors group px-5 py-2.5 bg-slate-50 dark:bg-slate-800/50 rounded-full w-max border border-slate-100 dark:border-slate-800">
                         <span class="material-symbols-outlined text-[18px] transform transition-transform group-hover:-translate-x-1">arrow_back</span>
                         Go Back
@@ -97,12 +134,12 @@
                 </div>
 
                 {{-- Judul --}}
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black text-slate-900 dark:text-white leading-[1.1] mb-10 tracking-tight reveal-immediate" style="animation-delay: 0.3s; font-family: 'Montserrat', sans-serif;">
+                <h1 class="desktop-only text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-black text-slate-900 dark:text-white leading-[1.1] mb-10 tracking-tight reveal-immediate" style="animation-delay: 0.3s; font-family: 'Montserrat', sans-serif;">
                     {{ $book->title }}
                 </h1>
 
                 {{-- Meta: Kategori & Tanggal (Clean Editorial List) --}}
-                <div class="flex items-center mb-10 pb-10 border-b border-slate-200 dark:border-slate-800 reveal-immediate" style="animation-delay: 0.4s; gap: 2rem;">
+                <div class="desktop-flex-only items-center mb-10 pb-10 border-b border-slate-200 dark:border-slate-800 reveal-immediate" style="animation-delay: 0.4s; gap: 2rem;">
                     <div class="flex flex-col mt-4">
                         <span class="text-xs uppercase font-bold tracking-widest text-slate-400 dark:text-slate-500 mb-1">Category</span>
                         <span class="text-lg font-bold text-slate-800 dark:text-slate-200 flex items-center">
