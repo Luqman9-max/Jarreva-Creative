@@ -1568,11 +1568,7 @@
 </section>
 <!-- NEW: Radial Orbital Timeline Section -->
 <section
-<<<<<<< HEAD
     class="reveal-on-scroll relative z-0 w-full overflow-hidden bg-white py-16 min-h-[700px] md:min-h-[1000px] flex flex-col items-center justify-center scroll-mt-28"
-=======
-    class="reveal-element reveal-up relative z-0 w-full overflow-hidden bg-white py-16 min-h-[1000px] flex flex-col items-center justify-center scroll-mt-28"
->>>>>>> origin/main
     id="about">
     <style>
         @media (max-width: 767px) {

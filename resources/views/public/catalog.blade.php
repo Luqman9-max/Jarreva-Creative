@@ -52,21 +52,6 @@
 
 
     <!-- Grid Container -->
-<<<<<<< HEAD
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-        @forelse ($books ?? [] as $book)
-        <!-- Book Card -->
-        <div
-            class="group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-100 hover:border-primary/30 dark:border-gray-700 dark:hover:border-primary/50 shadow-sm hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 transform hover:-translate-y-2 flex flex-col h-full z-10 hover:z-20">
-
-            <!-- Card Image Header -->
-            <div
-                class="relative h-64 overflow-hidden border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
-                {{-- Assuming book has an image property in future, fallback to placeholder --}}
-                @if (isset($book->image))
-                <img src="{{ asset('storage/' . $book->image) }}" alt="{{ $book->title }}"
-                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-=======
     <style>
         @media (max-width: 767px) {
             .mobile-catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 12px !important; }
@@ -96,7 +81,6 @@
                 
                 @if($book->cover_image)
                     <img src="{{ asset('storage/' . $book->cover_image) }}" alt="{{ $book->title }}" class="h-full w-auto object-cover rounded-md shadow-lg transform transition-transform duration-700 cubic-bezier(0.2, 0.8, 0.2, 1) group-hover:scale-105 group-hover:-rotate-2 border-l-[4px] border-slate-900/10 relative z-10" />
->>>>>>> origin/main
                 @else
                     <div class="h-full w-32 flex flex-col items-center justify-center bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 rounded-md shadow-xl border-l-[4px] border-slate-900/10 transform transition-transform duration-700 cubic-bezier(0.2, 0.8, 0.2, 1) group-hover:scale-105 group-hover:-rotate-2 relative z-10">
                         <span class="mobile-catalog-icon-empty material-symbols-outlined text-4xl text-slate-400 dark:text-slate-500">auto_stories</span>
