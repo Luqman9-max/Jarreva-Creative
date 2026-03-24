@@ -1,5 +1,22 @@
 {{-- Footer component --}}
-<footer class="relative bg-white dark:bg-background-dark pt-24 pb-12 overflow-hidden" id="contact">
+<footer class="mobile-footer relative bg-white dark:bg-background-dark pt-24 pb-12 overflow-hidden" id="contact">
+    <style>
+        @media (max-width: 767px) {
+            .mobile-footer { padding-top: 64px !important; padding-bottom: 32px !important; }
+            .mobile-footer-logo { width: 32px !important; height: 32px !important; }
+            .mobile-footer-brand { font-size: 18px !important; }
+            .mobile-footer-desc { font-size: 14px !important; margin-bottom: 24px !important; }
+            .mobile-footer-version { font-size: 10px !important; padding: 2px 8px !important; }
+            .mobile-footer-heading { font-size: 11px !important; margin-bottom: 12px !important; }
+            .mobile-footer-link { font-size: 14px !important; }
+            .mobile-footer-uplink-desc { font-size: 13px !important; margin-bottom: 16px !important; }
+            .mobile-footer-input { padding: 10px 14px !important; font-size: 13px !important; }
+            .mobile-footer-btn { font-size: 10px !important; padding: 4px 12px !important; right: 6px !important; top: 6px !important; bottom: 6px !important; }
+            .mobile-footer-copyright { font-size: 11px !important; }
+            .mobile-footer-legal { flex-wrap: wrap !important; justify-content: center !important; gap: 12px !important; }
+            .mobile-footer-legal a, .mobile-footer-legal span { font-size: 10px !important; }
+        }
+    </style>
     <!-- Background Elements -->
     @include ('public.components.footer-3d-bg')
 
@@ -18,19 +35,19 @@
                 <div class="flex items-center gap-3 mb-6 group cursor-pointer"
                     onclick="window.location.href='{{ route('home') }}'">
                     <div
-                        class="flex h-10 w-10 items-center justify-center rounded-lg overflow-hidden transition-transform duration-500 group-hover:rotate-20">
+                        class="mobile-footer-logo flex h-10 w-10 items-center justify-center rounded-lg overflow-hidden transition-transform duration-500 group-hover:rotate-20">
                         <img src="{{ asset('logo.png') }}" alt="Jarreva Creative Logo" class="h-full w-full object-contain">
                     </div>
                     <span
-                        class="text-xl font-bold tracking-tight text-gray-900 dark:text-white leading-none transition-colors duration-300 group-hover:text-blue-500">Jarreva
+                        class="mobile-footer-brand text-xl font-bold tracking-tight text-gray-900 dark:text-white leading-none transition-colors duration-300 group-hover:text-blue-500">Jarreva
                         Creative</span>
                 </div>
-                <p class="text-slate-500 text-lg leading-relaxed mb-8 max-w-md">
+                <p class="mobile-footer-desc text-slate-500 text-lg leading-relaxed mb-8 max-w-md">
                     Architecting clarity from chaos. We build digital systems that structure thought and amplify
                     intelligence.
                 </p>
                 <div
-                    class="flex items-center gap-2 text-xs font-mono text-slate-400 border border-slate-200 dark:border-slate-700 rounded-full px-3 py-1">
+                    class="mobile-footer-version flex items-center gap-2 text-xs font-mono text-slate-400 border border-slate-200 dark:border-slate-700 rounded-full px-3 py-1">
                     <span class="relative flex h-2 w-2">
                         <span
                             class="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-400 opacity-75"></span>
@@ -42,23 +59,23 @@
 
             <!-- Navigation Matrix -->
             <div class="lg:col-span-2 lg:col-start-7">
-                <h4 class="font-mono text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">
+                <h4 class="mobile-footer-heading font-mono text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">
                     Coordinates</h4>
                 <ul class="space-y-4">
                     <li><a href="{{ route('home') }}"
-                            class="group flex items-center gap-2 {{ request()->routeIs('home') ? 'text-blue-500 font-bold' : 'text-slate-600 dark:text-slate-400 hover:text-blue-400' }} transition-colors"><span
+                            class="mobile-footer-link group flex items-center gap-2 {{ request()->routeIs('home') ? 'text-blue-500 font-bold' : 'text-slate-600 dark:text-slate-400 hover:text-blue-400' }} transition-colors"><span
                                 class="{{ request()->routeIs('home') ? 'text-blue-500' : 'text-slate-300 dark:text-slate-600 group-hover:text-blue-400' }} transition-colors">/</span>
                             Home</a></li>
                     <li><a href="{{ route('about') }}"
-                            class="group flex items-center gap-2 {{ request()->routeIs('about') ? 'text-blue-500 font-bold' : 'text-slate-600 dark:text-slate-400 hover:text-blue-400' }} transition-colors"><span
+                            class="mobile-footer-link group flex items-center gap-2 {{ request()->routeIs('about') ? 'text-blue-500 font-bold' : 'text-slate-600 dark:text-slate-400 hover:text-blue-400' }} transition-colors"><span
                                 class="{{ request()->routeIs('about') ? 'text-blue-500' : 'text-slate-300 dark:text-slate-600 group-hover:text-blue-400' }} transition-colors">/</span>
                             About</a></li>
                     <li><a href="{{ route('catalog.index') }}"
-                            class="group flex items-center gap-2 {{ request()->routeIs('catalog.index') ? 'text-blue-500 font-bold' : 'text-slate-600 dark:text-slate-400 hover:text-blue-400' }} transition-colors"><span
+                            class="mobile-footer-link group flex items-center gap-2 {{ request()->routeIs('catalog.index') ? 'text-blue-500 font-bold' : 'text-slate-600 dark:text-slate-400 hover:text-blue-400' }} transition-colors"><span
                                 class="{{ request()->routeIs('catalog.index') ? 'text-blue-500' : 'text-slate-300 dark:text-slate-600 group-hover:text-blue-400' }} transition-colors">/</span>
                             Portfolio</a></li>
                     <li><a href="{{ route('contact') }}"
-                            class="group flex items-center gap-2 {{ request()->routeIs('contact') ? 'text-blue-500 font-bold' : 'text-slate-600 dark:text-slate-400 hover:text-blue-400' }} transition-colors"><span
+                            class="mobile-footer-link group flex items-center gap-2 {{ request()->routeIs('contact') ? 'text-blue-500 font-bold' : 'text-slate-600 dark:text-slate-400 hover:text-blue-400' }} transition-colors"><span
                                 class="{{ request()->routeIs('contact') ? 'text-blue-500' : 'text-slate-300 dark:text-slate-600 group-hover:text-blue-400' }} transition-colors">/</span>
                             Contact</a></li>
                 </ul>
@@ -66,23 +83,23 @@
 
             <!-- Social Frequencies -->
             <div class="lg:col-span-2">
-                <h4 class="font-mono text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">
+                <h4 class="mobile-footer-heading font-mono text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">
                     Frequencies</h4>
                 <ul class="space-y-4">
                     <li><a href="https://www.instagram.com/jarrevacreative?igsh=bjlwazJlOHBsd2h0&utm_source=qr" target="_blank" rel="noopener noreferrer"
-                            class="group flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-orange-400 transition-colors"><span
+                            class="mobile-footer-link group flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-orange-400 transition-colors"><span
                                 class="text-slate-300 dark:text-slate-600 group-hover:text-orange-400 transition-colors">></span>
                             Instagram</a></li>
                     <li><a href="https://x.com/jarrevacreative?s=21" target="_blank" rel="noopener noreferrer"
-                            class="group flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-orange-400 transition-colors"><span
+                            class="mobile-footer-link group flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-orange-400 transition-colors"><span
                                 class="text-slate-300 dark:text-slate-600 group-hover:text-orange-400 transition-colors">></span>
                             Twitter / X</a></li>
                     <li><a href="https://www.tiktok.com/@jarreva_creative?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"
-                            class="group flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-orange-400 transition-colors"><span
+                            class="mobile-footer-link group flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-orange-400 transition-colors"><span
                                 class="text-slate-300 dark:text-slate-600 group-hover:text-orange-400 transition-colors">></span>
                             TikTok</a></li>
                     <li><a href="https://medium.com/@jarrevacreative" target="_blank" rel="noopener noreferrer"
-                            class="group flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-orange-400 transition-colors"><span
+                            class="mobile-footer-link group flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-orange-400 transition-colors"><span
                                 class="text-slate-300 dark:text-slate-600 group-hover:text-orange-400 transition-colors">></span>
                             Medium</a></li>
                 </ul>
@@ -90,16 +107,16 @@
 
             <!-- Newsletter / Uplink -->
             <div class="lg:col-span-3">
-                <h4 class="font-mono text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Neural
+                <h4 class="mobile-footer-heading font-mono text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Neural
                     Uplink</h4>
-                <p class="text-sm text-slate-500 mb-4">Subscribe for system updates and intellectual design
+                <p class="mobile-footer-uplink-desc text-sm text-slate-500 mb-4">Subscribe for system updates and intellectual design
                     patterns.</p>
                 <form id="footer-newsletter-form" class="relative group" onsubmit="submitNewsletter(event)">
                     @csrf
                     <input type="email" id="footer-newsletter-email" placeholder="Enter signal frequency..."
-                        class="w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg py-3 px-4 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-mono placeholder:text-slate-400 dark:text-white" required>
+                        class="mobile-footer-input w-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg py-3 px-4 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-mono placeholder:text-slate-400 dark:text-white" required>
                     <button type="submit" id="footer-newsletter-btn"
-                        class="absolute right-2 top-2 bottom-2 bg-slate-900 text-white rounded px-3 text-xs font-bold uppercase hover:bg-primary transition-colors">
+                        class="mobile-footer-btn absolute right-2 top-2 bottom-2 bg-slate-900 text-white rounded px-3 text-xs font-bold uppercase hover:bg-primary transition-colors">
                         Init
                     </button>
                     <p id="footer-newsletter-msg" class="absolute -bottom-6 left-0 text-[10px] font-mono mt-1 hidden"></p>
@@ -176,9 +193,9 @@
         <!-- Footer Status Bar -->
         <div
             class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-sm text-slate-500 font-medium">© {{ date('Y') }} Jarreva Creative. All systems operational.</p>
+            <p class="mobile-footer-copyright text-sm text-slate-500 font-medium text-center md:text-left">© {{ date('Y') }} Jarreva Creative. All systems operational.</p>
 
-            <div class="flex items-center gap-8">
+            <div class="mobile-footer-legal flex items-center gap-8 justify-center">
                 <a href="#"
                     class="text-xs font-mono text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors uppercase">Privacy
                     Protocol</a>

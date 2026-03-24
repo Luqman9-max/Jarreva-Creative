@@ -151,17 +151,7 @@
         animation: ripple 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
     }
 
-    .reveal-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        will-change: opacity, transform;
-    }
 
-    .reveal-on-scroll.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
 
     @keyframes node-pulse-blue {
         0% {
@@ -373,29 +363,6 @@
     }
 
     /* NEW ANIMATIONS FROM ABOUT.HTML */
-    .reveal-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-        will-change: opacity, transform;
-    }
-
-    .reveal-on-scroll.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .delay-100 {
-        transition-delay: 100ms;
-    }
-
-    .delay-200 {
-        transition-delay: 200ms;
-    }
-
-    .delay-300 {
-        transition-delay: 300ms;
-    }
 
     .animate-gradient {
         background-size: 200% auto;
@@ -439,7 +406,7 @@
 
 @section('content')
 <section
-    class="reveal-on-scroll relative z-0 flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-24 pb-24 lg:pt-32 bg-white dark:bg-background-dark">
+    class="reveal-element reveal-scale relative z-0 flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-24 pb-24 lg:pt-32 bg-white dark:bg-background-dark">
 
     <!-- 3D Hero Background -->
     @include ('public.components.hero-3d-bg')
@@ -513,11 +480,11 @@
                 Stuck Like This?</span>
         </h1>
         <p
-            class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8 lg:mb-10 font-medium reveal-on-scroll delay-100">
+            class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-8 lg:mb-10 font-medium reveal-element reveal-up delay-100">
             You wake up. Grab your phone. Scroll. Just for a second, then one hour disappears. You know it's
             wrong, but you repeat it anyway.
         </p>
-        <div class="flex flex-col sm:flex-row items-center gap-3 lg:gap-4 w-full justify-center reveal-on-scroll delay-200">
+        <div class="flex flex-col sm:flex-row items-center gap-3 lg:gap-4 w-full justify-center reveal-element reveal-up delay-200">
             <a href="{{ route('catalog.index') }}"
                 class="group relative flex h-12 lg:h-14 items-center justify-center gap-2 rounded-full bg-primary px-6 lg:px-8 text-sm lg:text-base font-bold text-white transition-all hover:bg-orange-600 hover:shadow-lg w-[85%] max-w-[280px] sm:max-w-none sm:w-auto shadow-orange-200/50">
                 Explore Library
@@ -528,7 +495,7 @@
     </div>
 </section>
 <section
-    class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 py-24 rounded-[40px] shadow-2xl border border-slate-800 hover:border-slate-700 transition-colors duration-700 group">
+    class="reveal-element reveal-up relative z-10 w-full overflow-hidden bg-slate-950 py-24 rounded-[40px] shadow-2xl border border-slate-800 hover:border-slate-700 transition-colors duration-700 group">
     <!-- Clean Minimal Background -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
         <div
@@ -607,13 +574,25 @@
         </div>
     </div>
     <!-- Carousel Container -->
-    <div class="relative w-full h-[500px] flex items-center justify-center overflow-visible">
+    <style>
+        @media (max-width: 767px) {
+            .mobile-books-carousel-wrapper {
+                height: 380px !important;
+                margin-top: -20px !important;
+                margin-bottom: -20px !important;
+            }
+            .mobile-books-carousel {
+                transform: scale(0.60) !important;
+            }
+        }
+    </style>
+    <div class="mobile-books-carousel-wrapper relative w-full h-[500px] flex items-center justify-center overflow-visible">
         <!-- Glow behind carousel -->
         <div
             class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-[100px] pointer-events-none">
         </div>
 
-        <div class="carousel-scene relative flex h-[350px] w-full items-center justify-center overflow-visible">
+        <div class="mobile-books-carousel carousel-scene relative flex h-[350px] w-full items-center justify-center overflow-visible">
             <div class="carousel-cylinder relative h-[280px] w-[180px]">
                 <!-- Reduced number of books for performance, high quality only -->
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
@@ -717,7 +696,7 @@
     </div>
 </section>
 <section
-    class="reveal-on-scroll relative z-0 w-full overflow-hidden bg-white dark:bg-background-dark pb-24 pt-32 -mt-12">
+    class="reveal-element reveal-up relative z-0 w-full overflow-hidden bg-white dark:bg-background-dark pb-24 pt-32 -mt-12">
     <div class="flex justify-center">
         <div class="w-full max-w-7xl px-6 md:px-12">
             <div class="flex flex-col items-center">
@@ -746,6 +725,33 @@
                         </p>
                     </div>
 
+                    <style>
+                        @media (max-width: 767px) {
+                            .mobile-testimonial-card { 
+                                width: 240px !important; 
+                                padding: 16px !important; 
+                                border-radius: 16px !important;
+                            }
+                            .mobile-testimonial-card p {
+                                font-size: 13px !important;
+                                line-height: 1.5 !important;
+                            }
+                            .mobile-testimonial-card .material-symbols-outlined {
+                                font-size: 12px !important;
+                            }
+                            .mobile-testimonial-card .avatar {
+                                width: 32px !important;
+                                height: 32px !important;
+                                font-size: 12px !important;
+                            }
+                            .mobile-testimonial-card h4 {
+                                font-size: 13px !important;
+                            }
+                            .mobile-testimonial-card .subtitle {
+                                font-size: 11px !important;
+                            }
+                        }
+                    </style>
                     <!-- Infinite Scroll Marquee -->
                     <div class="relative w-full overflow-hidden"
                         style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
@@ -754,7 +760,7 @@
                             class="flex animate-scroll-marquee w-max gap-4 md:gap-8 py-6 md:py-10 px-4 hover:[animation-play-state:paused]">
                             <!-- Testimonial 1 -->
                             <div
-                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="mobile-testimonial-card w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -775,12 +781,12 @@
                                 </div>
                                 <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
+                                        class="avatar w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         MC
                                     </div>
                                     <div>
                                         <h4 class="text-slate-900 font-bold">Marcus Chen</h4>
-                                        <p class="text-slate-400 text-sm">Student, Singapore</p>
+                                        <p class="subtitle text-slate-400 text-sm">Student, Singapore</p>
                                     </div>
                                     <span
                                         class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
@@ -789,7 +795,7 @@
 
                             <!-- Testimonial 2 -->
                             <div
-                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="mobile-testimonial-card w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -810,12 +816,12 @@
                                 </div>
                                 <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
+                                        class="avatar w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         AR
                                     </div>
                                     <div>
                                         <h4 class="text-slate-900 font-bold">Aisha Rahman</h4>
-                                        <p class="text-slate-400 text-sm">Founder, Malaysia</p>
+                                        <p class="subtitle text-slate-400 text-sm">Founder, Malaysia</p>
                                     </div>
                                     <span
                                         class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
@@ -824,7 +830,7 @@
 
                             <!-- Testimonial 3 -->
                             <div
-                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="mobile-testimonial-card w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -845,12 +851,12 @@
                                 </div>
                                 <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
+                                        class="avatar w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         JM
                                     </div>
                                     <div>
                                         <h4 class="text-slate-900 font-bold">Jake Morrison</h4>
-                                        <p class="text-slate-400 text-sm">Dev Lead, Australia</p>
+                                        <p class="subtitle text-slate-400 text-sm">Dev Lead, Australia</p>
                                     </div>
                                     <span
                                         class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
@@ -859,7 +865,7 @@
 
                             <!-- Testimonial 4 -->
                             <div
-                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="mobile-testimonial-card w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -880,12 +886,12 @@
                                 </div>
                                 <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
+                                        class="avatar w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         PS
                                     </div>
                                     <div>
                                         <h4 class="text-slate-900 font-bold">Priya Sharma</h4>
-                                        <p class="text-slate-400 text-sm">Content Creator, India</p>
+                                        <p class="subtitle text-slate-400 text-sm">Content Creator, India</p>
                                     </div>
                                     <span
                                         class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
@@ -894,7 +900,7 @@
 
                             <!-- Testimonial 5 -->
                             <div
-                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="mobile-testimonial-card w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -915,12 +921,12 @@
                                 </div>
                                 <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
+                                        class="avatar w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         DP
                                     </div>
                                     <div>
                                         <h4 class="text-slate-900 font-bold">Daniel Park</h4>
-                                        <p class="text-slate-400 text-sm">Entrepreneur, Korea</p>
+                                        <p class="subtitle text-slate-400 text-sm">Entrepreneur, Korea</p>
                                     </div>
                                     <span
                                         class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
@@ -929,7 +935,7 @@
 
                             <!-- Testimonial 6 (Duplicate for Loop) -->
                             <div
-                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="mobile-testimonial-card w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -950,12 +956,12 @@
                                 </div>
                                 <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
+                                        class="avatar w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         SM
                                     </div>
                                     <div>
                                         <h4 class="text-slate-900 font-bold">Sofia Martinez</h4>
-                                        <p class="text-slate-400 text-sm">Engineer, Spain</p>
+                                        <p class="subtitle text-slate-400 text-sm">Engineer, Spain</p>
                                     </div>
                                     <span
                                         class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
@@ -964,7 +970,7 @@
 
                             <!-- Testimonial 7 (Duplicate for Loop) -->
                             <div
-                                class="w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
+                                class="mobile-testimonial-card w-[280px] sm:w-[320px] md:w-[400px] bg-white rounded-[24px] md:rounded-[32px] p-6 md:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-slate-100 flex flex-col justify-between shrink-0 group transition-all duration-300 hover:-translate-y-2">
                                 <div class="mb-6">
                                     <div class="flex items-center gap-1 mb-4">
                                         <span
@@ -985,12 +991,12 @@
                                 </div>
                                 <div class="flex items-center gap-3 md:gap-4 pt-4 md:pt-6 border-t border-slate-50">
                                     <div
-                                        class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
+                                        class="avatar w-10 h-10 md:w-12 md:h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 font-bold text-sm md:text-lg">
                                         RT
                                     </div>
                                     <div>
                                         <h4 class="text-slate-900 font-bold">Ryan Thompson</h4>
-                                        <p class="text-slate-400 text-sm">Coach, UK</p>
+                                        <p class="subtitle text-slate-400 text-sm">Coach, UK</p>
                                     </div>
                                     <span
                                         class="ml-auto material-symbols-outlined text-secondary group-hover:scale-110 transition-transform filled icon-filled">verified</span>
@@ -1113,31 +1119,41 @@
                             </defs>
                         </svg>
                     </div>
+                    <style>
+                        @media (max-width: 767px) {
+                            .mobile-builder-item { gap: 12px !important; margin-bottom: 8px !important; }
+                            .mobile-builder-item h3 { font-size: 15px !important; line-height: 1.3 !important; }
+                            .mobile-builder-check { width: 26px !important; height: 26px !important; }
+                            .mobile-builder-check span { font-size: 15px !important; }
+                            .mobile-builder-book { transform: scale(0.65) !important; margin-top: -30px !important; margin-bottom: -30px !important; }
+                            .mobile-builder-bottom-wrapper { margin-top: 56px !important; }
+                        }
+                    </style>
                     <div
-                        class="relative mt-8 lg:mt-0 flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24">
+                        class="mobile-builder-bottom-wrapper relative mt-8 lg:mt-0 flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24">
                         <div class="flex flex-col gap-10 lg:items-end lg:text-right w-full lg:w-1/3">
-                            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-4">
+                            <div class="mobile-builder-item flex flex-col lg:flex-row items-center lg:items-start gap-4">
                                 <div class="order-2 lg:order-1 flex flex-col gap-1">
                                     <h3 class="text-lg font-bold text-gray-800">
                                         Hyper-Personalized<br />Protocols</h3>
                                 </div>
                                 <div
-                                    class="order-1 lg:order-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
+                                    class="mobile-builder-check order-1 lg:order-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
                                     <span class="material-symbols-outlined text-[16px] font-bold">check</span>
                                 </div>
                             </div>
-                            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-4">
+                            <div class="mobile-builder-item flex flex-col lg:flex-row items-center lg:items-start gap-4">
                                 <div class="order-2 lg:order-1 flex flex-col gap-1">
                                     <h3 class="text-lg font-bold text-gray-800">Plug & Play<br />System
                                         Tools</h3>
                                 </div>
                                 <div
-                                    class="order-1 lg:order-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
+                                    class="mobile-builder-check order-1 lg:order-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
                                     <span class="material-symbols-outlined text-[16px] font-bold">check</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="relative z-10 mx-auto book-pulse">
+                        <div class="mobile-builder-book relative z-10 mx-auto book-pulse">
                             <div
                                 class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[280px] h-10 bg-gray-800 rounded-sm transform rotate(6deg) shadow-xl z-0 border-l border-b border-gray-600">
                             </div>
@@ -1184,9 +1200,9 @@
                             </div>
                         </div>
                         <div class="flex flex-col gap-10 lg:items-start lg:text-left w-full lg:w-1/3">
-                            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-4">
+                            <div class="mobile-builder-item flex flex-col lg:flex-row items-center lg:items-start gap-4">
                                 <div
-                                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
+                                    class="mobile-builder-check w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
                                     <span class="material-symbols-outlined text-[16px] font-bold">check</span>
                                 </div>
                                 <div class="flex flex-col gap-1">
@@ -1194,9 +1210,9 @@
                                         Experts</h3>
                                 </div>
                             </div>
-                            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-4">
+                            <div class="mobile-builder-item flex flex-col lg:flex-row items-center lg:items-start gap-4">
                                 <div
-                                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
+                                    class="mobile-builder-check w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-orange-500/20 flex-shrink-0">
                                     <span class="material-symbols-outlined text-[16px] font-bold">check</span>
                                 </div>
                                 <div class="flex flex-col gap-1">
@@ -1214,7 +1230,7 @@
 
 <!-- NEW: Why Solutions Fail Section -->
 <section
-    class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 pt-24 pb-48 rounded-[40px] shadow-2xl border border-slate-800 hover:border-slate-700 transition-colors duration-700 group mt-8">
+    class="reveal-element reveal-up relative z-10 w-full overflow-hidden bg-slate-950 pt-24 pb-48 rounded-[40px] shadow-2xl border border-slate-800 hover:border-slate-700 transition-colors duration-700 group mt-8">
     <!-- Clean Minimal Background -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
         <div
@@ -1301,9 +1317,20 @@
                 </div>
             </div>
             <!-- Right: Text Explanation -->
+            <style>
+                @media (max-width: 767px) {
+                    .mobile-fail-item { gap: 12px !important; margin-bottom: 8px !important; }
+                    .mobile-fail-item .icon-wrapper { width: 32px !important; height: 32px !important; }
+                    .mobile-fail-item .icon-wrapper span { font-size: 16px !important; }
+                    .mobile-fail-item h4 { font-size: 16px !important; margin-bottom: 6px !important; line-height: 1.3 !important; }
+                    .mobile-fail-item p { font-size: 14px !important; line-height: 1.5 !important; }
+                    .mobile-fail-quote { padding: 16px !important; margin-top: 20px !important; }
+                    .mobile-fail-quote p { font-size: 15px !important; }
+                }
+            </style>
             <div class="space-y-8">
-                <div class="flex gap-4">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div class="mobile-fail-item flex gap-4">
+                    <div class="icon-wrapper w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <span class="material-symbols-outlined text-primary">close</span>
                     </div>
                     <div>
@@ -1315,8 +1342,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex gap-4">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div class="mobile-fail-item flex gap-4">
+                    <div class="icon-wrapper w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <span class="material-symbols-outlined text-primary">close</span>
                     </div>
                     <div>
@@ -1327,8 +1354,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="flex gap-4">
-                    <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div class="mobile-fail-item flex gap-4">
+                    <div class="icon-wrapper w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <span class="material-symbols-outlined text-primary">close</span>
                     </div>
                     <div>
@@ -1339,7 +1366,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="mt-8 p-6 bg-secondary/5 rounded-2xl border border-secondary/20">
+                <div class="mobile-fail-quote mt-8 p-6 bg-secondary/5 rounded-2xl border border-secondary/20">
                     <p class="text-white font-bold text-lg">
                         "Your life doesn't need more motivation. Your life needs <span
                             class="text-primary">structure</span>."
@@ -1349,7 +1376,7 @@
         </div>
     </div>
 </section>
-<section class="reveal-on-scroll w-full max-w-7xl mx-auto px-6 -mt-24 mb-20 relative z-20">
+<section class="reveal-element reveal-up w-full max-w-7xl mx-auto px-6 -mt-24 mb-20 relative z-20">
     <div class="bg-[#F7F9FB] rounded-[60px] p-12 lg:p-16 shadow-2xl relative overflow-hidden">
         <div class="text-center mb-16 relative z-10">
             <div
@@ -1369,46 +1396,55 @@
             </p>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-center relative z-10">
+            <style>
+                @media (max-width: 767px) {
+                    .mobile-share-list > li { margin-top: 16px !important; }
+                    .mobile-share-item { gap: 12px !important; }
+                    .mobile-share-item .icon-wrapper { width: 20px !important; height: 20px !important; }
+                    .mobile-share-item .icon-wrapper span { font-size: 13px !important; }
+                    .mobile-share-item .list-text { font-size: 14px !important; }
+                }
+            </style>
             <div class="lg:text-right flex flex-col lg:items-end">
                 <span class="text-gray-400 font-bold tracking-widest text-xs uppercase mb-4">Who to share
                     with</span>
                 <h3 class="text-2xl font-black text-gray-900 mb-8">Perfect for</h3>
-                <ul class="space-y-6">
-                    <li class="flex items-center lg:flex-row-reverse gap-4 text-right">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                <ul class="mobile-share-list space-y-6">
+                    <li class="mobile-share-item flex items-center lg:flex-row-reverse gap-4 text-right">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Friends who feel stuck</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Friends who feel stuck</span>
                     </li>
-                    <li class="flex items-center lg:flex-row-reverse gap-4 text-right">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center lg:flex-row-reverse gap-4 text-right">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Startup teams needing focus</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Startup teams needing focus</span>
                     </li>
-                    <li class="flex items-center lg:flex-row-reverse gap-4 text-right">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center lg:flex-row-reverse gap-4 text-right">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">School counselors</span>
+                        <span class="list-text text-gray-600 font-medium text-base">School counselors</span>
                     </li>
-                    <li class="flex items-center lg:flex-row-reverse gap-4 text-right">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center lg:flex-row-reverse gap-4 text-right">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Youth group leaders</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Youth group leaders</span>
                     </li>
-                    <li class="flex items-center lg:flex-row-reverse gap-4 text-right">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center lg:flex-row-reverse gap-4 text-right">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Parents of teenagers</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Parents of teenagers</span>
                     </li>
-                    <li class="flex items-center lg:flex-row-reverse gap-4 text-right">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center lg:flex-row-reverse gap-4 text-right">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Community organizations</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Community organizations</span>
                     </li>
                 </ul>
             </div>
@@ -1485,44 +1521,44 @@
                 <span class="text-gray-400 font-bold tracking-widest text-xs uppercase mb-4">Beyond
                     Yourself</span>
                 <h3 class="text-2xl font-black text-gray-900 mb-8">Create big things</h3>
-                <ul class="space-y-6">
-                    <li class="flex items-center gap-4">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                <ul class="mobile-share-list space-y-6">
+                    <li class="mobile-share-item flex items-center gap-4">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Build accountability
+                        <span class="list-text text-gray-600 font-medium text-base">Build accountability
                             circles</span>
                     </li>
-                    <li class="flex items-center gap-4">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center gap-4">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Transform team dynamics</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Transform team dynamics</span>
                     </li>
-                    <li class="flex items-center gap-4">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center gap-4">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Mentor future leaders</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Mentor future leaders</span>
                     </li>
-                    <li class="flex items-center gap-4">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center gap-4">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Teach system-based
+                        <span class="list-text text-gray-600 font-medium text-base">Teach system-based
                             thinking</span>
                     </li>
-                    <li class="flex items-center gap-4">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center gap-4">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Replace hype with habits</span>
+                        <span class="list-text text-gray-600 font-medium text-base">Replace hype with habits</span>
                     </li>
-                    <li class="flex items-center gap-4">
-                        <div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+                    <li class="mobile-share-item flex items-center gap-4">
+                        <div class="icon-wrapper w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-white text-sm font-bold">check</span>
                         </div>
-                        <span class="text-gray-600 font-medium text-base">Build a culture of
+                        <span class="list-text text-gray-600 font-medium text-base">Build a culture of
                             execution</span>
                     </li>
                 </ul>
@@ -1532,8 +1568,31 @@
 </section>
 <!-- NEW: Radial Orbital Timeline Section -->
 <section
+<<<<<<< HEAD
     class="reveal-on-scroll relative z-0 w-full overflow-hidden bg-white py-16 min-h-[700px] md:min-h-[1000px] flex flex-col items-center justify-center scroll-mt-28"
+=======
+    class="reveal-element reveal-up relative z-0 w-full overflow-hidden bg-white py-16 min-h-[1000px] flex flex-col items-center justify-center scroll-mt-28"
+>>>>>>> origin/main
     id="about">
+    <style>
+        @media (max-width: 767px) {
+            #about { min-height: 700px !important; }
+            #radial-timeline-container { height: 500px !important; }
+            .orbit-center-core { width: 80px !important; height: 80px !important; }
+            .orbit-center-pulse-1 { width: 112px !important; height: 112px !important; }
+            .orbit-center-pulse-2 { width: 160px !important; height: 160px !important; }
+            .orbit-center-inner { width: 32px !important; height: 32px !important; }
+            .orbit-ring-1 { width: 180px !important; height: 180px !important; }
+            .orbit-ring-2 { width: 280px !important; height: 280px !important; }
+            .orbit-ring-3 { width: 380px !important; height: 380px !important; }
+            .node-core { width: 40px !important; height: 40px !important; }
+            .node-core span { font-size: 18px !important; }
+            .node-label { top: 48px !important; font-size: 12px !important; }
+            .node-card { width: 256px !important; top: 64px !important; padding: 16px !important; }
+            .node-card h4 { font-size: 16px !important; margin-bottom: 4px !important; }
+            .node-card p { font-size: 12px !important; }
+        }
+    </style>
     <!-- Premium Light Texture Background -->
     <div class="absolute inset-0 pointer-events-none">
         <div
@@ -1806,7 +1865,7 @@
     </script>
 </section>
 <section
-    class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 py-24 rounded-[40px] shadow-2xl scroll-mt-28 border border-slate-800 hover:border-slate-700 transition-colors duration-700 group"
+    class="reveal-element reveal-up relative z-10 w-full overflow-hidden bg-slate-950 py-24 rounded-[40px] shadow-2xl scroll-mt-28 border border-slate-800 hover:border-slate-700 transition-colors duration-700 group"
     id="portfolio">
     <!-- Clean Minimal Background -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -1910,7 +1969,7 @@
 </section>
 <!-- NEW: Transformation/Benefits Section -->
 <section
-    class="reveal-on-scroll relative z-0 w-full overflow-hidden bg-white dark:bg-background-dark py-24 min-h-[900px] flex flex-col items-center justify-center scroll-mt-28">
+    class="reveal-element reveal-up relative z-0 w-full overflow-hidden bg-white dark:bg-background-dark py-24 min-h-[900px] flex flex-col items-center justify-center scroll-mt-28">
     <!-- Qualifiers Content (merged) -->
     <div class="max-w-5xl mx-auto px-6 md:px-12">
         <div class="text-center mb-16">
@@ -2007,7 +2066,19 @@
 </section>
 <!-- NEW: Final CTA Section -->
 <section
-    class="reveal-on-scroll relative z-10 w-full overflow-hidden bg-slate-950 py-20 rounded-[40px] mt-16 border border-slate-800 hover:border-slate-700 transition-colors duration-700 shadow-2xl group">
+    class="mobile-turning-section reveal-element reveal-up relative z-10 w-full overflow-hidden bg-slate-950 py-20 rounded-[40px] mt-16 border border-slate-800 hover:border-slate-700 transition-colors duration-700 shadow-2xl group">
+
+    <style>
+        @media (max-width: 767px) {
+            .mobile-turning-section { padding-top: 48px !important; padding-bottom: 48px !important; margin-top: 32px !important; border-radius: 32px !important; }
+            .mobile-turning-title { font-size: 28px !important; margin-bottom: 24px !important; line-height: 1.2 !important; }
+            .mobile-turning-card { padding: 20px !important; gap: 12px !important; border-radius: 20px !important; }
+            .mobile-turning-icon { width: 40px !important; height: 40px !important; }
+            .mobile-turning-icon span { font-size: 18px !important; }
+            .mobile-turning-text { font-size: 14px !important; line-height: 1.5 !important; }
+            .mobile-turning-btn { padding: 12px 24px !important; font-size: 15px !important; }
+        }
+    </style>
 
     <!-- Clean Minimal Background -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -2024,7 +2095,7 @@
     <div class="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
 
         <!-- Minimal Badge -->
-        <div class="inline-flex flex-col items-center mb-8 reveal-on-scroll">
+        <div class="inline-flex flex-col items-center mb-8 reveal-element reveal-up">
             <span class="w-px h-6 bg-gradient-to-b from-transparent to-primary/30 mb-4 block"></span>
             <div
                 class="inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner">
@@ -2035,34 +2106,34 @@
 
         <!-- Clean Headline -->
         <h2
-            class="text-3xl md:text-5xl font-black text-white mb-8 tracking-tight leading-[1.1] reveal-on-scroll delay-100">
+            class="mobile-turning-title text-3xl md:text-5xl font-black text-white mb-8 tracking-tight leading-[1.1] reveal-element reveal-up delay-100">
             The Choice Is<br>
             <span class="text-slate-400">Absolutely Simple.</span>
         </h2>
 
         <!-- Clean Choices (Horizontal alignment for Side-by-Side look) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 max-w-4xl mx-auto reveal-on-scroll delay-200 text-left">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 max-w-4xl mx-auto reveal-element reveal-up delay-200 text-left">
 
             <!-- Choice A: Subtle Box -->
             <div
-                class="flex flex-col gap-4 p-6 rounded-[24px] border border-slate-800/50 bg-slate-900/30 hover:bg-slate-900/80 hover:border-slate-700 transition-all duration-300 group/item backdrop-blur-sm">
+                class="mobile-turning-card flex flex-col gap-4 p-6 rounded-[24px] border border-slate-800/50 bg-slate-900/30 hover:bg-slate-900/80 hover:border-slate-700 transition-all duration-300 group/item backdrop-blur-sm">
                 <div
-                    class="w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center shrink-0 group-hover/item:-translate-y-1 transition-transform duration-300 shadow-inner">
+                    class="mobile-turning-icon w-12 h-12 rounded-full bg-slate-800/80 flex items-center justify-center shrink-0 group-hover/item:-translate-y-1 transition-transform duration-300 shadow-inner">
                     <span class="material-symbols-outlined text-slate-500 text-xl">swipe_down</span>
                 </div>
-                <p class="text-slate-400 font-medium text-base leading-relaxed">
+                <p class="mobile-turning-text text-slate-400 font-medium text-base leading-relaxed">
                     Keep scrolling, keep overthinking, keep breaking promises to yourself.
                 </p>
             </div>
 
             <!-- Choice B: Highlighted Box -->
             <div
-                class="flex flex-col gap-4 p-6 rounded-[24px] border border-primary/30 bg-primary/5 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 group/item backdrop-blur-sm shadow-[0_0_30px_rgba(249,115,22,0.05)]">
+                class="mobile-turning-card flex flex-col gap-4 p-6 rounded-[24px] border border-primary/30 bg-primary/5 hover:bg-primary/10 hover:border-primary/50 transition-all duration-300 group/item backdrop-blur-sm shadow-[0_0_30px_rgba(249,115,22,0.05)]">
                 <div
-                    class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center shrink-0 group-hover/item:-translate-y-1 transition-transform duration-300">
+                    class="mobile-turning-icon w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center shrink-0 group-hover/item:-translate-y-1 transition-transform duration-300">
                     <span class="material-symbols-outlined text-primary text-xl">rocket_launch</span>
                 </div>
-                <p class="text-white font-bold text-base leading-relaxed">
+                <p class="mobile-turning-text text-white font-bold text-base leading-relaxed">
                     Or start building the systems that pull your life out of chaos.
                 </p>
             </div>
@@ -2070,14 +2141,14 @@
         </div>
 
         <!-- Focus CTA Button -->
-        <div class="relative inline-block group reveal-on-scroll delay-300">
+        <div class="relative inline-block group reveal-element reveal-up delay-300">
             <!-- Subtle hover ring -->
             <div
                 class="absolute -inset-1 bg-gradient-to-r from-primary to-orange-500 rounded-full blur opacity-30 group-hover:opacity-70 transition duration-500">
             </div>
 
             <a href="#library"
-                class="relative inline-flex items-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-full font-bold text-lg transform group-hover:scale-[1.02] transition-all duration-300 overflow-hidden isolate">
+                class="mobile-turning-btn relative inline-flex items-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-full font-bold text-lg transform group-hover:scale-[1.02] transition-all duration-300 overflow-hidden isolate">
 
                 <!-- Shimmer effect -->
                 <div
@@ -2097,24 +2168,6 @@
 <script>
 
     document.addEventListener('DOMContentLoaded', () => {
-        // 1. Reveal Animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal-on-scroll').forEach(section => {
-            observer.observe(section);
-        });
 
         // 2. Spotlight Effect (Orange for Landing Page)
         document.querySelectorAll('.spotlight-card').forEach(card => {
