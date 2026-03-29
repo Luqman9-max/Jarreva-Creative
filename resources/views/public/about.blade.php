@@ -276,7 +276,7 @@
 </section>
 
 <!-- SECTION 3: CORE PRINCIPLES - BENTO GRID v2 -->
-<section id="principles" class="reveal-element reveal-up py-24 bg-white dark:bg-background-dark mx-4">
+<section id="principles" class="reveal-element reveal-up py-24 bg-white dark:bg-background-dark">
     <div class="max-w-7xl mx-auto px-6 md:px-12 text-center mb-10 md:mb-16">
         <span
             class="text-secondary font-bold tracking-widest uppercase text-[10px] sm:text-xs border border-secondary/20 bg-secondary/10 px-3 py-1 rounded-full mb-4 inline-block">The
@@ -286,10 +286,10 @@
             principles.</p>
     </div>
 
-    <div class="max-w-6xl mx-auto px-6 md:px-12">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
         <style>
             @media (max-width: 767px) {
-                .mobile-about-grid { grid-auto-rows: minmax(280px, auto) !important; gap: 16px !important; }
+                .mobile-about-grid { grid-auto-rows: minmax(280px, auto) !important; }
                 .mobile-about-card { padding: 24px !important; gap: 24px !important; }
                 .mobile-about-icon { width: 44px !important; height: 44px !important; }
                 .mobile-about-icon span { font-size: 24px !important; }
@@ -300,7 +300,7 @@
                 .mobile-about-principle { font-size: 10px !important; margin-bottom: 8px !important; }
             }
         </style>
-        <div class="mobile-about-grid grid grid-cols-1 md:grid-cols-6 gap-6 auto-rows-[340px]">
+        <div class="mobile-about-grid grid grid-cols-1 md:grid-cols-6 gap-6 md:gap-8 auto-rows-[340px]">
 
             <!-- Card 1: Systems > Hacks (Large Span) -->
             <div
