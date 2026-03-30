@@ -1,5 +1,5 @@
 {{-- Footer component --}}
-<footer class="mobile-footer relative bg-white dark:bg-background-dark pt-24 pb-12 overflow-hidden" id="contact">
+<footer class="mobile-footer relative bg-white dark:bg-background-dark pt-24 pb-12 px-4 sm:px-6 overflow-hidden" id="contact">
     <style>
         @media (max-width: 767px) {
             .mobile-footer { padding-top: 64px !important; padding-bottom: 32px !important; }
@@ -27,7 +27,7 @@
         class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent opacity-50">
     </div>
 
-    <div class="container mx-auto px-6 relative z-10">
+    <div class="w-full max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
 
             <!-- Brand Module -->
