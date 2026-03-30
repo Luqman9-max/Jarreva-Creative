@@ -2,7 +2,7 @@
 
 @section('title', 'Jarreva Creative - Public Landing Page')
 
-@push ('styles')
+@push('styles')
 <style>
     html {
         scroll-behavior: smooth;
@@ -409,12 +409,12 @@
     class="reveal-element reveal-scale relative z-0 flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-24 pb-24 lg:pt-32 bg-white dark:bg-background-dark">
 
     <!-- 3D Hero Background -->
-    @include ('public.components.hero-3d-bg')
+    @include('public.components.hero-3d-bg')
 
     <div
         class="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none mix-blend-overlay opacity-50 dark:opacity-20">
     </div>
-    <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 flex flex-col items-center text-center">
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 flex flex-col items-center text-center">
         <!-- System Intelligence Status -->
         <div
             class="group relative mb-8 lg:mb-12 inline-flex items-center gap-2 lg:gap-3 rounded-full border border-slate-200 bg-white/50 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner px-3 py-1.5 lg:px-4 lg:py-2 shadow-sm hover:border-secondary/30 transition-all duration-500 max-w-[90vw] sm:max-w-[95vw] md:max-w-full">
@@ -506,7 +506,7 @@
         </div>
     </div>
 
-    <div class="mx-auto max-w-7xl px-6 flex flex-col items-center justify-center mb-24 relative z-10">
+    <div class="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 flex flex-col items-center justify-center mb-24 relative z-10">
         <div>
             <div
                 class="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-white shadow-sm px-4 py-1.5 mb-6">
@@ -567,7 +567,7 @@
             </div>
         </div>
     </div>
-    <div class="mx-auto max-w-7xl px-6 text-center pt-8 relative z-10">
+    <div class="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 text-center pt-8 relative z-10">
         <h3 class="font-display text-2xl font-bold uppercase tracking-widest text-white/50 mb-2">THIS IS
             NOT A TYPICAL MOTIVATION BOOK SET</h3>
         <div class="mx-auto h-1 w-24 rounded-full bg-primary mb-16 shadow-[0_0_15px_rgba(249,115,22,0.5)]">
@@ -575,6 +575,16 @@
     </div>
     <!-- Carousel Container -->
     <style>
+        /* Tambahkan ini untuk mematikan seleksi biru saat di-drag */
+        .mobile-books-carousel, 
+        .mobile-books-carousel img, 
+        .mobile-books-carousel-wrapper {
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none;     /* IE 10 dan 11 */
+            user-select: none;         /* Standard syntax */
+            -webkit-user-drag: none;   /* Mencegah gambar ikut ter-drag keluar */
+        }
+
         @media (max-width: 767px) {
             .mobile-books-carousel-wrapper {
                 height: 380px !important;
@@ -698,7 +708,7 @@
 <section
     class="reveal-element reveal-up relative z-0 w-full overflow-hidden bg-white dark:bg-background-dark pb-24 pt-32 -mt-12">
     <div class="flex justify-center">
-        <div class="w-full max-w-7xl px-6 md:px-12">
+        <div class="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
             <div class="flex flex-col items-center">
                 <div class="w-full max-w-7xl mx-auto mb-32 relative">
                     <!-- Background Ambient Light -->
@@ -1230,7 +1240,7 @@
 
 <!-- NEW: Why Solutions Fail Section -->
 <section
-    class="reveal-element reveal-up relative z-10 w-full overflow-hidden bg-slate-950 pt-24 pb-48 rounded-[40px] shadow-2xl border border-slate-800 hover:border-slate-700 transition-colors duration-700 group mt-8">
+    class="reveal-element reveal-up relative z-10 w-full overflow-hidden bg-slate-950 pt-24 pb-48 rounded-[40px] shadow-2xl border border-slate-800 hover:border-slate-700 transition-colors duration-700 group mt-12">
     <!-- Clean Minimal Background -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
         <div
@@ -1238,7 +1248,7 @@
         </div>
     </div>
 
-    <div class="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
+    <div class="w-full max-w-6xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
         <div class="text-center mb-16">
             <div
                 class="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-white shadow-sm px-4 py-1.5 mb-6">
@@ -1376,7 +1386,7 @@
         </div>
     </div>
 </section>
-<section class="reveal-element reveal-up w-full max-w-7xl mx-auto px-6 -mt-24 mb-20 relative z-20">
+<section class="reveal-element reveal-up w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 -mt-24 mb-20 relative z-20">
     <div class="bg-[#F7F9FB] rounded-[60px] p-12 lg:p-16 shadow-2xl relative overflow-hidden">
         <div class="text-center mb-16 relative z-10">
             <div
@@ -1568,7 +1578,7 @@
 </section>
 <!-- NEW: Radial Orbital Timeline Section -->
 <section
-    class="reveal-on-scroll relative z-0 w-full overflow-hidden bg-white py-16 min-h-[700px] md:min-h-[1000px] flex flex-col items-center justify-center scroll-mt-28"
+    class="reveal-element reveal-up relative z-0 w-full overflow-hidden bg-white py-24 min-h-[1000px] flex flex-col items-center justify-center scroll-mt-28"
     id="about">
     <style>
         @media (max-width: 767px) {
@@ -1598,7 +1608,7 @@
         </div>
     </div>
 
-    <div class="relative z-10 text-center mb-10 max-w-3xl px-6">
+    <div class="relative z-10 w-full max-w-3xl mx-auto text-center mb-10 px-6 md:px-12 lg:px-16">
         <div
             class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white shadow-sm px-4 py-1.5 mb-4">
             <div class="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
@@ -1615,31 +1625,31 @@
 
     <!-- Radial Orbital Timeline Container -->
     <div id="radial-timeline-container"
-        class="relative w-full h-[500px] md:h-[800px] flex items-center justify-center cursor-pointer select-none overflow-visible">
+        class="relative w-full h-[800px] flex items-center justify-center cursor-pointer select-none overflow-visible">
         <!-- Orbit Container (Rotates) -->
         <div id="orbit-container" class="absolute w-full h-full flex items-center justify-center">
 
             <!-- Center Core -->
             <div
-                class="absolute z-10 w-16 h-16 md:w-24 md:h-24 rounded-full bg-gradient-to-br from-secondary to-orange-600 shadow-2xl flex items-center justify-center animate-pulse">
-                <div class="absolute w-24 h-24 md:w-32 md:h-32 rounded-full border border-secondary/30 animate-ping opacity-50">
+                class="orbit-center-core absolute z-10 w-24 h-24 rounded-full bg-gradient-to-br from-secondary to-orange-600 shadow-2xl flex items-center justify-center animate-pulse">
+                <div class="orbit-center-pulse-1 absolute w-32 h-32 rounded-full border border-secondary/30 animate-ping opacity-50">
                 </div>
-                <div class="absolute w-32 h-32 md:w-48 md:h-48 rounded-full border border-secondary/10 animate-ping opacity-30"
+                <div class="orbit-center-pulse-2 absolute w-48 h-48 rounded-full border border-secondary/10 animate-ping opacity-30"
                     style="animation-delay: 0.5s;"></div>
                 <div
-                    class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white/90 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner">
+                    class="orbit-center-inner w-10 h-10 rounded-full bg-white/90 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner">
                 </div>
             </div>
 
             <!-- Orbit Rings (Visual) -->
             <div
-                class="absolute w-[160px] h-[160px] md:w-[300px] md:h-[300px] rounded-full border border-slate-200 pointer-events-none opacity-60">
+                class="orbit-ring-1 absolute w-[300px] h-[300px] rounded-full border border-slate-200 pointer-events-none opacity-60">
             </div>
             <div
-                class="absolute w-[240px] h-[240px] md:w-[500px] md:h-[500px] rounded-full border border-slate-200 pointer-events-none opacity-40">
+                class="orbit-ring-2 absolute w-[500px] h-[500px] rounded-full border border-slate-200 pointer-events-none opacity-40">
             </div>
             <div
-                class="absolute w-[320px] h-[320px] md:w-[700px] md:h-[700px] rounded-full border border-slate-100 pointer-events-none opacity-30">
+                class="orbit-ring-3 absolute w-[700px] h-[700px] rounded-full border border-slate-100 pointer-events-none opacity-30">
             </div>
 
             <!-- Nodes will be injected here by JS -->
@@ -1687,16 +1697,11 @@
             let rotationAngle = 0;
             let autoRotate = true;
             let activeNodeId = null;
-            let radius = window.innerWidth < 768 ? 120 : 250;
+            let radius = window.innerWidth < 768 ? 140 : 250;
             const total = timelineData.length;
 
-            // Update radius on resize for responsiveness
             window.addEventListener('resize', () => {
-                const newRadius = window.innerWidth < 768 ? 120 : 250;
-                if (radius !== newRadius) {
-                    radius = newRadius;
-                    updatePositions();
-                }
+                radius = window.innerWidth < 768 ? 140 : 250;
             });
 
             function createNodes() {
@@ -1712,19 +1717,18 @@
                     // Inner Content
                     nodeEl.innerHTML = `
                                     <div class="node-pulse absolute inset-0 rounded-full bg-secondary/10 opacity-0 transition-opacity duration-300 scale-150"></div>
-                                    <div class="node-core relative w-10 h-10 md:w-12 md:h-12 rounded-full bg-white border-2 border-slate-200 shadow-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-secondary/20 z-20">
-                                        <span class="material-symbols-outlined text-slate-500 text-lg md:text-xl transition-colors group-hover:text-secondary">${item.icon}</span>
+                                    <div class="node-core relative w-12 h-12 rounded-full bg-white border-2 border-slate-200 shadow-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:border-secondary group-hover:shadow-secondary/20 z-20">
+                                        <span class="material-symbols-outlined text-slate-500 text-xl transition-colors group-hover:text-secondary">${item.icon}</span>
                                     </div>
-                                    <div class="node-label absolute top-12 md:top-14 text-[11px] md:text-sm font-extrabold tracking-wide text-slate-700 bg-white/95 px-3 md:px-4 py-1.5 rounded-full backdrop-blur-md shadow-md opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-10 border border-slate-200/60 ring-1 ring-slate-900/5">
+                                    <div class="node-label absolute top-14 text-sm font-bold text-slate-600 bg-white/80 px-2 py-1 rounded backdrop-blur-sm shadow-sm opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-10">
                                         ${item.title}
                                     </div>
                                     
-                                    <!-- EXPANDED CARD -->
-                                    <div class="node-card absolute top-14 md:top-20 left-1/2 -translate-x-1/2 w-[260px] md:w-[320px] bg-white/95 backdrop-blur-xl border border-slate-200/60 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] rounded-2xl p-5 md:p-7 opacity-0 pointer-events-none scale-90 transition-all duration-400 ease-out origin-top z-50 text-center ring-1 ring-slate-900/5">
-                                        <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-t border-l border-slate-200/60 rotate-45 transform"></div>
-                                        <h4 class="font-black text-slate-900 text-[15px] md:text-xl mb-2 tracking-tight">${item.title}</h4>
-                                        <div class="h-[3px] w-8 md:w-12 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-3 md:mb-4 opacity-90 shadow-[0_0_10px_rgba(249,115,22,0.3)]"></div>
-                                        <p class="text-[13px] md:text-[15px] text-slate-600 leading-[1.7] font-medium">${item.content}</p>
+                                    <!-- EXPANDED CARD (Simplifed) -->
+                                    <div class="node-card absolute top-20 left-1/2 -translate-x-1/2 w-72 bg-white/95 bg-opacity-95 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner border-white/10 shadow-inner border border-slate-200 shadow-2xl rounded-xl p-5 opacity-0 pointer-events-none scale-90 transition-all duration-300 origin-top z-50 text-center">
+                                        <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-t border-l border-slate-200 rotate-45 transform"></div>
+                                        <h4 class="font-bold text-slate-900 text-lg mb-2">${item.title}</h4>
+                                        <p class="text-sm text-slate-500 leading-relaxed">${item.content}</p>
                                     </div>
                                 `;
 
@@ -1861,7 +1865,7 @@
     </script>
 </section>
 <section
-    class="reveal-element reveal-up relative z-10 w-full overflow-hidden bg-slate-950 py-24 rounded-[40px] shadow-2xl scroll-mt-28 border border-slate-800 hover:border-slate-700 transition-colors duration-700 group"
+    class="reveal-element reveal-up relative z-10 w-full overflow-hidden bg-slate-950 py-24 rounded-[40px] shadow-2xl scroll-mt-28 border border-slate-800 hover:border-slate-700 transition-colors duration-700 group mt-12"
     id="portfolio">
     <!-- Clean Minimal Background -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -1875,7 +1879,7 @@
     </div>
 
     <div class="flex justify-center relative z-10">
-        <div class="w-full max-w-7xl px-6 md:px-12">
+        <div class="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
             <div class="text-center mb-16">
                 <div
                     class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white shadow-sm px-4 py-1.5 mb-6">
@@ -1967,7 +1971,7 @@
 <section
     class="reveal-element reveal-up relative z-0 w-full overflow-hidden bg-white dark:bg-background-dark py-24 min-h-[900px] flex flex-col items-center justify-center scroll-mt-28">
     <!-- Qualifiers Content (merged) -->
-    <div class="max-w-5xl mx-auto px-6 md:px-12">
+    <div class="w-full max-w-5xl mx-auto px-6 md:px-12 lg:px-16">
         <div class="text-center mb-16">
             <div
                 class="inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-white shadow-sm px-4 py-1.5 mb-6">
@@ -2062,7 +2066,7 @@
 </section>
 <!-- NEW: Final CTA Section -->
 <section
-    class="mobile-turning-section reveal-element reveal-up relative z-10 w-full overflow-hidden bg-slate-950 py-20 rounded-[40px] mt-16 border border-slate-800 hover:border-slate-700 transition-colors duration-700 shadow-2xl group">
+    class="mobile-turning-section reveal-element reveal-up relative z-10 w-full overflow-hidden bg-slate-950 py-24 rounded-[40px] mt-12 border border-slate-800 hover:border-slate-700 transition-colors duration-700 shadow-2xl group">
 
     <style>
         @media (max-width: 767px) {
@@ -2088,7 +2092,7 @@
         </div>
     </div>
 
-    <div class="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+    <div class="w-full max-w-4xl mx-auto px-6 md:px-12 lg:px-16 text-center relative z-10">
 
         <!-- Minimal Badge -->
         <div class="inline-flex flex-col items-center mb-8 reveal-element reveal-up">
@@ -2160,7 +2164,7 @@
 </section>
 @endsection
 
-@push ('scripts')
+@push('scripts')
 <script>
 
     document.addEventListener('DOMContentLoaded', () => {
