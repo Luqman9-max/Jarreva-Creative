@@ -36,4 +36,22 @@ class BookController extends Controller
 
         return view('public.book-detail', compact('book', 'relatedBooks'));
     }
+
+    /**
+     * Display the checkout page.
+     */
+    public function checkout($slug)
+    {
+        $book = Book::where('slug', $slug)->firstOrFail();
+        return view('public.checkout', compact('book'));
+    }
+
+    /**
+     * Display the book reading page.
+     */
+    public function read($slug)
+    {
+        $book = Book::where('slug', $slug)->firstOrFail();
+        return view('public.read', compact('book'));
+    }
 }

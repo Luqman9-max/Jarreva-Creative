@@ -34,6 +34,8 @@ Route::post('/lead-submit', [LeadController::class, 'submitForm'])->name('lead.s
 // Catalog / Portfolio
 Route::get('/catalog', [\App\Http\Controllers\Public\BookController::class, 'index'])->middleware('lead.captured')->name('catalog.index');
 Route::get('/book/{slug}', [\App\Http\Controllers\Public\BookController::class, 'show'])->name('book.show');
+Route::get('/book/{slug}/checkout', [\App\Http\Controllers\Public\BookController::class, 'checkout'])->name('book.checkout');
+Route::get('/book/{slug}/read', [\App\Http\Controllers\Public\BookController::class, 'read'])->name('book.read');
 
 // Admin Guest Routes (Login)
 Route::middleware('guest:admin')->prefix('admin')->name('admin.')->group(function () {
