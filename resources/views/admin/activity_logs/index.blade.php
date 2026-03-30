@@ -20,11 +20,11 @@
                 </tr>
             </thead>
             <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
-                @forelse($logs as $log)
+                @forelse ($logs as $log)
                 <tr class="hover:bg-slate-50/80 dark:hover:bg-[#252f45] transition-colors">
                     <td class="px-6 py-4">
                         <div class="flex items-center gap-3">
-                             @if($log->admin && $log->admin->profile_photo_path)
+                             @if ($log->admin && $log->admin->profile_photo_path)
                                 <div class="h-8 w-8 rounded-full bg-cover bg-center border border-slate-200" style="background-image: url('{{ asset('storage/' . $log->admin->profile_photo_path) }}');"></div>
                             @else
                                 <div class="h-8 w-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">
@@ -38,11 +38,11 @@
                         </div>
                     </td>
                     <td class="px-6 py-4">
-                        @if($log->action == 'created')
+                        @if ($log->action == 'created')
                             <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-green-100 text-green-700">Created</span>
-                        @elseif($log->action == 'updated')
+                        @elseif ($log->action == 'updated')
                             <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-700">Updated</span>
-                        @elseif($log->action == 'deleted')
+                        @elseif ($log->action == 'deleted')
                             <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-700">Deleted</span>
                         @else
                             <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700">{{ ucfirst($log->action) }}</span>
@@ -50,7 +50,7 @@
                     </td>
                     <td class="px-6 py-4">
                         <p class="text-sm text-slate-600 dark:text-slate-300 font-medium">{{ $log->description }}</p>
-                        @if($log->subject_type)
+                        @if ($log->subject_type)
                             <p class="text-xs text-slate-400 mt-0.5">Ref: {{ class_basename($log->subject_type) }} #{{ $log->subject_id }}</p>
                         @endif
                     </td>
@@ -82,7 +82,7 @@
         </p>
         
         {{-- Custom Pagination Links --}}
-        @if($logs->hasPages())
+        @if ($logs->hasPages())
         <div class="flex gap-1">
             {{-- Previous Page Link --}}
             @if ($logs->onFirstPage())

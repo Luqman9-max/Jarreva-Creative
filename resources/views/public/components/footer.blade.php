@@ -18,7 +18,7 @@
         }
     </style>
     <!-- Background Elements -->
-    @include('public.components.footer-3d-bg')
+    @include ('public.components.footer-3d-bg')
 
     <div
         class="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none mix-blend-overlay opacity-50 dark:opacity-20">

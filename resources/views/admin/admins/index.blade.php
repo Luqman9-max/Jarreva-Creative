@@ -30,11 +30,11 @@
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
-                    @foreach($admins as $admin)
+                    @foreach ($admins as $admin)
                     <tr class="hover:bg-slate-50/80 dark:hover:bg-[#252f45] transition-colors">
                         <td class="px-6 py-4">
                             <div class="flex items-center gap-3">
-                                @if($admin->profile_photo_path)
+                                @if ($admin->profile_photo_path)
                                     <div class="size-8 rounded-full bg-cover bg-center ring-1 ring-slate-200" style="background-image: url('{{ asset('storage/' . $admin->profile_photo_path) }}');"></div>
                                 @else
                                     <div class="size-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">{{ substr($admin->name, 0, 2) }}</div>
@@ -52,7 +52,7 @@
                                 <a href="{{ route('admin.admins.edit', $admin) }}" class="text-slate-400 hover:text-primary transition-colors">
                                     <span class="material-symbols-outlined text-[18px]">edit</span>
                                 </a>
-                                @if(auth()->guard('admin')->id() !== $admin->id)
+                                @if (auth()->guard('admin')->id() !== $admin->id)
                                 <button type="button" @click="deleteModalOpen = true; deleteAction = '{{ route('admin.admins.destroy', $admin) }}'; deleteItem = '{{ addslashes($admin->name) }}'" class="text-slate-400 hover:text-red-500 transition-colors">
                                     <span class="material-symbols-outlined text-[18px]">delete</span>
                                 </button>

@@ -2,7 +2,7 @@
 
 @section('title', 'Jarreva Creative - Contact Us')
 
-@push('styles')
+@push ('styles')
 <style>
     /* Content specifically for contact page */
 
@@ -179,7 +179,7 @@
     <section class="reveal-element reveal-up relative min-h-[60vh] flex items-center justify-center px-6 overflow-hidden bg-white dark:bg-background-dark">
         
         <!-- 3D Hero Background -->
-        @include('public.components.hero-3d-bg')
+        @include ('public.components.hero-3d-bg')
 
         <!-- Light theme grid background (local to hero) -->
         <div class="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none mix-blend-overlay opacity-50 dark:opacity-20">
@@ -465,7 +465,7 @@
 </div>
 @endsection
 
-@push('scripts')
+@push ('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', () => {
 

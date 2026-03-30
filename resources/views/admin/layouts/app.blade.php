@@ -19,7 +19,7 @@
         
         {{-- Sidebar --}}
         <aside class="flex flex-col w-64 h-full bg-sidebar-bg text-sidebar-text flex-shrink-0 transition-all duration-300 z-20 shadow-xl border-r border-blue-100 hidden md:flex">
-            @include('admin.components.sidebar')
+            @include ('admin.components.sidebar')
         </aside>
 
         {{-- Mobile Menu Button (Visible only on mobile) --}}
@@ -34,7 +34,7 @@
             <div class="flex-1 overflow-y-auto main-scroll p-6 md:p-10 lg:p-12">
                 <div class="max-w-[1600px] w-full mx-auto flex flex-col gap-8">
                     {{-- Top Header (Search, Profile, etc) --}}
-                    @include('admin.components.header')
+                    @include ('admin.components.header')
 
                     {{-- Page Content --}}
                     @yield('content')

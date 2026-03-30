@@ -23,14 +23,14 @@
             <div class="space-y-1">
                 <label for="title" class="block text-sm font-semibold text-slate-700 ml-1">Book Title <span class="text-red-500">*</span></label>
                 <input type="text" name="title" id="title" value="{{ old('title') }}" required class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary block p-3 outline-none transition-all">
-                @error('title') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+                @error ('title') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
             </div>
 
             {{-- Slug --}}
             <div class="space-y-1">
                 <label for="slug" class="block text-sm font-semibold text-slate-700 ml-1">Slug <span class="text-red-500">*</span></label>
                 <input type="text" name="slug" id="slug" value="{{ old('slug') }}" required class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary block p-3 outline-none transition-all">
-                @error('slug') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+                @error ('slug') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
             </div>
         </div>
 
@@ -65,7 +65,7 @@
                 <!-- Hidden Input -->
                 <textarea name="description" id="description" class="hidden" required>{{ old('description') }}</textarea>
             </div>
-            @error('description') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+            @error ('description') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -75,14 +75,14 @@
             <div class="space-y-1">
                 <label for="year" class="block text-sm font-semibold text-slate-700 ml-1">Year</label>
                 <input type="number" name="year" id="year" value="{{ old('year') }}" class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary block p-3 outline-none transition-all">
-                @error('year') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+                @error ('year') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
             </div>
 
             {{-- Category --}}
             <div class="space-y-1">
                 <label for="category" class="block text-sm font-semibold text-slate-700 ml-1">Category</label>
                 <input type="text" name="category" id="category" value="{{ old('category') }}" class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary block p-3 outline-none transition-all">
-                @error('category') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+                @error ('category') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
             </div>
         </div>
 
@@ -97,7 +97,7 @@
                     <p class="text-xs text-slate-400">SVG, PNG, JPG or GIF (MAX. 2MB)</p>
                 </div>
             </div>
-            @error('cover_image') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+            @error ('cover_image') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
         </div>
 
         {{-- Toggles --}}

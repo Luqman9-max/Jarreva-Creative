@@ -56,11 +56,11 @@
     <div class="bg-white dark:bg-[#1e293b] p-2 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col md:flex-row gap-3">
         <form action="{{ route('admin.books.index') }}" method="GET" class="flex-grow">
             {{-- Persist other filters --}}
-            @if(request('filter')) <input type="hidden" name="filter" value="{{ request('filter') }}"> @endif
-            @if(request('sort_by')) <input type="hidden" name="sort_by" value="{{ request('sort_by') }}"> @endif
-            @if(request('sort_dir')) <input type="hidden" name="sort_dir" value="{{ request('sort_dir') }}"> @endif
-            @if(request('year')) <input type="hidden" name="year" value="{{ request('year') }}"> @endif
-            @if(request('category')) <input type="hidden" name="category" value="{{ request('category') }}"> @endif
+            @if (request('filter')) <input type="hidden" name="filter" value="{{ request('filter') }}"> @endif
+            @if (request('sort_by')) <input type="hidden" name="sort_by" value="{{ request('sort_by') }}"> @endif
+            @if (request('sort_dir')) <input type="hidden" name="sort_dir" value="{{ request('sort_dir') }}"> @endif
+            @if (request('year')) <input type="hidden" name="year" value="{{ request('year') }}"> @endif
+            @if (request('category')) <input type="hidden" name="category" value="{{ request('category') }}"> @endif
 
             <div class="relative group w-full">
                 <div class="absolute left-3 top-1/2 -translate-y-1/2 flex items-center text-slate-400">
@@ -87,7 +87,7 @@
                         ['label' => 'Year (Newest)', 'by' => 'year', 'dir' => 'desc'],
                     ];
                 @endphp
-                @foreach($sorts as $sort)
+                @foreach ($sorts as $sort)
                 <a href="{{ request()->fullUrlWithQuery(['sort_by' => $sort['by'], 'sort_dir' => $sort['dir']]) }}" 
                    class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 {{ request('sort_by', 'created_at') == $sort['by'] && request('sort_dir', 'desc') == $sort['dir'] ? 'font-bold text-primary bg-orange-50' : '' }}">
                     {{ $sort['label'] }}
@@ -106,16 +106,16 @@
     <div x-show="showFilters" x-transition class="bg-white dark:bg-[#1e293b] p-4 rounded-xl border border-slate-200 dark:border-slate-700 mt-2 shadow-sm" style="display: none;">
         <form action="{{ route('admin.books.index') }}" method="GET" class="flex flex-wrap items-end gap-4">
              {{-- Persist other filters --}}
-            @if(request('search')) <input type="hidden" name="search" value="{{ request('search') }}"> @endif
-            @if(request('filter')) <input type="hidden" name="filter" value="{{ request('filter') }}"> @endif
-            @if(request('sort_by')) <input type="hidden" name="sort_by" value="{{ request('sort_by') }}"> @endif
-            @if(request('sort_dir')) <input type="hidden" name="sort_dir" value="{{ request('sort_dir') }}"> @endif
+            @if (request('search')) <input type="hidden" name="search" value="{{ request('search') }}"> @endif
+            @if (request('filter')) <input type="hidden" name="filter" value="{{ request('filter') }}"> @endif
+            @if (request('sort_by')) <input type="hidden" name="sort_by" value="{{ request('sort_by') }}"> @endif
+            @if (request('sort_dir')) <input type="hidden" name="sort_dir" value="{{ request('sort_dir') }}"> @endif
 
             <div class="flex flex-col gap-1 w-full md:w-auto min-w-[150px]">
                 <label class="text-xs font-bold text-slate-500 uppercase">Year</label>
                 <select name="year" class="w-full h-9 px-3 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none">
                     <option value="">All Years</option>
-                    @foreach($filter_years ?? [] as $y)
+                    @foreach ($filter_years ?? [] as $y)
                         <option value="{{ $y }}" {{ request('year') == $y ? 'selected' : '' }}>{{ $y }}</option>
                     @endforeach
                 </select>
@@ -125,7 +125,7 @@
                 <label class="text-xs font-bold text-slate-500 uppercase">Category</label>
                 <select name="category" class="w-full h-9 px-3 rounded-lg bg-slate-50 border border-slate-200 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none">
                     <option value="">All Categories</option>
-                    @foreach($filter_categories ?? [] as $c)
+                    @foreach ($filter_categories ?? [] as $c)
                         <option value="{{ $c }}" {{ request('category') == $c ? 'selected' : '' }}>{{ $c }}</option>
                     @endforeach
                 </select>
@@ -154,12 +154,12 @@
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
-                    @forelse($books as $book)
+                    @forelse ($books as $book)
                     <tr class="hover:bg-slate-50/80 dark:hover:bg-[#252f45] transition-colors group">
                         <td class="px-6 py-4">
                             <div class="flex items-center gap-4">
                                 <div class="h-14 w-10 rounded shadow-sm bg-slate-100 flex-shrink-0 overflow-hidden relative border border-slate-200">
-                                    @if($book->cover_image)
+                                    @if ($book->cover_image)
                                         <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ asset('storage/' . $book->cover_image) }}');"></div>
                                     @else
                                         <div class="w-full h-full flex items-center justify-center text-slate-300 bg-slate-50">
@@ -175,7 +175,7 @@
                         </td>
                         <td class="px-6 py-4">
                             <div class="flex items-center gap-2">
-                                 @if($book->admin && $book->admin->profile_photo_path)
+                                 @if ($book->admin && $book->admin->profile_photo_path)
                                     <div class="h-6 w-6 rounded-full bg-cover bg-center border border-slate-200" style="background-image: url('{{ asset('storage/' . $book->admin->profile_photo_path) }}');"></div>
                                 @else
                                     <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-[10px] font-bold">
@@ -193,13 +193,13 @@
                         </td>
                         <td class="px-6 py-4">
                             <div class="flex gap-2">
-                                @if($book->is_published)
+                                @if ($book->is_published)
                                     <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-green-100 text-green-700">Published</span>
                                 @else
                                     <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-600">Draft</span>
                                 @endif
                                 
-                                @if($book->is_featured)
+                                @if ($book->is_featured)
                                     <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-orange-100 text-orange-700">Featured</span>
                                 @endif
                             </div>
@@ -237,7 +237,7 @@
             </p>
             
             {{-- Custom Pagination Links --}}
-            @if($books->hasPages())
+            @if ($books->hasPages())
             <div class="flex gap-1">
                 {{-- Previous Page Link --}}
                 @if ($books->onFirstPage())

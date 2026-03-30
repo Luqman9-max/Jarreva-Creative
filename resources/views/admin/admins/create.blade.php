@@ -29,21 +29,21 @@
                     <p class="text-xs text-slate-400">JPG, PNG or GIF (MAX. 2MB)</p>
                 </div>
             </div>
-            @error('profile_photo') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+            @error ('profile_photo') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
         </div>
 
         {{-- Name --}}
         <div class="space-y-1">
             <label for="name" class="block text-sm font-semibold text-slate-700 ml-1">Full Name <span class="text-red-500">*</span></label>
             <input type="text" name="name" id="name" value="{{ old('name') }}" required class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary block p-3 outline-none transition-all">
-            @error('name') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+            @error ('name') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
         </div>
 
         {{-- Email --}}
         <div class="space-y-1">
             <label for="email" class="block text-sm font-semibold text-slate-700 ml-1">Email Information <span class="text-red-500">*</span></label>
             <input type="email" name="email" id="email" value="{{ old('email') }}" required class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary block p-3 outline-none transition-all">
-            @error('email') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+            @error ('email') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -51,7 +51,7 @@
             <div class="space-y-1">
                 <label for="password" class="block text-sm font-semibold text-slate-700 ml-1">Password <span class="text-red-500">*</span></label>
                 <input type="password" name="password" id="password" required class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary block p-3 outline-none transition-all">
-                @error('password') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+                @error ('password') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
             </div>
 
             {{-- Confirm Password --}}

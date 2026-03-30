@@ -2,7 +2,7 @@
 
 @section('title', 'Jarreva Creative - Evolve with Us')
 
-@push('styles')
+@push ('styles')
 <style>
     body {
         font-family: 'Montserrat', sans-serif;
@@ -355,7 +355,7 @@
                             placeholder="Your Name"
                             value="{{ old('name') }}"
                             autocomplete="name">
-                        @error('name')
+                        @error ('name')
                             <p class="mt-2 text-sm text-red-500 flex items-center gap-1">
                                 <span class="material-symbols-outlined text-xs">error</span>
                                 {{ $message }}
@@ -371,7 +371,7 @@
                             placeholder="Your Email Address"
                             value="{{ old('email') }}"
                             autocomplete="email">
-                        @error('email')
+                        @error ('email')
                             <p class="mt-2 text-sm text-red-500 flex items-center gap-1">
                                 <span class="material-symbols-outlined text-xs">error</span>
                                 {{ $message }}
