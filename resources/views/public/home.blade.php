@@ -1518,12 +1518,6 @@
                                 class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#1a1a1a] to-transparent z-10">
                             </div>
                         </div>
-                        <div
-                            class="absolute -bottom-8 -right-8 w-24 h-24 bg-white transform rotate(12deg) shadow-2xl z-30 rounded-tl-3xl">
-                        </div>
-                        <div
-                            class="absolute -bottom-8 -left-8 w-24 h-24 bg-white transform -rotate(12deg) shadow-2xl z-30 rounded-tr-3xl">
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1960,7 +1954,7 @@
             <div class="mt-16 text-center">
                 <a href="{{ route('catalog.index') }}"
                     class="inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-bold text-white transition-all hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 hover:-translate-y-0.5">
-                    View Full Portfolio
+                    View Full Catalog
                     <span class="material-symbols-outlined text-lg">arrow_forward</span>
                 </a>
             </div>

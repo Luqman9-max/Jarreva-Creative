@@ -50,14 +50,6 @@
                     <span
                         class="absolute right-0 top-1/2 -translate-y-1/2 text-primary {{ request()->routeIs('about') ? 'opacity-100 translate-x-1' : 'opacity-0 translate-x-2 group-hover/nav:-translate-x-1 group-hover/nav:opacity-100' }} transition-all duration-300 text-xs font-mono mr-1">]</span>
                 </a>
-                <a class="relative px-4 py-2 text-sm {{ request()->routeIs('catalog.index') ? 'text-slate-900 font-bold dark:text-white' : 'text-slate-600 font-normal dark:text-slate-400 hover:text-slate-900 dark:hover:text-white' }} transition-colors group/nav"
-                    href="{{ route('catalog.index') }}">
-                    <span class="relative z-10">Portfolio</span>
-                    <span
-                        class="absolute left-0 top-1/2 -translate-y-1/2 text-primary {{ request()->routeIs('catalog.index') ? 'opacity-100 -translate-x-1' : 'opacity-0 -translate-x-2 group-hover/nav:translate-x-1 group-hover/nav:opacity-100' }} transition-all duration-300 text-xs font-mono ml-1">[</span>
-                    <span
-                        class="absolute right-0 top-1/2 -translate-y-1/2 text-primary {{ request()->routeIs('catalog.index') ? 'opacity-100 translate-x-1' : 'opacity-0 translate-x-2 group-hover/nav:-translate-x-1 group-hover/nav:opacity-100' }} transition-all duration-300 text-xs font-mono mr-1">]</span>
-                </a>
                 <a class="relative px-4 py-2 text-sm {{ request()->routeIs('contact') ? 'text-slate-900 font-bold dark:text-white' : 'text-slate-600 font-normal dark:text-slate-400 hover:text-slate-900 dark:hover:text-white' }} transition-colors group/nav"
                     href="{{ route('contact') }}">
                     <span class="relative z-10">Contact</span>
