@@ -736,6 +736,9 @@
                     </div>
 
                     <style>
+                        .material-symbols-outlined.filled {
+                            font-variation-settings: 'FILL' 1;
+                        }
                         @media (max-width: 767px) {
                             .mobile-testimonial-card { 
                                 width: 240px !important; 
@@ -852,7 +855,7 @@
                                         <span
                                             class="material-symbols-outlined text-yellow-500 text-sm filled">star</span>
                                         <span
-                                            class="material-symbols-outlined text-yellow-500 text-sm filled">star</span>
+                                            class="material-symbols-outlined text-slate-300 text-sm">star</span>
                                     </div>
                                     <p class="text-slate-700 leading-relaxed font-medium text-base md:text-lg">
                                         "Finally, something that doesn't promise overnight success. It's a
@@ -922,7 +925,7 @@
                                         <span
                                             class="material-symbols-outlined text-yellow-500 text-sm filled">star</span>
                                         <span
-                                            class="material-symbols-outlined text-yellow-500 text-sm filled">star</span>
+                                            class="material-symbols-outlined text-slate-300 text-sm">star</span>
                                     </div>
                                     <p class="text-slate-700 leading-relaxed font-medium text-base md:text-lg">
                                         "The discipline systems in this book helped me launch my startup
@@ -992,7 +995,7 @@
                                         <span
                                             class="material-symbols-outlined text-yellow-500 text-sm filled">star</span>
                                         <span
-                                            class="material-symbols-outlined text-yellow-500 text-sm filled">star</span>
+                                            class="material-symbols-outlined text-slate-300 text-sm">star</span>
                                     </div>
                                     <p class="text-slate-700 leading-relaxed font-medium text-base md:text-lg">
                                         "Worth every second. The 'Identity Shifting' framework is now the
