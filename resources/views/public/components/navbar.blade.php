@@ -20,15 +20,6 @@
                     <span
                         class="text-sm font-bold tracking-tight text-gray-900 dark:text-white leading-none transition-colors duration-300 group-hover/logo:text-blue-500">Jarreva
                         Creative</span>
-                    <div class="flex items-center gap-1.5 mt-0.5">
-                        <span class="relative flex h-1.5 w-1.5">
-                            <span
-                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-green-500"></span>
-                        </span>
-                        <span class="text-[9px] font-mono text-slate-400 uppercase tracking-wider">System
-                            Online</span>
-                    </div>
                 </div>
             </div>
 

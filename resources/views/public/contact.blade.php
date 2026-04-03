@@ -263,7 +263,7 @@
                                     </svg>
                                 </div>
                                 <div class="overflow-hidden w-full">
-                                    <span class="mobile-social-title block font-bold text-sm text-slate-900 dark:text-white group-hover:text-primary transition-colors truncate">X (Twitter)</span>
+                                    <span class="mobile-social-title block font-bold text-sm text-slate-900 dark:text-white group-hover:text-primary transition-colors truncate">X</span>
                                     <span class="mobile-social-desc block text-xs text-slate-500 truncate">Thoughts</span>
                                 </div>
                             </a>
@@ -412,10 +412,6 @@
 
                     <!-- Submit Action -->
                     <div class="mobile-contact-footer flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-slate-100 dark:border-slate-800">
-                        <div class="mobile-contact-status text-xs text-gray-500 w-full sm:w-auto text-center sm:text-left">
-                            <span class="inline-block w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
-                            System Online
-                        </div>
                         <button type="submit" id="submitBtn" class="mobile-contact-submit w-full sm:w-auto group relative px-8 py-3 md:py-4 bg-primary text-white font-bold rounded-lg overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
                             <span class="relative z-10 flex items-center justify-center sm:justify-start gap-2 text-sm md:text-base">
                                 TRANSMIT SIGNAL
