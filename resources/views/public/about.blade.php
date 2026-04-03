@@ -64,6 +64,22 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
+
+    /* Subtle Ping for Noise Visual */
+    @keyframes ping-subtle {
+        0% {
+            transform: scale(1);
+            opacity: 0.8;
+        }
+        70%, 100% {
+            transform: scale(1.3);
+            opacity: 0;
+        }
+    }
+
+    .animate-ping-subtle {
+        animation: ping-subtle 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
 </style>
 @endpush
 
@@ -110,7 +126,7 @@
 
 <!-- SECTION 2: ORIGIN STORY - INTERACTIVE EVOLUTION -->
 <section class="relative py-24 bg-white dark:bg-background-dark overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col gap-12 md:gap-32">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col gap-12 md:gap-16">
 
         <!-- ROW 1: DISCOVERY (Text Left, Visual Right) -->
         <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-32 reveal-element reveal-up">
@@ -127,8 +143,7 @@
             </div>
             <div class="lg:w-1/2 w-full">
                 <!-- Visual 1: Noise -->
-                <div
-                    class="w-full aspect-square md:aspect-video lg:aspect-square rounded-[40px] bg-slate-950 border border-slate-800 overflow-hidden shadow-2xl relative flex items-center justify-center group hover:scale-[1.02] transition-transform duration-500">
+                <div class="w-full aspect-square flex items-center justify-center relative overflow-hidden">
                     <div
                         class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay">
                     </div>
@@ -137,8 +152,8 @@
                         <h4
                             class="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-500 to-red-500 animate-pulse blur-[1px]">
                             NOISE</h4>
-                        <h4 class="absolute top-0 left-0 text-6xl md:text-8xl font-black text-red-500 opacity-50 animate-ping"
-                            style="animation-duration: 0.2s;">NOISE</h4>
+                        <h4 class="absolute top-0 left-0 text-6xl md:text-8xl font-black text-red-500 opacity-40 animate-ping-subtle"
+                            style="animation-duration: 0.8s;">NOISE</h4>
                     </div>
                 </div>
             </div>
@@ -158,12 +173,7 @@
             </div>
             <div class="lg:w-1/2 w-full">
                 <!-- Visual 2: Architecture / Blueprint -->
-                <div
-                    class="w-full aspect-square md:aspect-video lg:aspect-square rounded-[40px] bg-slate-900 border border-slate-700 overflow-hidden shadow-2xl relative flex items-center justify-center group hover:scale-[1.02] transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-[linear-gradient(to_right,#137fec10_1px,transparent_1px),linear-gradient(to_bottom,#137fec10_1px,transparent_1px)] bg-[size:40px_40px]">
-                    </div>
-
+                <div class="w-full aspect-square flex items-center justify-center">
                     <!-- Animated 3D Structure -->
                     <div class="relative w-64 h-64 perspective-1000">
                         <style>
@@ -211,9 +221,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="absolute bottom-8 right-8 font-mono text-primary/50 text-xs tracking-widest">
-                        ARCH_V.2.0 // BUILDING...</div>
                 </div>
             </div>
         </div>
@@ -232,12 +239,7 @@
             </div>
             <div class="lg:w-1/2 w-full">
                 <!-- Visual 3: Clarity Engine / System -->
-                <div
-                    class="w-full aspect-square md:aspect-video lg:aspect-square rounded-[40px] bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-2xl relative flex items-center justify-center group hover:scale-[1.02] transition-transform duration-500">
-                    <div
-                        class="absolute inset-0 bg-[radial-gradient(circle_at_center,#f0f9ff_0%,#ffffff_70%)] dark:bg-[radial-gradient(circle_at_center,#1e293b_0%,#0f172a_70%)]">
-                    </div>
-
+                <div class="w-full aspect-square flex items-center justify-center">
                     <!-- Animated System Core -->
                     <div class="relative flex items-center justify-center">
                         <!-- Orbit 1 -->
@@ -264,10 +266,6 @@
                                 class="material-symbols-outlined text-transparent bg-clip-text bg-gradient-to-br from-primary to-blue-600 text-6xl">diamond</span>
                         </div>
                     </div>
-
-                    <div
-                        class="absolute bottom-8 font-bold text-slate-900 dark:text-white text-xs tracking-[0.3em] uppercase opacity-70">
-                        System Active</div>
                 </div>
             </div>
         </div>
@@ -324,7 +322,7 @@
                     </div>
 
                     <div>
-                        <h3 class="mobile-about-title text-3xl font-bold mb-2 group-hover:text-blue-500 transition-colors">
+                        <h3 class="mobile-about-title text-3xl font-bold mb-2 transition-colors">
                             Systems &gt; Hacks</h3>
                         <p class="mobile-about-text text-slate-500 dark:text-slate-400 text-base sm:text-lg md:text-xl font-medium leading-relaxed max-w-md">
                             Overnight success is a myth. We build robust, scalable architectures for your

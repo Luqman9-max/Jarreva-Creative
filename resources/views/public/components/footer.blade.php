@@ -46,15 +46,6 @@
                     Architecting clarity from chaos. We build digital systems that structure thought and amplify
                     intelligence.
                 </p>
-                <div
-                    class="mobile-footer-version flex items-center gap-2 text-xs font-mono text-slate-400 border border-slate-200 dark:border-slate-700 rounded-full px-3 py-1">
-                    <span class="relative flex h-2 w-2">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-slate-500"></span>
-                    </span>
-                    SYSTEM VERSION 2.0.4
-                </div>
             </div>
 
             <!-- Navigation Matrix -->
@@ -93,7 +84,7 @@
                     <li><a href="https://x.com/jarrevacreative?s=21" target="_blank" rel="noopener noreferrer"
                             class="mobile-footer-link group flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-orange-400 transition-colors"><span
                                 class="text-slate-300 dark:text-slate-600 group-hover:text-orange-400 transition-colors">></span>
-                            Twitter / X</a></li>
+                            X</a></li>
                     <li><a href="https://www.tiktok.com/@jarreva_creative?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer"
                             class="mobile-footer-link group flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-orange-400 transition-colors"><span
                                 class="text-slate-300 dark:text-slate-600 group-hover:text-orange-400 transition-colors">></span>
