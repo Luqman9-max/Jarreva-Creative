@@ -23,6 +23,8 @@ class BookRequest extends FormRequest
             'category' => 'nullable|string|max:255',
             'is_featured' => 'boolean',
             'is_published' => 'boolean',
+            'is_free' => 'boolean',
+            'gumroad_url' => 'nullable|url|max:255',
         ];
     }
 }

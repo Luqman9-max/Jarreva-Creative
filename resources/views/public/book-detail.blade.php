@@ -163,6 +163,31 @@
                     </p>
                 </div>
 
+                {{-- Book Action Buttons (Gumroad) --}}
+                @if($book->gumroad_url)
+                <div class="mt-2 mb-12 flex reveal-immediate" style="animation-delay: 0.6s;">
+                    @if($book->is_free)
+                        <a href="{{ $book->gumroad_url }}" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center justify-center px-8 py-3.5 font-bold text-white transition-all duration-300 bg-slate-900 dark:bg-white dark:text-slate-900 rounded-full hover:shadow-xl hover:shadow-slate-900/20 dark:hover:shadow-white/20 hover:-translate-y-1 overflow-hidden">
+                            <span class="relative flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[20px]">menu_book</span>
+                                Read for Free
+                            </span>
+                        </a>
+                    @else
+                        <a href="{{ $book->gumroad_url }}" target="_blank" rel="noopener noreferrer" class="group flex items-center bg-primary rounded-full hover:bg-orange-600 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-1 text-white overflow-hidden w-max">
+                            <div class="flex items-center gap-2 px-6 py-3.5 font-bold border-r border-white/20 bg-white/5 group-hover:bg-transparent transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+                                Buy Now
+                            </div>
+                            <div class="px-6 py-3.5 font-black text-sm tracking-widest flex items-center">
+                                Rp{{ number_format($book->price ?? 0, 0, ',', '.') }}
+                            </div>
+                        </a>
+                    @endif
+                </div>
+                @endif
+
+
             </div>
         </div>
 
