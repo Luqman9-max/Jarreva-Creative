@@ -156,11 +156,59 @@
                     </div>
                 </div>
 
-                {{-- Deskripsi --}}
-                <div class="prose prose-lg prose-slate dark:prose-invert max-w-none mb-12 reveal-immediate" style="animation-delay: 0.5s;">
-                    <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
-                        {{ $book->description }}
-                    </p>
+                {{-- Deskripsi dengan Read More --}}
+                <div class="mb-12 reveal-immediate" style="animation-delay: 0.5s;">
+                    <div id="description-container" class="relative overflow-hidden transition-[max-height] duration-500 ease-in-out" style="max-height: 140px;">
+                        <div class="prose prose-lg prose-slate dark:prose-invert max-w-none">
+                            <p id="description-text" class="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed font-medium pb-2">
+                                {{ $book->description }}
+                            </p>
+                        </div>
+                        <!-- Gradient Overlay -->
+                        <div id="description-gradient" class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white dark:from-slate-900 to-transparent pointer-events-none transition-opacity duration-300"></div>
+                    </div>
+                    
+                    <button id="read-more-btn" class="mt-4 text-sm font-bold tracking-widest text-primary uppercase hover:text-orange-600 transition-colors flex items-center gap-1 group hidden">
+                        <span id="read-more-label">Read More</span>
+                        <span id="read-more-icon" class="material-symbols-outlined text-[18px] transform transition-transform group-hover:translate-y-1">expand_more</span>
+                    </button>
+                    
+                    <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const container = document.getElementById('description-container');
+                            const text = document.getElementById('description-text');
+                            const btn = document.getElementById('read-more-btn');
+                            const label = document.getElementById('read-more-label');
+                            const icon = document.getElementById('read-more-icon');
+                            const gradient = document.getElementById('description-gradient');
+                            
+                            // Check if description actually needs truncation
+                            if (text.offsetHeight > 140) {
+                                btn.classList.remove('hidden');
+                                let isExpanded = false;
+                                
+                                btn.addEventListener('click', () => {
+                                    isExpanded = !isExpanded;
+                                    if (isExpanded) {
+                                        container.style.maxHeight = text.offsetHeight + 30 + 'px';
+                                        label.textContent = 'Show Less';
+                                        gradient.style.opacity = '0';
+                                        icon.textContent = 'expand_less';
+                                        icon.classList.replace('group-hover:translate-y-1', 'group-hover:-translate-y-1');
+                                    } else {
+                                        container.style.maxHeight = '140px';
+                                        label.textContent = 'Read More';
+                                        gradient.style.opacity = '1';
+                                        icon.textContent = 'expand_more';
+                                        icon.classList.replace('group-hover:-translate-y-1', 'group-hover:translate-y-1');
+                                    }
+                                });
+                            } else {
+                                container.style.maxHeight = 'none';
+                                gradient.style.display = 'none';
+                            }
+                        });
+                    </script>
                 </div>
 
                 {{-- Book Action Buttons (Gumroad) --}}
@@ -180,7 +228,7 @@
                                 Buy Now
                             </div>
                             <div class="px-6 py-3.5 font-black text-sm tracking-widest flex items-center">
-                                Rp{{ number_format($book->price ?? 0, 0, ',', '.') }}
+                                ${{ number_format($book->price ?? 0, 2) }}
                             </div>
                         </a>
                     @endif
