@@ -405,7 +405,7 @@
 
                     <!-- Message -->
                     <div class="form-group relative group">
-                        <textarea id="message" name="message" rows="6" class="mobile-contact-input terminal-input w-full py-4 text-lg bg-transparent focus:ring-0 placeholder-transparent resize-none dark:text-white" placeholder="Describe your chaos..." required></textarea>
+                        <textarea id="message" name="message" rows="4" class="mobile-contact-input terminal-input w-full py-4 text-lg bg-transparent focus:ring-0 placeholder-transparent resize-none dark:text-white" placeholder="Describe your chaos..." required></textarea>
                         <label for="message" class="mobile-contact-label floating-label absolute left-0 top-4 text-slate-500 pointer-events-none origin-left">Input Raw Data (Message)</label>
                         <div class="absolute bottom-0 left-0 w-full h-[1px] signal-line"></div>
                     </div>
