@@ -13,8 +13,8 @@
             <div class="flex items-center gap-3 group/logo cursor-pointer"
                 onclick="window.location.href='{{ route('home') }}'">
                 <div
-                    class="relative flex h-9 w-9 items-center justify-center rounded-lg overflow-hidden transition-transform duration-500 group-hover/logo:rotate-20">
-                    <img src="{{ asset('logo.png') }}" alt="Jarreva Creative Logo" class="h-full w-full object-contain">
+                    class="relative flex h-9 w-9 items-center justify-center rounded-full overflow-hidden transition-transform duration-500 group-hover/logo:rotate-20">
+                    <img src="{{ asset('logo.png') }}" alt="Jarreva Creative Logo" class="h-full w-full object-cover">
                 </div>
                 <div class="flex flex-col">
                     <span

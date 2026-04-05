@@ -125,8 +125,8 @@
 </section>
 
 <!-- SECTION 2: ORIGIN STORY - INTERACTIVE EVOLUTION -->
-<section class="relative py-24 bg-white dark:bg-background-dark overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col gap-12 md:gap-16">
+<section class="relative py-20 md:py-32 bg-white dark:bg-background-dark overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 flex flex-col gap-16 md:gap-24">
 
         <!-- ROW 1: DISCOVERY (Text Left, Visual Right) -->
         <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-32 reveal-element reveal-up">
@@ -143,7 +143,7 @@
             </div>
             <div class="lg:w-1/2 w-full">
                 <!-- Visual 1: Noise -->
-                <div class="w-full aspect-square flex items-center justify-center relative overflow-hidden">
+                <div class="w-full py-20 md:py-28 flex items-center justify-center relative overflow-hidden">
                     <div
                         class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay">
                     </div>
@@ -173,7 +173,7 @@
             </div>
             <div class="lg:w-1/2 w-full">
                 <!-- Visual 2: Architecture / Blueprint -->
-                <div class="w-full aspect-square flex items-center justify-center">
+                <div class="w-full py-20 md:py-28 flex items-center justify-center">
                     <!-- Animated 3D Structure -->
                     <div class="relative w-64 h-64 perspective-1000">
                         <style>
@@ -239,7 +239,7 @@
             </div>
             <div class="lg:w-1/2 w-full">
                 <!-- Visual 3: Clarity Engine / System -->
-                <div class="w-full aspect-square flex items-center justify-center">
+                <div class="w-full py-20 md:py-28 flex items-center justify-center">
                     <!-- Animated System Core -->
                     <div class="relative flex items-center justify-center">
                         <!-- Orbit 1 -->
