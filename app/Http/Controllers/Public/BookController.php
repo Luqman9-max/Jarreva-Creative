@@ -31,7 +31,7 @@ class BookController extends Controller
         $relatedBooks = Book::where('id', '!=', $book->id)
             ->where('is_published', true)
             ->latest()
-            ->take(4)
+            ->take(6)
             ->get();
 
         return view('public.book-detail', compact('book', 'relatedBooks'));
