@@ -17,12 +17,15 @@ class Book extends Model
         'category',
         'is_featured',
         'is_published',
+        'is_free',
+        'gumroad_url',
         'admin_id',
     ];
 
     protected $casts = [
         'is_featured' => 'boolean',
         'is_published' => 'boolean',
+        'is_free' => 'boolean',
     ];
 
     public function admin()
