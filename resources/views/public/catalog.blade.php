@@ -3,55 +3,322 @@
 @section('title', 'Jarreva Creative - Catalog Portfolio')
 
 @section('content')
-    <!-- Header Section with Dynamic Background & Gradient Text -->
-    <div class="relative py-20 lg:py-28 overflow-hidden bg-white dark:bg-background-dark">
-        <!-- Seamless Top Gradient for transition -->
-        <div
-            class="absolute top-0 left-0 w-full h-32 lg:h-48 bg-gradient-to-t from-transparent to-white dark:to-background-dark pointer-events-none z-20">
+    <!-- Cinematic Hero Section -->
+    <div class="relative min-h-[90vh] lg:min-h-screen overflow-hidden bg-white dark:bg-background-dark flex items-center pt-20 lg:pt-0 pb-10 lg:pb-24" id="cinematic-hero">
+        <!-- Background Gradients -->
+        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-32 lg:h-48 bg-gradient-to-t from-transparent to-white dark:to-background-dark z-20"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-white via-white to-orange-50/50 dark:from-background-dark dark:via-background-dark dark:to-blue-900/10"></div>
+            
+            <!-- Soft Ambient Light -->
+            <div class="absolute top-1/4 -left-[10%] w-[50%] h-[50%] rounded-full bg-orange-400/5 dark:bg-orange-500/10 blur-[120px] mix-blend-multiply dark:mix-blend-screen opacity-80 animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 -right-[10%] w-[60%] h-[60%] rounded-full bg-blue-500/5 dark:bg-blue-600/10 blur-[120px] mix-blend-multiply dark:mix-blend-screen opacity-70 animate-pulse-slow"></div>
         </div>
 
-        <!-- Background decorative elements -->
-        <div class="absolute inset-0 z-0 pointer-events-none">
-            <div
-                class="absolute -top-24 -left-24 w-96 h-96 bg-primary/5 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float-p1 dark:opacity-10 translate-x-1/4">
+        <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 mx-auto h-full flex flex-col lg:flex-row items-center gap-12 lg:gap-8 pb-10 lg:-translate-y-8">
+            
+            <!-- LEFT: TEXT CONTENT (50%) -->
+            <div class="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left z-20 pt-10 lg:pt-0">
+                <!-- Removed Premium Collection Badge -->
+
+                <h1 class="stagger-2 opacity-0 translate-y-6 mb-6 font-display text-[42px] sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-slate-900 dark:text-white drop-shadow-sm">
+                    Discover Our<br/>
+                    <span class="relative inline-block pb-1">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary relative z-10">Portfolio</span>
+                    </span>
+                </h1>
+
+                <p class="stagger-3 opacity-0 translate-y-4 max-w-lg mx-auto lg:mx-0 text-base lg:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium mb-10">
+                    Explore a curated collection of our best projects, publications, and creative endeavors that define Jarreva Creative's commitment to excellence.
+                </p>
+
+                <div class="stagger-4 opacity-0 translate-y-4">
+                    <button class="group relative px-7 py-3.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-semibold text-sm tracking-wide overflow-hidden transition-all duration-300 hover:scale-[1.03] shadow-lg hover:shadow-primary/20 inline-flex items-center gap-2">
+                        <span class="relative z-10">Explore Works</span>
+                        <span class="relative z-10 material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">trending_flat</span>
+                    </button>
+                </div>
             </div>
-            <div
-                class="absolute top-1/4 right-0 w-96 h-96 bg-secondary/5 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float-p2 dark:opacity-10 -translate-x-1/4">
-            </div>
-            <div
-                class="absolute -bottom-24 left-1/3 w-80 h-80 bg-indigo-400/5 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float-p3 dark:opacity-10">
+
+            <!-- RIGHT: 3D BOOK COMPOSITION & TABLE (50%) -->
+            <div class="w-full lg:w-1/2 h-[500px] lg:h-[700px] relative z-10 hero-perspective" id="3d-scene">
+                
+                <!-- THE TABLE / SURFACE LAYER (BOTTOM) -->
+                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] lg:w-[120%] h-[300px] lg:h-[400px] table-surface rounded-t-full border-t border-slate-200/80 dark:border-slate-600/50 shadow-[0_-20px_50px_rgba(0,0,0,0.03)] dark:shadow-[0_-20px_50px_rgba(0,0,0,0.3)] bg-gradient-to-b from-slate-100/60 to-white dark:from-slate-800 dark:to-background-dark z-0">
+                    <!-- Reflection Highight on Table -->
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[100px] bg-gradient-to-b from-white/60 dark:from-white/5 to-transparent blur-xl"></div>
+                </div>
+
+                <!-- 3D BOOKS LAYER (TRIPTYCH PANEL LAYOUT) -->
+                <div class="absolute inset-0 w-full h-full z-10 flex flex-row items-center justify-center gap-2 lg:gap-4 transform-style-3d scene-rotator" id="book-rotator">
+                    
+                    <!-- LEFT BOOK (Volume III, BLUE) -->
+                    <div class="relative z-10 float-delay-1 scale-[0.9] lg:scale-[1]">
+                        <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[110%] h-6 bg-black/15 blur-[15px] rounded-[100%] book-table-shadow"></div>
+                        
+                        <div class="book-3d w-[90px] lg:w-[150px] aspect-[860/1216] transform-style-3d group cursor-pointer hover-lift transition-transform duration-700 ease-out" style="transform: translateZ(0px) rotateY(3deg) rotateX(2deg);">
+                            <div class="absolute inset-0 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-r-md shadow-[0_15px_30px_rgba(0,0,0,0.1)] overflow-hidden front pointer-events-auto group-hover:border-blue-400/50 transition-colors">
+                                <div class="w-full h-full flex flex-col items-center bg-slate-50 dark:bg-slate-800">
+                                    <div class="w-full h-1/2 bg-blue-100/50 dark:bg-blue-900/30 flex items-center justify-center relative overflow-hidden group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40 transition-colors duration-500">
+                                        <span class="material-symbols-outlined text-4xl text-blue-300 dark:text-blue-500/50">auto_awesome_mosaic</span>
+                                    </div>
+                                    <div class="h-1/2 w-full p-4 flex flex-col justify-center items-center text-center mt-2">
+                                        <div class="w-8 h-0.5 bg-blue-300 dark:bg-blue-500/50 mb-3"></div>
+                                        <h3 class="text-[9px] lg:text-[11px] font-bold text-slate-500 dark:text-slate-400 tracking-widest uppercase leading-loose">Volume<br>III</h3>
+                                    </div>
+                                </div>
+                                <div class="absolute top-0 left-0 w-3 h-full bg-black/10 dark:bg-black/30 shadow-[1px_0_2px_rgba(255,255,255,0.2)_inset]"></div>
+                            </div>
+                            <div class="absolute inset-0 bg-slate-300 dark:bg-slate-900 border border-slate-400 dark:border-slate-800 rounded-r-md back"></div>
+                            <div class="absolute left-0 top-0 w-[40px] h-full bg-slate-200 dark:bg-slate-800 border-l border-r border-slate-300 dark:border-slate-900 spine"></div>
+                            <div class="absolute right-0 top-[2px] w-[40px] h-[calc(100%-4px)] pages text-page-color page-right"></div>
+                            <div class="absolute top-0 left-[2px] w-[calc(100%-4px)] h-[40px] pages text-page-color page-top"></div>
+                            <div class="absolute bottom-0 left-[2px] w-[calc(100%-4px)] h-[40px] pages text-page-color page-bottom"></div>
+                        </div>
+                    </div>
+
+                    <!-- CENTER BOOK (The Artifact, MAIN TALL PANEL) -->
+                    <div class="relative z-30 float-main scale-100 lg:scale-[1.1]">
+                        <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[120%] h-8 bg-black/20 blur-[20px] rounded-[100%] book-table-shadow"></div>
+                        
+                        <div class="book-3d w-[130px] lg:w-[210px] aspect-[860/1216] transform-style-3d group cursor-pointer hover-lift-main transition-transform duration-700 ease-out" style="transform: translateZ(30px) rotateY(0deg) rotateX(0deg);">
+                            <div class="absolute inset-0 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg shadow-[0_25px_50px_rgba(0,0,0,0.15)] overflow-hidden front group-hover:border-primary/40 transition-colors pointer-events-auto">
+                                <div class="w-full h-full bg-[#f8f9fa] dark:bg-[#0f1420] p-4 lg:p-6 flex flex-col justify-between items-center text-center">
+                                    <div class="w-full flex justify-between items-center">
+                                        <div class="w-4 h-[2px] bg-primary/60"></div>
+                                        <span class="text-[7px] lg:text-[9px] text-slate-400 font-mono tracking-wider">NO. 01</span>
+                                        <div class="w-4 h-[2px] bg-primary/60"></div>
+                                    </div>
+                                    <div class="flex flex-col items-center mt-2">
+                                        <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full border-[3px] border-slate-200 dark:border-slate-700/50 flex items-center justify-center mb-4 group-hover:border-primary/50 group-hover:scale-110 transition-all duration-500">
+                                            <div class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-600 group-hover:bg-primary transition-colors duration-500"></div>
+                                        </div>
+                                        <h3 class="font-display font-bold text-slate-800 dark:text-white text-base lg:text-lg tracking-[0.15em] uppercase leading-snug group-hover:text-primary transition-colors">The<br>Artifact</h3>
+                                        <p class="text-[7px] lg:text-[9px] text-slate-500 mt-4 tracking-widest uppercase">Jarreva Creative</p>
+                                    </div>
+                                    <div class="w-full h-[1px] border-b border-dashed border-slate-300 dark:border-slate-700/50 relative"></div>
+                                </div>
+                                <div class="absolute top-0 left-0 w-3 h-full bg-gradient-to-r from-black/20 to-transparent shadow-[2px_0_4px_rgba(255,255,255,0.4)_inset] pointer-events-none"></div>
+                                <div class="absolute inset-0 bg-gradient-to-tr from-primary/0 to-secondary/0 group-hover:from-primary/10 group-hover:to-secondary/10 transition-colors duration-700 pointer-events-none"></div>
+                            </div>
+                            <div class="absolute inset-0 bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-lg back"></div>
+                            <div class="absolute left-0 top-0 w-[45px] h-full bg-slate-100 dark:bg-[#0a0e17] border-l border-r border-slate-300 border-slate-800/80 spine flex flex-col items-center justify-center py-8 rotate-180">
+                                <span class="writing-vertical-rl text-[7px] lg:text-[8px] text-slate-400 tracking-widest font-bold rotate-180">THE ARTIFACT</span>
+                            </div>
+                            <div class="absolute right-0 top-[2px] w-[45px] h-[calc(100%-4px)] pages text-page-color page-right"></div>
+                            <div class="absolute top-0 left-[3px] w-[calc(100%-6px)] h-[45px] pages text-page-color page-top"></div>
+                            <div class="absolute bottom-0 left-[3px] w-[calc(100%-6px)] h-[45px] pages text-page-color page-bottom"></div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT BOOK (The Shift, ORANGE) -->
+                    <div class="relative z-20 float-delay-2 scale-[0.9] lg:scale-[1]">
+                        <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[110%] h-6 bg-black/15 blur-[15px] rounded-[100%] book-table-shadow"></div>
+                        
+                        <div class="book-3d w-[95px] lg:w-[155px] aspect-[860/1216] transform-style-3d group cursor-pointer hover-lift transition-transform duration-700 ease-out" style="transform: translateZ(0px) rotateY(-3deg) rotateX(2deg);">
+                            <div class="absolute inset-0 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-r-md shadow-[0_15px_30px_rgba(0,0,0,0.1)] overflow-hidden front pointer-events-auto group-hover:border-orange-400/50 transition-colors">
+                                <div class="w-full h-full flex flex-col border-[4px] border-white dark:border-slate-900 bg-orange-50 dark:bg-[#1a1311]">
+                                    <div class="h-2/3 w-full flex items-center justify-center p-3">
+                                        <div class="w-full h-full border border-orange-200 dark:border-orange-900/50 rounded-sm flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                                            <span class="material-symbols-outlined text-4xl text-orange-200 dark:text-orange-500/30">landscape</span>
+                                        </div>
+                                    </div>
+                                    <div class="h-1/3 w-full px-3 text-center">
+                                        <div class="w-4 h-px bg-orange-200 mx-auto mb-2"></div>
+                                        <h3 class="text-[8px] lg:text-[10px] font-bold text-orange-400 dark:text-orange-600/80 tracking-widest uppercase">The Shift</h3>
+                                    </div>
+                                </div>
+                                <div class="absolute top-0 left-0 w-3 h-full bg-black/10 dark:bg-black/30 shadow-[1px_0_2px_rgba(255,255,255,0.2)_inset]"></div>
+                            </div>
+                            <div class="absolute inset-0 bg-slate-300 dark:bg-slate-900 border border-slate-400 dark:border-slate-800 rounded-r-md back"></div>
+                            <div class="absolute left-0 top-0 w-[40px] h-full bg-orange-100 dark:bg-[#1a1311] border-l border-r border-orange-200 dark:border-orange-900/50 spine"></div>
+                            <div class="absolute right-0 top-[2px] w-[40px] h-[calc(100%-4px)] pages text-page-color page-right"></div>
+                            <div class="absolute top-0 left-[2px] w-[calc(100%-4px)] h-[40px] pages text-page-color page-top"></div>
+                            <div class="absolute bottom-0 left-[2px] w-[calc(100%-4px)] h-[40px] pages text-page-color page-bottom"></div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
 
-        <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 mx-auto flex flex-col items-center text-center">
-            <!-- Badge -->
-            <div
-                class="inline-flex items-center gap-1.5 lg:gap-2 px-3 py-1.5 lg:px-4 lg:py-2 rounded-full border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm shadow-inner shadow-sm mb-6 animate-float">
-                <span
-                    class="w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(249,115,22,0.8)]"></span>
-                <span class="text-[11px] sm:text-xs lg:text-sm font-medium text-slate-600 dark:text-slate-300 font-mono">Our
-                    Creative
-                    Works</span>
-            </div>
+        <!-- Seamless blending gradient to the next section -->
+        <div class="absolute -bottom-2 left-0 w-full h-48 bg-gradient-to-t from-white via-white/90 dark:from-background-dark dark:via-background-dark/90 to-transparent pointer-events-none z-20"></div>
 
-            <h1
-                class="mb-6 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] dark:text-white drop-shadow-sm max-w-5xl mx-auto">
-                Discover Our<br class="hidden md:block" /> <span
-                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Portfolio</span>
-            </h1>
+        <style>
+            .hero-perspective {
+                perspective: 1500px;
+                -webkit-perspective: 1500px;
+                perspective-origin: 50% 50%;
+            }
 
-            <p
-                class="max-w-2xl text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mx-auto leading-relaxed mb-8 lg:mb-10 font-medium">
-                Explore a curated collection of our best projects, publications, and creative endeavors that define Jarreva
-                Creative's commitment to excellence.
-            </p>
-        </div>
+            .transform-style-3d {
+                transform-style: preserve-3d;
+                -webkit-transform-style: preserve-3d;
+            }
 
-        <!-- Seamless Bottom Gradient for transition -->
-        <div
-            class="absolute bottom-0 left-0 w-full h-32 lg:h-48 bg-gradient-to-b from-transparent to-white dark:to-background-dark pointer-events-none z-20">
-        </div>
+            /* Table Surface Styling */
+            .table-surface {
+                transform-origin: bottom;
+                transform: rotateX(75deg) translateZ(-150px) translateY(100px);
+                /* Linear gradient simulating distance falloff */
+                mask-image: linear-gradient(to top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+                -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+            }
+
+            /* Realistic 3D Book Construction */
+            .book-3d {
+                position: relative;
+            }
+            .book-3d .front { transform: translateZ(calc(var(--thick, 45px)/2)); }
+            .book-3d .back { transform: translateZ(calc(var(--thick, 45px)/-2)) rotateY(180deg); }
+            
+            .book-3d .spine {
+                transform-origin: left center;
+                transform: rotateY(-90deg) translateX(calc(var(--thick, 45px)/-2));
+            }
+            
+            .book-3d .page-right {
+                transform-origin: right center;
+                transform: rotateY(90deg) translateX(calc(var(--thick, 45px)/2));
+            }
+            
+            .book-3d .page-top {
+                transform-origin: top center;
+                transform: rotateX(90deg) translateY(calc(var(--thick, 45px)/-2));
+            }
+
+            .book-3d .page-bottom {
+                transform-origin: bottom center;
+                transform: rotateX(-90deg) translateY(calc(var(--thick, 45px)/2));
+            }
+
+            /* Set individual thicknesses */
+            .float-delay-1 .book-3d { --thick: 40px; }
+            .float-delay-2 .book-3d { --thick: 35px; }
+            .float-main .book-3d { --thick: 45px; }
+
+            /* Page realistic lines */
+            .text-page-color {
+                background-color: #f1f5f9;
+            }
+            :is(.dark) .text-page-color {
+                background-color: #cbd5e1;
+            }
+            .pages {
+                background-image: repeating-linear-gradient(
+                    to right,
+                    rgba(0,0,0,0.05) 0px,
+                    rgba(0,0,0,0) 2px,
+                    rgba(0,0,0,0.05) 4px
+                );
+                box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+            }
+            .page-top, .page-bottom {
+                background-image: repeating-linear-gradient(
+                    to bottom,
+                    rgba(0,0,0,0.05) 0px,
+                    rgba(0,0,0,0) 2px,
+                    rgba(0,0,0,0.05) 4px
+                );
+            }
+
+            /* Vertical Text for Spine */
+            .writing-vertical-rl {
+                writing-mode: vertical-rl;
+            }
+
+            /* Hover Lifts */
+            .hover-lift:hover {
+                transform: translateZ(-20px) translateY(-15px) rotateY(-20deg) scale(1.05) !important;
+            }
+            .hover-lift-main:hover {
+                transform: translateZ(100px) translateY(-20px) rotateY(0deg) scale(1.05) !important;
+            }
+
+            /* Smooth Slow Float Animations using translate to avoid fighting Tailwind scales */
+            @keyframes floatOrganic {
+                0%, 100% { translate: 0 0; }
+                50% { translate: 0 -12px; }
+            }
+            .float-delay-1 { animation: floatOrganic 6s ease-in-out infinite; }
+            .float-delay-2 { animation: floatOrganic 7s ease-in-out infinite -2s; }
+            .float-main { animation: floatOrganic 8s ease-in-out infinite -4s; }
+
+            /* Table Shadow matching float */
+            @keyframes shadowBreath {
+                0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+                50% { transform: translateX(-50%) scale(0.9); opacity: 0.5; }
+            }
+            .book-table-shadow { animation: shadowBreath 8s ease-in-out infinite -4s; }
+            .float-delay-1 .book-table-shadow { animation: shadowBreath 6s ease-in-out infinite; }
+            .float-delay-2 .book-table-shadow { animation: shadowBreath 7s ease-in-out infinite -2s; }
+
+            /* Text Stagger Reveal */
+            @keyframes revealUp {
+                0% { opacity: 0; transform: translateY(20px); }
+                100% { opacity: 1; transform: translateY(0); }
+            }
+            .stagger-1 { animation: revealUp 0.8s ease-out 0.2s forwards; }
+            .stagger-2 { animation: revealUp 0.8s ease-out 0.3s forwards; }
+            .stagger-3 { animation: revealUp 0.8s ease-out 0.4s forwards; }
+            .stagger-4 { animation: revealUp 0.8s ease-out 0.5s forwards; }
+
+            @keyframes pulse-slow {
+                0%, 100% { opacity: 0.6; transform: scale(1); }
+                50% { opacity: 0.8; transform: scale(1.05); }
+            }
+            .animate-pulse-slow {
+                animation: pulse-slow 8s infinite;
+            }
+        </style>
+
+        <!-- Subtle Parallax Mouse Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const scene = document.getElementById('3d-scene');
+                const rotator = document.getElementById('book-rotator');
+                if(!scene || !rotator || window.innerWidth < 1024) return;
+
+                // Hardware acceleration for the rotating container
+                rotator.style.willChange = 'transform';
+
+                let state = { currentX: 0, currentY: 0, targetX: 0, targetY: 0 };
+                
+                scene.addEventListener('mousemove', (e) => {
+                    const rect = scene.getBoundingClientRect();
+                    // Normalize position from -1 to 1
+                    const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+                    const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+                    
+                    // Constrain max rotation for subtlety (Premium feel)
+                    state.targetX = x * 8; 
+                    state.targetY = y * -5; 
+                });
+
+                scene.addEventListener('mouseleave', () => {
+                    state.targetX = 0; 
+                    state.targetY = 0;
+                });
+
+                function loop() {
+                    // Fast and buttery smooth lerp interpolation
+                    state.currentX += (state.targetX - state.currentX) * 0.08;
+                    state.currentY += (state.targetY - state.currentY) * 0.08;
+                    
+                    // Use toFixed to eliminate sub-pixel floating point jitter during resting state
+                    rotator.style.transform = `rotateY(${state.currentX.toFixed(3)}deg) rotateX(${state.currentY.toFixed(3)}deg)`;
+                    
+                    requestAnimationFrame(loop);
+                }
+                loop();
+            });
+        </script>
     </div>
+    
+
+
+    <!-- Catalog Grid Section -->
 
     <!-- Catalog Grid Section -->
     <div class="container mx-auto px-4 py-16 lg:py-24">
