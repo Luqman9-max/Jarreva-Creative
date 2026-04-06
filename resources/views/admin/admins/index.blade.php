@@ -46,7 +46,7 @@
                         <td class="px-6 py-4 text-center">
                             <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-700">Administrator</span>
                         </td>
-                        <td class="px-6 py-4 text-xs text-slate-500">{{ $admin->created_at->format('d M Y') }}</td>
+                        <td class="px-6 py-4 text-xs text-slate-500">{{ $admin->created_at?->format('d M Y') ?? 'N/A' }}</td>
                         <td class="px-6 py-4 text-right">
                             <div class="flex justify-end items-center gap-2">
                                 <a href="{{ route('admin.admins.edit', $admin) }}" class="text-slate-400 hover:text-primary transition-colors">

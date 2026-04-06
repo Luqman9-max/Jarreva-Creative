@@ -37,12 +37,12 @@
         perspective: 1200px;
     }
     .book-3d-mockup {
-        transform: rotateY(-18deg) rotateX(8deg);
+        transform: rotateY(0deg) rotateX(0deg);
         transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s ease;
         transform-style: preserve-3d;
     }
     .book-3d-mockup:hover {
-        transform: rotateY(-5deg) rotateX(2deg) translateY(-10px);
+        transform: translateY(-10px);
         box-shadow: 25px 35px 50px -12px rgba(0, 0, 0, 0.3);
     }
     
@@ -79,23 +79,19 @@
             <div class="lg:col-span-5 flex flex-col items-center lg:items-end lg:sticky lg:top-32 reveal-immediate" style="animation-delay: 0.1s;">
                 <div class="flex justify-center items-center perspective-1000 py-6 w-full max-w-md">
                     <div class="book-glow w-full flex justify-center">
-                        <div class="book-3d-mockup relative w-[260px] sm:w-[320px] lg:w-[380px] aspect-[2/3] rounded-r-lg shadow-2xl shadow-slate-900/40">
+                        <div class="relative w-[260px] sm:w-[320px] lg:w-[380px] aspect-[2/3] rounded-lg shadow-2xl">
                             @if($book->cover_image)
                                 <img
                                     src="{{ asset('storage/' . $book->cover_image) }}"
                                     alt="{{ $book->title }}"
-                                    class="h-full w-full object-cover rounded-r-lg border-l-[14px] border-slate-900/20 dark:border-slate-800/60"
+                                    class="h-full w-full object-cover rounded-lg"
                                 />
                             @else
-                                <div class="h-full w-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 rounded-r-lg border-l-[14px] border-slate-900/20 dark:border-slate-800/60">
+                                <div class="h-full w-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 rounded-lg">
                                     <span class="material-symbols-outlined text-7xl text-slate-300 dark:text-slate-600 mb-4">auto_stories</span>
                                     <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">No Cover</span>
                                 </div>
                             @endif
-                            <div class="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent pointer-events-none rounded-r-lg"></div>
-                            
-                            {{-- Pages effect on the right edge (optional realism) --}}
-                            <div class="absolute right-0 top-[2%] bottom-[2%] w-[4px] bg-white rounded-r-sm shadow-inner transform translate-x-full"></div>
                         </div>
                     </div>
                 </div>
@@ -228,7 +224,7 @@
                                 Buy Now
                             </div>
                             <div class="px-6 py-3.5 font-black text-sm tracking-widest flex items-center">
-                                ${{ number_format($book->price ?? 0, 2) }}
+                                ${{ number_format($book->price, 2) }}
                             </div>
                         </a>
                     @endif
@@ -341,10 +337,10 @@
 
                         @if($related->cover_image)
                             <img src="{{ asset('storage/' . $related->cover_image) }}" alt="{{ $related->title }}"
-                                class="w-full h-full object-cover rounded-md shadow-lg border-l-[3px] border-slate-900/10 transform transition-transform duration-700 cubic-bezier(0.2, 0.8, 0.2, 1) group-hover:scale-105 group-hover:-rotate-2 relative z-10" />
+                                class="w-full h-full object-cover rounded-md shadow-lg border-l-[3px] border-slate-900/10 transform transition-transform duration-700 cubic-bezier(0.2, 0.8, 0.2, 1) group-hover:scale-105 relative z-10" />
                         @else
                             <div
-                                class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 rounded-md shadow-lg border-l-[3px] border-slate-900/10 transform transition-transform duration-700 cubic-bezier(0.2, 0.8, 0.2, 1) group-hover:scale-105 group-hover:-rotate-2 relative z-10">
+                                class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800 rounded-md shadow-lg border-l-[3px] border-slate-900/10 transform transition-transform duration-700 cubic-bezier(0.2, 0.8, 0.2, 1) group-hover:scale-105 relative z-10">
                                 <span
                                     class="mobile-catalog-icon-empty material-symbols-outlined text-4xl text-slate-400 dark:text-slate-500">auto_stories</span>
                             </div>

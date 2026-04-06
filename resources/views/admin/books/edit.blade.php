@@ -108,6 +108,14 @@
                     @error ('category') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
                 </div>
 
+                {{-- Price --}}
+                <div class="space-y-1">
+                    <label for="price" class="block text-sm font-semibold text-slate-700 ml-1">Price (USD)</label>
+                    <input type="number" name="price" id="price" value="{{ old('price', $book->price) }}" step="0.01"
+                        class="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary block p-3 outline-none transition-all">
+                    @error ('price') <span class="text-xs text-red-500 ml-1">{{ $message }}</span> @enderror
+                </div>
+
                 {{-- Gumroad URL --}}
                 <div class="space-y-1 md:col-span-3">
                     <label for="gumroad_url" class="block text-sm font-semibold text-slate-700 ml-1">Gumroad URL</label>
@@ -149,29 +157,29 @@
 
             {{-- Toggles --}}
             <div class="flex gap-8 border-t border-slate-100 pt-6">
-                <label class="inline-flex items-center cursor-pointer">
-                    <input type="hidden" name="is_published" value="0">
-                    <input type="checkbox" name="is_published" value="1" class="sr-only peer" {{ old('is_published', $book->is_published) ? 'checked' : '' }}>
+                <input type="hidden" name="is_published" value="0">
+                <label class="inline-flex items-center cursor-pointer relative">
+                    <input type="checkbox" name="is_published" value="1" class="absolute opacity-0 w-full h-full cursor-pointer peer z-10" {{ old('is_published', $book->is_published) ? 'checked' : '' }}>
                     <div
                         class="relative w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500">
                     </div>
                     <span class="ms-3 text-sm font-medium text-slate-700">Published</span>
                 </label>
 
-                <label class="inline-flex items-center cursor-pointer">
-                    <input type="hidden" name="is_featured" value="0">
-                    <input type="checkbox" name="is_featured" value="1" class="sr-only peer" {{ old('is_featured', $book->is_featured) ? 'checked' : '' }}>
+                <input type="hidden" name="is_featured" value="0">
+                <label class="inline-flex items-center cursor-pointer relative">
+                    <input type="checkbox" name="is_featured" value="1" class="absolute opacity-0 w-full h-full cursor-pointer peer z-10" {{ old('is_featured', $book->is_featured) ? 'checked' : '' }}>
                     <div
                         class="relative w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-500">
                     </div>
                     <span class="ms-3 text-sm font-medium text-slate-700">Featured</span>
                 </label>
 
-                <label class="inline-flex items-center cursor-pointer">
-                    <input type="hidden" name="is_free" value="0">
-                    <input type="checkbox" name="is_free" value="1" class="sr-only peer" {{ old('is_free', $book->is_free) ? 'checked' : '' }}>
+                <input type="hidden" name="is_free" value="0">
+                <label class="inline-flex items-center cursor-pointer relative">
+                    <input type="checkbox" name="is_free" value="1" class="absolute opacity-0 w-full h-full cursor-pointer peer z-10" {{ old('is_free', $book->is_free) ? 'checked' : '' }}>
                     <div
-                        class="relative w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-500">
+                        class="relative w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500">
                     </div>
                     <span class="ms-3 text-sm font-medium text-slate-700">Free Book</span>
                 </label>
