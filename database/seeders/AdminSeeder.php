@@ -15,27 +15,27 @@ class AdminSeeder extends Seeder
             [
                 'name' => 'Luqman',
                 'email' => 'luqman@jarreva.com',
-                'password' => Hash::make('luqman'),
+                'password' => 'luqman',
             ],
             [
                 'name' => 'Fajar',
                 'email' => 'fajar@jarreva.com',
-                'password' => Hash::make('fajar'),
+                'password' => 'fajar',
             ],
             [
                 'name' => 'Indra',
                 'email' => 'indra@jarreva.com',
-                'password' => Hash::make('indra'),
+                'password' => 'indra',
             ],
             [
                 'name' => 'Renu',
                 'email' => 'renu@jarreva.com',
-                'password' => Hash::make('renu'),
+                'password' => 'renu',
             ],
         ];
 
         foreach ($admins as $admin) {
-            Admin::create($admin);
+            Admin::updateOrCreate(['email' => $admin['email']], $admin);
         }
     }
 }
