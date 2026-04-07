@@ -608,91 +608,91 @@
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(0deg) translateZ(480px);">
                     <img alt="Book Cover 1" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxYsyRSwgXtMEZEFhdJ-PS1lOqC1y9V6eUZyRnTTX5tPkLndwD1Oan6R9zVNbXrIa0mEbrNaKQ28lXcxFmYefpEnyJRDIEBp4ZBp-TF9AVd_INoqTdtE_MSloij8hxco6HaH2CYQPFEr6l1A6e-6XEqTX97S0sUzglSPsFkewuAjMzIalvmSKl6abvxy2gqJQnpd6IX7ty8kGUuaYfUhDtyaOFcLxk5m3r2IWKqHrht8GX8rsrXh2gD_FQ61dUD4mj9AwQzginOyk" />
+                        src="{{ asset('images/books/57.jpg') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
-                        <p class="font-bold text-white text-sm">Discipline Blueprint</p>
+                        <p class="font-bold text-white text-sm text-center w-full">Build Unbreakable Discipline</p>
                     </div>
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(36deg) translateZ(480px);">
                     <img alt="Book Cover 2" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSC5mJewY7dZx1s6m7cTWnT-SpwpZ90q-dXlh157QtCD5CskNIlxL3t1wTtAxuj_bF1QwOoFzeRKrV2IV3HxuMy1qRjfYmaXj7ueuYWkUNHvLCoN0ZDqnBCT0vtOO-Nlf1dT-Q2SzfXkTMjVvhpOZGUfK7IbW830wCt_rFWYQKOBvPSc7baxhVQcgRbKjjMkVnEQZqsLY1WVNEzjZlp_l7xHZVO8R4S9gzojmpXfEfOJ_BU48nqnuwZAVWlNoYFrXMk2dHD4ajwT4" />
+                        src="{{ asset('images/books/14.jpg') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
-                        <p class="font-bold text-white text-sm">Focus Protocol</p>
+                        <p class="font-bold text-white text-sm text-center w-full">Reclaim Deep Focus</p>
                     </div>
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(72deg) translateZ(480px);">
                     <img alt="Book Cover 3" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEFbNRvyPYRAWTToebf6PdbEFEVzmIhTO7ZLhcKdh1Z3AlPpOzfug2Xngz746KOn1jWLFh_7fN4QygqgezTD0T4DuQQRlyeaNCdqd15m0ws1crVvwmagmEC1XLLGBO1ecbXmWxElqV2CRR3bhQiNiaZNm3PY-42gMacJxSXZeHcI0HG-Ur5KzqutbS-m8Vsehj40NyOJPe77TshsEIx9qmOC8KYJVVotR5I_NMIHNN0OWFnpXMsX7yHdUBFpnolgbYRXC5a4Djyzc" />
+                        src="{{ asset('images/books/3.jpg') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
-                        <p class="font-bold text-white text-sm">Emotional Reset</p>
+                        <p class="font-bold text-white text-sm text-center w-full">Overcome Mental Burnout</p>
                     </div>
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(108deg) translateZ(480px);">
                     <img alt="Book Cover 4" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuALSeZanVKMNzFqf8z3YElfEc1DA-qiuE_nJg_aXmFwvxiLT_WjBOA3M7gJHSMJf3emhRPAevFxljJJK1KxjA12rZ3iSUHzg-TsjoSUWQMOJyrl9lMcbLRqxDcxuS2GbZSndbENeG-FiK0JfHuLZy8aaxyrVTFgawvQOiJti4Gh-epy9retriK_jwxxbKgocZ9fC7wvOkG0rbjoiw0eS3bN2mJ-MOmmCn2n0PWVS9E56Hgqa11_gBGnTUYdolGuA2A5JNbxxQzqw_g" />
+                        src="{{ asset('images/books/68.jpg') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
-                        <p class="font-bold text-white text-sm">Momentum System</p>
+                        <p class="font-bold text-white text-sm text-center w-full">Forge Lasting Habits</p>
                     </div>
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(144deg) translateZ(480px);">
                     <img alt="Book Cover 5" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbaCswGNNfB1Jpn9pqgHIc7uzNbYaOAvAf3zV-NHO9uEAB0VOCPx_Dtf0izFssoMFWnTTc381Dy7KcpZUrIkseITlLqA-P6k_p_KKVYV6tSFdYGyauxIpFgLSwVhaxXYM9IR0wlqY42xXaewmlrjB3IdFuR4_rogXJJWhbl0ofZo5nEhFe_DK7CdTDy3ZlYrPD9cNUPTBToXd3MEs4U4ih6MEQrycn49r6UO3pYId411Wcnoll6kt46BcHTUTjiz0szgIrd4S-rlo" />
+                        src="{{ asset('images/books/4.jpg') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
-                        <p class="font-bold text-white text-sm">Career Control</p>
+                        <p class="font-bold text-white text-sm text-center w-full">Destroy Procrastination</p>
                     </div>
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(180deg) translateZ(480px);">
                     <img alt="Book Cover 6" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKXvOcxBAna-QU39U2Oz5UU0AjNivu_pkraY5tdtVNTV-1T0GjN25_kfw9jgolLXX4YD6VX03Pe8q_NJq8OJ9MqIdZjyQW1PUJBwDA5swtbuaBI_SUJkLTApgDMWwRcd9q3ji2hDHYtvvOrD9Br6rB8nSPQKTc62V3jiQpFmeGdt3_8qVaAJ_C2UbKFbChjlcdgqZYCID7ns5hZhlKMit19hGARGh_RthT3zPS0oWwVhUu3ok3C6gTI61C_h4DtBB3FxDeEsRresU" />
+                        src="{{ asset('images/books/62.jpg') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
-                        <p class="font-bold text-white text-sm">Digital Minimalism</p>
+                        <p class="font-bold text-white text-sm text-center w-full">Become Distraction-Proof</p>
                     </div>
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(216deg) translateZ(480px);">
                     <img alt="Book Cover 7" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfoVSwU7qtkcr-CFwqN-pQamAJyHvx71VAzGszL6QIJ82TmPb-pLE6PtKoS4H9rYnWizjMn1m9M300tqIgA-RDqEyoI8f24gFKDxA18a0KPScz7NxJhnuRmpfLQNoZmRTxHEmgwpdOtXxGnoUuLaZtcJeXLU7npux1I2SdB8t_yCGxzWt_uj0VKm2ZXzDOQBI6fvOOdSRneev_kRHg9jly2XZFzWqr4634DB8QIDgAjiFfcEdKgshC-r7jdixrKuTBl9NQM34cb38" />
+                        src="{{ asset('images/books/18.jpg') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
-                        <p class="font-bold text-white text-sm">Social Battery</p>
+                        <p class="font-bold text-white text-sm text-center w-full">Master Your Energy</p>
                     </div>
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(252deg) translateZ(480px);">
                     <img alt="Book Cover 8" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGPfAAmM0IzGZanJPzBIHN4y1iVk159-Obptn1BR2k4BWKdwXurrkOV4f7vCmnt3pfdCbvBrlxs0EKj7xeEgi2vISJ9Bscl1DdSlk6UsCKj1woGDWQ7i-nhaphkJ9Ezlt_LnPlH6Ih7D0YpY5dYjxTkUoK6I8kGcfSTRKwW0M_fDTPHDiNqPJecCF0xknT7IHmcWf54gFVkf4vQD4_0pDhgBtHN2WAbCgpw4Krhr10emu5ygevxrmnL2EnK9CsH__3t89Scbc3T6I" />
+                        src="{{ asset('images/books/45.jpg') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
-                        <p class="font-bold text-white text-sm">Money Clarity</p>
+                        <p class="font-bold text-white text-sm text-center w-full">Zero-Fluff Strategies</p>
                     </div>
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(288deg) translateZ(480px);">
                     <img alt="Book Cover 9" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAOQvjm5RfKZiaRjXtTlGgQt-XLigbV5vnWdTtWxHb5hQEDimzJ9NDJ-WGa8VKPbojGHRqpV91Aw3fFPAJyHbwdFh5mbfvfrlcAXvi4-j7W4zkKBL37r0_1wCxIOawrGaWCoTaz_-xGMvhBiKpF3MatmYLAH4sxxnwaNPeUsCaFv18OLe9Ai1Oey0NGdNkMVuavKZ_X7FJ56BojO3vLzAkERQEj97U5VHR_7RAzec9FLkSJJg7CW0QYwwrezny1pc4U_B554VRlwI" />
+                        src="{{ asset('images/books/5.jpg') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
-                        <p class="font-bold text-white text-sm">Identity Architect</p>
+                        <p class="font-bold text-white text-sm text-center w-full">Unlock True Purpose</p>
                     </div>
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(324deg) translateZ(480px);">
                     <img alt="Book Cover 10" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4jU2MEmgBHBskXd4Fpmr451oC2Ca9kxAvh7VOR7LWSkrcSK9U_yK_5dGLqQcBVYWmPVtjWbBuHChNrWYRq05m1iIZBfkwKOMcIG4tP9QFn5fICTGlBclziIs5ioxi4VvXeUXBOD0ZKRh-T63t9ZKk4oR-2zZgWGcJxIVD2ucVAn-1UjGsuHaNt0kxlmFfRt8ym2ApsruHDSGMRys2LRo14cYDxIjFUyTtDeB3hBSpbj_wNm9ODoWyMwX1lRyYtY6fvJFZNJ11fE0" />
+                        src="{{ asset('images/books/7.jpg') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
-                        <p class="font-bold text-white text-sm">Sleep Audit</p>
+                        <p class="font-bold text-white text-sm text-center w-full">Achieve Real Results</p>
                     </div>
                 </div>
             </div>
@@ -1895,62 +1895,72 @@
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Volume I -->
                 <div
                     class="group relative flex flex-col p-8 bg-slate-900/40 rounded-[2rem] border border-slate-800 hover:border-slate-600 hover:bg-slate-900/60 hover:shadow-2xl hover:shadow-secondary/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden backdrop-blur-sm">
                     <div class="relative h-64 w-full flex items-center justify-center mb-6 z-0">
-                        <img alt="Book Layer 1"
+                        <img alt="Volume 1 Layer 1"
                             class="absolute w-40 h-60 object-cover rounded-lg shadow-md border border-white/20 transition-all duration-500 ease-out opacity-80 group-hover:opacity-100 group-hover:rotate-[-12deg] group-hover:-translate-x-12 z-10"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqQAUN9Hpv4fYdlVu2ZhzrNHJLaDmpWXXGl_RUQ1HbufrtOvFYR39hbKF0LURl1Bj26eSxGlzBiB74lM71FGv52bIWgrNnPgJpSA6SL6yXEbmQJuvjy19tqgdeLv9csqps6sqw1cBbO_cCaqe9u6gyv0tu07cI-61XPJT-UZZnqeIZ6oX6wvkcX9HipHJgJf5gYxwcBNyShTqvXus47C_pZd_5Foqx1fGWUjL06CaorMSHq02lZ4VVoI0s1Mu460YVBx4qF2GHCvM" />
-                        <img alt="Book Layer 2"
+                            src="{{ asset('images/books/14.jpg') }}" />
+                        <img alt="Volume 1 Layer 2"
                             class="absolute w-40 h-60 object-cover rounded-lg shadow-md border border-white/20 transition-all duration-500 ease-out opacity-80 group-hover:opacity-100 group-hover:rotate-[12deg] group-hover:translate-x-12 z-10"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqQAUN9Hpv4fYdlVu2ZhzrNHJLaDmpWXXGl_RUQ1HbufrtOvFYR39hbKF0LURl1Bj26eSxGlzBiB74lM71FGv52bIWgrNnPgJpSA6SL6yXEbmQJuvjy19tqgdeLv9csqps6sqw1cBbO_cCaqe9u6gyv0tu07cI-61XPJT-UZZnqeIZ6oX6wvkcX9HipHJgJf5gYxwcBNyShTqvXus47C_pZd_5Foqx1fGWUjL06CaorMSHq02lZ4VVoI0s1Mu460YVBx4qF2GHCvM" />
-                        <img alt="Book Cover"
+                            src="{{ asset('images/books/18.jpg') }}" />
+                        <img alt="Volume 1 Cover"
                             class="relative w-40 h-60 object-cover rounded-lg shadow-2xl border-2 border-white/10 z-20 transition-all duration-500 group-hover:scale-105"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqQAUN9Hpv4fYdlVu2ZhzrNHJLaDmpWXXGl_RUQ1HbufrtOvFYR39hbKF0LURl1Bj26eSxGlzBiB74lM71FGv52bIWgrNnPgJpSA6SL6yXEbmQJuvjy19tqgdeLv9csqps6sqw1cBbO_cCaqe9u6gyv0tu07cI-61XPJT-UZZnqeIZ6oX6wvkcX9HipHJgJf5gYxwcBNyShTqvXus47C_pZd_5Foqx1fGWUjL06CaorMSHq02lZ4VVoI0s1Mu460YVBx4qF2GHCvM" />
+                            src="{{ asset('images/books/68.jpg') }}" />
                     </div>
-                    <h3 class="text-xl font-bold text-white leading-tight mb-3">Echoes of
-                        the Void</h3>
+                    <div class="mb-2">
+                        <span class="text-xs font-bold tracking-widest text-secondary uppercase">Volume I</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white leading-tight mb-3">Mental Reset</h3>
                     <p class="text-gray-400 leading-relaxed text-sm">
-                        A journey through space and time that challenges the perception of reality itself.
+                        Strip away cheap dopamine, kill destructive loops, and build a clean slate for your mind.
                     </p>
                 </div>
+
+                <!-- Volume II -->
                 <div
                     class="group relative flex flex-col p-8 bg-slate-900/40 rounded-[2rem] border border-slate-800 hover:border-slate-600 hover:bg-slate-900/60 hover:shadow-2xl hover:shadow-secondary/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden backdrop-blur-sm">
                     <div class="relative h-64 w-full flex items-center justify-center mb-6 z-0">
-                        <img alt="Book Layer 1"
+                        <img alt="Volume 2 Layer 1"
                             class="absolute w-40 h-60 object-cover rounded-lg shadow-md border border-white/20 transition-all duration-500 ease-out opacity-80 group-hover:opacity-100 group-hover:rotate-[-12deg] group-hover:-translate-x-12 z-10"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgVsaHLBvXrE6w-xt4xnTBbuW5AU2e9BFE_9cY5vfcDc5DphdsyCJF-BCCOR5fmTvP3YlsXiS726qlF_tcazn-CbYPIxR5t0N2iGfsNAanPtunuWXGEApJKOEG66FR64c4T7hA5uuvWj9e_atoFbZW2dWNbFKUeFxC42-cGtPvrUzHO84W6ZD_o72zdiGQq_tp8jMwqEC5LTzz2zVPsMQRWa7IN2xKoG249oHfh_cNn4ZhEjSyAtYlehi0dyCE9lFsWX3pDivetSg" />
-                        <img alt="Book Layer 2"
+                            src="{{ asset('images/books/4.jpg') }}" />
+                        <img alt="Volume 2 Layer 2"
                             class="absolute w-40 h-60 object-cover rounded-lg shadow-md border border-white/20 transition-all duration-500 ease-out opacity-80 group-hover:opacity-100 group-hover:rotate-[12deg] group-hover:translate-x-12 z-10"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgVsaHLBvXrE6w-xt4xnTBbuW5AU2e9BFE_9cY5vfcDc5DphdsyCJF-BCCOR5fmTvP3YlsXiS726qlF_tcazn-CbYPIxR5t0N2iGfsNAanPtunuWXGEApJKOEG66FR64c4T7hA5uuvWj9e_atoFbZW2dWNbFKUeFxC42-cGtPvrUzHO84W6ZD_o72zdiGQq_tp8jMwqEC5LTzz2zVPsMQRWa7IN2xKoG249oHfh_cNn4ZhEjSyAtYlehi0dyCE9lFsWX3pDivetSg" />
-                        <img alt="Book Cover"
+                            src="{{ asset('images/books/5.jpg') }}" />
+                        <img alt="Volume 2 Cover"
                             class="relative w-40 h-60 object-cover rounded-lg shadow-2xl border-2 border-white/10 z-20 transition-all duration-500 group-hover:scale-105"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgVsaHLBvXrE6w-xt4xnTBbuW5AU2e9BFE_9cY5vfcDc5DphdsyCJF-BCCOR5fmTvP3YlsXiS726qlF_tcazn-CbYPIxR5t0N2iGfsNAanPtunuWXGEApJKOEG66FR64c4T7hA5uuvWj9e_atoFbZW2dWNbFKUeFxC42-cGtPvrUzHO84W6ZD_o72zdiGQq_tp8jMwqEC5LTzz2zVPsMQRWa7IN2xKoG249oHfh_cNn4ZhEjSyAtYlehi0dyCE9lFsWX3pDivetSg" />
+                            src="{{ asset('images/books/45.jpg') }}" />
                     </div>
-                    <h3 class="text-xl font-bold text-white leading-tight mb-3">Digital
-                        Renaissance</h3>
+                    <div class="mb-2">
+                        <span class="text-xs font-bold tracking-widest text-primary uppercase">Volume II</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white leading-tight mb-3">System Architecture</h3>
                     <p class="text-gray-400 leading-relaxed text-sm">
-                        Exploring how modern technology is reshaping the creative landscape for artists.
+                        Replace fleeting motivation with automated rules and protocols that guarantee daily execution.
                     </p>
                 </div>
+
+                <!-- Volume III -->
                 <div
                     class="group relative flex flex-col p-8 bg-slate-900/40 rounded-[2rem] border border-slate-800 hover:border-slate-600 hover:bg-slate-900/60 hover:shadow-2xl hover:shadow-secondary/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden backdrop-blur-sm">
                     <div class="relative h-64 w-full flex items-center justify-center mb-6 z-0">
-                        <img alt="Book Layer 1"
+                        <img alt="Volume 3 Layer 1"
                             class="absolute w-40 h-60 object-cover rounded-lg shadow-md border border-white/20 transition-all duration-500 ease-out opacity-80 group-hover:opacity-100 group-hover:rotate-[-12deg] group-hover:-translate-x-12 z-10"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7veN4LzkfNO-ZXYNdPyIqb7hNQdn6dErDu3fKuqiGzQfTANwMyIkqklfTuz_CoNxEwfD-5oQgN19G28O0EjNJma_pqNpsCYF6QmY2mZhCKNA6lpPb8t5cBW2OspOHwlgesk5UuFr9XzRQlsKmddwNY2Ch55rcWazsZZwR6txbnsKPzr5WoiyAKFqRygCPsJNjxsfx_ogDekCc2I4pXcMMMDFhpEpfxOPA8F6dM4EkqqVddd_9qPPcyPdHjAUT8VdNtRkPD2kuXUs" />
-                        <img alt="Book Layer 2"
+                            src="{{ asset('images/books/57.jpg') }}" />
+                        <img alt="Volume 3 Layer 2"
                             class="absolute w-40 h-60 object-cover rounded-lg shadow-md border border-white/20 transition-all duration-500 ease-out opacity-80 group-hover:opacity-100 group-hover:rotate-[12deg] group-hover:translate-x-12 z-10"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7veN4LzkfNO-ZXYNdPyIqb7hNQdn6dErDu3fKuqiGzQfTANwMyIkqklfTuz_CoNxEwfD-5oQgN19G28O0EjNJma_pqNpsCYF6QmY2mZhCKNA6lpPb8t5cBW2OspOHwlgesk5UuFr9XzRQlsKmddwNY2Ch55rcWazsZZwR6txbnsKPzr5WoiyAKFqRygCPsJNjxsfx_ogDekCc2I4pXcMMMDFhpEpfxOPA8F6dM4EkqqVddd_9qPPcyPdHjAUT8VdNtRkPD2kuXUs" />
-                        <img alt="Book Cover"
+                            src="{{ asset('images/books/62.jpg') }}" />
+                        <img alt="Volume 3 Cover"
                             class="relative w-40 h-60 object-cover rounded-lg shadow-xl border-2 border-white/10 z-20 transition-all duration-500 group-hover:scale-105"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7veN4LzkfNO-ZXYNdPyIqb7hNQdn6dErDu3fKuqiGzQfTANwMyIkqklfTuz_CoNxEwfD-5oQgN19G28O0EjNJma_pqNpsCYF6QmY2mZhCKNA6lpPb8t5cBW2OspOHwlgesk5UuFr9XzRQlsKmddwNY2Ch55rcWazsZZwR6txbnsKPzr5WoiyAKFqRygCPsJNjxsfx_ogDekCc2I4pXcMMMDFhpEpfxOPA8F6dM4EkqqVddd_9qPPcyPdHjAUT8VdNtRkPD2kuXUs" />
+                            src="{{ asset('images/books/3.jpg') }}" />
                     </div>
-                    <h3 class="text-xl font-bold text-white leading-tight mb-3">The
-                        Silent Protocol</h3>
+                    <div class="mb-2">
+                        <span class="text-xs font-bold tracking-widest text-blue-500 uppercase">Volume III</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white leading-tight mb-3">Relentless Momentum</h3>
                     <p class="text-gray-400 leading-relaxed text-sm">
-                        A high-stakes cyber thriller that will keep you on the edge of your seat until the
-                        last page.
+                        Scale your output, compound your results, and maintain unbreakable consistency over the years.
                     </p>
                 </div>
             </div>
