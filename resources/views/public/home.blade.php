@@ -406,7 +406,7 @@
 
 @section('content')
 <section
-    class="reveal-element reveal-scale relative z-0 flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-24 pb-24 lg:pt-32 bg-white dark:bg-background-dark">
+    class="reveal-element reveal-scale relative z-0 flex min-h-[70vh] lg:min-h-[90vh] w-full items-center justify-center overflow-hidden pt-12 pb-12 lg:pt-32 lg:pb-24 bg-white dark:bg-background-dark">
 
     <!-- 3D Hero Background -->
     @include('public.components.hero-3d-bg')
@@ -414,7 +414,7 @@
     <div
         class="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none mix-blend-overlay opacity-50 dark:opacity-20">
     </div>
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 flex flex-col items-center text-center">
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 flex flex-col items-center text-center lg:-translate-y-12">
         <!-- System Intelligence Status -->
         <div
             class="group relative mb-8 lg:mb-12 inline-flex items-center gap-2 lg:gap-3 rounded-full border border-slate-200 bg-white/50 bg-opacity-80 backdrop-blur-sm border-white/5 shadow-inner px-3 py-1.5 lg:px-4 lg:py-2 shadow-sm hover:border-secondary/30 transition-all duration-500 max-w-[90vw] sm:max-w-[95vw] md:max-w-full">
