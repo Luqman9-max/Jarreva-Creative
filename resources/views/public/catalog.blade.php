@@ -4,7 +4,7 @@
 
 @section('content')
     <!-- Cinematic Hero Section -->
-    <div class="relative min-h-[90vh] lg:min-h-screen overflow-hidden bg-white dark:bg-background-dark flex items-center pt-20 lg:pt-0 pb-10 lg:pb-24" id="cinematic-hero">
+    <div class="relative min-h-[30vh] lg:min-h-screen overflow-hidden bg-white dark:bg-background-dark flex items-start lg:items-center pt-32 lg:pt-0 pb-6 lg:pb-24" id="cinematic-hero">
         <!-- Background Gradients -->
         <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-32 lg:h-48 bg-gradient-to-t from-transparent to-white dark:to-background-dark z-20"></div>
@@ -15,10 +15,10 @@
             <div class="absolute bottom-1/4 -right-[10%] w-[60%] h-[60%] rounded-full bg-blue-500/5 dark:bg-blue-600/10 blur-[120px] mix-blend-multiply dark:mix-blend-screen opacity-70 animate-pulse-slow"></div>
         </div>
 
-        <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 mx-auto h-full flex flex-col lg:flex-row items-center gap-12 lg:gap-8 pb-10 lg:-translate-y-8">
+        <div class="relative z-10 w-full max-w-7xl px-6 md:px-12 mx-auto h-full flex flex-col lg:flex-row items-center gap-4 lg:gap-8 pb-10 lg:-translate-y-8">
             
             <!-- LEFT: TEXT CONTENT (50%) -->
-            <div class="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left z-20 pt-10 lg:pt-0">
+            <div class="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left relative z-30 pt-4 lg:pt-0 order-2 lg:order-1">
                 <!-- Removed Premium Collection Badge -->
 
                 <h1 class="stagger-2 opacity-0 translate-y-6 mb-6 font-display text-[42px] sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-slate-900 dark:text-white drop-shadow-sm">
@@ -41,7 +41,7 @@
             </div>
 
             <!-- RIGHT: 3D BOOK COMPOSITION & TABLE (50%) -->
-            <div class="w-full lg:w-1/2 h-[500px] lg:h-[700px] relative z-10 hero-perspective" id="3d-scene">
+            <div class="hidden lg:block w-full lg:w-1/2 h-[380px] lg:h-[700px] relative z-10 hero-perspective order-1 lg:order-2" id="3d-scene">
                 
                 <!-- THE TABLE / SURFACE LAYER (BOTTOM) -->
                 <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] lg:w-[120%] h-[300px] lg:h-[400px] table-surface rounded-t-full border-t border-slate-200/80 dark:border-slate-600/50 shadow-[0_-20px_50px_rgba(0,0,0,0.03)] dark:shadow-[0_-20px_50px_rgba(0,0,0,0.3)] bg-gradient-to-b from-slate-100/60 to-white dark:from-slate-800 dark:to-background-dark z-0">
@@ -120,7 +120,7 @@
         </div>
 
         <!-- Seamless blending gradient to the next section -->
-        <div class="absolute -bottom-2 left-0 w-full h-48 bg-gradient-to-t from-white via-white/90 dark:from-background-dark dark:via-background-dark/90 to-transparent pointer-events-none z-20"></div>
+        <div class="hidden lg:block absolute -bottom-2 left-0 w-full h-48 bg-gradient-to-t from-white via-white/90 dark:from-background-dark dark:via-background-dark/90 to-transparent pointer-events-none z-20"></div>
 
         <style>
             .hero-perspective {
@@ -296,7 +296,7 @@
     <!-- Catalog Grid Section -->
 
     <!-- Catalog Grid Section -->
-    <div class="container mx-auto px-4 pb-16 pt-4 lg:pt-0 lg:pb-24 lg:-mt-16">
+    <div class="container mx-auto px-4 pb-16 pt-16 lg:pt-0 lg:pb-24 lg:-mt-16 relative z-30">
 
         <!-- Optional: Simulated Toolbar/Filters (Just for visual enhancement) -->
 
