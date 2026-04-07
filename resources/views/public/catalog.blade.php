@@ -41,6 +41,23 @@
             </div>
 
             <!-- RIGHT: 3D BOOK COMPOSITION & TABLE (50%) -->
+            @php
+                $bookImages = glob(public_path('images/books/*.{jpg,jpeg,png,gif,webp}'), GLOB_BRACE) ?: [];
+                $bookImages = array_map(function($path) {
+                    return asset('images/books/' . basename($path));
+                }, $bookImages);
+                
+                if (count($bookImages) >= 3) {
+                    $keys = array_rand($bookImages, 3);
+                    $imgLeft = $bookImages[$keys[0]];
+                    $imgMain = $bookImages[$keys[1]];
+                    $imgRight = $bookImages[$keys[2]];
+                } else {
+                    $imgLeft = 'https://placehold.co/860x1216/e2e8f0/64748b?text=Your+Left+Book+Image';
+                    $imgMain = 'https://placehold.co/860x1216/f8f9fa/1e293b?text=Your+Main+Book+Image';
+                    $imgRight = 'https://placehold.co/860x1216/fff7ed/ea580c?text=Your+Right+Book+Image';
+                }
+            @endphp
             <div class="hidden lg:block w-full lg:w-1/2 h-[380px] lg:h-[700px] relative z-10 hero-perspective order-1 lg:order-2" id="3d-scene">
                 
                 <!-- THE TABLE / SURFACE LAYER (BOTTOM) -->
@@ -58,7 +75,7 @@
                             <div class="book-3d w-[90px] lg:w-[150px] aspect-[860/1216] transform-style-3d group cursor-pointer hover-lift transition-transform duration-700 ease-out" style="transform: translateZ(0px) rotateY(3deg) rotateX(2deg);">
                             <div class="absolute inset-0 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-r-md shadow-[0_15px_30px_rgba(0,0,0,0.1)] overflow-hidden front pointer-events-auto group-hover:border-blue-400/50 transition-colors">
                                 <!-- USER IMAGE FOR LEFT BOOK -->
-                                <img src="https://placehold.co/860x1216/e2e8f0/64748b?text=Your+Left+Book+Image" alt="Left Book Cover" class="w-full h-full object-cover">
+                                <img src="{{ $imgLeft }}" alt="Left Book Cover" class="w-full h-full object-cover">
                                 
                                 <!-- Realistic Book Hinge Shadow Overlay -->
                                 <div class="absolute top-0 left-0 w-3 h-full bg-black/10 dark:bg-black/30 shadow-[1px_0_2px_rgba(255,255,255,0.2)_inset] pointer-events-none"></div>
@@ -78,7 +95,7 @@
                             <div class="book-3d w-[130px] lg:w-[210px] aspect-[860/1216] transform-style-3d group cursor-pointer hover-lift-main transition-transform duration-700 ease-out" style="transform: translateZ(30px) rotateY(0deg) rotateX(0deg);">
                             <div class="absolute inset-0 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg shadow-[0_25px_50px_rgba(0,0,0,0.15)] overflow-hidden front group-hover:border-primary/40 transition-colors pointer-events-auto">
                                 <!-- USER IMAGE FOR CENTER BOOK -->
-                                <img src="https://placehold.co/860x1216/f8f9fa/1e293b?text=Your+Main+Book+Image" alt="Main Book Cover" class="w-full h-full object-cover">
+                                <img src="{{ $imgMain }}" alt="Main Book Cover" class="w-full h-full object-cover">
                                 
                                 <!-- Realistic Book Hinge Shadow Overlay -->
                                 <div class="absolute top-0 left-0 w-3 h-full bg-gradient-to-r from-black/20 to-transparent shadow-[2px_0_4px_rgba(255,255,255,0.4)_inset] pointer-events-none"></div>
@@ -101,7 +118,7 @@
                             <div class="book-3d w-[95px] lg:w-[155px] aspect-[860/1216] transform-style-3d group cursor-pointer hover-lift transition-transform duration-700 ease-out" style="transform: translateZ(0px) rotateY(-3deg) rotateX(2deg);">
                             <div class="absolute inset-0 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-r-md shadow-[0_15px_30px_rgba(0,0,0,0.1)] overflow-hidden front pointer-events-auto group-hover:border-orange-400/50 transition-colors">
                                 <!-- USER IMAGE FOR RIGHT BOOK -->
-                                <img src="https://placehold.co/860x1216/fff7ed/ea580c?text=Your+Right+Book+Image" alt="Right Book Cover" class="w-full h-full object-cover">
+                                <img src="{{ $imgRight }}" alt="Right Book Cover" class="w-full h-full object-cover">
                                 
                                 <!-- Realistic Book Hinge Shadow Overlay -->
                                 <div class="absolute top-0 left-0 w-3 h-full bg-black/10 dark:bg-black/30 shadow-[1px_0_2px_rgba(255,255,255,0.2)_inset] pointer-events-none"></div>
