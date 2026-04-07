@@ -1879,19 +1879,17 @@
         <div class="w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
             <div class="text-center mb-16">
                 <div
-                    class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white shadow-sm px-4 py-1.5 mb-6">
+                    class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/10 shadow-sm px-4 py-1.5 mb-6 backdrop-blur-sm">
                     <div class="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
                     <span class="text-[10px] sm:text-xs font-bold text-primary uppercase tracking-widest">The
-                        Collection</span>
+                        Methodology</span>
                 </div>
-                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-6">Complete
-                    Book
-                    Series</h2>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-6">The 3-Phase
+                    Framework</h2>
                 <div class="h-1.5 w-24 bg-primary rounded-full mx-auto shadow-[0_0_15px_rgba(249,115,22,0.5)]">
                 </div>
                 <p class="mt-8 text-base sm:text-lg md:text-xl font-medium text-gray-400 w-full px-4 sm:px-0 sm:max-w-[95%] md:max-w-3xl mx-auto leading-relaxed">
-                    Our discipline framework spans multiple volumes, each targeting specific<br class="hidden md:block"> areas of
-                    personal growth.
+                    This isn't a random collection. It is a sequential, three-volume blueprint<br class="hidden md:block"> designed to pull your mind out of chaos and build unbreakable consistency.
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
