@@ -607,8 +607,8 @@
                 <!-- Reduced number of books for performance, high quality only -->
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(0deg) translateZ(480px);">
-                    <img alt="Book Cover 1" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="{{ asset('images/books/57.jpg') }}" />
+                    <img alt="Book Cover 1" class="h-full w-full rounded-xl object-cover opacity-90" loading="lazy" decoding="async"
+                        src="{{ asset('images/books/57.webp') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
                         <p class="font-bold text-white text-sm text-center w-full">Build Unbreakable Discipline</p>
@@ -616,8 +616,8 @@
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(36deg) translateZ(480px);">
-                    <img alt="Book Cover 2" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="{{ asset('images/books/14.jpg') }}" />
+                    <img alt="Book Cover 2" class="h-full w-full rounded-xl object-cover opacity-90" loading="lazy" decoding="async"
+                        src="{{ asset('images/books/14.webp') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
                         <p class="font-bold text-white text-sm text-center w-full">Reclaim Deep Focus</p>
@@ -625,8 +625,8 @@
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(72deg) translateZ(480px);">
-                    <img alt="Book Cover 3" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="{{ asset('images/books/3.jpg') }}" />
+                    <img alt="Book Cover 3" class="h-full w-full rounded-xl object-cover opacity-90" loading="lazy" decoding="async"
+                        src="{{ asset('images/books/3.webp') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
                         <p class="font-bold text-white text-sm text-center w-full">Overcome Mental Burnout</p>
@@ -634,8 +634,8 @@
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(108deg) translateZ(480px);">
-                    <img alt="Book Cover 4" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="{{ asset('images/books/68.jpg') }}" />
+                    <img alt="Book Cover 4" class="h-full w-full rounded-xl object-cover opacity-90" loading="lazy" decoding="async"
+                        src="{{ asset('images/books/68.webp') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
                         <p class="font-bold text-white text-sm text-center w-full">Forge Lasting Habits</p>
@@ -643,8 +643,8 @@
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(144deg) translateZ(480px);">
-                    <img alt="Book Cover 5" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="{{ asset('images/books/4.jpg') }}" />
+                    <img alt="Book Cover 5" class="h-full w-full rounded-xl object-cover opacity-90" loading="lazy" decoding="async"
+                        src="{{ asset('images/books/4.webp') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
                         <p class="font-bold text-white text-sm text-center w-full">Destroy Procrastination</p>
@@ -652,8 +652,8 @@
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(180deg) translateZ(480px);">
-                    <img alt="Book Cover 6" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="{{ asset('images/books/62.jpg') }}" />
+                    <img alt="Book Cover 6" class="h-full w-full rounded-xl object-cover opacity-90" loading="lazy" decoding="async"
+                        src="{{ asset('images/books/62.webp') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
                         <p class="font-bold text-white text-sm text-center w-full">Become Distraction-Proof</p>
@@ -661,8 +661,8 @@
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(216deg) translateZ(480px);">
-                    <img alt="Book Cover 7" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="{{ asset('images/books/18.jpg') }}" />
+                    <img alt="Book Cover 7" class="h-full w-full rounded-xl object-cover opacity-90" loading="lazy" decoding="async"
+                        src="{{ asset('images/books/18.webp') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
                         <p class="font-bold text-white text-sm text-center w-full">Master Your Energy</p>
@@ -670,8 +670,8 @@
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(252deg) translateZ(480px);">
-                    <img alt="Book Cover 8" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="{{ asset('images/books/45.jpg') }}" />
+                    <img alt="Book Cover 8" class="h-full w-full rounded-xl object-cover opacity-90" loading="lazy" decoding="async"
+                        src="{{ asset('images/books/45.webp') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
                         <p class="font-bold text-white text-sm text-center w-full">Zero-Fluff Strategies</p>
@@ -679,8 +679,8 @@
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(288deg) translateZ(480px);">
-                    <img alt="Book Cover 9" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="{{ asset('images/books/5.jpg') }}" />
+                    <img alt="Book Cover 9" class="h-full w-full rounded-xl object-cover opacity-90" loading="lazy" decoding="async"
+                        src="{{ asset('images/books/5.webp') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
                         <p class="font-bold text-white text-sm text-center w-full">Unlock True Purpose</p>
@@ -688,8 +688,8 @@
                 </div>
                 <div class="absolute left-0 top-0 h-full w-full rounded-xl bg-gray-900 shadow-2xl border border-white/10 transition-transform duration-300 hover:scale-105 hover:border-secondary/50 hover:shadow-[0_0_20px_rgba(249,115,22,0.3)]"
                     style="transform: rotateY(324deg) translateZ(480px);">
-                    <img alt="Book Cover 10" class="h-full w-full rounded-xl object-cover opacity-90"
-                        src="{{ asset('images/books/7.jpg') }}" />
+                    <img alt="Book Cover 10" class="h-full w-full rounded-xl object-cover opacity-90" loading="lazy" decoding="async"
+                        src="{{ asset('images/books/7.webp') }}" />
                     <div
                         class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex items-end">
                         <p class="font-bold text-white text-sm text-center w-full">Achieve Real Results</p>
@@ -1899,13 +1899,13 @@
                     <div class="relative h-64 w-full flex items-center justify-center mb-6 z-0">
                         <img alt="Volume 1 Layer 1"
                             class="absolute w-40 h-60 object-cover rounded-lg shadow-md border border-white/20 transition-all duration-500 ease-out opacity-80 group-hover:opacity-100 group-hover:rotate-[-12deg] group-hover:-translate-x-12 z-10"
-                            src="{{ asset('images/books/14.jpg') }}" />
+                            loading="lazy" decoding="async" src="{{ asset('images/books/14.webp') }}" />
                         <img alt="Volume 1 Layer 2"
                             class="absolute w-40 h-60 object-cover rounded-lg shadow-md border border-white/20 transition-all duration-500 ease-out opacity-80 group-hover:opacity-100 group-hover:rotate-[12deg] group-hover:translate-x-12 z-10"
-                            src="{{ asset('images/books/18.jpg') }}" />
+                            loading="lazy" decoding="async" src="{{ asset('images/books/18.webp') }}" />
                         <img alt="Volume 1 Cover"
                             class="relative w-40 h-60 object-cover rounded-lg shadow-2xl border-2 border-white/10 z-20 transition-all duration-500 group-hover:scale-105"
-                            src="{{ asset('images/books/68.jpg') }}" />
+                            loading="lazy" decoding="async" src="{{ asset('images/books/68.webp') }}" />
                     </div>
                     <div class="mb-2">
                         <span class="text-xs font-bold tracking-widest text-secondary uppercase">Volume I</span>
@@ -1922,13 +1922,13 @@
                     <div class="relative h-64 w-full flex items-center justify-center mb-6 z-0">
                         <img alt="Volume 2 Layer 1"
                             class="absolute w-40 h-60 object-cover rounded-lg shadow-md border border-white/20 transition-all duration-500 ease-out opacity-80 group-hover:opacity-100 group-hover:rotate-[-12deg] group-hover:-translate-x-12 z-10"
-                            src="{{ asset('images/books/4.jpg') }}" />
+                            loading="lazy" decoding="async" src="{{ asset('images/books/4.webp') }}" />
                         <img alt="Volume 2 Layer 2"
                             class="absolute w-40 h-60 object-cover rounded-lg shadow-md border border-white/20 transition-all duration-500 ease-out opacity-80 group-hover:opacity-100 group-hover:rotate-[12deg] group-hover:translate-x-12 z-10"
-                            src="{{ asset('images/books/5.jpg') }}" />
+                            loading="lazy" decoding="async" src="{{ asset('images/books/5.webp') }}" />
                         <img alt="Volume 2 Cover"
                             class="relative w-40 h-60 object-cover rounded-lg shadow-2xl border-2 border-white/10 z-20 transition-all duration-500 group-hover:scale-105"
-                            src="{{ asset('images/books/45.jpg') }}" />
+                            loading="lazy" decoding="async" src="{{ asset('images/books/45.webp') }}" />
                     </div>
                     <div class="mb-2">
                         <span class="text-xs font-bold tracking-widest text-primary uppercase">Volume II</span>
@@ -1945,13 +1945,13 @@
                     <div class="relative h-64 w-full flex items-center justify-center mb-6 z-0">
                         <img alt="Volume 3 Layer 1"
                             class="absolute w-40 h-60 object-cover rounded-lg shadow-md border border-white/20 transition-all duration-500 ease-out opacity-80 group-hover:opacity-100 group-hover:rotate-[-12deg] group-hover:-translate-x-12 z-10"
-                            src="{{ asset('images/books/57.jpg') }}" />
+                            loading="lazy" decoding="async" src="{{ asset('images/books/57.webp') }}" />
                         <img alt="Volume 3 Layer 2"
                             class="absolute w-40 h-60 object-cover rounded-lg shadow-md border border-white/20 transition-all duration-500 ease-out opacity-80 group-hover:opacity-100 group-hover:rotate-[12deg] group-hover:translate-x-12 z-10"
-                            src="{{ asset('images/books/62.jpg') }}" />
+                            loading="lazy" decoding="async" src="{{ asset('images/books/62.webp') }}" />
                         <img alt="Volume 3 Cover"
                             class="relative w-40 h-60 object-cover rounded-lg shadow-xl border-2 border-white/10 z-20 transition-all duration-500 group-hover:scale-105"
-                            src="{{ asset('images/books/3.jpg') }}" />
+                            loading="lazy" decoding="async" src="{{ asset('images/books/3.webp') }}" />
                     </div>
                     <div class="mb-2">
                         <span class="text-xs font-bold tracking-widest text-blue-500 uppercase">Volume III</span>

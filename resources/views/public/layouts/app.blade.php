@@ -15,7 +15,7 @@
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
-    <!-- Three.js Library -->
+    <!-- Three.js Library (3D components handle adaptive quality via JarrevaPerf) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
     
     @stack('styles')

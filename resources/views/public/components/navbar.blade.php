@@ -14,7 +14,10 @@
                 onclick="window.location.href='{{ route('home') }}'">
                 <div
                     class="relative flex h-9 w-9 items-center justify-center rounded-full overflow-hidden transition-transform duration-500 group-hover/logo:rotate-20">
-                    <img src="{{ asset('logo.png') }}" alt="Jarreva Creative Logo" class="h-full w-full object-cover">
+                    <picture>
+                        <source srcset="{{ asset('logo.webp') }}" type="image/webp">
+                        <img src="{{ asset('logo.png') }}" alt="Jarreva Creative Logo" class="h-full w-full object-cover">
+                    </picture>
                 </div>
                 <div class="flex flex-col">
                     <span
@@ -107,29 +110,36 @@
 
 @push ('scripts')
 <script>
-    // Header Scroll Progress Logic
+    // Header Scroll Progress Logic — RAF throttled
+    let isScrollTicking = false;
+    const header = document.getElementById('main-header');
+    const progressBar = document.getElementById('scroll-progress');
+
     window.addEventListener('scroll', () => {
-        const header = document.getElementById('main-header');
-        const progressBar = document.getElementById('scroll-progress');
+        if (!isScrollTicking) {
+            requestAnimationFrame(() => {
+                // Progress Calculation
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
 
-        // Progress Calculation
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
+                if (progressBar) {
+                    progressBar.style.width = scrolled + "%";
+                }
 
-        if (progressBar) {
-            progressBar.style.width = scrolled + "%";
+                // Compact Header on Scroll
+                if (window.scrollY > 50) {
+                    header.classList.remove('py-4');
+                    header.classList.add('py-2');
+                } else {
+                    header.classList.add('py-4');
+                    header.classList.remove('py-2');
+                }
+                isScrollTicking = false;
+            });
+            isScrollTicking = true;
         }
-
-        // Compact Header on Scroll
-        if (window.scrollY > 50) {
-            header.classList.remove('py-4');
-            header.classList.add('py-2');
-        } else {
-            header.classList.add('py-4');
-            header.classList.remove('py-2');
-        }
-    });
+    }, { passive: true });
 
     // Mobile Menu Toggle Logic
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');

@@ -36,7 +36,10 @@
                     onclick="window.location.href='{{ route('home') }}'">
                     <div
                         class="mobile-footer-logo flex h-10 w-10 items-center justify-center rounded-full overflow-hidden transition-transform duration-500 group-hover:rotate-20">
-                        <img src="{{ asset('logo.png') }}" alt="Jarreva Creative Logo" class="h-full w-full object-cover">
+                        <picture>
+                            <source srcset="{{ asset('logo.webp') }}" type="image/webp">
+                            <img src="{{ asset('logo.png') }}" alt="Jarreva Creative Logo" class="h-full w-full object-cover" loading="lazy" decoding="async">
+                        </picture>
                     </div>
                     <span
                         class="mobile-footer-brand text-xl font-bold tracking-tight text-gray-900 dark:text-white leading-none transition-colors duration-300 group-hover:text-blue-500">Jarreva

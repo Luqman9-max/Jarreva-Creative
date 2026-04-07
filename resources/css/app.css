@@ -219,10 +219,14 @@
 /* --- Global Scroll Animation System --- */
 .reveal-element {
     opacity: 0;
-    will-change: opacity, transform, filter;
     transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
                 transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
                 filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Only hint will-change while animating, release GPU memory after */
+.reveal-element:not(.is-revealed) {
+    will-change: opacity, transform, filter;
 }
 
 .reveal-up { transform: translateY(30px); }
@@ -240,6 +244,7 @@
     opacity: 1;
     transform: translate(0) scale(1);
     filter: blur(0);
+    will-change: auto; /* Release GPU memory after animation completes */
 }
 
 /* Delay Utilities */
@@ -257,4 +262,48 @@
 .card-hover-lift:hover {
     transform: translateY(-6px);
     box-shadow: 0 15px 30px -5px rgba(249, 115, 22, 0.15), 0 8px 10px -5px rgba(249, 115, 22, 0.05);
+}
+
+/* === PERFORMANCE: Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* === PERFORMANCE: Low-end device tier (set by JarrevaPerf) === */
+[data-perf-tier="low"] .animate-scroll-marquee,
+[data-perf-tier="low"] .animate-float,
+[data-perf-tier="low"] .animate-float-delayed-1,
+[data-perf-tier="low"] .animate-float-delayed-2,
+[data-perf-tier="low"] .animate-float-delayed-3,
+[data-perf-tier="low"] .animate-float-delayed-4,
+[data-perf-tier="low"] .animate-trace,
+[data-perf-tier="low"] .animate-trace-delayed-1,
+[data-perf-tier="low"] .animate-trace-delayed-2,
+[data-perf-tier="low"] .animate-trace-delayed-3,
+[data-perf-tier="low"] .sun-core-animate,
+[data-perf-tier="low"] .animate-ripple,
+[data-perf-tier="low"] .animate-smooth-float,
+[data-perf-tier="low"] .animate-plr-pulse,
+[data-perf-tier="low"] .animate-scroll-vertical,
+[data-perf-tier="low"] .book-pulse,
+[data-perf-tier="low"] .animate-gradient {
+    animation: none !important;
+}
+
+[data-perf-tier="low"] .spotlight-card::before {
+    display: none !important;
+}
+
+/* Medium tier: slow down heavy marquee animations */
+[data-perf-tier="medium"] .animate-scroll-marquee {
+    animation-duration: 60s !important; /* Slower = less GPU work */
+}
+
+[data-perf-tier="medium"] .animate-scroll-vertical {
+    animation-duration: 25s !important;
 }

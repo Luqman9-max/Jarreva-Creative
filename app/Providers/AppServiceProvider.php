@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Blade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Register @cdn Blade directive for CDN asset URLs
+        // Usage: @cdn('images/books/57.webp') → CDN URL in production, local asset() in dev
+        Blade::directive('cdn', function ($expression) {
+            return "<?php echo \App\Helpers\CdnHelper::asset($expression); ?>";
+        });
+
         // Share activity logs with the admin header
         \Illuminate\Support\Facades\View::composer('admin.components.header', function ($view) {
             if (\Illuminate\Support\Facades\Auth::guard('admin')->check()) {
