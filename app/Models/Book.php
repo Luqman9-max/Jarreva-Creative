@@ -19,6 +19,7 @@ class Book extends Model
         'is_published',
         'is_free',
         'gumroad_url',
+        'price',
         'admin_id',
     ];
 
@@ -26,6 +27,7 @@ class Book extends Model
         'is_featured' => 'boolean',
         'is_published' => 'boolean',
         'is_free' => 'boolean',
+        'price' => 'decimal:2',
     ];
 
     public function admin()

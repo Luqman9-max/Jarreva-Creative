@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('books', function (Blueprint $table) {
-            //
+            $table->decimal('price', 10, 2)->nullable()->after('gumroad_url');
         });
     }
 

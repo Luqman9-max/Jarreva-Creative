@@ -35,8 +35,8 @@
                 <div class="flex items-center gap-3 mb-6 group cursor-pointer"
                     onclick="window.location.href='{{ route('home') }}'">
                     <div
-                        class="mobile-footer-logo flex h-10 w-10 items-center justify-center rounded-lg overflow-hidden transition-transform duration-500 group-hover:rotate-20">
-                        <img src="{{ asset('logo.png') }}" alt="Jarreva Creative Logo" class="h-full w-full object-contain">
+                        class="mobile-footer-logo flex h-10 w-10 items-center justify-center rounded-full overflow-hidden transition-transform duration-500 group-hover:rotate-20">
+                        <img src="{{ asset('logo.png') }}" alt="Jarreva Creative Logo" class="h-full w-full object-cover">
                     </div>
                     <span
                         class="mobile-footer-brand text-xl font-bold tracking-tight text-gray-900 dark:text-white leading-none transition-colors duration-300 group-hover:text-blue-500">Jarreva
@@ -64,7 +64,7 @@
                     <li><a href="{{ route('catalog.index') }}"
                             class="mobile-footer-link group flex items-center gap-2 {{ request()->routeIs('catalog.index') ? 'text-blue-500 font-bold' : 'text-slate-600 dark:text-slate-400 hover:text-blue-400' }} transition-colors"><span
                                 class="{{ request()->routeIs('catalog.index') ? 'text-blue-500' : 'text-slate-300 dark:text-slate-600 group-hover:text-blue-400' }} transition-colors">/</span>
-                            Portfolio</a></li>
+                            Catalog</a></li>
                     <li><a href="{{ route('contact') }}"
                             class="mobile-footer-link group flex items-center gap-2 {{ request()->routeIs('contact') ? 'text-blue-500 font-bold' : 'text-slate-600 dark:text-slate-400 hover:text-blue-400' }} transition-colors"><span
                                 class="{{ request()->routeIs('contact') ? 'text-blue-500' : 'text-slate-300 dark:text-slate-600 group-hover:text-blue-400' }} transition-colors">/</span>

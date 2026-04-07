@@ -25,6 +25,7 @@ class BookRequest extends FormRequest
             'is_published' => 'boolean',
             'is_free' => 'boolean',
             'gumroad_url' => 'nullable|url|max:255',
+            'price' => 'nullable|numeric|min:0',
         ];
     }
 }

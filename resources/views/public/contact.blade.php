@@ -357,7 +357,7 @@
                         .mobile-contact-topic-label { font-size: 13px !important; margin-bottom: 12px !important; }
                         .mobile-contact-topic-btns { gap: 6px !important; }
                         .mobile-contact-btn { padding: 6px 14px !important; font-size: 11px !important; }
-                        .mobile-contact-footer { padding-top: 20px !important; gap: 16px !important; }
+                        .mobile-contact-footer { padding-top: 8px !important; gap: 16px !important; }
                         .mobile-contact-status { font-size: 11px !important; }
                         .mobile-contact-submit { padding-top: 12px !important; padding-bottom: 12px !important; }
                         .mobile-contact-submit span { font-size: 13px !important; }
@@ -404,14 +404,14 @@
                     </div>
 
                     <!-- Message -->
-                    <div class="form-group relative group mt-8">
+                    <div class="form-group relative group">
                         <textarea id="message" name="message" rows="4" class="mobile-contact-input terminal-input w-full py-4 text-lg bg-transparent focus:ring-0 placeholder-transparent resize-none dark:text-white" placeholder="Describe your chaos..." required></textarea>
                         <label for="message" class="mobile-contact-label floating-label absolute left-0 top-4 text-slate-500 pointer-events-none origin-left">Input Raw Data (Message)</label>
                         <div class="absolute bottom-0 left-0 w-full h-[1px] signal-line"></div>
                     </div>
 
                     <!-- Submit Action -->
-                    <div class="mobile-contact-footer flex flex-col sm:flex-row items-center justify-between gap-6 pt-8 border-t border-slate-100 dark:border-slate-800">
+                    <div class="mobile-contact-footer flex flex-col sm:flex-row items-center justify-between gap-6 pt-2 !mt-1">
                         <button type="submit" id="submitBtn" class="mobile-contact-submit w-full sm:w-auto group relative px-8 py-3 md:py-4 bg-primary text-white font-bold rounded-lg overflow-hidden transition-all hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
                             <span class="relative z-10 flex items-center justify-center sm:justify-start gap-2 text-sm md:text-base">
                                 TRANSMIT SIGNAL
