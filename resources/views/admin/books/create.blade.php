@@ -152,6 +152,7 @@
                     <span class="ms-3 text-sm font-medium text-slate-700">Published</span>
                 </label>
 
+<<<<<<< HEAD
                 <input type="hidden" name="is_featured" value="0">
                 <label class="inline-flex items-center cursor-pointer relative">
                     <input type="checkbox" name="is_featured" value="1" class="absolute opacity-0 w-full h-full cursor-pointer peer z-10" {{ old('is_featured') ? 'checked' : '' }}>
@@ -160,6 +161,9 @@
                     </div>
                     <span class="ms-3 text-sm font-medium text-slate-700">Featured</span>
                 </label>
+=======
+
+>>>>>>> 115e9c7d8f556f9f99695ad9f7f0c406b408a925
 
                 <input type="hidden" name="is_free" value="0">
                 <label class="inline-flex items-center cursor-pointer relative">
