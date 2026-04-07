@@ -64,7 +64,7 @@
                     <li><a href="{{ route('catalog.index') }}"
                             class="mobile-footer-link group flex items-center gap-2 {{ request()->routeIs('catalog.index') ? 'text-blue-500 font-bold' : 'text-slate-600 dark:text-slate-400 hover:text-blue-400' }} transition-colors"><span
                                 class="{{ request()->routeIs('catalog.index') ? 'text-blue-500' : 'text-slate-300 dark:text-slate-600 group-hover:text-blue-400' }} transition-colors">/</span>
-                            Portfolio</a></li>
+                            Catalog</a></li>
                     <li><a href="{{ route('contact') }}"
                             class="mobile-footer-link group flex items-center gap-2 {{ request()->routeIs('contact') ? 'text-blue-500 font-bold' : 'text-slate-600 dark:text-slate-400 hover:text-blue-400' }} transition-colors"><span
                                 class="{{ request()->routeIs('contact') ? 'text-blue-500' : 'text-slate-300 dark:text-slate-600 group-hover:text-blue-400' }} transition-colors">/</span>
