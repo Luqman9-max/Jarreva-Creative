@@ -50,24 +50,18 @@
                 </div>
 
                 <!-- 3D BOOKS LAYER (TRIPTYCH PANEL LAYOUT) -->
-                <div class="absolute inset-0 w-full h-full z-10 flex flex-row items-center justify-center gap-2 lg:gap-4 transform-style-3d scene-rotator" id="book-rotator">
+                <div class="absolute inset-0 w-full h-full z-10 flex flex-row items-center justify-center gap-2 lg:gap-4 transform-style-3d scene-rotator lg:pt-16" id="book-rotator">
                     
                     <!-- LEFT BOOK (Volume III, BLUE) -->
-                    <div class="relative z-10 float-delay-1 scale-[0.9] lg:scale-[1]">
-                        <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[110%] h-6 bg-black/15 blur-[15px] rounded-[100%] book-table-shadow"></div>
-                        
-                        <div class="book-3d w-[90px] lg:w-[150px] aspect-[860/1216] transform-style-3d group cursor-pointer hover-lift transition-transform duration-700 ease-out" style="transform: translateZ(0px) rotateY(3deg) rotateX(2deg);">
+                    <div class="relative z-10 scale-[0.9] lg:scale-[1]">
+                        <div class="float-delay-1">
+                            <div class="book-3d w-[90px] lg:w-[150px] aspect-[860/1216] transform-style-3d group cursor-pointer hover-lift transition-transform duration-700 ease-out" style="transform: translateZ(0px) rotateY(3deg) rotateX(2deg);">
                             <div class="absolute inset-0 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-r-md shadow-[0_15px_30px_rgba(0,0,0,0.1)] overflow-hidden front pointer-events-auto group-hover:border-blue-400/50 transition-colors">
-                                <div class="w-full h-full flex flex-col items-center bg-slate-50 dark:bg-slate-800">
-                                    <div class="w-full h-1/2 bg-blue-100/50 dark:bg-blue-900/30 flex items-center justify-center relative overflow-hidden group-hover:bg-blue-100 dark:group-hover:bg-blue-900/40 transition-colors duration-500">
-                                        <span class="material-symbols-outlined text-4xl text-blue-300 dark:text-blue-500/50">auto_awesome_mosaic</span>
-                                    </div>
-                                    <div class="h-1/2 w-full p-4 flex flex-col justify-center items-center text-center mt-2">
-                                        <div class="w-8 h-0.5 bg-blue-300 dark:bg-blue-500/50 mb-3"></div>
-                                        <h3 class="text-[9px] lg:text-[11px] font-bold text-slate-500 dark:text-slate-400 tracking-widest uppercase leading-loose">Volume<br>III</h3>
-                                    </div>
-                                </div>
-                                <div class="absolute top-0 left-0 w-3 h-full bg-black/10 dark:bg-black/30 shadow-[1px_0_2px_rgba(255,255,255,0.2)_inset]"></div>
+                                <!-- USER IMAGE FOR LEFT BOOK -->
+                                <img src="https://placehold.co/860x1216/e2e8f0/64748b?text=Your+Left+Book+Image" alt="Left Book Cover" class="w-full h-full object-cover">
+                                
+                                <!-- Realistic Book Hinge Shadow Overlay -->
+                                <div class="absolute top-0 left-0 w-3 h-full bg-black/10 dark:bg-black/30 shadow-[1px_0_2px_rgba(255,255,255,0.2)_inset] pointer-events-none"></div>
                             </div>
                             <div class="absolute inset-0 bg-slate-300 dark:bg-slate-900 border border-slate-400 dark:border-slate-800 rounded-r-md back"></div>
                             <div class="absolute left-0 top-0 w-[40px] h-full bg-slate-200 dark:bg-slate-800 border-l border-r border-slate-300 dark:border-slate-900 spine"></div>
@@ -75,29 +69,18 @@
                             <div class="absolute top-0 left-[2px] w-[calc(100%-4px)] h-[40px] pages text-page-color page-top"></div>
                             <div class="absolute bottom-0 left-[2px] w-[calc(100%-4px)] h-[40px] pages text-page-color page-bottom"></div>
                         </div>
+                        </div>
                     </div>
 
                     <!-- CENTER BOOK (The Artifact, MAIN TALL PANEL) -->
-                    <div class="relative z-30 float-main scale-100 lg:scale-[1.1]">
-                        <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[120%] h-8 bg-black/20 blur-[20px] rounded-[100%] book-table-shadow"></div>
-                        
-                        <div class="book-3d w-[130px] lg:w-[210px] aspect-[860/1216] transform-style-3d group cursor-pointer hover-lift-main transition-transform duration-700 ease-out" style="transform: translateZ(30px) rotateY(0deg) rotateX(0deg);">
+                    <div class="relative z-30 scale-100 lg:scale-[1.1]">
+                        <div class="float-main">
+                            <div class="book-3d w-[130px] lg:w-[210px] aspect-[860/1216] transform-style-3d group cursor-pointer hover-lift-main transition-transform duration-700 ease-out" style="transform: translateZ(30px) rotateY(0deg) rotateX(0deg);">
                             <div class="absolute inset-0 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg shadow-[0_25px_50px_rgba(0,0,0,0.15)] overflow-hidden front group-hover:border-primary/40 transition-colors pointer-events-auto">
-                                <div class="w-full h-full bg-[#f8f9fa] dark:bg-[#0f1420] p-4 lg:p-6 flex flex-col justify-between items-center text-center">
-                                    <div class="w-full flex justify-between items-center">
-                                        <div class="w-4 h-[2px] bg-primary/60"></div>
-                                        <span class="text-[7px] lg:text-[9px] text-slate-400 font-mono tracking-wider">NO. 01</span>
-                                        <div class="w-4 h-[2px] bg-primary/60"></div>
-                                    </div>
-                                    <div class="flex flex-col items-center mt-2">
-                                        <div class="w-10 h-10 lg:w-14 lg:h-14 rounded-full border-[3px] border-slate-200 dark:border-slate-700/50 flex items-center justify-center mb-4 group-hover:border-primary/50 group-hover:scale-110 transition-all duration-500">
-                                            <div class="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-600 group-hover:bg-primary transition-colors duration-500"></div>
-                                        </div>
-                                        <h3 class="font-display font-bold text-slate-800 dark:text-white text-base lg:text-lg tracking-[0.15em] uppercase leading-snug group-hover:text-primary transition-colors">The<br>Artifact</h3>
-                                        <p class="text-[7px] lg:text-[9px] text-slate-500 mt-4 tracking-widest uppercase">Jarreva Creative</p>
-                                    </div>
-                                    <div class="w-full h-[1px] border-b border-dashed border-slate-300 dark:border-slate-700/50 relative"></div>
-                                </div>
+                                <!-- USER IMAGE FOR CENTER BOOK -->
+                                <img src="https://placehold.co/860x1216/f8f9fa/1e293b?text=Your+Main+Book+Image" alt="Main Book Cover" class="w-full h-full object-cover">
+                                
+                                <!-- Realistic Book Hinge Shadow Overlay -->
                                 <div class="absolute top-0 left-0 w-3 h-full bg-gradient-to-r from-black/20 to-transparent shadow-[2px_0_4px_rgba(255,255,255,0.4)_inset] pointer-events-none"></div>
                                 <div class="absolute inset-0 bg-gradient-to-tr from-primary/0 to-secondary/0 group-hover:from-primary/10 group-hover:to-secondary/10 transition-colors duration-700 pointer-events-none"></div>
                             </div>
@@ -109,32 +92,26 @@
                             <div class="absolute top-0 left-[3px] w-[calc(100%-6px)] h-[45px] pages text-page-color page-top"></div>
                             <div class="absolute bottom-0 left-[3px] w-[calc(100%-6px)] h-[45px] pages text-page-color page-bottom"></div>
                         </div>
+                        </div>
                     </div>
 
                     <!-- RIGHT BOOK (The Shift, ORANGE) -->
-                    <div class="relative z-20 float-delay-2 scale-[0.9] lg:scale-[1]">
-                        <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[110%] h-6 bg-black/15 blur-[15px] rounded-[100%] book-table-shadow"></div>
-                        
-                        <div class="book-3d w-[95px] lg:w-[155px] aspect-[860/1216] transform-style-3d group cursor-pointer hover-lift transition-transform duration-700 ease-out" style="transform: translateZ(0px) rotateY(-3deg) rotateX(2deg);">
+                    <div class="relative z-20 scale-[0.9] lg:scale-[1]">
+                        <div class="float-delay-2">
+                            <div class="book-3d w-[95px] lg:w-[155px] aspect-[860/1216] transform-style-3d group cursor-pointer hover-lift transition-transform duration-700 ease-out" style="transform: translateZ(0px) rotateY(-3deg) rotateX(2deg);">
                             <div class="absolute inset-0 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-r-md shadow-[0_15px_30px_rgba(0,0,0,0.1)] overflow-hidden front pointer-events-auto group-hover:border-orange-400/50 transition-colors">
-                                <div class="w-full h-full flex flex-col border-[4px] border-white dark:border-slate-900 bg-orange-50 dark:bg-[#1a1311]">
-                                    <div class="h-2/3 w-full flex items-center justify-center p-3">
-                                        <div class="w-full h-full border border-orange-200 dark:border-orange-900/50 rounded-sm flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                                            <span class="material-symbols-outlined text-4xl text-orange-200 dark:text-orange-500/30">landscape</span>
-                                        </div>
-                                    </div>
-                                    <div class="h-1/3 w-full px-3 text-center">
-                                        <div class="w-4 h-px bg-orange-200 mx-auto mb-2"></div>
-                                        <h3 class="text-[8px] lg:text-[10px] font-bold text-orange-400 dark:text-orange-600/80 tracking-widest uppercase">The Shift</h3>
-                                    </div>
-                                </div>
-                                <div class="absolute top-0 left-0 w-3 h-full bg-black/10 dark:bg-black/30 shadow-[1px_0_2px_rgba(255,255,255,0.2)_inset]"></div>
+                                <!-- USER IMAGE FOR RIGHT BOOK -->
+                                <img src="https://placehold.co/860x1216/fff7ed/ea580c?text=Your+Right+Book+Image" alt="Right Book Cover" class="w-full h-full object-cover">
+                                
+                                <!-- Realistic Book Hinge Shadow Overlay -->
+                                <div class="absolute top-0 left-0 w-3 h-full bg-black/10 dark:bg-black/30 shadow-[1px_0_2px_rgba(255,255,255,0.2)_inset] pointer-events-none"></div>
                             </div>
                             <div class="absolute inset-0 bg-slate-300 dark:bg-slate-900 border border-slate-400 dark:border-slate-800 rounded-r-md back"></div>
                             <div class="absolute left-0 top-0 w-[40px] h-full bg-orange-100 dark:bg-[#1a1311] border-l border-r border-orange-200 dark:border-orange-900/50 spine"></div>
                             <div class="absolute right-0 top-[2px] w-[40px] h-[calc(100%-4px)] pages text-page-color page-right"></div>
                             <div class="absolute top-0 left-[2px] w-[calc(100%-4px)] h-[40px] pages text-page-color page-top"></div>
                             <div class="absolute bottom-0 left-[2px] w-[calc(100%-4px)] h-[40px] pages text-page-color page-bottom"></div>
+                        </div>
                         </div>
                     </div>
 
@@ -241,18 +218,16 @@
                 0%, 100% { translate: 0 0; }
                 50% { translate: 0 -12px; }
             }
-            .float-delay-1 { animation: floatOrganic 6s ease-in-out infinite; }
-            .float-delay-2 { animation: floatOrganic 7s ease-in-out infinite -2s; }
-            .float-main { animation: floatOrganic 8s ease-in-out infinite -4s; }
 
-            /* Table Shadow matching float */
-            @keyframes shadowBreath {
-                0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.8; }
-                50% { transform: translateX(-50%) scale(0.9); opacity: 0.5; }
+            /* Cinematic 3D Entrance Sequence */
+            @keyframes bookReveal {
+                0% { opacity: 0; translate: 0 60px; scale: 0.8; }
+                100% { opacity: 1; translate: 0 0; scale: 1; }
             }
-            .book-table-shadow { animation: shadowBreath 8s ease-in-out infinite -4s; }
-            .float-delay-1 .book-table-shadow { animation: shadowBreath 6s ease-in-out infinite; }
-            .float-delay-2 .book-table-shadow { animation: shadowBreath 7s ease-in-out infinite -2s; }
+
+            .float-main { animation: bookReveal 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards, floatOrganic 8s ease-in-out infinite 1.8s; }
+            .float-delay-1 { animation: bookReveal 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s backwards, floatOrganic 6s ease-in-out infinite 2.0s; }
+            .float-delay-2 { animation: bookReveal 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.6s backwards, floatOrganic 7s ease-in-out infinite 2.2s; }
 
             /* Text Stagger Reveal */
             @keyframes revealUp {
@@ -321,7 +296,7 @@
     <!-- Catalog Grid Section -->
 
     <!-- Catalog Grid Section -->
-    <div class="container mx-auto px-4 py-16 lg:py-24">
+    <div class="container mx-auto px-4 pb-16 pt-4 lg:pt-0 lg:pb-24 lg:-mt-16">
 
         <!-- Optional: Simulated Toolbar/Filters (Just for visual enhancement) -->
 
