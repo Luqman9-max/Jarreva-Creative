@@ -482,7 +482,7 @@
                     class="relative group rounded-[40px] overflow-hidden shadow-2xl border border-white/20 dark:border-slate-700">
                     <!-- Main Image (Placeholder for Group) -->
                     <div class="aspect-video relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                        <img src="{{ asset('images/about/about.jpeg') }}"
                             alt="Jarreva Team"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
 
@@ -498,18 +498,6 @@
                                 <div>
                                     <h4 class="font-bold text-lg">The Collective</h4>
                                     <p class="text-slate-400 text-sm">Designers, Engineers, Strategists</p>
-                                </div>
-                                <div class="flex -space-x-3">
-                                    <!-- Avatars (Micro Representations) -->
-                                    <div class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-700">
-                                    </div>
-                                    <div class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-600">
-                                    </div>
-                                    <div class="w-10 h-10 rounded-full border-2 border-slate-900 bg-slate-500">
-                                    </div>
-                                    <div
-                                        class="w-10 h-10 rounded-full border-2 border-slate-900 bg-secondary flex items-center justify-center text-xs font-bold">
-                                        +</div>
                                 </div>
                             </div>
                         </div>

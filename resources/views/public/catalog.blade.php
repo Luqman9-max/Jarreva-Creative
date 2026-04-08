@@ -33,10 +33,9 @@
                 </p>
 
                 <div class="stagger-4 opacity-0 translate-y-4">
-                    <button class="group relative px-7 py-3.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-semibold text-sm tracking-wide overflow-hidden transition-all duration-300 hover:scale-[1.03] shadow-lg hover:shadow-primary/20 inline-flex items-center gap-2">
-                        <span class="relative z-10">Explore Works</span>
-                        <span class="relative z-10 material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">trending_flat</span>
-                    </button>
+                    <a href="#catalog-grid" onclick="event.preventDefault(); document.querySelector('#catalog-grid').scrollIntoView({behavior: 'smooth'});" class="group relative px-10 py-3.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-semibold text-[15px] tracking-wide overflow-hidden transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-primary/30 inline-flex items-center justify-center cursor-pointer">
+                        <span class="relative z-10">Explore</span>
+                    </a>
                 </div>
             </div>
 
@@ -263,6 +262,7 @@
             .animate-pulse-slow {
                 animation: pulse-slow 8s infinite;
             }
+
         </style>
 
         <!-- Subtle Parallax Mouse Script -->
@@ -313,7 +313,7 @@
     <!-- Catalog Grid Section -->
 
     <!-- Catalog Grid Section -->
-    <div class="container mx-auto px-4 pb-16 pt-16 lg:pt-0 lg:pb-24 lg:-mt-16 relative z-30">
+    <div id="catalog-grid" class="container mx-auto px-4 pb-16 pt-16 lg:pt-0 lg:pb-24 lg:-mt-16 relative z-30">
 
         <!-- Optional: Simulated Toolbar/Filters (Just for visual enhancement) -->
 
