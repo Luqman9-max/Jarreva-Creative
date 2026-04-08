@@ -6,6 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Jarreva Creative')</title>
     <meta name="color-scheme" content="light">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+    {{-- SEO Meta Tags --}}
+    <meta name="description" content="@yield('meta_description', 'Jarreva Creative — Creative publishing studio delivering transformative books and digital content that inspire growth and innovation.')">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ url()->current() }}">
+    
+    {{-- Open Graph / Social --}}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="@yield('title', 'Jarreva Creative')">
+    <meta property="og:description" content="@yield('meta_description', 'Jarreva Creative — Creative publishing studio delivering transformative books and digital content.')">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('logo.webp') }}">
+    <meta property="og:site_name" content="Jarreva Creative">
+    
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('title', 'Jarreva Creative')">
+    <meta name="twitter:description" content="@yield('meta_description', 'Jarreva Creative — Creative publishing studio delivering transformative books and digital content.')">
+    <meta name="twitter:image" content="{{ asset('logo.webp') }}">
+    
+    {{-- Favicon --}}
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     
     <!-- Fonts and Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,3 +57,4 @@
     @stack('scripts')
 </body>
 </html>
+

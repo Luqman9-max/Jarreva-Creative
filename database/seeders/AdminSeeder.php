@@ -15,22 +15,22 @@ class AdminSeeder extends Seeder
             [
                 'name' => 'Luqman',
                 'email' => 'luqman@jarreva.com',
-                'password' => 'luqman',
+                'password' => Hash::make('luqman'),
             ],
             [
                 'name' => 'Fajar',
                 'email' => 'fajar@jarreva.com',
-                'password' => 'fajar',
+                'password' => Hash::make('fajar'),
             ],
             [
                 'name' => 'Indra',
                 'email' => 'indra@jarreva.com',
-                'password' => 'indra',
+                'password' => Hash::make('indra'),
             ],
             [
                 'name' => 'Renu',
                 'email' => 'renu@jarreva.com',
-                'password' => 'renu',
+                'password' => Hash::make('renu'),
             ],
         ];
 
