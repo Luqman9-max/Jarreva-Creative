@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Lead;
+use App\Mail\NewLeadNotification;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 class LeadController extends Controller
 {
@@ -42,6 +45,13 @@ class LeadController extends Controller
         ]);
 
         Lead::create($validated);
+
+        // Send email notification to Jarreva Creative
+        try {
+            Mail::to('jarrevacreative@gmail.com')->send(new NewLeadNotification($validated['name'], $validated['email']));
+        } catch (\Exception $e) {
+            Log::error('Lead notification email failed: ' . $e->getMessage());
+        }
 
         // Set cookie for 1 year (60 minutes * 24 hours * 365 days)
         $cookie = Cookie::make('jarreva_lead_captured', true, 60 * 24 * 365);
