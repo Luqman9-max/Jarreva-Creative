@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,6 +21,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Force HTTPS in production (Railway uses reverse proxy that terminates SSL)
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
+        }
         // Register @cdn Blade directive for CDN asset URLs
         // Usage: @cdn('images/books/57.webp') → CDN URL in production, local asset() in dev
         Blade::directive('cdn', function ($expression) {
