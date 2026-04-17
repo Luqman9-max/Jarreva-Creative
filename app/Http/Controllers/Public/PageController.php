@@ -43,7 +43,10 @@ class PageController extends Controller
             }
         })->afterResponse();
 
-        // 3. Return success immediately (user sees animation right away)
-        return response()->json(['success' => true, 'message' => 'Signal received.']);
+        // 3. Return success immediately with Connection: close
+        $response = response()->json(['success' => true, 'message' => 'Signal received.']);
+        $response->headers->set('Connection', 'close');
+
+        return $response;
     }
 }

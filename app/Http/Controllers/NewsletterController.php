@@ -19,7 +19,17 @@ class NewsletterController extends Controller
         // 1. Save to database FIRST
         $subscriber = Subscriber::create($validated);
 
-        // 2. Send email AFTER response is sent (non-blocking)
+        // 2. Prepare a lightweight JSON response (no Eloquent model serialization)
+        $responseData = [
+            'message' => 'Sys_Uplink: Signal accepted.',
+        ];
+
+        // 3. Send response with Connection: close header to force immediate delivery
+        //    This ensures the browser receives the response BEFORE afterResponse() runs
+        $response = response()->json($responseData, 201);
+        $response->headers->set('Connection', 'close');
+
+        // 4. Send email AFTER response is fully sent (non-blocking)
         $subscriberEmail = $subscriber->email;
         dispatch(function () use ($subscriberEmail) {
             try {
@@ -30,10 +40,6 @@ class NewsletterController extends Controller
             }
         })->afterResponse();
 
-        // 3. Return success immediately
-        return response()->json([
-            'message' => 'Sys_Uplink: Signal accepted.',
-            'subscriber' => $subscriber
-        ], 201);
+        return $response;
     }
 }
