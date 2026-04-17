@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Subscriber;
 use App\Mail\NewSubscriberNotification;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Log;
 
 class NewsletterController extends Controller
 {
@@ -15,19 +16,19 @@ class NewsletterController extends Controller
             'email' => 'required|email|unique:subscribers,email'
         ]);
 
+        $subscriber = Subscriber::create($validated);
+
+        // Send email notification (non-blocking — don't fail the response if mail fails)
         try {
-            $subscriber = Subscriber::create($validated);
             Mail::to('jarrevacreative@gmail.com')->send(new NewSubscriberNotification($subscriber->email));
-            
-            return response()->json([
-                'message' => 'Sys_Uplink: Signal accepted.',
-                'subscriber' => $subscriber
-            ], 201);
+            Log::info('Subscriber notification email sent successfully to jarrevacreative@gmail.com for: ' . $subscriber->email);
         } catch (\Exception $e) {
-            \Illuminate\Support\Facades\Log::error('Newsletter Subscription Error: ' . $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine());
-            return response()->json([
-                'message' => 'Sys_Error: ' . $e->getMessage()
-            ], 500);
+            Log::error('Subscriber notification email failed: ' . $e->getMessage());
         }
+
+        return response()->json([
+            'message' => 'Sys_Uplink: Signal accepted.',
+            'subscriber' => $subscriber
+        ], 201);
     }
 }
