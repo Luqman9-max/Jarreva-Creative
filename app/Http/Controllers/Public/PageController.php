@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
+use App\Models\ContactMessage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
@@ -29,14 +30,20 @@ class PageController extends Controller
             'message' => 'required|string',
         ]);
 
-        try {
-            Mail::to('jarrevacreative@gmail.com')->send(new ContactFormMail($validated));
-            Log::info('Contact form email sent successfully from: ' . $validated['email']);
-            
-            return response()->json(['success' => true, 'message' => 'Signal received.']);
-        } catch (\Exception $e) {
-            Log::error('Contact form email failed: ' . $e->getMessage() . ' | Trace: ' . $e->getTraceAsString());
-            return response()->json(['success' => false, 'message' => 'Transmission failed. Please try again.'], 500);
-        }
+        // 1. Save to database FIRST (so data is never lost)
+        ContactMessage::create($validated);
+
+        // 2. Send email AFTER response is sent (non-blocking)
+        dispatch(function () use ($validated) {
+            try {
+                Mail::to('jarrevacreative@gmail.com')->send(new ContactFormMail($validated));
+                Log::info('Contact form email sent for: ' . $validated['email']);
+            } catch (\Exception $e) {
+                Log::error('Contact form email failed: ' . $e->getMessage());
+            }
+        })->afterResponse();
+
+        // 3. Return success immediately (user sees animation right away)
+        return response()->json(['success' => true, 'message' => 'Signal received.']);
     }
 }

@@ -16,16 +16,21 @@ class NewsletterController extends Controller
             'email' => 'required|email|unique:subscribers,email'
         ]);
 
+        // 1. Save to database FIRST
         $subscriber = Subscriber::create($validated);
 
-        // Send email notification (non-blocking — don't fail the response if mail fails)
-        try {
-            Mail::to('jarrevacreative@gmail.com')->send(new NewSubscriberNotification($subscriber->email));
-            Log::info('Subscriber notification email sent successfully to jarrevacreative@gmail.com for: ' . $subscriber->email);
-        } catch (\Exception $e) {
-            Log::error('Subscriber notification email failed: ' . $e->getMessage());
-        }
+        // 2. Send email AFTER response is sent (non-blocking)
+        $subscriberEmail = $subscriber->email;
+        dispatch(function () use ($subscriberEmail) {
+            try {
+                Mail::to('jarrevacreative@gmail.com')->send(new NewSubscriberNotification($subscriberEmail));
+                Log::info('Subscriber notification sent for: ' . $subscriberEmail);
+            } catch (\Exception $e) {
+                Log::error('Subscriber notification failed: ' . $e->getMessage());
+            }
+        })->afterResponse();
 
+        // 3. Return success immediately
         return response()->json([
             'message' => 'Sys_Uplink: Signal accepted.',
             'subscriber' => $subscriber

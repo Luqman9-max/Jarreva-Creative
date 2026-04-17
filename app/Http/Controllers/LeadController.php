@@ -44,16 +44,22 @@ class LeadController extends Controller
             'email.unique' => 'This email is already registered. You will be redirected to the catalog.'
         ]);
 
+        // 1. Save to database FIRST
         Lead::create($validated);
 
-        // Send email notification to Jarreva Creative
-        try {
-            Mail::to('jarrevacreative@gmail.com')->send(new NewLeadNotification($validated['name'], $validated['email']));
-        } catch (\Exception $e) {
-            Log::error('Lead notification email failed: ' . $e->getMessage());
-        }
+        // 2. Send email AFTER response is sent (non-blocking)
+        $leadName = $validated['name'];
+        $leadEmail = $validated['email'];
+        dispatch(function () use ($leadName, $leadEmail) {
+            try {
+                Mail::to('jarrevacreative@gmail.com')->send(new NewLeadNotification($leadName, $leadEmail));
+                Log::info('Lead notification sent for: ' . $leadEmail);
+            } catch (\Exception $e) {
+                Log::error('Lead notification failed: ' . $e->getMessage());
+            }
+        })->afterResponse();
 
-        // Set cookie for 1 year (60 minutes * 24 hours * 365 days)
+        // 3. Set cookie and redirect immediately
         $cookie = Cookie::make('jarreva_lead_captured', true, 60 * 24 * 365);
 
         return redirect()->route('catalog.index')->withCookie($cookie);
