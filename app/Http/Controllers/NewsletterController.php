@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Subscriber;
+use App\Mail\NewSubscriberNotification;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
 
 class NewsletterController extends Controller
@@ -14,12 +16,15 @@ class NewsletterController extends Controller
             'email' => 'required|email|unique:subscribers,email'
         ]);
 
-        // Save to database
-        Subscriber::create($validated);
+        // 1. Save to database
+        $subscriber = Subscriber::create($validated);
 
-        Log::info('New subscriber: ' . $validated['email']);
+        // 2. Queue email for background processing (instant, no SMTP wait)
+        Mail::to('jarrevacreative@gmail.com')->queue(new NewSubscriberNotification($subscriber->email));
 
-        // Return success immediately — admin sees new subscribers in the database
+        Log::info('New subscriber queued: ' . $validated['email']);
+
+        // 3. Return success immediately
         return response()->json([
             'message' => 'Sys_Uplink: Signal accepted.',
         ], 201);

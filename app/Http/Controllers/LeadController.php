@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Lead;
+use App\Mail\NewLeadNotification;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
 
 class LeadController extends Controller
@@ -42,12 +44,15 @@ class LeadController extends Controller
             'email.unique' => 'This email is already registered. You will be redirected to the catalog.'
         ]);
 
-        // Save to database
+        // 1. Save to database
         Lead::create($validated);
 
-        Log::info('New lead captured: ' . $validated['email']);
+        // 2. Queue email for background processing (instant, no SMTP wait)
+        Mail::to('jarrevacreative@gmail.com')->queue(new NewLeadNotification($validated['name'], $validated['email']));
 
-        // Set cookie and redirect immediately
+        Log::info('New lead queued: ' . $validated['email']);
+
+        // 3. Set cookie and redirect immediately
         $cookie = Cookie::make('jarreva_lead_captured', true, 60 * 24 * 365);
 
         return redirect()->route('catalog.index')->withCookie($cookie);
