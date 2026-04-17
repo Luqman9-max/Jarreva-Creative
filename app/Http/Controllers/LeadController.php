@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Lead;
-use App\Mail\NewLeadNotification;
+use App\Jobs\SendEmailNotification;
 use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
 
 class LeadController extends Controller
@@ -47,8 +46,18 @@ class LeadController extends Controller
         // 1. Save to database
         Lead::create($validated);
 
-        // 2. Queue email for background processing (instant, no SMTP wait)
-        Mail::to('jarrevacreative@gmail.com')->queue(new NewLeadNotification($validated['name'], $validated['email']));
+        // 2. Queue email notification via Resend HTTP API
+        $html = view('emails.new_lead', [
+            'leadName' => $validated['name'],
+            'leadEmail' => $validated['email'],
+        ])->render();
+
+        SendEmailNotification::dispatch(
+            'jarrevacreative@gmail.com',
+            'New Lead Captured: ' . $validated['name'],
+            $html,
+            $validated['email']  // reply-to user's email
+        );
 
         Log::info('New lead queued: ' . $validated['email']);
 

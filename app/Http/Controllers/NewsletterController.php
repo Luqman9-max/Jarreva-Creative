@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Subscriber;
-use App\Mail\NewSubscriberNotification;
-use Illuminate\Support\Facades\Mail;
+use App\Jobs\SendEmailNotification;
 use Illuminate\Support\Facades\Log;
 
 class NewsletterController extends Controller
@@ -19,8 +18,13 @@ class NewsletterController extends Controller
         // 1. Save to database
         $subscriber = Subscriber::create($validated);
 
-        // 2. Queue email for background processing (instant, no SMTP wait)
-        Mail::to('jarrevacreative@gmail.com')->queue(new NewSubscriberNotification($subscriber->email));
+        // 2. Queue email notification via Resend HTTP API
+        $html = view('emails.new_subscriber', ['subscriberEmail' => $subscriber->email])->render();
+        SendEmailNotification::dispatch(
+            'jarrevacreative@gmail.com',
+            'New System Subscriber: ' . $subscriber->email,
+            $html
+        );
 
         Log::info('New subscriber queued: ' . $validated['email']);
 

@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Public;
 
 use App\Http\Controllers\Controller;
 use App\Models\ContactMessage;
+use App\Jobs\SendEmailNotification;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Log;
-use App\Mail\ContactFormMail;
 
 class PageController extends Controller
 {
@@ -33,8 +32,20 @@ class PageController extends Controller
         // 1. Save to database
         ContactMessage::create($validated);
 
-        // 2. Queue email for background processing (instant, no SMTP wait)
-        Mail::to('jarrevacreative@gmail.com')->queue(new ContactFormMail($validated));
+        // 2. Queue email notification via Resend HTTP API
+        $html = view('emails.contact-form', [
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'topic' => $validated['topic'],
+            'messageContent' => $validated['message'],
+        ])->render();
+
+        SendEmailNotification::dispatch(
+            'jarrevacreative@gmail.com',
+            'New Contact Form: ' . $validated['topic'],
+            $html,
+            $validated['email']  // reply-to user's email
+        );
 
         Log::info('Contact message queued from: ' . $validated['email']);
 
