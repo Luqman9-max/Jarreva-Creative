@@ -1,59 +1,141 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align="center">
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# 🚀 Jarreva Creative
+**"Stop Wasting Opportunities. Start Building Systems."**
 
-## About Laravel
+A premium Laravel web application and lead-generation platform designed to help high-performers, particularly Gen Z, overcome mental burnout, build unbreakable discipline, and transform their potential into real impact.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+[![Laravel](https://img.shields.io/badge/Laravel-12.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+[View Demo](#) · [Report Bug](#) · [Request Feature](#)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+</div>
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 🌟 About The Project
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Jarreva Creative** is more than just a landing page; it's a comprehensive funnel and catalog platform. The core philosophy of the site addresses a modern epidemic: *knowing exactly what to do, but lacking the discipline and focus to execute it.* 
 
-## Laravel Sponsors
+Instead of relying on fleeting motivation, this platform offers a "library" of resources (books, guides, methodologies) aimed at forging lasting habits, reclaiming deep focus, and becoming distraction-proof.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 🎯 Key Features
 
-### Premium Partners
+- **High-Converting Landing Pages**: Premium, modern, and dark-themed UI featuring custom 3D animations, gradient text, and dynamic scroll effects to captivate visitors.
+- **Lead Capture System (Evolve)**: Integrated funnel for capturing leads seamlessly.
+- **Digital Catalog / Library**: A showcase of premium digital products and books (e.g., "Build Unbreakable Discipline", "Reclaim Deep Focus").
+- **Custom Admin Dashboard**: Fully authenticated administrative panel to manage:
+  - Digital Books / Products Catalog
+  - Admin Users
+  - Site Settings & Configurations
+  - Activity Logs & Support
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 💻 Tech Stack
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **Backend**: [Laravel 12.x](https://laravel.com/) (PHP 8.2+)
+- **Frontend**: Blade Templating, [Tailwind CSS](https://tailwindcss.com/), Vanilla JavaScript (Custom Animations)
+- **Database**: MySQL / SQLite (via Eloquent ORM)
+- **Tooling**: Vite for fast frontend asset compilation.
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🚀 Getting Started
 
-## Security Vulnerabilities
+Follow these steps to set up the project locally on your machine.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Prerequisites
 
-## License
+- PHP >= 8.2
+- Composer
+- Node.js & npm
+- MySQL or SQLite
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Installation
+
+1. **Clone the repository** (if applicable):
+   ```bash
+   git clone https://github.com/your-username/jarreva-creative.git
+   cd jarreva-creative
+   ```
+
+2. **Install PHP dependencies**:
+   ```bash
+   composer install
+   ```
+
+3. **Install NPM dependencies**:
+   ```bash
+   npm install
+   ```
+
+4. **Environment Setup**:
+   Copy the example `.env` file and generate the application key.
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+   *Note: Make sure to configure your database settings in the `.env` file.*
+
+5. **Run Database Migrations**:
+   ```bash
+   php artisan migrate
+   ```
+
+6. **Compile Frontend Assets**:
+   ```bash
+   npm run dev
+   ```
+
+7. **Serve the Application**:
+   ```bash
+   php artisan serve
+   ```
+   *Your app will be available at `http://localhost:8000`*
+
+---
+
+## 📂 Project Structure
+
+- `app/Http/Controllers/Public/` - Controllers for the public-facing pages (Home, About, Contact, Catalog).
+- `app/Http/Controllers/Admin/` - Controllers for the authenticated admin dashboard and management.
+- `resources/views/public/` - Blade templates for the main website frontend.
+- `resources/views/admin/` - Blade templates for the backend dashboard.
+- `routes/web.php` - Routing configurations separating public, guest admin, and authenticated admin routes.
+
+---
+
+## ✨ Design Philosophy
+
+The UI is built with a focus on a **premium, atmospheric experience**. It heavily utilizes:
+- **Glassmorphism** and blur effects (`backdrop-blur`).
+- **Dynamic Micro-animations** (pulse, float, trace, gradient shifts).
+- A bespoke **System Intelligence** theme (e.g., typing effects, terminal-like status indicators).
+- **Dark Mode First**: Optimized for a sleek dark-mode aesthetic with vibrant orange and blue accents (`#F97316` and `#137FEC`).
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+Feel free to check [issues page](#).
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📝 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<div align="center">
+  <p>Built with 💻 and ☕ by <b>Jarreva Creative</b></p>
+</div>
