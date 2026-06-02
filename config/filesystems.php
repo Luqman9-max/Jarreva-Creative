@@ -60,6 +60,29 @@ return [
             'report' => false,
         ],
 
+        /*
+        |----------------------------------------------------------------------
+        | Supabase Storage (S3-compatible)
+        |----------------------------------------------------------------------
+        |
+        | Used in production for persistent file storage (book covers, admin
+        | profile photos). Supabase Storage provides an S3-compatible API.
+        | In local development, the 'public' disk is used as fallback.
+        |
+        */
+
+        'supabase' => [
+            'driver' => 's3',
+            'key' => env('SUPABASE_STORAGE_KEY'),
+            'secret' => env('SUPABASE_STORAGE_SECRET'),
+            'region' => env('SUPABASE_STORAGE_REGION', 'auto'),
+            'bucket' => env('SUPABASE_STORAGE_BUCKET', 'media'),
+            'endpoint' => env('SUPABASE_STORAGE_URL'),
+            'use_path_style_endpoint' => true,
+            'throw' => false,
+            'report' => false,
+        ],
+
     ],
 
     /*

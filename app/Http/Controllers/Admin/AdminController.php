@@ -74,7 +74,7 @@ class AdminController extends Controller
         }
 
         if ($admin->profile_photo_path) {
-            \Illuminate\Support\Facades\Storage::disk('public')->delete($admin->profile_photo_path);
+            \App\Helpers\StorageHelper::storage()->delete($admin->profile_photo_path);
         }
 
         $name = $admin->name;

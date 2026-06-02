@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Helpers\StorageHelper;
 
 class BookController extends Controller
 {
@@ -79,7 +80,7 @@ class BookController extends Controller
         $data['admin_id'] = \Illuminate\Support\Facades\Auth::guard('admin')->id();
         
         if ($request->hasFile('cover_image')) {
-            $path = $request->file('cover_image')->store('books', 'public');
+            $path = $request->file('cover_image')->store('books', StorageHelper::disk());
             $data['cover_image'] = $path;
         }
 
@@ -101,10 +102,10 @@ class BookController extends Controller
 
         if ($request->hasFile('cover_image')) {
             // Delete old image if exists
-            if ($book->cover_image && \Illuminate\Support\Facades\Storage::disk('public')->exists($book->cover_image)) {
-                \Illuminate\Support\Facades\Storage::disk('public')->delete($book->cover_image);
+            if ($book->cover_image && StorageHelper::storage()->exists($book->cover_image)) {
+                StorageHelper::storage()->delete($book->cover_image);
             }
-            $path = $request->file('cover_image')->store('books', 'public');
+            $path = $request->file('cover_image')->store('books', StorageHelper::disk());
             $data['cover_image'] = $path;
         }
 
@@ -119,8 +120,8 @@ class BookController extends Controller
     {
         $title = $book->title; // Capture title before deleting
 
-        if ($book->cover_image && \Illuminate\Support\Facades\Storage::disk('public')->exists($book->cover_image)) {
-            \Illuminate\Support\Facades\Storage::disk('public')->delete($book->cover_image);
+        if ($book->cover_image && StorageHelper::storage()->exists($book->cover_image)) {
+            StorageHelper::storage()->delete($book->cover_image);
         }
         
         $book->delete();

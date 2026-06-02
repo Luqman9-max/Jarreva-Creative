@@ -35,7 +35,7 @@
                         <td class="px-6 py-4">
                             <div class="flex items-center gap-3">
                                 @if ($admin->profile_photo_path)
-                                    <div class="size-8 rounded-full bg-cover bg-center ring-1 ring-slate-200" style="background-image: url('{{ asset('storage/' . $admin->profile_photo_path) }}');"></div>
+                                    <div class="size-8 rounded-full bg-cover bg-center ring-1 ring-slate-200" style="background-image: url('@storage_url($admin->profile_photo_path)');"></div>
                                 @else
                                     <div class="size-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs font-bold">{{ substr($admin->name, 0, 2) }}</div>
                                 @endif

@@ -25,7 +25,7 @@
             
             @if ($admin->profile_photo_path)
             <div class="mb-2 p-2 bg-slate-50 rounded-lg flex items-center gap-4 w-fit">
-                <div class="h-16 w-16 rounded-full bg-cover bg-center ring-2 ring-white shadow-sm" style="background-image: url('{{ asset('storage/' . $admin->profile_photo_path) }}');"></div>
+                <div class="h-16 w-16 rounded-full bg-cover bg-center ring-2 ring-white shadow-sm" style="background-image: url('@storage_url($admin->profile_photo_path)');"></div>
                 <div>
                     <p class="text-xs text-slate-500">Current Photo</p>
                     <p class="text-xs font-bold truncate max-w-[150px]">{{ basename($admin->profile_photo_path) }}</p>

@@ -10,7 +10,7 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        // Trust Railway's reverse proxy (needed for correct HTTPS detection)
+        // Trust reverse proxy (Koyeb/any platform — needed for correct HTTPS detection)
         $middleware->trustProxies(at: '*');
 
         $middleware->alias([

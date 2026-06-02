@@ -160,7 +160,7 @@
                             <div class="flex items-center gap-4">
                                 <div class="h-14 w-10 rounded shadow-sm bg-slate-100 flex-shrink-0 overflow-hidden relative border border-slate-200">
                                     @if ($book->cover_image)
-                                        <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ asset('storage/' . $book->cover_image) }}');"></div>
+                                        <div class="w-full h-full bg-cover bg-center" style="background-image: url('@storage_url($book->cover_image)');"></div>
                                     @else
                                         <div class="w-full h-full flex items-center justify-center text-slate-300 bg-slate-50">
                                             <span class="material-symbols-outlined text-[20px]">image</span>
@@ -176,7 +176,7 @@
                         <td class="px-6 py-4">
                             <div class="flex items-center gap-2">
                                  @if ($book->admin && $book->admin->profile_photo_path)
-                                    <div class="h-6 w-6 rounded-full bg-cover bg-center border border-slate-200" style="background-image: url('{{ asset('storage/' . $book->admin->profile_photo_path) }}');"></div>
+                                    <div class="h-6 w-6 rounded-full bg-cover bg-center border border-slate-200" style="background-image: url('@storage_url($book->admin->profile_photo_path)');"></div>
                                 @else
                                     <div class="h-6 w-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-[10px] font-bold">
                                         {{ substr($book->admin->name ?? 'S', 0, 1) }}

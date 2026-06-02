@@ -46,7 +46,7 @@
     <div class="flex flex-col gap-3 p-3 bg-white/60 rounded-xl border border-blue-100">
         <div class="flex items-center gap-3 w-full">
             @if (Auth::guard('admin')->user()->profile_photo_path)
-                <div class="size-10 rounded-full bg-cover bg-center ring-2 ring-white shadow-sm" style="background-image: url('{{ asset('storage/' . Auth::guard('admin')->user()->profile_photo_path) }}');"></div>
+                <div class="size-10 rounded-full bg-cover bg-center ring-2 ring-white shadow-sm" style="background-image: url('@storage_url(Auth::guard('admin')->user()->profile_photo_path)');"></div>
             @else
                 <div class="size-10 rounded-full bg-blue-100 flex items-center justify-center text-xs font-bold text-blue-800 ring-2 ring-white shadow-sm">
                     {{ substr(Auth::guard('admin')->user()->name ?? 'AD', 0, 2) }}

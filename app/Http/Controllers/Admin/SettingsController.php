@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use App\Helpers\StorageHelper;
 
 class SettingsController extends Controller
 {
@@ -36,9 +37,9 @@ class SettingsController extends Controller
         // Handle Profile Photo
         if ($request->hasFile('profile_photo')) {
             if ($admin->profile_photo_path) {
-                Storage::disk('public')->delete($admin->profile_photo_path);
+                StorageHelper::storage()->delete($admin->profile_photo_path);
             }
-            $data['profile_photo_path'] = $request->file('profile_photo')->store('admin-photos', 'public');
+            $data['profile_photo_path'] = $request->file('profile_photo')->store('admin-photos', StorageHelper::disk());
         }
 
         // Handle Password Update

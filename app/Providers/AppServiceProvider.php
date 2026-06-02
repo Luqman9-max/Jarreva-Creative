@@ -24,13 +24,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Force HTTPS in production (Railway uses reverse proxy that terminates SSL)
+        // Force HTTPS in production (reverse proxy terminates SSL)
         if (app()->environment('production')) {
             URL::forceScheme('https');
         }
 
-        // Configure SMTP SSL options for Railway deployment
-        // Railway's Nixpacks container may not have the full CA bundle in the default path.
+        // Configure SMTP SSL options for containerized deployment
+        // Docker containers may not have the full CA bundle in the default path.
         // This ensures SSL connections to Gmail SMTP work even if CA certs are in a non-standard location.
         $this->configureMailSSL();
 
@@ -38,6 +38,12 @@ class AppServiceProvider extends ServiceProvider
         // Usage: @cdn('images/books/57.webp') → CDN URL in production, local asset() in dev
         Blade::directive('cdn', function ($expression) {
             return "<?php echo \App\Helpers\CdnHelper::asset($expression); ?>";
+        });
+
+        // Register @storage_url Blade directive for uploaded file URLs
+        // Usage: @storage_url($book->cover_image) → Supabase URL in production, local in dev
+        Blade::directive('storage_url', function ($expression) {
+            return "<?php echo \App\Helpers\StorageHelper::url($expression); ?>";
         });
 
         // Share activity logs with the admin header
@@ -54,7 +60,7 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Configure SSL context for SMTP mail transport.
-     * Resolves SSL certificate verification failures on Railway/Nixpacks containers
+     * Resolves SSL certificate verification failures on Docker/container platforms
      * where CA certificates may be in non-standard locations.
      */
     private function configureMailSSL(): void
@@ -80,7 +86,7 @@ class AppServiceProvider extends ServiceProvider
                     $stream = $transport->getStream();
 
                     if ($stream instanceof SocketStream) {
-                        // Find CA certificates - check common paths in Nix/Railway containers
+                        // Find CA certificates - check common paths in Linux containers
                         $caFile = $this->findCACertFile();
 
                         $sslOptions = [
@@ -93,7 +99,7 @@ class AppServiceProvider extends ServiceProvider
                             \Illuminate\Support\Facades\Log::info('Mail SSL: Using CA file: ' . $caFile);
                         } else {
                             // If no CA file found, disable verification as last resort
-                            // so emails can still be sent on Railway
+                            // so emails can still be sent on container platforms
                             $sslOptions['verify_peer'] = false;
                             $sslOptions['verify_peer_name'] = false;
                             $sslOptions['allow_self_signed'] = true;
@@ -115,7 +121,7 @@ class AppServiceProvider extends ServiceProvider
     private function findCACertFile(): ?string
     {
         $paths = [
-            // Nix store (Railway Nixpacks)
+            // Nix store / common Linux paths
             '/etc/ssl/certs/ca-certificates.crt',
             '/etc/ssl/certs/ca-bundle.crt',
             '/etc/pki/tls/certs/ca-bundle.crt',

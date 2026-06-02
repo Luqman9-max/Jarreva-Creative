@@ -12,7 +12,7 @@
         <div class="bg-white dark:bg-[#1e293b] rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 p-6 flex flex-col items-center text-center">
             <div class="relative group mb-4">
                 @if ($admin->profile_photo_path)
-                    <div class="size-32 rounded-full bg-cover bg-center ring-4 ring-slate-50 dark:ring-slate-700 shadow-md" style="background-image: url('{{ asset('storage/' . $admin->profile_photo_path) }}');"></div>
+                    <div class="size-32 rounded-full bg-cover bg-center ring-4 ring-slate-50 dark:ring-slate-700 shadow-md" style="background-image: url('@storage_url($admin->profile_photo_path)');"></div>
                 @else
                     <div class="size-32 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-4xl font-bold ring-4 ring-slate-50 dark:ring-slate-700 shadow-md">
                         {{ substr($admin->name, 0, 2) }}

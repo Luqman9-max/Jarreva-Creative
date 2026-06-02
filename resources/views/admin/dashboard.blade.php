@@ -91,7 +91,7 @@
                         <div class="flex items-center gap-4">
                             <div class="h-14 w-10 rounded shadow-sm bg-slate-100 flex-shrink-0 overflow-hidden relative">
                                 @if ($book->cover_image)
-                                    <div class="w-full h-full bg-cover bg-center" style="background-image: url('{{ asset('storage/' . $book->cover_image) }}');"></div>
+                                    <div class="w-full h-full bg-cover bg-center" style="background-image: url('@storage_url($book->cover_image)');"></div>
                                 @else
                                     <div class="w-full h-full flex items-center justify-center text-slate-400">
                                         <span class="material-symbols-outlined text-[20px]">image</span>

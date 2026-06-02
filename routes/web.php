@@ -26,7 +26,7 @@ Route::get('/contact', [\App\Http\Controllers\Public\PageController::class, 'con
 Route::post('/contact/submit', [\App\Http\Controllers\Public\PageController::class, 'submitContact'])->name('contact.submit');
 Route::post('/subscribe', [\App\Http\Controllers\NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 
-// Health Check (for Railway / hosting platform monitoring)
+// Health Check (for hosting platform monitoring)
 Route::get('/up', function () {
     return response()->json(['status' => 'ok', 'timestamp' => now()->toISOString()]);
 })->name('health.check');

@@ -82,7 +82,7 @@
                         <div class="relative w-[260px] sm:w-[320px] lg:w-[380px] aspect-[2/3] rounded-lg shadow-2xl">
                             @if($book->cover_image)
                                 <img
-                                    src="{{ asset('storage/' . $book->cover_image) }}"
+                                    src="@storage_url($book->cover_image)"
                                     alt="{{ $book->title }}"
                                     class="h-full w-full object-cover rounded-lg"
                                 />
@@ -336,7 +336,7 @@
                         </div>
 
                         @if($related->cover_image)
-                            <img src="{{ asset('storage/' . $related->cover_image) }}" alt="{{ $related->title }}"
+                            <img src="@storage_url($related->cover_image)" alt="{{ $related->title }}"
                                 class="w-full h-full object-cover rounded-md shadow-lg border-l-[3px] border-slate-900/10 transform transition-transform duration-700 cubic-bezier(0.2, 0.8, 0.2, 1) group-hover:scale-105 relative z-10" />
                         @else
                             <div

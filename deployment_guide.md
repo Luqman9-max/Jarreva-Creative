@@ -1,77 +1,86 @@
-# Jarreva Creative — Railway Deployment Walkthrough
+# Jarreva Creative — Deployment Guide
 
-## Summary of Code Changes Made
+## Architecture
 
-| File | Change |
-|---|---|
-| [.env.example](file:///Applications/XAMPP/xamppfiles/htdocs/Jarreva-Creative/.env.example) | Removed leaked APP_KEY and Gmail credentials |
-| [AdminSeeder.php](file:///Applications/XAMPP/xamppfiles/htdocs/Jarreva-Creative/database/seeders/AdminSeeder.php) | Passwords now hashed with `Hash::make()` |
-| [nixpacks.toml](file:///Applications/XAMPP/xamppfiles/htdocs/Jarreva-Creative/nixpacks.toml) | Added `migrate --force` and `storage:link` to build |
-| [app.blade.php](file:///Applications/XAMPP/xamppfiles/htdocs/Jarreva-Creative/resources/views/public/layouts/app.blade.php) | Added SEO meta, Open Graph, Twitter Card, favicon |
-| [web.php](file:///Applications/XAMPP/xamppfiles/htdocs/Jarreva-Creative/routes/web.php) | Added `/up` health check endpoint |
-| [.env.production.example](file:///Applications/XAMPP/xamppfiles/htdocs/Jarreva-Creative/.env.production.example) | New production env variable template |
+```
+Cloudflare Pages (CDN)          Koyeb (App Server)          Supabase
+├── CSS (app-*.css)             └── Laravel 12 (PHP 8.3)    ├── PostgreSQL Database
+├── JS (app-*.js)                   └── Docker container    └── Storage (S3-compatible)
+├── Images (books/*.webp)
+└── Three.js (vendor/)
+```
 
-> [!NOTE]
-> All changes have been committed and pushed to `main` branch on GitHub.
+## Prerequisites
 
----
-
-## Step-by-Step: Deploy to Railway
-
-### Step 1 — Create Railway Account
-
-1. Buka **https://railway.com** dan klik **"Login"**
-2. Login dengan **GitHub account** kamu (`Luqman9-max`)
-3. Kamu akan mendapat **$5 free trial credit**
+- [Koyeb account](https://koyeb.com) (free tier)
+- [Supabase account](https://supabase.com) (free tier)
+- [Cloudflare Pages](https://pages.cloudflare.com) — already configured
+- GitHub repository access
 
 ---
 
-### Step 2 — Create New Project
+## Step 1: Supabase Setup
 
-1. Di Railway dashboard, klik **"New Project"**
-2. Pilih **"Deploy from GitHub Repo"**
-3. Pilih repo **`Luqman9-max/Jarreva-Creative`**
-4. Railway akan otomatis detect `nixpacks.toml` dan mulai build
+### 1.1 Create Project
+1. Go to [supabase.com](https://supabase.com) → New Project
+2. Choose region closest to your users
+3. Save your project password
 
-> [!WARNING]
-> **Jangan deploy dulu!** Build pertama akan gagal karena belum ada database. Klik **"Cancel Deploy"** jika sudah mulai, lalu lanjut ke Step 3.
+### 1.2 Get Database Credentials
+Navigate to **Settings → Database** and note:
+- **Host**: `db.<project-ref>.supabase.co`
+- **Port**: `5432` (direct) or `6543` (connection pooler)
+- **Database**: `postgres`
+- **User**: `postgres`
+- **Password**: Your project password
+
+### 1.3 Create Storage Bucket
+1. Go to **Storage** in the Supabase dashboard
+2. Click **New Bucket** → Name it `media`
+3. Set the bucket to **Public** (for book covers and admin photos)
+4. Under **Policies**, add a policy allowing public reads:
+   - **SELECT** for `authenticated` and `anon` roles
+
+### 1.4 Get Storage Credentials
+Navigate to **Settings → API**:
+- **Project URL**: `https://<project-ref>.supabase.co`
+- **Service Role Key**: Copy the `service_role` key (keep secret!)
+
+Storage S3 endpoint: `https://<project-ref>.supabase.co/storage/v1/s3`
+Public URL pattern: `https://<project-ref>.supabase.co/storage/v1/object/public/media`
 
 ---
 
-### Step 3 — Add MySQL Database
+## Step 2: Koyeb Deployment
 
-1. Di project Railway, klik **"New"** → **"Database"** → **"MySQL"**
-2. Railway akan otomatis membuat MySQL instance
-3. Klik pada MySQL service → tab **"Variables"**
-4. Catat variabel berikut (Railway auto-generates):
-   - `MYSQLHOST`
-   - `MYSQLPORT`
-   - `MYSQLDATABASE`
-   - `MYSQLUSER`
-   - `MYSQLPASSWORD`
+### 2.1 Create Service
+1. Go to [koyeb.com](https://koyeb.com) → Create Service
+2. Deploy from **GitHub** → Select `Jarreva-Creative` repository
+3. Choose **Docker** as the builder (the Dockerfile will be auto-detected)
+4. Set the exposed port to `8000`
 
----
+### 2.2 Set Environment Variables
 
-### Step 4 — Set Environment Variables
-
-1. Klik pada **Jarreva-Creative service** (bukan MySQL)
-2. Buka tab **"Variables"**
-3. Klik **"Raw Editor"** dan paste semua variabel berikut:
+Add these in the Koyeb dashboard under **Service → Settings → Environment Variables**:
 
 ```env
+# Application
 APP_NAME=Jarreva Creative
 APP_ENV=production
-APP_KEY=base64:JLohGt/vSXR8PXvJKWAMm1GS0hPew0OEIjr/A+sj71A=
+APP_KEY=                              # php artisan key:generate --show
 APP_DEBUG=false
-APP_URL=https://${{RAILWAY_PUBLIC_DOMAIN}}
+APP_URL=https://your-app.koyeb.app
 
-DB_CONNECTION=mysql
-DB_HOST=${{MySQL.MYSQLHOST}}
-DB_PORT=${{MySQL.MYSQLPORT}}
-DB_DATABASE=${{MySQL.MYSQLDATABASE}}
-DB_USERNAME=${{MySQL.MYSQLUSER}}
-DB_PASSWORD=${{MySQL.MYSQLPASSWORD}}
+# Database (Supabase PostgreSQL)
+DB_CONNECTION=pgsql
+DB_HOST=db.<project-ref>.supabase.co
+DB_PORT=5432
+DB_DATABASE=postgres
+DB_USERNAME=postgres
+DB_PASSWORD=<supabase-project-password>
+DB_SSLMODE=require
 
+# Session, Cache & Queue (must use database — Koyeb is ephemeral)
 SESSION_DRIVER=database
 SESSION_LIFETIME=120
 SESSION_ENCRYPT=false
@@ -79,220 +88,148 @@ SESSION_SECURE_COOKIE=true
 CACHE_STORE=database
 QUEUE_CONNECTION=database
 
+# Logging
 LOG_CHANNEL=stack
 LOG_STACK=single
 LOG_LEVEL=error
 
+# Mail (Gmail SMTP)
 MAIL_MAILER=smtp
+MAIL_SCHEME=smtps
 MAIL_HOST=smtp.gmail.com
 MAIL_PORT=465
 MAIL_USERNAME=jarrevacreative@gmail.com
-MAIL_PASSWORD=ucziyoeioqrqrbml
-MAIL_ENCRYPTION=ssl
+MAIL_PASSWORD=<gmail-app-password>
 MAIL_FROM_ADDRESS=jarrevacreative@gmail.com
 MAIL_FROM_NAME=Jarreva Creative
 
+# CDN (Cloudflare Pages)
+ASSET_CDN_ENABLED=true
+ASSET_CDN_URL=https://jarreva-frontend-assets.pages.dev
+
+# Supabase Storage (S3-compatible)
+SUPABASE_STORAGE_URL=https://<project-ref>.supabase.co/storage/v1/s3
+SUPABASE_STORAGE_KEY=<supabase-service-role-key>
+SUPABASE_STORAGE_SECRET=<supabase-service-role-key>
+SUPABASE_STORAGE_BUCKET=media
+SUPABASE_STORAGE_REGION=auto
+SUPABASE_STORAGE_PUBLIC_URL=https://<project-ref>.supabase.co/storage/v1/object/public/media
+
+# Security
 BCRYPT_ROUNDS=12
-ASSET_CDN_ENABLED=false
-ASSET_CDN_URL=
+
+# Server Port
+PORT=8000
 ```
 
-> [!IMPORTANT]
-> Perhatikan syntax `${{MySQL.MYSQLHOST}}` — ini adalah **Railway reference variables** yang otomatis terisi dari MySQL service. Pastikan nama MySQL service kamu sesuai (default: `MySQL`).
+### 2.3 Deploy
+Push to GitHub → Koyeb auto-builds and deploys:
+1. Docker builds the image (PHP 8.3, Node 22, Composer, Vite)
+2. `start.sh` runs at container start:
+   - `php artisan migrate --force`
+   - `php artisan config:cache`
+   - `php artisan storage:link`
+   - `php artisan queue:work` (background)
+   - `php artisan serve --port=8000`
 
----
-
-### Step 5 — Generate Public Domain
-
-1. Klik pada **Jarreva-Creative service**
-2. Buka tab **"Settings"**
-3. Scroll ke **"Networking"** → klik **"Generate Domain"**
-4. Railway akan memberi domain seperti: `jarreva-creative-production.up.railway.app`
-5. **Copy domain ini** — kamu akan butuhkan untuk verifikasi
-
----
-
-### Step 6 — Deploy
-
-1. Setelah semua variables di-set, Railway akan otomatis trigger deploy
-2. Klik tab **"Deployments"** untuk melihat build log
-3. Build process akan:
-   - ✅ Install PHP 8.3 + extensions
-   - ✅ `composer install --no-dev`
-   - ✅ `npm ci` + `npm run build`
-   - ✅ Cache config, routes, views
-   - ✅ Run `migrate --force`
-   - ✅ Create `storage:link`
-4. Tunggu sampai status **"Success"** (biasanya 2-5 menit)
-
-> [!TIP]
-> Jika build gagal, klik pada deployment untuk melihat log error. Masalah umum:
-> - **Database connection refused** → pastikan reference variable MySQL benar
-> - **npm build failed** → biasanya memory issue, coba lagi
-
----
-
-### Step 7 — Seed Admin Users
-
-1. Di Railway dashboard, klik pada **Jarreva-Creative service**
-2. Buka tab **"Settings"** → scroll ke **"Service"**
-3. Atau gunakan **Railway CLI** (opsional):
-
+### 2.4 Seed Admin Users
+After first deployment, use Koyeb's **Exec** feature (or run a one-time command):
 ```bash
-# Install Railway CLI
-npm install -g @railway/cli
-
-# Login
-railway login
-
-# Link project
-railway link
-
-# Run seeder
-railway run php artisan db:seed --force
-```
-
-**Alternatif tanpa CLI:** Tambahkan seeder ke `nixpacks.toml` build phase (sementara):
-```toml
-# Tambahkan ini di phases.build.cmds (hapus setelah deploy pertama!):
-'php artisan db:seed --force'
+php artisan db:seed --force
 ```
 
 ---
 
-### Step 8 — Verify Deployment
-
-Buka URL Railway kamu dan test:
+## Step 3: Verification
 
 | Test | URL | Expected |
 |---|---|---|
-| Homepage | `https://your-app.up.railway.app/` | Homepage dengan 3D effects |
-| Health Check | `https://your-app.up.railway.app/up` | JSON `{"status":"ok"}` |
-| About | `https://your-app.up.railway.app/about` | About page |
-| Admin Login | `https://your-app.up.railway.app/admin/login` | Login form |
-| Contact | `https://your-app.up.railway.app/contact` | Contact form |
-
-Login admin dengan:
-- **Email:** `luqman@jarreva.com`
-- **Password:** `luqman`
+| Homepage | `https://your-app.koyeb.app/` | Landing page with 3D effects |
+| Health Check | `https://your-app.koyeb.app/up` | `{"status":"ok"}` |
+| Catalog | `https://your-app.koyeb.app/catalog` | Book listing |
+| Admin Login | `https://your-app.koyeb.app/admin/login` | Login form |
+| Admin Dashboard | `https://your-app.koyeb.app/admin/dashboard` | Stats dashboard |
+| Contact Form | `https://your-app.koyeb.app/contact` | Form + email delivery |
+| CDN Assets | Browser DevTools → Network | `pages.dev` URLs |
+| Book Covers | Upload via admin | Stored in Supabase Storage |
 
 ---
 
-### Step 9 — Build CDN Assets
+## Step 4: CDN Assets Update
 
-Di terminal lokal kamu, jalankan:
+The CDN (`jarreva-frontend-assets`) is **independent** and requires no changes.
 
+To deploy new frontend assets:
 ```bash
-cd /Applications/XAMPP/xamppfiles/htdocs/Jarreva-Creative
-chmod +x scripts/build-cdn.sh
-./scripts/build-cdn.sh
+cd scripts/
+./build-cdn.sh
+cd ../jarreva-frontend-assets
+git add . && git commit -m "Update assets" && git push
 ```
 
-Ini akan membuat folder `jarreva-frontend-assets/` di **parent directory** projek.
+Cloudflare Pages auto-deploys on push.
 
 ---
 
-### Step 10 — Create CDN GitHub Repo
+## Architecture Details
 
-```bash
-cd /Applications/XAMPP/xamppfiles/htdocs/jarreva-frontend-assets
-git init
-git add .
-git commit -m "Initial CDN assets deployment"
-```
+### File Storage
+- **Static assets** (CSS, JS, Images, Three.js) → Cloudflare Pages CDN
+- **User uploads** (book covers, admin photos) → Supabase Storage (S3-compatible)
+- **Sessions, cache, queue** → Supabase PostgreSQL (database driver)
 
-1. Buat repo baru di GitHub: **`Luqman9-max/jarreva-frontend-assets`**
-2. Push:
-```bash
-git remote add origin https://github.com/Luqman9-max/jarreva-frontend-assets.git
-git branch -M main
-git push -u origin main
-```
+### Asset URL Resolution
+- `@cdn('path')` → Cloudflare Pages URL (static assets)
+- `@storage_url($path)` → Supabase Storage URL in production, local `asset('storage/...')` in dev
 
----
-
-### Step 11 — Connect to Cloudflare Pages
-
-1. Buka **https://dash.cloudflare.com** → buat account (gratis)
-2. Klik **"Workers & Pages"** → **"Create"** → **"Pages"** → **"Connect to Git"**
-3. Pilih repo **`jarreva-frontend-assets`**
-4. Settings:
-   - **Production branch:** `main`
-   - **Build command:** _(kosongkan — assets sudah pre-built)_
-   - **Build output directory:** `/` _(root)_
-5. Klik **"Save and Deploy"**
-6. Cloudflare akan memberi URL seperti: `jarreva-frontend-assets.pages.dev`
-
----
-
-### Step 12 — Activate CDN in Railway
-
-1. Di Railway dashboard, tambahkan 2 variabel baru:
-
-```env
-ASSET_CDN_ENABLED=true
-ASSET_CDN_URL=https://jarreva-frontend-assets.pages.dev
-```
-
-2. Railway akan auto-redeploy
-3. Verifikasi: buka site → inspect element → cek bahwa images/CSS/JS load dari `pages.dev` domain
-
----
-
-## Architecture After Deployment
-
-```mermaid
-graph LR
-    User[🌐 User Browser] --> Railway[Railway<br/>Laravel App<br/>PHP + MySQL]
-    User --> CDN[Cloudflare Pages<br/>Static Assets<br/>CSS/JS/Images]
-    Railway --> MySQL[(MySQL DB<br/>Railway Addon)]
-    Railway --> Gmail[Gmail SMTP<br/>Email Sending]
-    
-    style Railway fill:#7c3aed,color:#fff
-    style CDN fill:#f59e0b,color:#000
-    style MySQL fill:#3b82f6,color:#fff
-    style Gmail fill:#ef4444,color:#fff
-```
+### Key Files
+| File | Purpose |
+|---|---|
+| `Dockerfile` | Production Docker build for Koyeb |
+| `.dockerignore` | Excludes unnecessary files from Docker build |
+| `start.sh` | Runtime startup (migrations, config cache, queue worker, serve) |
+| `nixpacks.toml` | Legacy Nixpacks config (kept as reference) |
+| `config/filesystems.php` | Defines `supabase` disk (S3-compatible) |
+| `app/Helpers/StorageHelper.php` | Disk selection + URL generation helper |
+| `app/Helpers/CdnHelper.php` | CDN URL helper for static assets |
 
 ---
 
 ## Troubleshooting
 
-### Build gagal: "SQLSTATE connection refused"
-→ MySQL service belum ready. Tunggu 1-2 menit lalu redeploy.
+### Database connection refused
+- Verify `DB_SSLMODE=require` is set
+- Use port `5432` (direct) or `6543` (connection pooler)
+- Check Supabase dashboard → Database → Connection string
 
-### Page blank / 500 error
-→ Cek `APP_DEBUG=true` sementara di Railway vars untuk melihat error detail. **Jangan lupa kembalikan ke `false`!**
+### File uploads not working
+- Verify Supabase Storage bucket `media` exists and is set to **public**
+- Check `SUPABASE_STORAGE_URL`, `SUPABASE_STORAGE_KEY` env vars
+- Ensure `league/flysystem-aws-s3-v3` is installed (`composer install`)
 
-### Images tidak muncul
-→ Jalankan `php artisan storage:link` via Railway CLI atau tambah ke nixpacks build.
+### Emails not sending
+- Gmail requires an **App Password** (not your regular password)
+- Go to Google Account → Security → 2-Step Verification → App passwords
+- Use the generated 16-character password as `MAIL_PASSWORD`
 
-### Admin login gagal
-→ Pastikan sudah run `php artisan db:seed`. Jika sudah tapi tetap gagal, password mungkin belum ter-hash di DB. Jalankan seeder ulang.
+### Assets not loading from CDN
+- Check `ASSET_CDN_ENABLED=true` and `ASSET_CDN_URL` env vars
+- Verify Cloudflare Pages deployment is current
+- Check browser console for CORS errors (should be handled by `_headers` file)
 
-### CSS/JS tidak load (404)
-→ Pastikan `npm run build` berhasil di build log. Cek bahwa Vite manifest exists.
+### Container keeps restarting
+- Check Koyeb logs for startup errors
+- Verify `APP_KEY` is set (run `php artisan key:generate --show`)
+- Ensure all required env vars are configured
 
 ---
 
-## Monthly Cost Estimate
+## Cost Summary
 
-| Service | Cost |
-|---|---|
-| Railway (app + MySQL) | ~$5-10/bulan |
-| Cloudflare Pages (CDN) | **Gratis** |
-| Gmail SMTP | **Gratis** |
-| **Total** | **~$5-10/bulan** |
-
----
-
-## Future Improvements
-
-Setelah deploy berhasil, pertimbangkan:
-
-1. **Custom Domain** — beli domain, arahkan DNS ke Railway
-2. **SSL Certificate** — Railway otomatis handle via Let's Encrypt
-3. **Redis** — upgrade cache/session dari database ke Redis untuk performa
-4. **Backup Database** — setup automated MySQL backup
-5. **Monitoring** — tambahkan uptime monitoring (UptimeRobot, gratis)
-6. **Stronger Passwords** — ganti password admin ke yang lebih kuat
+| Service | Tier | Cost |
+|---|---|---|
+| Koyeb | Free (1 nano instance, 512MB) | $0/month |
+| Supabase | Free (500MB DB, 1GB storage) | $0/month |
+| Cloudflare Pages | Free (unlimited bandwidth) | $0/month |
+| Gmail SMTP | Free (500 emails/day) | $0/month |
+| **Total** | | **$0/month** |
